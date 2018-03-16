@@ -1,0 +1,45 @@
+%compiling with XeLaTeX
+\documentclass[twoside,11pt,abstracton]{scrreprt}
+
+\input{metadata/settings}
+\input{metadata/definitions}
+
+\begin{document}
+%title, abstract and toc	
+ 
+\pagenumbering{roman} %start roman numbering before main text
+\input{content/titlepage}
+{\renewcommand{\headrulewidth}{0pt} % kill headrule for abstract and toc
+	\addcontentsline{toc}{chapter}{Vorwort}
+	\include{content/abstract}
+	\tableofcontents
+	\blankpage}
+}
+%main content
+\setcounter{tocdepth}{1}
+\pagenumbering{arabic} % now set main numbering in arabic
+
+%lectures
+\include{content/VL1-170418}
+\include{content/VL2-190418}
+\include{content/VL3-240418}
+\include{content/VL4-260418}
+
+
+
+
+%\appendix
+\blankpage
+\pagenumbering{Roman} %start capital roman numbering for appendices
+
+\pagestyle{plain}
+
+
+
+\addcontentsline{toc}{chapter}{Abbildungsverzeichnis}	
+\listoffigures
+
+\addcontentsline{toc}{chapter}{Tabellenverzeichnis}
+\listoftables
+
+\end{document}

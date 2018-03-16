@@ -1,0 +1,106 @@
+%personel data
+\title{Differentialgeometrie I}
+\author{Dr. Anna Siffert}
+\date{Sommersemester 2018}
+
+
+%math and theorems
+\usepackage{amsmath}
+\usepackage{ntheorem}
+
+%language settings and microtype
+\usepackage{fontspec} 
+\setmainfont{Palatino}
+\setsansfont{Optima}
+%\setmonofont[Scale=MatchLowercase]{Menlo}
+
+\usepackage{polyglossia}
+\setmainlanguage{german}
+\setotherlanguages{english}
+\usepackage{microtype}
+
+%useful packages
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{fancyhdr}
+\usepackage{csquotes}
+\usepackage{blindtext}
+\usepackage{todonotes}
+
+
+%geometry
+\geometry{
+	width=150mm,
+	bindingoffset=7mm,}
+
+%color settings
+\definecolor{myred}{RGB}{196,19,47} 
+\definecolor{myblue}{RGB}{0,139,139}
+
+
+%for empty pages at the beginning of the document
+\def\blankpage{%
+	\clearpage%
+	\thispagestyle{empty}
+	\addtocounter{page}{-1}
+	\null%
+	\clearpage}
+
+% Page layout for beginning of chapter
+\fancypagestyle{plain}{%
+	\fancyhf{}  % clear all header and footer fields 
+	\fancyfoot[C]{\thepage} 
+	\renewcommand{\headrulewidth}{0pt}
+	\renewcommand{\footrulewidth}{0pt}}
+
+%page layout for the other pages
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE]{\textit{\nouppercase{\leftmark}}}
+\fancyhead[RO]{\textit{\nouppercase{\rightmark}}}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.2pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% titles and stuff
+\setkomafont{chapter}{\normalfont\bfseries\Huge}
+\setkomafont{section}{\normalfont\bfseries\LARGE}
+\setkomafont{subsection}{\normalfont\bfseries\large}
+\setkomafont{title}{\normalfont\bfseries\Large}
+\setkomafont{author}{\normalfont\bfseries\Large}
+\setkomafont{date}{\normalfont\bfseries\Large}
+
+%nice boxes
+\usepackage[many]{tcolorbox}    
+\newtcolorbox{mybox}[1]{%
+	tikznode boxed title,
+	enhanced,
+	arc=0mm,
+	interior style={white},
+	attach boxed title to top center= {yshift=-\tcboxedtitleheight/2},
+	fonttitle=\large\bfseries,
+	colbacktitle=white,coltitle=black,
+	boxed title style={size=normal,colframe=white,boxrule=0pt},
+	title={#1}}
+
+%bibliography
+\usepackage[
+style=numeric-comp,
+backend=biber,
+maxnames=10,
+maxcitenames=2,
+isbn=false,
+date=year,
+url=false,
+doi=false
+]{biblatex}
+\bibliography{bibliography/diffgeo-bib}
+
+%appendix
+\RequirePackage[toc,page]{appendix}
+
+%always use heperref at the end of the preamble!
+\usepackage[colorlinks=True]{hyperref}
+\hypersetup{allcolors=myred}
