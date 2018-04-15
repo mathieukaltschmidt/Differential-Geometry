@@ -51,7 +51,7 @@
 % Page layout for beginning of chapter
 \fancypagestyle{plain}{%
 	\fancyhf{}  % clear all header and footer fields 
-	\fancyfoot[C]{\thepage} 
+	\fancyfoot[C]{- \thepage\hspace{3pt}-} 
 	\renewcommand{\headrulewidth}{0pt}
 	\renewcommand{\footrulewidth}{0pt}}
 
@@ -60,7 +60,7 @@
 \fancyhf{}
 \fancyhead[LE]{\textit{\nouppercase{\leftmark}}}
 \fancyhead[RO]{\textit{\nouppercase{\rightmark}}}
-\fancyfoot[C]{\thepage}
+\fancyfoot[C]{- \thepage\hspace{3pt}-}
 \renewcommand{\headrulewidth}{0.2pt}
 \renewcommand{\footrulewidth}{0pt}
 
@@ -99,7 +99,7 @@ doi=false
 \bibliography{bibliography/diffgeo-bib}
 
 %appendix
-\RequirePackage[toc,page]{appendix}
+\usepackage[toc,page]{appendix}
 
 %always use heperref at the end of the preamble!
 \usepackage[colorlinks=True]{hyperref}
