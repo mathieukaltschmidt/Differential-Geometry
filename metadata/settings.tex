@@ -6,13 +6,13 @@
 
 %math and theorems
 \usepackage{amsmath}
-\usepackage{ntheorem}
+\usepackage[thmmarks,hyperref,amsmath]{ntheorem}
 
 %language settings and microtype
 \usepackage{fontspec} 
 \setmainfont{Palatino}
 \setsansfont{Optima}
-%\setmonofont[Scale=MatchLowercase]{Menlo}
+\setmonofont[Scale=MatchLowercase]{Menlo}
 
 \usepackage{polyglossia}
 \setmainlanguage{german}
@@ -85,6 +85,44 @@
 	boxed title style={size=normal,colframe=white,boxrule=0pt},
 	title={#1}}
 
+%proofs,defs ...
+
+%Theorems
+\theoremstyle{marginbreak}
+\theoremheaderfont{\normalfont\bfseries}
+\theorembodyfont{\slshape} 
+\theoremseparator{}
+\newtheorem{satz}{Satz}[chapter]
+
+%Lemma
+\theoremstyle{changebreak} 
+\theoremindent0.5cm 
+\theoremseparator{}
+\newtheorem{lem}[satz]{Lemma}
+
+%Corolarys
+\theoremindent0cm 
+\theoremseparator{}
+\newtheorem{kor}[satz]{Korollar}
+
+%Examples
+\theoremstyle{break} 
+\theorembodyfont{\upshape} 
+\theoremseparator{} 
+\newtheorem{bsp}[satz]{Beispiel}
+
+%Definitions
+\theoremstyle{break}
+\theoremseparator{} 
+\newtheorem{defs}[satz]{Definition}
+
+%Proofs
+%\theoremheaderfont{\bfseries\normalfont}
+\theoremstyle{nonumberbreak}
+\theoremseparator{} 
+\theoremsymbol{\qed} 
+\newtheorem{bew}[satz]{Beweis:}
+
 %bibliography
 \usepackage[
 style=numeric-comp,
@@ -101,6 +139,6 @@ doi=false
 %appendix
 \usepackage[toc,page]{appendix}
 
-%always use heperref at the end of the preamble!
+%always use hyperref at the end of the preamble!
 \usepackage[colorlinks=True]{hyperref}
 \hypersetup{allcolors=myred}
