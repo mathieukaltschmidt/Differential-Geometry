@@ -6,7 +6,8 @@
 
 %math and theorems
 \usepackage{amsmath}
-\usepackage[thmmarks,hyperref,amsmath]{ntheorem}
+\usepackage{amssymb}
+\usepackage[amsmath,thmmarks,hyperref]{ntheorem}
 
 %language settings and microtype
 \usepackage{fontspec} 
@@ -120,7 +121,7 @@
 %\theoremheaderfont{\normalfont} %falls es nicht dick gedruckt sein soll
 \theoremstyle{nonumberbreak}
 \theoremseparator{} 
-\theoremsymbol{\qed} 
+\theoremsymbol{\ensuremath{\square}}
 \newtheorem{bew}[satz]{Beweis:}
 
 %bibliography
