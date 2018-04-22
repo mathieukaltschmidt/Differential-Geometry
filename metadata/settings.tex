@@ -66,7 +66,7 @@
 \renewcommand{\footrulewidth}{0pt}
 
 % titles and stuff
-\setkomafont{chapter}{\normalfont\bfseries\Huge}
+\setkomafont{chapter}{\normalfont\bfseries\huge}
 \setkomafont{section}{\normalfont\bfseries\LARGE}
 \setkomafont{subsection}{\normalfont\bfseries\large}
 \setkomafont{title}{\normalfont\bfseries\Large}
@@ -114,8 +114,14 @@
 
 %Definitions
 \theoremstyle{break}
+\theorembodyfont{\slshape} 
 \theoremseparator{} 
 \newtheorem{defs}[satz]{Definition}
+
+%Annotations
+\theoremstyle{plain}
+\theoremseparator{:} 
+\newtheorem{bem}[satz]{Anmerkung}
 
 %Proofs
 %\theoremheaderfont{\normalfont} %falls es nicht dick gedruckt sein soll
