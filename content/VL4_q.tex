@@ -1,0 +1,84 @@
+\begin{satz}[Umkehrsatz]
+Sei $f: M \rightarrow N$ glatt, $p\in M$. Sei $\d f\vert_p: T_p M\rightarrow T_{f(p)} N$ ein Isomorphismus. Dann existiert eine Umgebung $U$ von $p$ und $U'$ von $f(p)$, so dass
+\begin{align*}
+f\vert_U: U \rightarrow U'
+\end{align*}
+ein Diffeomorphismus ist.
+\end{satz}
+
+\begin{bew}
+Nutze Karten um dies auf den euklidischen Fall zurückzuführen
+\missingfigure{Karten und Abbildungen}
+Seien $(x, U)$ und $(y, U')$ Karten von $M$ und $N$ um $p$ und $f(p)$.\\
+o. B. d. A.: $f(U) \subset U'$\\
+Dann ist $\varphi$ eine glatte Abbildung, deren Differential $\d f\vert_{x(p)}$ invertierbar ist.\\ 
+Umkehrsatz im $\R^n$ liefert: $\exists$ Umgebungen  $\hat{V}$ von $x(p)$ und $\hat{V}'$ von $y(f(p))$, so dass $\varphi\vert_{\hat{V}'}$ ein Diffeomorphismus ist. Dann ist $f\vert_{x^{-1}(\hat{V})}: x^{-1}(\hat{V}) \rightarrow y^{-1}(\hat{V}')$ ein Diffeomorphismus.
+\end{bew}
+
+\begin{satz}[implizite Funktion]
+$f:M^m \rightarrow N^m$ glatt.
+\begin{enumerate}
+\item Sei $\operatorname{Rang} f = r$. Dann $\exists$ zu jeder Karte $(y, U')$ um $f(p)$ eine Karte $(x, U)$ um $p$, so dass\linebreak \mbox{$y\circ f\circ x^{-1}(u^1, \dots, u^n) = (u^1, \dots, u^r, \varphi^{r+1}(u), \dots, \varphi^n(u))$}.
+Falls $y(f(p)) = 0$, so kann man $x$ so wählen, dass $x(p) = 0$ und $\varphi^j(0) = 0$ und $(\partial_i \varphi^j)(0) = 0\ \forall i, j > r$.
+\item Sei $\operatorname{Rang	}f = r (\forall p \in M!)$. Dann gibt es Karten $(x, U), (y, U')$, so dass\linebreak \mbox{$y\circ f\circ x^{-1}(u^1, \dots, u^n) = (u^1, \dots, u^r, 0, \dots, 0)$}.
+\end{enumerate}
+\end{satz}
+
+\begin{bew}[zu 1]
+"Wähle Karten und modifiziere diese geschickt"\\
+Sei $(y, U')$ Karte von $N$ um $f(p)$ und $(x, U)$ Karte von $M$ um $p$ mit $\hat{x}(p) = 0$. Setze 
+\begin{align*}
+\hat{\varphi} &= y\circ f\circ \hat{x}^{-1}\\
+\hat{A} &= (A_{ij} = (\partial_i \varphi^j)_{\substack{1\leq i\leq m\\1\leq j\leq n}}
+\end{align*}
+Da $\operatorname{Rang}f = r$ können wir o. B. d. A annehmen, dass $\det(\tilde{A})\not = 0$, wobei\mbox{$\tilde{A} = (\hat{A})_{1\leq i, j\leq r}$}\\
+Setze $x^i =
+\left\{
+\begin{array}{l}
+y'\circ f, 1\leq i\leq r\\
+\hat{x}^i, r+1\leq i\leq n
+\end{array}
+\right.$
+Dann gilt $c(p) = 0$ und
+\begin{align*}
+\partial_i(x^j\circ\hat{x}^{-1})(0) = 
+\left(
+\begin{array}{c|c}
+\partial_i\hat{\varphi}^j(0) & \ast\\
+\hline
+0 & \operatorname{id}
+\end{array}
+\right)
+\end{align*}
+$\Rightarrow x$ hat $\operatorname{Rang} = m = \dim M$ im Punkt $p$\\
+$\Rightarrow x$ lokaler Diffeomorphismus\\
+$\Rightarrow \exists$ Umgebung $U$ um $p$ und $V$ von $0$ in $\R^n$, so dass $x: M \rightarrow V$ eine Karte von $M$ ist und 
+\begin{align*}
+varphi(u^1, \dots, u^n) &= y\circ f\circ x^{-1}(u^1, \dots, u^n)
+&= (u^1, \dots, u^r, \varphi^{r + 1}(u), \dots, \varphi^n(u))
+\end{align*}
+wobei $\varphi^\alpha$ glatt auf $U'$ sind, mit $\varphi'(0) = 0$.
+Betrachte Jacobimatrix:
+\begin{align*}
+A_{ij} &= (\partial_i \varphi^j)
+&= 
+\begin{pmatrix}
+\mathds{1} & 0\\
+\ast & (\partial_i\varphi^j)
+\end{pmatrix}
+\end{align*}
+Da $\operatorname{Rang}\varphi = r$ in einer Umgebung von $u=0$ hat $\Rightarrow \partial_i\varphi^j = 0\ \forall i, j > r$
+\end{bew}
+
+\begin{kor}
+Sei $f: M^m \rightarrow N^n$ glatt.
+\begin{enumerate}
+\item Sei $q\in N$ regulärer Wert, so ist
+\begin{align*}
+H\coloneqq f^{-1}(q) = \set{p\in M\middle| f(p) = q}
+\end{align*}
+eine Untermannigfaltigkeit der Dimension $m-n$
+\item Sei $f$ in einer Umgebung von $H = f^{-1}(q)$ vom Rang $r$, so ist $H$ eine Untermannigfaltigkeit der Dimension $m-r$
+\end{enumerate}
+Der Tangentialraum $T_p H$ ist isomorph zu $\ker \d f\vert_p \subseteq T_p M\ \forall p \in H$.
+\end{kor}
