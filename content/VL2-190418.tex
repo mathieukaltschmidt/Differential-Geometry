@@ -20,7 +20,7 @@ f_i: V_i \subseteq X \rightarrow [0, 1],\ \sum_{i \in I} f_i (x) = 1
 Metrische Räume sind parakompakt.
 \end{bsp}
 
-\begin{bsp}[differenzierbare Mannigfaltigen]
+\begin{bsp}[differenzierbare Mannigfaltigkeiten]
 \begin{enumerate}
 \item$\mathbb{R}^n$ mit Atlas $\mathcal{A} = \{(\operatorname{id}, \R^n)\}$
 \item$V$ Vektorraum, $B$ Basis mit $B = \{v_1, \cdots, v_n\}$, Atlas $\mathcal{A} = \set{(\chi_B, V)}$
@@ -31,16 +31,23 @@ Metrische Räume sind parakompakt.
 wobei $(e_1, \cdots, e_n)$ die Standartbasis ist.
 \item$M\subseteq \R^n,\ (\chi_U, U)$ mit $\chi_U = \operatorname{id}\vert_U,\ V \subseteq M^n,\ M$ differenzierbare Mannigfaltigkeit, $\mathcal{A} = \set{(\chi_X, U)}$ Atlas von $M$\\
 $\mathcal{A}_V = \set{(\chi_V, U_V}$ wobei $(\chi_V, U_V) = (\chi_{U\cap V}, U\cap V)$
-\item$M_1 = S^1,\ M_2 = \R,\ M_1\times M_2 =$ "unendlicher Zylinder" \missingfigure{unendlicher Zylinder}
-Seien $M_1^{n_1}, M_1^{n_2}$ differenzierbare Mannigfaltigkeiten, so ist $M_1\times M_2$ ebenfalls eine \difM der Dimension $n_1 + n_2$.\\
+\item$M_1 = S^1,\ M_2 = \R,\ M_1\times M_2 =$ "unendlicher Zylinder"
+\end{enumerate}
+\hspace{.06\textwidth}
+\begin{minipage}[H]{0.8\textwidth}
+Seien $M_1^{n_1}, M_1^{n_2}$ differenzierbare Mannigfaltigkeiten, so ist $M_1\times M_2$ ebenfalls eine \difM \ der Dimension $n_1 + n_2$.\\
 Atlas $\mathcal{A} = \set{(x\times y, U\times V)}$, wobei 
 \begin{align*}
 (x, U) &= \text{Karte von } M_1\\
 (y, V) &= \text{Karte von } M_2
 \end{align*}
 $(x\times y)(p_1, p_2) = (x(p_1), y(p_2))$
-\end{enumerate}
-\todo{Mannigfaltigkeiten}
+\end{minipage}
+\hspace{1cm}
+\begin{minipage}[H]{.2\textwidth}
+\vspace{-1.5cm}
+\includegraphics[scale=0.5]{figures/tikz/cylinder.pdf}
+\end{minipage}
 \end{bsp}
 
 \begin{bem}

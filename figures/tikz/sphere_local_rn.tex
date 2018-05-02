@@ -1,0 +1,33 @@
+\documentclass[border=5mm]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{shapes}
+\usepackage{pgfplots}
+\usepgfplotslibrary{fillbetween}
+\usepackage[active,tightpage]{preview} 
+\PreviewEnvironment{tikzpicture}
+\setlength\PreviewBorder{2mm}
+\usepackage{xcolor}
+\usepackage{amssymb}
+\begin{document}
+	\begin{tikzpicture}
+%local part
+\path[fill,teal!40] (-1,1.7) arc (180:-180:1 and 0.29) ;
+\draw (-1,1.7) arc (180:360:1 and 0.29);
+
+%sphere
+	\shade[ball color = gray!90, opacity = 0.2] (0,0) circle (2cm);
+	\draw (0,0) circle (2cm);
+	\draw (-2,0) arc (180:360:2 and 0.6);
+	\draw[dashed] (2,0) arc (0:180:2 and 0.6);
+	
+%point on top and description
+	\filldraw (0,2) circle (1.5pt);
+	\node at (0.1,2.4) {\Large$P$};
+	
+	
+	\node at (4.5,1.9) {\LARGE lokal wie $\mathbb{R}^n$};
+	\draw[->] (2.7,1.9) [out=180, in=90] to  (0.5,2);
+	
+	\end{tikzpicture}
+\end{document}
+
