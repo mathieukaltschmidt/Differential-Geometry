@@ -1,0 +1,93 @@
+\chapter{Vektorbündel}
+\missingfigure{Vektorbündel}
+
+\section{Tangentialbündel}
+\missingfigure{Tangentialbündel}
+
+Wir wollen alle Tangentialräume von $M$ gemeinsam betrachten.
+\begin{align*}
+TM = \bigsqcup_{p\in M} = \set{(p, v)\middle| p \in M,\ v \in T_p M}
+\end{align*}
+
+\paragraph{Wollen:} Struktur einer differenzierbaren Mannigfaltigkeit, das heißt wir wollen eine Topologie + $c^\infty$-Struktur auf $TM$ definieren.
+
+\begin{defs}[Projektion]
+\begin{align*}
+\pi: TM &\rightarrow M\\
+(p, v) &\mapsto p
+\end{align*}
+\end{defs}
+
+\paragraph{Karten auf $TM$}
+Sei $(x, U)$ Karte von $M$. Definiere Karte $(\bar{x}, \bar{U})$ von $TM$ wie folgt:
+\begin{align*}
+\bar{U} &= \pi^{-1}(U)\\
+\bar{x}: \bar{U} &\rightarrow x(U)\times \R^n\subset\R^{2n}\\
+(p, v) &\mapsto (x(p), \xi)
+\end{align*}
+wobei $\xi = (\xi_1, \dots, \xi_n)\in \R^n$ durch
+\begin{align*}
+v = \sum_{i=1}^n \xi_i \left.\frac{\partial}{\partial x^i}\right|_p\ \forall P \in U
+\end{align*}
+Wir haben noch keine Topologie auf $TM$ definiert, das heißt $\bar{x}$ ist nur eine bijektive Abbildung zwischen Mengen. Wir können also nicht sagen ob $\bar{x}$ Homöomorphismus oder Diffeomorphismus ist. Aber wir können einen "Kartenwechsel" betrachten.\\
+Seinen $(\bar{x}, \bar{U}),\ (\bar{y}, \bar{U}')$ zwei "Karten"
+\begin{align*}
+\bar{y}\circ\bar{x}^{-1}: \underbrace{\bar{x}(\bar{U}\cap\bar{U}')}_{x(U\cap U')\times\R^n} &\rightarrow \underbrace{\bar{y}(U\cap\bar{U}')}_{y(U\cap U')\times \R^n}\\
+(u, \xi) &\mapsto (x\circ x^{-1}(u), \eta)
+\end{align*}
+mit $\eta = \d (y\circ x^{-1}\vert_u (\xi)$. Da $y\circ x^{-1}$ ein Diffeomorphismus ist, ist $\d (y\circ x^{-1})\vert_u$ ein Isomorphismus (Analysis) $\Rightarrow$ $\bar{y}\circ\bar{x}^{-1}$ ist ein Diffeomorphismus. Nun können wir die Topologie auf $TM$ definieren.\\
+$\mathbb{O}\subset TM$ offen, falls $\bar{x}(\mathcal{O}\cup\bar{U})$ offen in  $V\times\R^n$ ist $\forall$ Karten $(x, U) \in \mathcal{A}_U$ (beziehungsweise $(\bar{x}, \bar{U}) \in \mathcal{A}_{TM})$
+\begin{align*}
+x: U &\rightarrow V \subseteq\R^n\\
+\bar{x}: \bar{U} &\rightarrow \bar{V} \subseteq \R^{2m}
+\end{align*}
+
+\begin{satz}
+$TM$ mit dieser Topologie ist eine topologische Mannigfaltigkeit mit $\mathcal{A}_{TM}$, welcher eine differenzierbare Struktur definiert.
+\end{satz}
+
+\section{Vektorbündel}
+
+$TM$ hat die Struktur einer glatten Mannigfaltigkeit, aber es hat noch mehr Struktur: "Familie von Vektorräumen über $M$" ($TM$ hat also die Struktur eines Vektorbündels)
+
+\begin{defs}
+Sei $M$ eine differenzierbare Mannigfaltigkeit.\\
+Ein $\R$-Vektorbündel vom Rang $K$ über $M$ ist eine differenzierbare Mannigfaltigkeit $E$ mit einer glatten surjektiven Abbildung $\pi: E\rightarrow M$, so dass 
+\begin{enumerate}
+\item$\forall p \in M$ hat $E_p\coloneqq \pi{-1}(\{p\})$ die Struktur eines $\R$-Vektorraums der Dimension $K$\\
+($E_p$ = "Faser von $E$ über $p$")
+\item$\forall p\in M\ \exists$ Umgebung $U$ von $p \in M$ und ein Diffeomorphismus
+\missingfigure{Diffeomorphismus zu Vektorbündeln}
+so dass:
+\begin{enumerate}
+\item$\pi\circ\phi = pr_1$
+\item$\forall q\in U$ ist die Abbildung 
+\begin{align*}
+\phi_{K_q}: {q}\times\R^K &\rightarrow E_q\\
+(q, \xi)&\mapsto\Phi_q(\xi)\coloneqq\phi(q, \xi)
+\end{align*}
+ein Isomorphismus.
+\end{enumerate}
+\end{enumerate}
+$\phi$ heißt eine lokale Trivialisierung von $E$.
+\end{defs}
+
+\begin{bem}
+Ein Vektorbündel ist ein Tripel $(\pi, E, M)$ (Projektion, Totalraum, Basis). Wir schreiben oft nur $E$.
+\end{bem}
+
+\begin{bsp}
+\begin{enumerate}
+\item Triviales Bündel
+\begin{align*}
+E = M\times\R^K &\xrightarrow{\pi} M\\
+(P, \xi) &\mapsto p
+\end{align*}
+\item Tangentialbündel
+\begin{align*}
+TM &\xrightarrow{\pi} M\\
+(p, v) &\mapsto p &\pi^{-1}({p}) = T_p M \text{ VR der Dimension }m
+\end{align*}
+\missingfigure{Diagrammjagd Beispiel}
+\end{enumerate}
+\end{bsp}
