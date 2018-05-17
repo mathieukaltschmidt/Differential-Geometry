@@ -17,12 +17,14 @@ Dann definieren wir eine Karte $(\overline{x}, \overline{U})$ von $T\mfk$ wie fo
 &\overline{x}: \overline{U} \to x(U) \times \R^m \subset \R^{2m} \\
 &(p, V) \mapsto (x(p), \xi)
 \end{align}
+
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.4\linewidth]{figures/scan/tangentialbuendel.png}
 \caption{Veranschaulichung eines Tangentialbündels}
 \label{img:tangentialbuendel}
 \end{figure} 
+
 Wobei $\xi = (\xi^1, \dots, \xi^m) \in \R^m$ gegeben ist durch:
 \begin{align}
 v = \sum_{i=1}^{m} \xi_i \pdv{x_i} \big\vert_p, \quad \forall p \in U.
@@ -59,12 +61,19 @@ so dass:
 \item $\forall p \in \mfk$ hat $E_p:= \pi^{-1}( \{ p \})$ die Struktur eines $\R$-Vektorraums der Dimension $k$.
 $E_p$ heißt Faser von $E$ über $p$.
 \item Für alle $p$ in $\mfk$ existiert eine Umgebung $U$ von $p$ in $\mfk$ und ein Diffeomorphismus.
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.4\linewidth]{figures/scan/lokaletrivialisierung.png}
-\caption{Lokale Trivialisierung}
-\label{img:lokaletrivialisierung}
-\end{figure} 
+\begin{align}
+\begin{xy}
+\xymatrix@=0.2\linewidth{
+      \phi: U \times \R^k \ar[rr] \ar[rd]_{pr_1}  &     &  \pi^{-1}(U) \ar[dl]^{\pi}  \\
+                             &  U  &}
+\end{xy}
+\end{align}
+%\begin{figure}[h]
+%\centering
+%\includegraphics[width=0.4\linewidth]{figures/scan/lokaletrivialisierung.png}
+%\caption{Lokale Trivialisierung}
+%\label{img:lokaletrivialisierung}
+%\end{figure} 
 Für diesen gilt:
 \begin{itemize}
 \item $\pi \circ \phi = p r_1$

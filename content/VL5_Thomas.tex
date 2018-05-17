@@ -111,11 +111,20 @@ Ein paar $(f, L)$ von glatten Abbildungen $f: \mfk \to \mfk'$ und $L: E \to E'$ 
 \item $L\big\vert_{E_p}$ ist $\R$-linear
 \end{itemize}
 
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.4\linewidth]{figures/scan/buendelabbildung.png}
-\label{img:buendelabbildung}
-\end{figure} 
+
+\begin{align}
+\begin{xy}
+  \xymatrix@=0.25\linewidth{
+      E \ar[r]^L \ar[d]_\pi    &   E' \ar[d]^{\pi '}  \\
+      \mfk \ar[r]_f             &   \mfk'   
+  }
+\end{xy}
+\end{align}
+%\begin{figure}[h]
+%\centering
+%\includegraphics[width=0.4\linewidth]{figures/scan/buendelabbildung.png}
+%\label{img:buendelabbildung}
+%\end{figure} 
 
 
 \end{defs}
@@ -163,7 +172,7 @@ Ein Schnitt von $E$ über $U$ ist eine Abbildung $s : U \to E$ mit $\pi \circ s 
 &p \mapsto 0 \in E_p
 \end{align}
 \item Schnitte von $T\mfk$ heißen Vektorfelder.
-Wir bezeichnen die Vektorfelder $V: \mfk \to T\mfk$ mit $\mathcal{X}(\mfk)$.
+Wir bezeichnen die Vektorfelder $V: \mfk \to T\mfk$ mit $\mathfrak{X}(\mfk)$.
 
 \begin{figure}[h]
 \centering

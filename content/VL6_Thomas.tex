@@ -106,18 +106,18 @@ Ein Schnitt von $E$ entlang von $f$ ist eine glatte Abbildung $\delta : \mfka \t
 
 \begin{defs}[Lie-Klammern]
 \begin{align}
-\comm{\cdot}{\cdot} : \mathcal{X}(\mfk) \times \mathcal{X}(\mfk) \to \mathcal{X}(\mfk)\\
+\comm{\cdot}{\cdot} : \mathfrak{X}(\mfk) \times \mathfrak{X}(\mfk) \to \mathfrak{X}(\mfk)\\
 \comm{x}{y} f := x(y(f)) - y(x(f))
 \end{align}
 Hier bleibt als Übung zu zeigen, dass $\comm{x}{y}$ tatsächlich ein neues Vektorfeld ist.
-Mit der Lie-Klammer ist $\mathcal{X}(\mfk)$ eine Lie-Algebra.
+Mit der Lie-Klammer ist $\mathfrak{X}(\mfk)$ eine Lie-Algebra.
 \end{defs}
 
 \begin{defs}[Zusammenhang]
 Sei $(\pi, E, \mfk)$ ein Vektorbündel vom Rang $k$.
 Ein Zusammenhang auf $E$ ist eine Abbildung
 \begin{align}
-\covd : \mathcal{X}(\mfk) \times \Gamma(E) \to \Gamma (E) \\
+\covd : \mathfrak{X}(\mfk) \times \Gamma(E) \to \Gamma (E) \\
 (x, s) \mapsto \covd (x, s) = \covd_x s
 \end{align}
 Wobei folgende EIgenschaften erfüllt sind:
@@ -141,7 +141,7 @@ $\covd_x s$ heißt die kovariante Ableitung von $s$ in Richtung $x$.
 Es gibt bei der kovarianten Ableitung den folgenden Spezialfall:
 \begin{align}
 E = T\mfk\\
-\covd: \underbrace{\mathcal{X}(\mfk)}_{tensoriell} \times \underbrace{\mathcal{X}(\mfk)}_{derivativ} \to \mathcal{X}(\mfk)
+\covd: \underbrace{\mathfrak{X}(\mfk)}_{\mathrm{tensoriell}} \times \underbrace{\mathfrak{X}(\mfk)}_{\mathrm{derivativ}} \to \mathfrak{X}(\mfk)
 \end{align}
 
 \begin{bsp}
@@ -160,7 +160,7 @@ Wir benutzen die folgende Notation: $\covd_x s = x(\sigma)$.
 
 \begin{lem}
 \label{lem:lokalisierung1}
-$x_1, x_2 \in \mathcal{X}(\mfk)$ und $x_1(p) = x_2(p)$,
+$x_1, x_2 \in \mathfrak{X}(\mfk)$ und $x_1(p) = x_2(p)$,
 dann folgt daraus, dass 
 \begin{align}
 (\covd_{x_1} s)(p) = (\covd_{x_2} s) (p).
