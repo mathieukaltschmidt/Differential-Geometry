@@ -1,0 +1,195 @@
+\begin{satz}
+\label{satz:lokalrahmentrivialisierung}
+Sei $(\pi, E, \mfk)$ ein Vektorbündel vom Rang $k$.
+\begin{enumerate}
+\item Aus einem lokalen Rahmen folgt eine lokale Trivialisierung.
+Sei $(s_1, \dots, s_k)$ ein lokaler Rahmen über $U\subset\mfk$.
+Dann ist 
+\begin{align}
+\phi : U \times \R^k \to E \big\vert_U\\
+(p, \xi) \to \sum^k_{i=1} \xi_i s_i (p),
+\end{align}
+eine lokale Trivialisierung
+\item  Aus einer lokalen Trivialisierung folgt ein lokaler Rahmen.
+Sei $\phi: U \times \R^k \to E \big\vert_U$ eine lokale Trivialisierung.
+Dann ist $(s_1, \dots, s_k)$ ein lokaler Rahmen mit 
+\begin{align}
+s_i(p) = \phi (p, e_i).
+\end{align} 
+Wobei $\{ e_i \}$ die Standardbasis von $\R^k$ ist.
+\end{enumerate}
+\end{satz}
+\begin{bew}[Beweis Teil 1 Satz \ref{satz:lokalrahmentrivialisierung}]
+Es gilt, dass 
+\begin{align}
+\phi \big\vert_p : \{ p \} \times \R^k \to E \big\vert_p
+\end{align}
+ein Isomorphismus ist.
+Außerdem hat
+\begin{align}
+\phi : U \times \R^k \to E \big\vert_U,
+\end{align}
+maximalen Rang.
+Für alle $p$ in $U$ existiert eine Umgebung $V \subset U$ von $p$, so dass die folgende Abbildung eine lokale Trivialisierung ist:
+\begin{align}
+\psi_V : V\times \R^k \to E \big\vert_V.
+\end{align}
+Dann gilt:
+\begin{align}
+\psi^{-1}_V \circ  \phi (q, \xi) = (q, \underbrace{\psi^{-1}_q \circ \phi_q(\xi)}_{\mathrm{Isomorphismus}})
+\end{align}
+$\psi^{-1}_V \circ \phi : V \times \R^k \to V \times \R^k$ ist ein Diffeomorphismus.
+Daraus folgt, dass $\phi$ maximalen Rang auf $V$ und $U$ hat womit folgt, dass $\phi$ ein Diffeomorphismus ist.
+\end{bew}
+\begin{bew}[Beweis Teil 2 Satz \ref{satz:lokalrahmentrivialisierung}]
+Diese Aussage ist sofort klar, da $\phi_p$ ein Isomorphismus ist.
+\end{bew}
+
+Lokale Rahmen erlauben es uns mit Schnitten zu rechnen.
+
+\begin{defs}[Hauptteil]
+Sei $(s_1, \dots, s_k)$ ein lokaler Rahmen und $\phi$ die dazugehörige lokale Trivialisierung.
+Ferner sei $s \in \Gamma_U (E)$ über $U \subset \mfk$.
+Dann existiert eine glatte Abbildung
+\begin{align}
+\sigma : U \to \R^k,
+\end{align}
+so dass
+\begin{align}
+s(p) &= \sum^{k}_{i=1} \sigma_i (p) s_i(p)\\
+\phi(p, \sigma(p)) &= s(p).
+\end{align}
+$\sigma$ heißt der Hauptteil von $s$ bezüglich $\phi$.
+\end{defs}
+
+\begin{bem}
+Die Aussagen $\sigma$ ist glatt und $s$ ist glatt sind äquivalent.\\
+Sei $(t_1, \dots t_k)$ ein lokaler Rahmen über $V$ und $\psi$ die dazugehörige lokale Trivialisierung, so dass $U \cap V \neq \emptyset$.
+Über $U \cap V$ gilt:
+\begin{align}
+s_i = \sum_j g^j_i t_j,
+\end{align}
+wobei $g^j_i : U \cap V \to \R$.
+Setze $g(p) = (g^j_i (p))^k_{i,j =1}$
+\begin{align}
+g(p)(t_1(p), \dots , t_k(p)) = (s_1(p), \dots, s_k(p))\\
+g: U \cap V \ni p \to g(p) \in \mathrm{GL}(E\big\vert_p)
+\end{align}
+sei $s \in \Gamma_{U \cap V} (E)$ und Hauptteile $\sigma_\phi$, $\sigma_\psi$, dann ist
+\begin{align}
+\sigma^i_\phi = \sum^k_{j=1} g^j_i \sigma^j_{\psi}\
+\sigma_\phi = g \sigma_\psi\
+g : U \cap V \to \mathrm{GL} (k, \R)
+\end{align}
+\end{bem}
+
+
+\begin{defs}[Pullback]
+Sei $E	\xrightarrow{\pi} \mfk$ ein Vektorbündel und $f : \mfka \to \mfk$ eine glatte Abbildung.
+Der Pullback von $E$ über $f$ ist das Vektorbündel $f^* E$ welches definiert ist durch:
+\begin{enumerate}
+\item $(f^* E)_{p \in \mfka} = \{ (p, x) \vert x \in E_{f(p)}\}$
+\item sei $\phi : U \times \R^k \to E\big\vert_U$ lokale Trivialisierung von $E$
+\begin{align}
+f^* \phi : f^{-1} (U) \times \R^k \to (f^* E)\big\vert_{f^{-1}(U)}\\
+(p, \xi) \mapsto (p, \phi(f(p), \xi)) 
+\end{align}
+\end{enumerate}
+\end{defs}
+
+
+\begin{defs}
+Ein Schnitt von $E$ entlang von $f$ ist eine glatte Abbildung $\delta : \mfka \to E$, so dass $\pi \circ s = f$. 
+\end{defs}
+
+\section{Zusammenhang und kovariante Ableitung}
+
+\begin{defs}[Lie-Klammern]
+\begin{align}
+\comm{\cdot}{\cdot} : \mathfrak{X}(\mfk) \times \mathfrak{X}(\mfk) \to \mathfrak{X}(\mfk)\\
+\comm{x}{y} f := x(y(f)) - y(x(f))
+\end{align}
+Hier bleibt als Übung zu zeigen, dass $\comm{x}{y}$ tatsächlich ein neues Vektorfeld ist.
+Mit der Lie-Klammer ist $\mathfrak{X}(\mfk)$ eine Lie-Algebra.
+\end{defs}
+
+\begin{defs}[Zusammenhang]
+Sei $(\pi, E, \mfk)$ ein Vektorbündel vom Rang $k$.
+Ein Zusammenhang auf $E$ ist eine Abbildung
+\begin{align}
+\covd : \mathfrak{X}(\mfk) \times \Gamma(E) \to \Gamma (E) \\
+(x, s) \mapsto \covd (x, s) = \covd_x s
+\end{align}
+Wobei folgende EIgenschaften erfüllt sind:
+\begin{enumerate}
+\item $\covd$ ist tensoriell in $x$. 
+Das bedeuetet:
+\begin{align}
+\covd_{x_1 + x_2} s = \covd_{x_1} s + \covd_{x_2} s \\
+\covd_{\phi x} s = \phi \covd_x s
+\end{align}
+\item $\covd$ ist eine Derivation in s:
+\begin{align}
+\covd_x (s_1 + s_2) = \covd_x s_1 + \covd_x s_2\\
+\covd_x (\phi s) = x(\phi) s + \phi \covd_x  s
+\end{align}
+\end{enumerate}
+\end{defs}
+
+Wir führen hier die folgende Notation ein:
+$\covd_x s$ heißt die kovariante Ableitung von $s$ in Richtung $x$.
+Es gibt bei der kovarianten Ableitung den folgenden Spezialfall:
+\begin{align}
+E = T\mfk\\
+\covd: \underbrace{\mathfrak{X}(\mfk)}_{\mathrm{tensoriell}} \times \underbrace{\mathfrak{X}(\mfk)}_{\mathrm{derivativ}} \to \mathfrak{X}(\mfk)
+\end{align}
+
+\begin{bsp}
+Sei $E = \mfk \times \R^k$ das tirivale Bündel mit
+\begin{align}
+s: \mfk \to E \\
+p \mapsto (p, \sigma(p))
+\end{align}
+wobei $\sigma = (\sigma_1, \dots, \sigma_k)$, $\sigma_i \in \mathcal{F}(\mfk)$.
+Dann ist der kanonische Zusammenhang gegeben als:
+\begin{align}
+(\covd_x s)(p) = (p, x_p(\sigma_1), \dots, x_p(\sigma_k))
+\end{align}
+Wir benutzen die folgende Notation: $\covd_x s = x(\sigma)$.
+\end{bsp}
+
+\begin{lem}
+\label{lem:lokalisierung1}
+$x_1, x_2 \in \mathfrak{X}(\mfk)$ und $x_1(p) = x_2(p)$,
+dann folgt daraus, dass 
+\begin{align}
+(\covd_{x_1} s)(p) = (\covd_{x_2} s) (p).
+\end{align}
+
+\end{lem}
+
+\begin{lem}
+\label{lem:lokalisierung2}
+$s_1, s_2 \in \Gamma(\mfk)$ und $s_1 = s_2$ in einer Umgebung von $p$,
+dass folgt daraus, dass
+\begin{align}
+(\covd_{x} s_1)(p) = (\covd_{x} s_2) (p).
+\end{align}
+\end{lem}
+
+\begin{bew}[Beweis Lemma \ref{lem:lokalisierung2}]
+Wähle $\phi \in \mathcal{F}(\mfk)$ mit $\supp \phi \subseteq U$ und $\phi = 1$ auf einer Umgebung $V \subset U$ von p.
+Dann gilt 
+\begin{align}
+\phi s_1 = \phi s_2 \\
+\covd_x(\phi s_1)(p) = \covd_x(\phi s_2)(p)
+\end{align}
+Für die linke Seite ist
+\begin{align}
+\covd_x(\phi s_1)(p) = \underbrace{x(p)}_{=0} s_1(p) + \underbrace{\phi(p)}_{=1} \covd_x s_1(p) = D_x s_1 (p).
+\end{align}
+Das gleiche gilt für die rechte Seite und somit folgt die Aussage:
+\begin{align}
+(\covd_{x} s_1)(p) = (\covd_{x} s_2) (p).
+\end{align}
+\end{bew}

@@ -1,192 +1,321 @@
-\chapter{Vektorbündel}
-\section{Tangentialbündel}
-Wir wollen nun alle Tangentialräume einer Mannigfaltigkeit $\mfk$ gemeinsam betrachten.
-\begin{align}
-T\mfk = \bigcup_{p\in \mfk} T_{p}\mfk = \{ (p, V) \vert p \in \mfk, v \in T_{p}\mfk \} 
-\end{align}
-Wir wollen nun die Struktur einer differenzierbaren Mannigfaltigkeit. 
-Das heißt wir müssen eine Topologie und eine $\cinf$-Struktur auf $T\mfk$ definieren.
-\begin{align}
-\pi: T\mfk &\to \mfk \\
-(p,V) &\mapsto p
-\end{align}
-Sei $(x, U)$ eine Karte von $\mfk^m$. 
-Dann definieren wir eine Karte $(\overline{x}, \overline{U})$ von $T\mfk$ wie folgt:
-\begin{align}
-&\overline{U} = \pi^{-1}(U) = \bigcup_{p\in\mfk} T_{p}\mfk \\
-&\overline{x}: \overline{U} \to x(U) \times \R^m \subset \R^{2m} \\
-&(p, V) \mapsto (x(p), \xi)
-\end{align}
 
+\begin{bew}[Beweis zweite Aussage Satz~\ref{satz:EigenschaftenTangentialraum]}]
+Wähle $\phi$ wie in \ref{lem:Existenz einer Glockenfunktion]}, wobei $U$ so gewählt ist, dass $\phi f = \phi g$. 
+Nun gilt:
+\begin{align}
+v(\phi f) &= v(\phi) f(p) + \phi(p) v(f) \\
+&= v(\phi) f(p) + v(f)
+\end{align}
+Andererseits gilt:
+\begin{align}
+v(\phi g) = v(\phi)g(p) + v(g)
+\end{align}
+Die rechten Seiten sind jedoch gerade gleich, wegen $f(p) = g(p)$. 
+Dann folgt:
+\begin{align}
+v(\phi f) = v(\phi)g
+\Rightarrow v(f) = v(g)
+\end{align}
+\end{bew}
+
+Jede Karte liefert eine spezielle Basis von $\tspace{p}$.
+
+\begin{defs}
+Sei $(x, U)$ eine Karte von $\mfk$ um $p$. 
+Definiere Tangentialvektoren $\pdv{x_i}\big\vert_{p} $ ($i = 1, \dots, m$) wie folgt:
+\begin{align}
+\pdv{x_i}\big\vert_{p} (f) := \partial_i (f \circ x^{-1}) \big\vert_{x(p)}
+\end{align}
+Hierbei bedeutet $\partial_i$ die $i$-te partielle Ableitung.
+\end{defs}
+
+\begin{satz}
+\label{satz:BasisTPM}
+Die Tangentialvektoren $(\pdv{x_1}\big\vert_{p}, \dots, \pdv{x_m}\big\vert_{p})$ bilden eine Basis des $\tspace{p}$.
+Jeder Tangentialvektor lässt sich schreiben als
+\begin{align}
+v = \sum_{i=1}^{m} v(x_i) \pdv{x_i}\big\vert_{p} = \sum_{i=1}^{m} \xi \pdv{x_i}\big\vert_{p}.
+\end{align}
+\end{satz}
+\begin{bew}[Beweis Satz \ref{satz:BasisTPM} Teil 1]
+Es gilt die lineare unabhängigkeit:
+\begin{align}
+\pdv{x_1}\big\vert_{p} (x^j) = \delta_{i j}
+\end{align}
+Jetzt muss noch gezeigt werden, dass $(\pdv{x_1}\big\vert_{p}, \dots, \pdv{x_m}\big\vert_{p})$ ein Erzeugendensystem für $\tspace{p}$ ist.
+ Dafür benötigen wir allerdings zunächst ein Hilfslemma.
+\end{bew}
+
+\begin{lem}
+\label{lem:DarstellungBasisTPM}
+Sei $f: U \subset \mfk \to \real$ eine glatte Funktion.
+Dann existiert eine Umgebung $U' \subset U$ von $p$ ($p \in U'$) und eine glatte Funktion
+$f_i: U' \to \real$, so dass
+\begin{align}
+f = f(p) + \sum_{i=1}^{m} ( x' - x'(p)) f.
+\end{align}
+Wobei $f_i (p) = \pdv{x_i}\big\vert_{p} (f)$.
+\end{lem}
+
+\begin{bew}[Beweis Lemma \ref{lem:DarstellungBasisTPM}] \leavevmode
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.4\linewidth]{figures/scan/tangentialbuendel.png}
-\caption{Veranschaulichung eines Tangentialbündels}
-\label{img:tangentialbuendel}
-\end{figure} 
-
-Wobei $\xi = (\xi^1, \dots, \xi^m) \in \R^m$ gegeben ist durch:
+\includegraphics[width=0.8\linewidth]{figures/scan/lemma22.png}
+\label{img:lemmaDarstellungBasisTPM}
+\end{figure}
+Nach Abbildung \ref{img:lemmaDarstellungBasisTPM} gilt:
 \begin{align}
-v = \sum_{i=1}^{m} \xi_i \pdv{x_i} \big\vert_p, \quad \forall p \in U.
+\psi(U) - \psi(U_0) = \int^1_0 \dv{t} \psi(t U + (1- t) U_0) \dd t
 \end{align}
-Wir haben noch keine Topologie auf $T\mfk$ definiert, das heißt $\overline{x}$ ist nur eine bijektive Abbildung zwischen Mengen.
-Wir können allerdings nicht sagen ob es ein Homöomorphismus oder Diffeomorphismus ist.
-Allerdings können wir Kartenwechsel betrachten.\\
-Seien $(\overline{x}, \overline{U})$ und $(\overline{y}, \overline{U}')$ zwei Karten. 
-Betrachte die Abbildungen:
+Hierbei ist $U=x(q)$ mit $q \in \mfk$ und $U_0 = x(p)$.
 \begin{align}
-\overline{y} \circ \overline{x}^{-1} \circ \underbrace{x (\overline{U} \cap \overline{U}')}_{x(U \cap U') \times \R^m} \to \underbrace{\overline{y}(\overline{U} \cap \overline{U}')}_{y(U \cap U') \times \R^m}
+\psi(U) - \psi(U_0) = \sum_i (U^i- U^i_0) \int^1_0 \underbrace{\dv{\psi}{U'} (t U + (1 - t) U_0) \dd t}_{:= \psi_i (U)}
 \end{align}
-\begin{align}
-(x,\xi) \mapsto (y\circ x^{-1}(U), \eta) 
-\end{align}
-Wobei $\eta = \dd (y \circ x^{-1})\big\vert_U \xi$.\\
-Da $y\circ x^{-1}$ Diffeomorphismus ist, ist $\overline{y} \circ \overline{x}^{-1}$ ein Isomorphimus.
-Nun können wir die Topologie auf $T\mfk$ definieren.
-$O \subset T\mfk$ offen, falls $\overline{x}(O\cap \overline{U})$ offen in $V \times \R^m$ ist für alle Karten $(x, U) \in \atlas_\mfk$ (bzw $(\overline{x}, \overline{U}) \in \atlas_{T\mfk}$)
-\begin{satz}
-$T\mfk$ mit dieser Topologie ist eine topologische Mannigfaltigkeit und $\atlas_{T\mfk}$ eine differenzierbare Struktur.
-\end{satz}
-\section{Vektorbündel}
-$T\mfk$ hat die Struktur einer glatten Mannigfaltigkeit.
-Allerdings hat es noch mehr, nämchlich die eines Vektorbündels, was wir nun definieren.
-\begin{defs}[Vektorbündel]
-Sei $\mfk$ eine differenzierbare Mannigfaltigkeit.
-Ein $\R$-Vektorbündel vom $\rang$ $k$ über $\mfk$ ist eine differenzierbare Mannigfaltigkeit mit einer glatten surjektiven Abbildung:
-\begin{align}
-\pi: E \to \mfk,
-\end{align}
-so dass:
-\begin{enumerate}
-\item $\forall p \in \mfk$ hat $E_p:= \pi^{-1}( \{ p \})$ die Struktur eines $\R$-Vektorraums der Dimension $k$.
-$E_p$ heißt Faser von $E$ über $p$.
-\item Für alle $p$ in $\mfk$ existiert eine Umgebung $U$ von $p$ in $\mfk$ und ein Diffeomorphismus.
-\begin{align}
-\begin{xy}
-\xymatrix@=0.2\linewidth{
-      \phi: U \times \R^k \ar[rr] \ar[rd]_{pr_1}  &     &  \pi^{-1}(U) \ar[dl]^{\pi}  \\
-                             &  U  &}
-\end{xy}
-\end{align}
-%\begin{figure}[h]
-%\centering
-%\includegraphics[width=0.4\linewidth]{figures/scan/lokaletrivialisierung.png}
-%\caption{Lokale Trivialisierung}
-%\label{img:lokaletrivialisierung}
-%\end{figure} 
-Für diesen gilt:
+Setze $f_i = \psi_i \circ x : U \subset \mfk \to \real$.
+$f_i$ ist glatt und es gelten folgende Eigenschaften nach Definition:
 \begin{itemize}
-\item $\pi \circ \phi = p r_1$
-\item Für alle $q \in U$ ist die Abbildung
-\begin{align}
-\phi\big\vert_q : \{ q \} \times \R^k &\to E_q\\
-\{ q, \xi \} &\mapsto \phi_q (\xi) := \phi(q, \xi)
-\end{align}
-$\phi$ heißt lokale Trivialisierung von $E$.
+\item $\psi(U)- \psi(U_0) = \psi(x(q)) - \psi(x(p)) = f(q)- f(p)$
+\item $U^i = x^i (q)$
+\item $U_0^i = x^i(p)$
+\item $\psi_i (U) = \psi_i (x(1)) = f_i(q)$
 \end{itemize}
+Das bedeutet
+\begin{align}
+f(q)- f(p) = \sum_{i=1}^n (x_i (q) - x_i (p)) f_i(q)
+\end{align}
+Wir wissen:
+\begin{align}
+\pdv{x_i}\big\vert_{p} (f) &= \partial_i \underbrace{(f \circ x^{-1})}_{\psi} \big \vert_{x(p)} \\
+&= \partial_i \psi \big\vert_{x(p)}\\
+&= \psi_i (x(p)) = f_i (p)
+\end{align}
+Da $\psi(U) = \psi(U_0) + \sum_i (U^i - U^i_0)\psi_i(U)$
+\begin{align}
+\Rightarrow \pdv{U_i} \psi \big\vert_{x(p)} = \psi_i(U) \big\vert_x(p) = \psi(x(p))
+\end{align}
+Und somit gilt schließlich $f_i (p) = \pdv{U_i} \big\vert_p (f)$.
+\end{bew}
+
+Nun können wir unseren Beweis fortführen.
+
+\begin{bew}[Beweis Satz \ref{satz:BasisTPM} Teil 2] \leavevmode
+\begin{align}
+v(f) &= v(f(p) + \sum_i (x_i - x_i(p)) f_i) \\
+&= v(f(p)) + \sum_i v(x_i - x_i (p) f_i)
+\end{align}
+Benutze Produktregel
+\begin{align}
+&= \sum_i (\underbrace{(x_i (p) - x_i (p)) v(f_i)}_{=0} + \underbrace{v(x_i - x_i (p))}_{=v(x_i)} f_i) \\
+&= \sum_i v(x_i) f_i \\
+&= \sum_i v(x_i) \pdv{x_i} \big\vert_p f 
+\end{align}
+\end{bew}
+
+
+\begin{satz}[Transformationsregel]
+Seien $(x, U)$ und $(\tilde{x}, \tilde{U})$ zwei Karten um $p \in \mfk$. 
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.5\linewidth]{figures/scan/transformationsregel.png}
+\label{img:transformationsregel}
+\end{figure} 
+Dann gilt:
+\begin{align}
+\pdv{\tilde{x}_i} \big\vert_p  = \sum_j \underbrace{\pdv{\tilde{x}_i} \big\vert_p  (x_j)}_{\in \real} \pdv{x_j} \big\vert_p 
+\end{align}
+(In der lineare Algebra hatten Transformation die ähnliche gestalt: $\tilde{v}_i = \sum_j a_{i j } v_j$)
+\end{satz}
+
+
+\begin{defs}[Differential, Ableitung]
+Seien $\mfk$ und $\mfka$ differenzierbare Mannigfaltigkeiten und $f: \mfk \to \mfka$ glatt.
+Das \textbf{Differential (Ableitung)} von $f$ in $p$ ist die lineare Abbildung:
+\begin{align}
+\dd f \big\vert_p : \tspace{p} &\to T_{f(p)}\mfka \\
+v &\mapsto \dd f \big\vert_p (v),
+\end{align}
+welche definiert ist durch:
+\begin{align}
+\underbrace{\dd f \big\vert_p (v)}_{T_{f(p)}\mfka} \underbrace{(\phi)}_{\in \mathcal{F}(\mfk)} = \underbrace{v(\phi \circ f)}_{\in \mathcal{F}(\mfka)}, \quad \forall p \in \mathcal{F}(\mfka)
+\end{align}
+\end{defs}
+Fakt: $\dd f \big\vert_p$ ist linear.
+
+\begin{satz}[Kettenregel]
+\label{satz:Kettenregel}
+Seien $f: \mfk \to \mfka$ und $g: \mfka \to \mathcal{P}$ glatte Abbildungen.
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.5\linewidth]{figures/scan/kettenregel.png}
+\label{img:kettenregel}
+\end{figure} 
+Dann gilt:
+\begin{align}
+\dd (g \circ f) \big\vert_p = \dd g \big\vert_{f(p)} \circ \dd f \big\vert_p
+\end{align}
+\end{satz}
+
+\begin{bew}[Beweis Satz \ref{satz:Kettenregel}] \leavevmode
+\begin{align}
+\dd (g \circ f) \big\vert_{p} (v (\phi)) &= v(\phi \circ g \circ f) \\
+&= \dd f \big\vert_p (v)(\phi \circ g) \\
+&= \dd g \big\vert_{f(\phi)} \circ \dd f \big\vert_p (v) (\phi)
+\end{align}
+\end{bew}
+
+\begin{satz}
+Sei $f: \mfk \to \mfka$ glatt und sei $(x, U)$ eine Karte von $\mfk$ um $p$ und $(y, V)$ eine Karte von $\mfka$ um $p$.
+Setze $f_j = y_j \circ f$ mit $f_j : \mfk \to \real$, dann gilt:
+\begin{align}
+\underbrace{\dd f \big\vert_p ( \pdv{x_i} \big\vert_p)}_{\in T_{f(p)}\mfk} = \sum_j \underbrace{\pdv{x_i}\big\vert_p (f_j)}_{\in \real} \underbrace{\pdv{y_j} \big\vert_{f(p)}}_{\in T_{f(p)}\mfka}
+\end{align}
+\end{satz}
+
+\begin{defs}[regulärer Wert/Punkt, Submersion, Immersion] 
+Sei $f: \mfk \to \mfka$ glatt und es gelte $\dim\mfk=m$, $\dim{\mfka} = n$.
+\begin{enumerate}
+\item $\rang f$ in $p$ ist $\rang \dd f \big \vert_p $.
+\item $p\in\mfk$ heißt regulärer Punkt ($\in\mfk$)  $\Leftrightarrow \rang\dd f \big\vert_p=\dim\mfka$.
+\item $q\in\mfka$ heißt reguläreer Wert ($\in\mfka$) $\Leftrightarrow \forall p \in f	^{-1}(q)$ sind reguläre Punkte.
+\item $f$ heißt Submersion $\Leftrightarrow$ $f$ surjektiv und alle $p\in\mfk$ reguläre Punkte sind.
+\item $f$ heißt Immersion $\Leftrightarrow$ $\dd f \big\vert_p$ injektiv für alle $p \in \mfk$
 \end{enumerate}
 \end{defs}
-\begin{bem}
-Ein Vektorbündel ist ein Tripel $(\pi, E, \mfk)$ aber wir schreiben oft nur $E$. Hierbei wird $E$ Totalraum und $\mfk$ Basis genannt.
-\end{bem}
-\begin{bsp} \leavevmode
+
+\begin{satz}[Umkehrsatz]
+\label{satz:Umkehrsatz}
+Sei $f: \mfk \to \mfka$ glatt. 
+Sei $\dd f \big\vert_p : \tspace{p} \to T_{f(p)}\mfka$ ein Isomorphismus,
+dann existiert eine Umgebung $U$ um $p$ und eine Umgebung $U'$ um $f(p)$, so dass
+\begin{align}
+f\big\vert_U : U \to U'
+\end{align}
+ein Diffeomorphismus ist.
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.5\linewidth]{figures/scan/umkehrsatz.png}
+\label{img:umkehrsatz}
+\end{figure} 
+\end{satz}
+
+\begin{bew}[Beweis Satz \ref{satz:Umkehrsatz}] \leavevmode
+Nutze Karten um dies auf den euklidischen Fall zu führen.
+
+\begin{align}
+\begin{xy}
+  \xymatrix@=0.25\linewidth{
+      \mfk \ar[r]^f \ar[d]_x    &   \mfka \ar[d]^y \\
+      V\subseteq \R^m \ar[r]_\phi             &   V\subseteq \R^m    
+  }
+\end{xy}
+\end{align}
+
+%\begin{figure}[h]
+%\centering
+%\includegraphics[width=0.7\linewidth]{figures/scan/umkehrsatzbeweis.png}
+%\label{img:umkehrsatzbeweis}
+%\end{figure} 
+Seien $(x, U)$ und $(y, U')$ Karten von $\mfk$ und $\mfka$ um $p$ und $f(p)$.
+Ohne Beschränkung der Allgemeinheit gilt: $f(U) \subset U'$.
+Dann ist $\phi$ eine glatte Abbildung deren Differential $\dd \phi \big\vert_{x(p)}$ invertierbar ist.
+Umkehrsatz im $\rn$ auf $\phi$ anwenden:
+Es existieren Umgebungen $\hat{V}$ von $x(p)$ und $\hat{V}'$ von $y(f(p)) = \phi(x(p))$, so dass
+$\hat{\phi}\big\vert_{\hat{V}}$ ein Diffeomorphismus ist.
+Dann ist
+\begin{align}
+f\big\vert_{x^{-1}(\hat{V})}: x^{-1}(\hat{V}) \to y^{-1}(\hat{V}')
+\end{align}
+ein Diffeomorphismus.
+\begin{align}
+\phi = y \circ f \circ x^{-1} \Rightarrow f = y^{-1} \circ \phi \circ x
+\end{align}
+\end{bew}
+
+
+\begin{satz}[Satz über implizite Funtionen]
+\label{satz:Satz über implizite Funtionen}
+\end{satz}
+Sei $f: \mfk \to \mfka$ glatt und es gelte $\dim\mfk=m$, $\dim{\mfka} = n$.
 \begin{enumerate}
-\item Triviale Bündel:
+\item Sei $\rang_p f = r$. 
+Dann existiert zu jeder Karte  $(y, U')$ um $f(p)$ eine Karte $(x, U)$ um $p$, so dass
 \begin{align}
-&E = \mfka \times \R^k \to \mfk\\
-&(p, \xi) \mapsto p
+y \circ f \circ x^{-1}(U_1, \dots, U_m) = (U_1, \dots, U_r, \phi_{r+1}(U), \dots, \phi_n(U)).
 \end{align}
-\item Tangentialbündel 
+Falls $y(f(p))=0$, so kann man $x$ so wählen, dass $x(p)=0$ und $\phi_j (0) = 0$ ($\forall j > r$).
+
+\item Sei $\rang f = r$ auf einer Umgebung von $p$.
+Dann gibt es Karten $(x, U)$, $(y, U')$, so dass 
 \begin{align}
-&\pi: T\mfk \to \mfk\\
-&(p, V) \to V
+y\circ f \circ x^{-1} (U_1, \dots, U_m).
 \end{align}
-\item Tautologisches Bündel
-\begin{align}
-&\mfk = \R \mathbb{P}^n\\
-&E = \{ (l, x) \vert l \in \R \mathbb{P}^n, x\in l \subset \R^{n+1} \}\\
-&\pi: E \to \mfk = \R \mathbb{P}^n\\
-&(l, x) \mapsto l
-\end{align}
-Behauptung: Dies ist ein Vektorbündel vom $\rang$ $1$.
-Vektorraumstruktur auf $E_l$:
-\begin{align}
-(l, x) + (l, y) &:= (l, x + y)\\
-k (l, x) &:= (l, k x)
-\end{align}
+
 \end{enumerate}
-\end{bsp}
-Nun wollen wir uns damit beschäftigen wie wir Vektorbündel konstruieren können.
-Angenommen uns wäre das folgende gegeben:
-\begin{enumerate}
-\item $E_p, p\in \mfk$ eine Familie von Vektorräumen der Dimension $k$
-\item $(U_\alpha)_{\alpha \in \atlas}$ eine offene Überdeckung von $\mfk$
-\item $\forall \alpha \in \atlas$, $p\in U_\alpha$ gibt es den folgenden Isomorphismus:
-\begin{align}
-\phi_{\alpha, p}: \R^\alpha \to E_p
-\end{align}
-\end{enumerate}
+\begin{bew}[Beweis von Satz \ref{satz:Satz über implizite Funtionen} Teil 1]
+Wähle Karten und modifiziere diese geschickt.
+Sei $(y, U')$ eine Karte von $\mfka$ um $f(p)$.
+Sei $(\hat{x}, U)$ eine Karte von $\mfk$ um $p$ mit $\hat{x}(p) = 0$.
 Setze 
 \begin{align}
-&E = \cup_{p \in \mfk} E_p\\
-&\pi : E \to \mfk\\
-&(p, V) \mapsto p\\
-&\phi_\alpha: U_\alpha \times \R^k \to E \big\vert_{U_\alpha}\\
-&(p, \xi) \mapsto (p, \phi_{\alpha, p}(\xi)).
+\hat{A} = (\hat{A})_{i j} = (\partial_i \hat{\phi}_j),
 \end{align}
-Nun stellt sich die Frage unter welchen Vorraussetzungen $(\pi, E, \mfk)$ ein Vektorbündel ist.
-\begin{lem}
-\label{lem:vorraussetzungenvektorbündel}
-Sei $\mfk$ eine glatte Mannigfaltigkeit, $E$ eine Menge und die Abbildung $\pi: E\to\mfk$ surjektiv.
-Sei $\{ U_\alpha \}$ eine offene Überdeckung von $\mfk$ zusammen mit bijektiven Abbildungen
+mit $\phi \circ y \circ f \circ x^{-1}$.
+Da $\rang_p f = r$, können wir ohne Beschränkung der Allgemeinheit annehmen, dass
 \begin{align}
-\phi^{-1}_{\alpha} = \varphi: \pi^{-1}(U_\alpha) \to U_\alpha \times \R^\alpha,
+\det \tilde{A} \neq 0.
 \end{align}
-die $pr_1 \circ \varphi_\alpha = \pi$ erfüllen, so dass wann immer $U_\alpha \cap U_\beta \neq \emptyset$, dann ist 
+Wobei hier nun $\tilde{A} = (\hat{A}_{i j})_{1 \leq i \leq r}$.
+Setze 
 \begin{align}
-\varphi_\alpha \circ \varphi_{\beta}^{-1} \to (U_\alpha \cap U_\beta) \times \R^k,
+x_i = \left\{
+\begin{array}{ll}
+y_i \circ f & \quad 1 \leq i \leq r \\
+\hat{x}_i & \textrm{falls} \ r+1 \leq i \leq n \\
+\end{array}
+\right. 
 \end{align}
-von der Form:
+Dann gilt $x(p)=0$ und 
 \begin{align}
-\label{eq:konstruktionvektorbündel}
-(\varphi_\alpha \circ \varphi_{\beta}^{-1})(p, v) = (p, \tau(p) v)
+\partial_i (x_j \circ \hat{x}^{-1})(0) = 
+\left(\begin{matrix}
+\partial_i \hat{\phi}_j (0) & \star \\ 
+0 & \mathds{1}
+\end{matrix} \right) .
 \end{align}
-mit einer glatten Abbildung $\tau: U_\alpha \cap U_\beta \to \mathrm{GL}(k, \R)$.
-Dann existiert eine eindeutige Struktur als glattes $k$-dim Vektorbündel über $\mfk$ für die $\varphi^{-1}_{\alpha}$ lokale Trivialisierungen sind.
-\end{lem}
-\begin{bew}[Beweis Lemma \ref{lem:vorraussetzungenvektorbündel}]
-Sei  $p\in\mfk$. 
-Setze $E_p := \pi^{-1}(\{ p \})$. 
-Falls $p\in U_\alpha$, dann ist 
+Daraus folgt, dass $\rang x = m = \dim \mfk$ im Punkt $p$.
+Mit Hilfe des Umkehrsatzes folgt, dass $x$ ein lokaler Diffeomorphismus ist 
+und eine Umgebung $U$ um den Punkt $p$ existiert und eine Umbegungen $V$ von $0$ in $\rn$, 
+sodass $x: \mfk \to V$ eine Karte ist und
 \begin{align}
-\varphi_\alpha \big\vert_p : E_p \to \{ p \} \times \R^k.
+\phi (U_1, \dots, U_m) &= y \circ f \circ x^{-1}(U_1, \dots, U_m) \\
+&= (U_1, \dots, U_r, \phi_{r+1}(U), \dots, \phi_m (U)).
 \end{align}
-Definiere eine Vektorraumstruktur auf $E_p$ durch die Forderung, dass die Abbildung $\varphi_\alpha \big\vert_p$ ein Isomorphismus ist.
-Durch verkleinern von $U_\alpha$ und hinzunahme von weiteren offenen Mengen kann man annehmen, dass jedes $U_\alpha$ diffeomorph zu $\overline{U}_\alpha \subseteq \R^m$ ist.
-Verknüpfung von $\varphi_\alpha$ mit einem solchen Diffeomorphismus liefert eine Bijektion:
+Wobei $\phi_k$ glatt auf $U'$ sint mit $\phi_i(0)=0$. 
+Betrachte die Jacobi-Matrix:
 \begin{align}
-\pi^{-1} (U_\alpha) \to \overline{U}_\alpha \times \R^k .
+A_{i j} = (\partial _i \phi_j )_{i j} = \begin{pmatrix}
+\mathds{1} & 0 \\ 
+\star & \partial_i \phi_i
+\end{pmatrix} 
 \end{align}
-Diese nutzen wir als Karte für $E$.
-Wegen Gleichung \ref{eq:konstruktionvektorbündel} bekommen wir eine glatte Struktur auf $E$.
+Da $\rang \phi = r$ in einer Umgebung von $U=0$ hat folgt:
+\begin{align}
+\partial_i \phi_j \quad \forall i, j > r.
+\end{align}
 \end{bew}
-Sei $(x, U)$ Karte von $\mfk$, $p\in U$, $v\in T_p \mfk$.
+
+\begin{kor}
+Sei $f: \mfk \to \mfka$ mit $\dim \mfk = m$ und $\dim \mfka = n$ glatt, dann gilt:
+\begin{enumerate}
+\item Sei $q \in \mfka$ ein regulärer Wert, so ist 
 \begin{align}
-v = \sum_{i=1}^{m} \xi_i \pdv{x_i}\big\vert_p
+\mathcal{H} = f^{-1}(q) = \{ p \in \mfk (f(p))=q \}
 \end{align}
-Definiere:
+eine Untermannigfaltigkeit der Dimension $m-n$.
+\item Sei $f$ linear in einer Umgebung von $\mathcal{H} = f^{-1}(q)$ vom $\rang$ $r$, so ist $\mathcal{H}$ eine Untermannigfaltigkeit der Dimension $m-r$.
+Der Tangentialraum $T_p \mathcal{H}$ ist isomorph zu
 \begin{align}
-\varphi: \pi^{-1} (U) &\to U \times \R^m\\
-v &\mapsto (p, V)
+\ker \dd f \big\vert_p \subseteq \tspace{p}, \quad \forall p \in \mathcal{H}.
 \end{align}
-Dort wo $(x)$ und $(\overline{x})$ überlappen.
-\begin{align}
-\pdv{x_i} \big\vert_p &= (\pdv{\overline{x}_j}{x_i})\pdv{\overline{x}_j} \big\vert\\
-v &= \sum_{j=1}^{m} \xi_j \pdv{\overline{x}_j}  \big\vert_p = \sum_{ji1}^{m} \xi_i \pdv{\overline{x}_i}  \big\vert_p \\
-&= \sum_{i, j}^{m} \xi_i \pdv{\overline{x}_j}{x_i}  \pdv{\overline{x}_j}\big\vert_p\\
-&\Rightarrow \overline{\xi}_j = \sum_i v_i \pdv{\overline{x}_j}{x_i}
-\end{align}
-\begin{align}
-\varphi \circ \varphi^{-1}(x, v) = (x, \overline{v}) = (x, \tau(x), v)
-\end{align}
-Wobei nun $\tau(x)$ gegeben ist durch $\pdv{\overline{x}_j}{x_i}$
+\end{enumerate} 
+\end{kor}
