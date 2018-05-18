@@ -1,3 +1,4 @@
+% !TeX root = ..//diffgeo_main.tex
 \chapter{Differenzierbare Mannigfaltigkeiten}
 \section*{Worum geht es in der Differentialgeometrie?}
 Die zentralen Objekte der Differentialgeometrie sind Mannigfaltigkeiten. Das Ziel ist es, Analysis und Geometrie auf solchen Mannigfaltigkeiten zu betreiben. \\
@@ -29,6 +30,14 @@ Um differenzierbare Mannigfaltigkeiten definieren zu können wiederholen wir zun
 \item[ii)] $U, V \subset \mathbb{R}^n$ offen $\Rightarrow U \cap V$ offen in $\mathbb{R}^n$
 \item [iii)] $U_i, i \in $ I offen in $\mathbb{R}^n \Rightarrow \bigcup\limits_{i \in \text{I}} U_i \subset \mathbb{R}^n$ offen
 \end{enumerate} 
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.4\linewidth]{figures/scan/offenemenge.png}
+\caption{Offene Menge}
+\label{img:offenemenge}
+\end{figure} 
+
 \begin{defs}[Topologischer Raum]
 Ein topologischer Raum ist eine Menge $X$ zusammen mit einer Menge $\mathcal{O} \subset \mathcal{P}(X)$, sodass:
 \begin{enumerate}
@@ -43,6 +52,11 @@ Ein topologischer Raum ist eine Menge $X$ zusammen mit einer Menge $\mathcal{O} 
 	\item[b)] $N \subset X$ Teilmenge. Dann ist auch $(N,\mathcal{O}_1)$ ein topologischer Raum, wobei $\mathcal{O}_1$ wie folgt gegeben ist:\\
 	\center{$V \in \mathcal{O}_1 \Leftrightarrow \ \exists \ U \in \mathcal{O}$, sodass $V= N \cap U$}
 \end{enumerate}
+%\begin{figure}[h]
+%\centering
+%\includegraphics[width=0.35\linewidth]{figures/scan/teilmengetopologie.png}
+%\label{img:teilmengetopologie}
+%\end{figure}
 Teilmengen topologischer Räume sind topologische Räume.
 \end{bsp}
 
@@ -50,6 +64,12 @@ Teilmengen topologischer Räume sind topologische Räume.
 Eine topologische Mannigfaltigkeit ist ein topologischer Raum $\mathcal{M}$ der Dimension $n$ mit folgenden Eigenschaften:
 \begin{enumerate}
 	\item[i)] $\mathcal{M}$ ist hausdorffsch. Das heißt $\forall \ p, q \in \mathcal{M}$ mit $p \neq q \  \exists$ \ zwei disjunkte, offene Umgebungen $U \in p$ und $V \in q$ wobei $U, V \in \mathcal{O}$
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.4\linewidth]{figures/scan/hausdorff.png}
+\caption{Hausdorff'sche Eigenschaft}
+\label{img:hausdorff}
+\end{figure} 	
 	\item[ii)] \textbf{2. Abzählbarkeitsaxiom}  \\
 	$\mathcal{M}$ hat eine abzählbare Basis der Topologie, das heißt es existieren abzählbar viele Mengen $\{U_1, \dots, U_k, \dots\}$ offener Teilmengen mit $U_i \in \mathcal{O}$, sodass $\forall p \in \mathcal{M}$ und alle Umgebungen $U$ von $p$ gibt es ein $K$ sodass $p \in U_k \subseteq U$.
 	\item [iii)] $\mathcal{M}$ ist homöomorph zu $\mathbb{R}^n$, das heißt $\forall p \in \mathcal{M}$ existiert eine Umgebung $U$ von $p$ und ein \bfseries Homöomorphismus \normalfont $X: U \rightarrow V \subseteq \mathbb{R}^n$ (offen).
@@ -58,7 +78,7 @@ Eine topologische Mannigfaltigkeit ist ein topologischer Raum $\mathcal{M}$ der 
 \begin{minipage}[H]{.8\textwidth}
 \begin{defs}[Karte, Atlas]
 	Das Paar $(X, U)$ heißt \textbf{Karte} von $\mathcal{M}$ um $p$. \\
-	Eine Menge $\mathcal{A} = \{(x_{\alpha},U_{\alpha})_{\alpha \in \mathcal{A}}\}$ von Karten hießt \textbf{Atlas} von $\mathcal{M}$, falls \\
+	Eine Menge $\mathcal{A} = \{(x_{\alpha},U_{\alpha})_{\alpha \in \mathcal{A}}\}$ von Karten heißt \textbf{Atlas} von $\mathcal{M}$, falls \\
 	\begin{align}
 	\bigcup\limits_{\alpha \in \mathcal{A}} = \mathcal{M}
 	\end{align}
@@ -79,6 +99,14 @@ Seien $x_{\alpha}$ und $x_{\beta}$ zwei Karten, dann ist der Kartenwechsel wie f
 x_{\alpha}\circ x_{\beta}^{-1}: x_{\beta}(U_{\alpha}\cap U_{\beta}) \rightarrow x_{\alpha}(U_{\alpha}\cap U_{\beta}) \subseteq \mathbb{R}^n
 \end{align}
 Dies ist ein Homöomorphismus.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.8\linewidth]{figures/scan/kartenwechsel.png}
+\caption{Kartenwechsel}
+\label{img:kartenwechsel}
+\end{figure} 
+
 \end{defs}
 Nun wollen wir, dass $x_{\alpha}\circ x_{\beta}^{-1}$ Diffeomorphismen sind.
 
