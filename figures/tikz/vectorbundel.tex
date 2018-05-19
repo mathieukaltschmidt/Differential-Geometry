@@ -1,0 +1,35 @@
+\documentclass[margin=5mm]{standalone}
+\usepackage{tikz} 
+\usetikzlibrary{shapes}
+\usepackage{pgfplots}
+\usepgfplotslibrary{fillbetween}
+\usepackage[active,tightpage]{preview}  %generates a tightly fitting border around the work
+\PreviewEnvironment{tikzpicture}
+\setlength\PreviewBorder{2mm}
+\usepackage{xcolor}
+
+\begin{document}
+\begin{tikzpicture}[>=stealth]
+\draw[name path=Grundfläche,fill,cyan!15](2,0)--(4,0)node[midway,below]{}arc(0:70:4)--(90:2)arc(90:0:2)--cycle;
+\draw[name path=Grundfläche](2,0)--(4,0)node[midway,below]{}arc(0:70:4)--(90:2)arc(90:0:2)--cycle;
+
+
+\begin{scope}[bend right]
+\foreach \i[count=\x] in {10,30,50,70}
+{\node(a\x)[circle,fill,inner sep=1pt]at (\i:2.4){};
+\draw(a\x)to(a\x|-0,4);}
+
+\foreach \i[count=\x] in {7,26,46,66}
+{\node(b\x)[circle,fill,inner sep=1pt]at (\i:3){};
+\draw(b\x)to(b\x|-0,4);}
+
+\foreach \i[count=\x] in {6,26,46,66}
+{\node(c\x)[circle,fill,inner sep=1pt]at (\i:3.6){};
+\draw(c\x)to(c\x|-0,4);}
+
+\path(c1)to coordinate[near start](d)(c1|-0,4);
+\end{scope}
+\draw[<-](d)--+(0.8,-0.5)node[right]{Faser $E_p$};
+
+\end{tikzpicture}
+\end{document}
