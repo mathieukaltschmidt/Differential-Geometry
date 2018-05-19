@@ -8,8 +8,6 @@
 \setlength\PreviewBorder{2mm}
 \usepackage{xcolor}
 
-\pgfdeclarelayer{background}
-\pgfsetlayers{background,main}
 \tikzset{
     expand bubble/.style={
         preaction={draw,line width=10.4pt},
@@ -22,9 +20,7 @@
     \node (p1) at (0, 0) {};
     \node (p2) at (1, 1) {};
     \node (p3) at (2, 0.5) {};
-    \begin{pgfonlayer}{background}
       \path[expand bubble,fill,cyan!15]plot [smooth cycle,tension=1] coordinates {(p1) (p2) (p3)};
-    \end{pgfonlayer}
   \end{tikzpicture}
 \end{document}
 

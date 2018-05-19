@@ -25,7 +25,7 @@
   
 \begin{document}
   \begin{tikzpicture}
-
+\tikzstyle{every node}=[font=\huge]
 
 % Menge 1 auf Kugel
     \node (p1) at (-2.5, -0.4) {};
@@ -49,7 +49,7 @@
 	\draw[dashed] (4,0) arc (0:180:4 and 0.6);
 	    
 % Punkt auf Kugel  
-	\filldraw (-0.2,0.4)   circle (0.4pt);
+	\filldraw (-0.5,0.4)   circle (1.5pt);
 	\node at (0.0,0.4)   {$p$};
 	
 % Beschriftung
@@ -85,7 +85,7 @@
 	\node at (16,3)   {$x_\alpha (U_\alpha \cap U_\beta)$};
 	\draw [arrow]  (16,-3)  to (16,2) ;
 	\node at (16,-4.2)   {$x_\beta (U_\alpha \cap U_\beta)$};
-	\node at (15,-0.5)   {$x_\alpha \circ x^{-1}_\beta$};
+	\node at (14,-0.5)   {$x_\alpha \circ x^{-1}_\beta$};
       
   \end{tikzpicture}
 \end{document}
