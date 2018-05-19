@@ -1,4 +1,4 @@
-Jede Karte liefert eine spezielle Basis von $\tspace{p}$.
+Jede Karte liefert eine spezielle Basis von $T_p \mfk$.
 
 \begin{defs}
 Sei $(x, U)$ eine Karte von $\mfk$ um $p$. 
@@ -41,7 +41,7 @@ Wobei $f_i (p) = \pdv{x_i}\big\vert_{p} (f)$.
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=1\linewidth]{figures/tikz/lemma_tangntialvectors.pdf}
+\includegraphics[width=1\linewidth]{figures/tikz/lemma_tangentialvectors.pdf}
 \label{img:lemmaDarstellungBasisTPM}
 \end{figure}
 
@@ -95,18 +95,18 @@ Benutze Produktregel
 
 
 \begin{satz}[Transformationsregel]
-Seien $(x, U)$ und $(\tilde{x}, \tilde{U})$ zwei Karten um $p \in \mfk$. 
+Seien $(x, U)$ und $(\tilde{x}, \tilde{U})$ zwei Karten um $p \in \mfk$.
 \begin{figure}[H]
 \centering
 \includegraphics[scale=1.0]{figures/tikz/transformationlaw.pdf}
 \label{img:transformationsregel}
-\end{figure} 
-
+\end{figure}  
 Dann gilt:
 \begin{align}
 \pdv{\tilde{x}_i} \big\vert_p  = \sum_j \underbrace{\pdv{\tilde{x}_i} \big\vert_p  (x_j)}_{\in \R} \pdv{x_j} \big\vert_p 
 \end{align}
-(In der lineare Algebra hatten Transformation die ähnliche gestalt: $\tilde{v}_i = \sum_j a_{i j } v_j$)
+(In der lineare Algebra hatten Transformation die ähnliche Gestalt: $\tilde{v}_i = \sum_j a_{i j } v_j$)
+
 \end{satz}
 
 
@@ -127,15 +127,15 @@ Fakt: $\dd f \big\vert_p$ ist linear.
 \begin{satz}[Kettenregel]
 \label{satz:Kettenregel}
 Seien $f: \mfk \to \mfka$ und $g: \mfka \to \mathcal{P}$ glatte Abbildungen.
-%\begin{figure}[h]
-%\centering
-%\includegraphics[width=0.5\linewidth]{figures/scan/kettenregel.png}
-%\label{img:kettenregel}
-%\end{figure} 
 Dann gilt:
 \begin{align}
 \dd (g \circ f) \big\vert_p = \dd g \big\vert_{f(p)} \circ \dd f \big\vert_p
 \end{align}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.45\linewidth]{figures/tikz/chain_rule.pdf}
+\label{img:kettenregel}
+\end{figure} 
 \end{satz}
 
 \begin{bew}[Beweis Satz \ref{satz:Kettenregel}] \leavevmode

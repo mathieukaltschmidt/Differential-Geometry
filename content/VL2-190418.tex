@@ -33,7 +33,7 @@ wobei $(e_1, \cdots, e_n)$ die Standartbasis ist.
 \item$M\subseteq \R^n,\ (\chi_U, U)$ mit $\chi_U = \operatorname{id}\vert_U,\ V \subseteq M^n,\ M$ differenzierbare Mannigfaltigkeit, $\mathcal{A} = \set{(\chi_X, U)}$ Atlas von $M$\\
 $\mathcal{A}_V = \set{(\chi_V, U_V}$ wobei $(\chi_V, U_V) = (\chi_{U\cap V}, U\cap V)$
 \item$M_1 = S^1,\ M_2 = \R,\ M_1\times M_2 =$ "unendlicher Zylinder"
-\end{enumerate}
+
 \hspace{.06\textwidth}
 \begin{minipage}[H]{0.8\textwidth}
 Seien $M_1^{n_1}, M_1^{n_2}$ differenzierbare Mannigfaltigkeiten, so ist $M_1\times M_2$ ebenfalls eine \difM \ der Dimension $n_1 + n_2$.\\
@@ -49,6 +49,29 @@ $(x\times y)(p_1, p_2) = (x(p_1), y(p_2))$
 \vspace{-1.5cm}
 \includegraphics[scale=0.5]{figures/tikz/cylinder.pdf}
 \end{minipage}
+
+\item $S_R^n = \{ (x_0, \dots, x_n) \in \real^{n+1} \vert \sum_{i=0}^n x_i^2 = R^2 \} \subset \real^{n+1}$
+
+\begin{itemize}
+\item Teilraumtopologie: $U \subset S^n_R$ offen $\Leftrightarrow \exists U' \subset \real^{n+1}$ offen mit $U = U' \cap S^n_R$
+\item Atlas: Wir brauchen zwei Karten. 
+Einmal für den Nord- und einmal für den Südpol (haben unterschiedliche Orientierung).  \\
+Nordpol ($N$):
+\begin{align}
+f_N : S^n_R \backslash \{ N \} \to \rn \\
+f_N (x_0, \dots , x_n) = \frac{R}{R- x_0} (x_1, \dots, x_n) 
+\end{align}
+Analog für den Südpol (S):
+\begin{align}
+f_S : \mfk_s \to \rn
+\end{align}
+\end{itemize}
+$\to$ Zwei Karten $f_N$ und $f_s$ ("Stereographische Projektionen").
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.8]{figures/tikz/stereographic_projection.pdf}
+\end{figure}
+\end{enumerate}
 \end{bsp}
 
 \begin{bem}
@@ -69,7 +92,7 @@ sodass
 
 \section{Tangentialraum} 
 
-\missingfigure{Tangentialräume}
+%\missingfigure{Tangentialräume}
 
 \begin{defs}
 \begin{enumerate}

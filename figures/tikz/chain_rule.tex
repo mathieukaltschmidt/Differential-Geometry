@@ -1,0 +1,65 @@
+\documentclass[border=5mm]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{shapes}
+\usepackage{pgfplots}
+\usepgfplotslibrary{fillbetween}
+\usepackage[active,tightpage]{preview} 
+\usepackage{amssymb}
+\usetikzlibrary{positioning,arrows}
+\usepackage[active,tightpage]{preview}  %generates a tightly fitting border around the work
+\PreviewEnvironment{tikzpicture}
+\setlength\PreviewBorder{2mm}
+\usepackage{xcolor}
+
+\tikzset{
+  state/.style={circle,draw,minimum size=6ex},
+  arrow/.style={-latex, shorten >=1ex, shorten <=1ex}}
+  
+\begin{document}
+		
+\begin{tikzpicture}
+%\tikzstyle{every node}=[font=\large]
+	
+	%Quadrat 1
+	\path[fill,cyan!15] (0,0) -- (0,1) -- (1.5,1) -- (1.5,0) -- (0,0);
+	\draw[thin] (0,0) -- (0,1);
+	\draw[thin] (0,1) -- (1.5,1);
+	\draw[thin] (1.5,1) -- (1.5,0);
+	\draw[thin] (1.5,0) -- (0,0);
+
+	%Quadrat 2
+	\path[fill,cyan!15] (0,-1.5) -- (0,-0.5) -- (1.5,-0.5) -- (1.5,-1.5) -- (0,-1.5);
+	\draw[thin] (0,-1.5) -- (0,-0.5);
+	\draw[thin] (0,-0.5) -- (1.5,-0.5);
+	\draw[thin] (1.5,-0.5) -- (1.5,-1.5);
+	\draw[thin] (1.5,-1.5) -- (0,-1.5);
+
+	%Quadrat 3
+	\path[fill,cyan!15] (0,-3) -- (0,-2) -- (1.5,-2) -- (1.5,-3) -- (0,-3);
+	\draw[thin] (0,-3) -- (0,-2);
+	\draw[thin] (0,-2) -- (1.5,-2);
+	\draw[thin] (1.5,-2) -- (1.5,-3);
+	\draw[thin] (1.5,-3) -- (0,-3);
+	
+	% Manifold names
+	\node at (0.75,0.5)   {$\mathcal{M}$};\\
+	\node at (0.75,-1)   {$\mathcal{N}$};
+	\node at (0.75,-2.5)   {$\mathcal{P}$};
+	
+	% Arrows
+	\draw [arrow, bend angle=45, bend left]  (2,0.5)  to (2,-1) ;
+	\draw [arrow, bend angle=45, bend left]  (2,-1)  to (2,-2.5) ;
+	
+	% Name of maps
+	\node at (2.75,-0.25)   {$f$};
+	\node at (2.75,-1.75)   {$g$};
+	
+	% Abbildung Tangentialraum	
+	\node at (4,0.5)   {$T_p \mathcal{M}$};
+	\node at (4,-1)   {$T_{f(p)}\mathcal{N}$};
+	\node at (4,-2.5)   {$T_{g(f(p))} \mathcal{P}$};	
+	\draw [arrow]  (4,0.25)  to (4,-0.75) ;
+	\draw [arrow]  (4,-1.25)  to (4,-2.25) ;	
+
+	\end{tikzpicture}
+\end{document}
