@@ -1,0 +1,94 @@
+\documentclass[border=5mm]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{shapes}
+\usepackage{pgfplots}
+\usepgfplotslibrary{fillbetween}
+\usepackage[active,tightpage]{preview} 
+\usepackage{amssymb}
+\usetikzlibrary{positioning,arrows}
+\usepackage[active,tightpage]{preview}  %generates a tightly fitting border around the work
+\PreviewEnvironment{tikzpicture}
+\setlength\PreviewBorder{2mm}
+\usepackage{xcolor}
+
+%\pgfdeclarelayer{background}
+%\pgfsetlayers{background,main}
+\tikzset{
+    expand bubble/.style={
+        preaction={draw,line width=10.4pt},
+        fill,draw,line width=10pt,
+    },
+}
+\tikzset{
+  state/.style={circle,draw,minimum size=6ex},
+  arrow/.style={-latex, shorten >=1ex, shorten <=1ex}}
+  
+\begin{document}
+  \begin{tikzpicture}
+
+
+% Menge 1 auf Kugel
+    \node (p1) at (-2.5, -0.4) {};
+    \node (p2) at (-0.5, 2.0) {};
+    \node (p3) at (0.4, 0.1) {};
+    \path[fill,cyan!15, opacity=0.5]plot [smooth cycle,tension=1] coordinates {(p1) (p2) (p3)};
+    
+% Menge 2 auf Kugel
+    \node (q1) at (-0.5,0) {};
+    \node (q2) at (2.0,-1) {};
+    \node (q3) at (2.0, 0.5) {};
+    \node (q4) at (-0.5, 1.0) {};
+    \path[fill,cyan!15, opacity=0.5]plot [smooth cycle,tension=1] coordinates {(q1) (q2) (q3)(q4)};
+    \path[draw, black]plot [smooth cycle,tension=1] coordinates {(q1) (q2) (q3)(q4)};
+    \path[draw, black]plot [smooth cycle,tension=1] coordinates {(p1) (p2) (p3)}; 
+    
+% Kugel
+	\shade[ball color = gray!90, opacity = 0.2] (0,0) circle (4cm);
+	\draw (0,0) circle (4cm);
+	\draw (-4,0) arc (180:360:4 and 0.6);
+	\draw[dashed] (4,0) arc (0:180:4 and 0.6);
+	    
+% Punkt auf Kugel  
+	\filldraw (-0.2,0.4)   circle (0.4pt);
+	\node at (0.0,0.4)   {$p$};
+	
+% Beschriftung
+	\node at (-1.5,0.5)   {$U_\alpha$};
+	\node at (1.8,0.0)   {$U_\beta$};
+	
+% Pfeil für Abbildungen	
+	%\node at (3,1.4) {$f$};
+	\draw [arrow, bend angle=45, bend left]  (0,1.2)  to (8.4,3) ;
+	\node at (5,3.4)   {$x_\alpha$};
+	\draw [arrow, bend angle=45, bend right]  (0.5,0)  to (7.5,-5) ;
+	\node at (5,-4.2)   {$x_\beta$};
+
+% Menge 1 auf Kugel
+    \node (p1) at (8, 2) {};
+    \node (p2) at (12.5, 5.0) {};
+    \node (p3) at (12.4, 2.1) {};
+    \path[fill,cyan!15]plot [smooth cycle,tension=1] coordinates {(p1) (p2) (p3)};
+    \path[draw, black]plot [smooth cycle,tension=1] coordinates {(p1) (p2) (p3)}; 
+	\node at (10,2.5)   {$V_\alpha$};
+    
+% Menge 2 auf Kugel
+    \node (q1) at (8.0,-5) {};
+    \node (q2) at (12.5,-5.2) {};
+    \node (q3) at (12.5, -2.3) {};
+    \node (q4) at (8.3, -2.3) {};
+    %\begin{pgfonlayer}{background}
+    \path[fill,cyan!15]plot [smooth cycle,tension=1] coordinates {(q1) (q2) (q3)(q4)};
+    \path[draw, black]plot [smooth cycle,tension=1] coordinates {(q1) (q2) (q3)(q4)};
+    \node at (10,-3.7)   {$V_\beta$};
+
+% Kartenwechsel
+	\node at (16,3)   {$x_\alpha (U_\alpha \cap U_\beta)$};
+	\draw [arrow]  (16,-3)  to (16,2) ;
+	\node at (16,-4.2)   {$x_\beta (U_\alpha \cap U_\beta)$};
+	\node at (15,-0.5)   {$x_\alpha \circ x^{-1}_\beta$};
+      
+  \end{tikzpicture}
+\end{document}
+
+
+	
