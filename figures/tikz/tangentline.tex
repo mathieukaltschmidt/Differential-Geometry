@@ -1,0 +1,42 @@
+\documentclass{standalone}
+\usepackage{tikz} 
+\usetikzlibrary{shapes}
+\usepackage{pgfplots}
+\usepgfplotslibrary{fillbetween}
+\usepackage[active,tightpage]{preview}  %generates a tightly fitting border around the work
+\PreviewEnvironment{tikzpicture}
+\setlength\PreviewBorder{2mm}
+\usepackage{xcolor}
+
+
+\begin{document}
+		
+\begin{tikzpicture}[scale=5]
+	
+%erstes Bild	
+	
+	%Füllen der Grundfläche
+	\path[name path=Grundfläche,fill,cyan!15] (0,0,0) -- (0,0,-1) -- (1.2,0,-1) -- (1.2,0,0) -- (0,0,0);
+	
+	%Rand
+	\draw[thin] (0,0,0) -- (1.2,0,0);
+	\draw[thin] (0,0,0) -- (0,0,-1);
+	\draw[thin] (0,0,-1) -- (1.2,0,-1);
+	\draw[thin] (1.2,0,-1) -- (1.2,0,0);
+	
+	%Punkte auf Karte
+	\filldraw (0.3,0,-0.3)circle (0.2pt);
+	\node at (0.25,0,-0.5) {\Large$P$};
+	\filldraw (0.9,0,-0.7)circle (0.2pt);
+	\node at (0.95,0,-0.5) {\Large$P'$};
+
+		
+	%Kurve
+	\draw[thick, -] (0.3,0,-0.3) [out=300, in=150] to  (0.9,0,-0.7);
+	
+	% Tangentenvektor	
+	\draw[ultra thick, color=red!80!black,->] (0.6,0,-0.4) -- (0.7,0,-0.95);
+	\filldraw(0.6,0,-0.4)circle (0.2pt);
+
+	\end{tikzpicture}
+\end{document}
