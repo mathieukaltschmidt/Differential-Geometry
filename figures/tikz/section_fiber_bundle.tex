@@ -1,0 +1,49 @@
+\documentclass[border=5mm]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{shapes}
+\usepackage{pgfplots}
+\usepgfplotslibrary{fillbetween}
+\usepackage[active,tightpage]{preview} 
+\usepackage{amssymb}
+\usetikzlibrary{positioning,arrows}
+\usepackage[active,tightpage]{preview}  %generates a tightly fitting border around the work
+\PreviewEnvironment{tikzpicture}
+\setlength\PreviewBorder{2mm}
+\usepackage{xcolor}
+
+\tikzset{
+  state/.style={circle,draw,minimum size=6ex},
+  arrow/.style={-latex, shorten >=1ex, shorten <=1ex}}
+  
+\begin{document}
+		
+\begin{tikzpicture}[scale=5]
+	
+		
+	% curves
+	\draw[thick, -] (0,0.2) [out=300, in=150] to  (0.9,0);
+	\draw[thick, -] (0,-0.3) [out=300, in=150] to  (0.9,-0.5);
+	
+	% fibre bundle
+	%\draw[-, color=red] (0.1,-0.2) to  (0.1,0.2);
+	%\draw[-, color=red] (0.2,-0.2) to  (0.2,0.2);
+	\draw[-, color=red] (0.3,-0.2) to  (0.3,0.2);	
+	\draw[-, color=red] (0.4,-0.2) to  (0.4,0.2);	
+	\draw[-, color=red] (0.5,-0.2) to  (0.5,0.2);	
+	\draw[-, color=red] (0.6,-0.2) to  (0.6,0.2);
+	%\draw[-, color=red] (0.7,-0.2) to  (0.7,0.2);
+	%\draw[-, color=red] (0.8,-0.2) to  (0.8,0.2);
+		
+	% arrows
+	\draw [arrow, bend angle=40, bend right] (0.3,0.0) to (0.2,-0.45) ;	
+	\draw [arrow, bend angle=40, bend right]  (0.6,-0.45)  to (0.6,0.0) ;
+	%\draw [arrow, bend angle=20, bend left]  (0.6,0.2) to (0.8,0.2) ;
+	\draw (0.6,0.1)  arc (260:360:0.1 and 0.05);
+	% text	
+	\node at (0.1,-0.2)   {$\pi$};\\
+	\node at (0.75,-0.2)   {$s$};\\
+	\node at (0.4,-0.55)   {$U$};\\
+	\node at (0.75,0.2)   {$E_p$};\\
+	
+	\end{tikzpicture}
+\end{document}

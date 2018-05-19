@@ -121,13 +121,6 @@ Ein paar $(f, L)$ von glatten Abbildungen $f: \mfk \to \mfk'$ und $L: E \to E'$ 
   }
 \end{xy}
 \end{align}
-%\begin{figure}[h]
-%\centering
-%\includegraphics[width=0.4\linewidth]{figures/scan/buendelabbildung.png}
-%\label{img:buendelabbildung}
-%\end{figure} 
-
-
 \end{defs}
 
 \begin{bsp}
@@ -159,6 +152,11 @@ ist ein Unterbündel.
 \end{enumerate}
 \end{bsp}
 \begin{defs}[Schnitte von Vektorbündeln]
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.4\linewidth]{figures/tikz/section_fiber_bundle.pdf}
+\label{img:bspvektorfeld}
+\end{figure} 
 Sei $(\pi, E, \mfk)$ ein Vektorbündel.
 Eine glatte Abbildung $S:\mfk \to E$ heißt Schnitt von $E$, falls $\pi \circ s = \id\big\vert_{\mfk}$.
 Wir bezeichnen die Schnitte von $E$ mit $\Gamma (E)$.\\
@@ -191,7 +189,7 @@ Wir bezeichnen die Vektorfelder $V: \mfk \to T\mfk$ mit $\mathfrak{X}(\mfk)$.
 Der Raum der Schnitte $\Gamma (E)$ ist ein Modul über $\mathcal{F}(\mfk)$.
 \end{satz}
 
-\begin{bew}[Beweis Satz \ref{satz:SchnitteModul}]
+\begin{bew}[Satz \ref{satz:SchnitteModul}]
 Seien $s_1, s_2 \in \Gamma (E)$, so ist $s_1 + s_2 \in \Gamma (E)$
 \begin{align}
 (s_1 + s_2)(p) := s_1 (p) p s_2 (p)

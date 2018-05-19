@@ -18,9 +18,6 @@ Dann definieren wir eine Karte $(\overline{x}, \overline{U})$ von $T\mfk$ wie fo
 &\overline{x}: \overline{U} \to x(U) \times \R^m \subset \R^{2m} \\
 &(p, V) \mapsto (x(p), \xi)
 \end{align}
-
-
-
 Wobei $\xi = (\xi^1, \dots, \xi^m) \in \R^m$ gegeben ist durch:
 \begin{align}
 v = \sum_{i=1}^{m} \xi_i \pdv{x_i} \big\vert_p, \quad \forall p \in U.
@@ -64,12 +61,6 @@ $E_p$ heißt Faser von $E$ über $p$.
                              &  U  &}
 \end{xy}
 \end{align}
-%\begin{figure}[h]
-%\centering
-%\includegraphics[width=0.4\linewidth]{figures/scan/lokaletrivialisierung.png}
-%\caption{Lokale Trivialisierung}
-%\label{img:lokaletrivialisierung}
-%\end{figure} 
 Für diesen gilt:
 \begin{itemize}
 \item $\pi \circ \phi = p r_1$
@@ -85,14 +76,12 @@ $\phi$ heißt lokale Trivialisierung von $E$.
 \begin{bem}
 Ein Vektorbündel ist ein Tripel $(\pi, E, \mfk)$ aber wir schreiben oft nur $E$. Hierbei wird $E$ Totalraum und $\mfk$ Basis genannt.
 \end{bem}
-
 \begin{figure}[H]
 \centering
 \includegraphics[scale=1.1]{figures/tikz/vectorbundel.pdf}
 \caption{Veranschaulichung eines Vektorbündels}
 \label{img:tangentialbuendel}
 \end{figure}
-
 \begin{bsp} \leavevmode
 \begin{enumerate}
 \item Triviales Bündel:
@@ -158,7 +147,7 @@ von der Form:
 mit einer glatten Abbildung $\tau: U_\alpha \cap U_\beta \to \mathrm{GL}(k, \R)$.
 Dann existiert eine eindeutige Struktur als glattes $k$-dim Vektorbündel über $\mfk$ für die $\varphi^{-1}_{\alpha}$ lokale Trivialisierungen sind.
 \end{lem}
-\begin{bew}[Beweis Lemma \ref{lem:vorraussetzungenvektorbündel}]
+\begin{bew}[Lemma \ref{lem:vorraussetzungenvektorbündel}]
 Sei  $p\in\mfk$. 
 Setze $E_p := \pi^{-1}(\{ p \})$. 
 Falls $p\in U_\alpha$, dann ist 

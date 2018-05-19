@@ -17,8 +17,8 @@ Jeder Tangentialvektor lässt sich schreiben als
 v = \sum_{i=1}^{m} v(x_i) \pdv{x_i}\big\vert_{p} = \sum_{i=1}^{m} \xi \pdv{x_i}\big\vert_{p}.
 \end{align}
 \end{satz}
-\begin{bew}[Beweis Satz \ref{satz:BasisTPM} Teil 1]
-Es gilt die lineare unabhängigkeit:
+\begin{bew}[Satz \ref{satz:BasisTPM} Teil 1]
+Es gilt die lineare Unabhängigkeit:
 \begin{align}
 \pdv{x_1}\big\vert_{p} (x^j) = \delta_{i j}
 \end{align}
@@ -26,16 +26,16 @@ Jetzt muss noch gezeigt werden, dass $(\pdv{x_1}\big\vert_{p}, \dots, \pdv{x_m}\
  Dafür benötigen wir allerdings zunächst ein Hilfslemma.
 \end{bew}
 
-\begin{lem}
+\begin{hlem}
 \label{lem:DarstellungBasisTPM}
 Sei $f: U \subset \mfk \to \R$ eine glatte Funktion.
 Dann existiert eine Umgebung $U' \subset U$ von $p$ ($p \in U'$) und eine glatte Funktion
 $f_i: U' \to \R$, so dass
 \begin{align}
-f = f(p) + \sum_{i=1}^{m} ( x' - x'(p)) f.
+f = f(p) + \sum_{i=1}^{m} ( x_i  - x_i(p)) f_i.
 \end{align}
 Wobei $f_i (p) = \pdv{x_i}\big\vert_{p} (f)$.
-\end{lem}
+\end{hlem}
 
 \begin{bew} \leavevmode
 
@@ -61,11 +61,11 @@ $f_i$ ist glatt und es gelten folgende Eigenschaften nach Definition:
 \item $U_0^i = x^i(p)$
 \item $\psi_i (U) = \psi_i (x(1)) = f_i(q)$
 \end{itemize}
-Das bedeutet
+Diese Eigenschaften können wir nun wie folgt verwenden:
 \begin{align}
 f(q)- f(p) = \sum_{i=1}^n (x_i (q) - x_i (p)) f_i(q)
 \end{align}
-Wir wissen:
+
 \begin{align}
 \pdv{x_i}\big\vert_{p} (f) &= \partial_i \underbrace{(f \circ x^{-1})}_{\psi} \big \vert_{x(p)} \\
 &= \partial_i \psi \big\vert_{x(p)}\\
@@ -80,19 +80,18 @@ Und somit gilt schließlich $f_i (p) = \pdv{U_i} \big\vert_p (f)$.
 
 Nun können wir unseren Beweis fortführen.
 
-\begin{bew}[Beweis Satz \ref{satz:BasisTPM} Teil 2] \leavevmode
+\begin{bew}[Satz \ref{satz:BasisTPM} Teil 2] \leavevmode
 \begin{align}
 v(f) &= v(f(p) + \sum_i (x_i - x_i(p)) f_i) \\
 &= v(f(p)) + \sum_i v(x_i - x_i (p) f_i)
 \end{align}
 Benutze Produktregel
 \begin{align}
-&= \sum_i (\underbrace{(x_i (p) - x_i (p)) v(f_i)}_{=0} + \underbrace{v(x_i - x_i (p))}_{=v(x_i)} f_i) \\
+v(f) &= \sum_i (\underbrace{(x_i (p) - x_i (p)) v(f_i)}_{=0} + \underbrace{v(x_i - x_i (p))}_{=v(x_i)} f_i) \\
 &= \sum_i v(x_i) f_i \\
 &= \sum_i v(x_i) \pdv{x_i} \big\vert_p f 
 \end{align}
 \end{bew}
-
 
 \begin{satz}[Transformationsregel]
 Seien $(x, U)$ und $(\tilde{x}, \tilde{U})$ zwei Karten um $p \in \mfk$.
@@ -138,7 +137,7 @@ Dann gilt:
 \end{figure} 
 \end{satz}
 
-\begin{bew}[Beweis Satz \ref{satz:Kettenregel}] \leavevmode
+\begin{bew}[Satz \ref{satz:Kettenregel}] \leavevmode
 \begin{align}
 \dd (g \circ f) \big\vert_{p} (v (\phi)) &= v(\phi \circ g \circ f) \\
 &= \dd f \big\vert_p (v)(\phi \circ g) \\
@@ -181,7 +180,7 @@ ein Diffeomorphismus ist.
 \end{figure} 
 \end{satz}
 
-\begin{bew}[Beweis Satz \ref{satz:Umkehrsatz}] \leavevmode
+\begin{bew}[Satz \ref{satz:Umkehrsatz}] \leavevmode
 Nutze Karten um dies auf den euklidischen Fall zu führen.
 
 \begin{align}
@@ -193,11 +192,6 @@ Nutze Karten um dies auf den euklidischen Fall zu führen.
 \end{xy}
 \end{align}
 
-%\begin{figure}[h]
-%\centering
-%\includegraphics[width=0.7\linewidth]{figures/scan/umkehrsatzbeweis.png}
-%\label{img:umkehrsatzbeweis}
-%\end{figure} 
 Seien $(x, U)$ und $(y, U')$ Karten von $\mfk$ und $\mfka$ um $p$ und $f(p)$.
 Ohne Beschränkung der Allgemeinheit gilt: $f(U) \subset U'$.
 Dann ist $\phi$ eine glatte Abbildung deren Differential $\dd \phi \big\vert_{x(p)}$ invertierbar ist.
@@ -234,7 +228,7 @@ y\circ f \circ x^{-1} (U_1, \dots, U_m).
 \end{align}
 
 \end{enumerate}
-\begin{bew}[Beweis von Satz \ref{satz:Satz über implizite Funtionen} Teil 1]
+\begin{bew}[Satz \ref{satz:Satz über implizite Funtionen} Teil 1]
 Wähle Karten und modifiziere diese geschickt.
 Sei $(y, U')$ eine Karte von $\mfka$ um $f(p)$.
 Sei $(\hat{x}, U)$ eine Karte von $\mfk$ um $p$ mit $\hat{x}(p) = 0$.
