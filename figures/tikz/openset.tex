@@ -1,0 +1,44 @@
+\documentclass{standalone}
+\usepackage{tikz} 
+\usetikzlibrary{shapes}
+\usepackage{pgfplots}
+\usepgfplotslibrary{fillbetween}
+\usepackage[active,tightpage]{preview}  %generates a tightly fitting border around the work
+\PreviewEnvironment{tikzpicture}
+\setlength\PreviewBorder{2mm}
+\usepackage{xcolor}
+
+\pgfdeclarelayer{background}
+\pgfsetlayers{background,main}
+\tikzset{
+    expand bubble/.style={
+        preaction={draw,line width=10.4pt},
+        white,fill,draw,line width=10pt,
+    },
+}
+
+\begin{document}
+  \begin{tikzpicture}
+    \node (p1) at (0, 0) {};
+    \node (p2) at (1.5, 2) {};
+    \node (p3) at (2, 0.5) {};
+    \begin{pgfonlayer}{background}
+      \path[expand bubble,fill,cyan!15]plot [smooth cycle,tension=1] coordinates {(p1) (p2) (p3)};
+    \end{pgfonlayer}
+    
+	%Punkte auf Karte
+	\filldraw (1.2,0.75)   circle (0.2pt);
+	\node at (1.05,0.75)   {$p$};
+	\node at (0.4,1.8) {$U$};
+	
+	\begin{scope} [fill opacity = .4]
+    \draw(1.2,0.75) circle (0.4);
+    \end{scope}
+    
+    
+    
+  \end{tikzpicture}
+\end{document}
+
+
+	

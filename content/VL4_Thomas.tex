@@ -48,9 +48,9 @@ Jetzt muss noch gezeigt werden, dass $(\pdv{x_1}\big\vert_{p}, \dots, \pdv{x_m}\
 
 \begin{lem}
 \label{lem:DarstellungBasisTPM}
-Sei $f: U \subset \mfk \to \real$ eine glatte Funktion.
+Sei $f: U \subset \mfk \to \R$ eine glatte Funktion.
 Dann existiert eine Umgebung $U' \subset U$ von $p$ ($p \in U'$) und eine glatte Funktion
-$f_i: U' \to \real$, so dass
+$f_i: U' \to \R$, so dass
 \begin{align}
 f = f(p) + \sum_{i=1}^{m} ( x' - x'(p)) f.
 \end{align}
@@ -71,7 +71,7 @@ Hierbei ist $U=x(q)$ mit $q \in \mfk$ und $U_0 = x(p)$.
 \begin{align}
 \psi(U) - \psi(U_0) = \sum_i (U^i- U^i_0) \int^1_0 \underbrace{\dv{\psi}{U'} (t U + (1 - t) U_0) \dd t}_{:= \psi_i (U)}
 \end{align}
-Setze $f_i = \psi_i \circ x : U \subset \mfk \to \real$.
+Setze $f_i = \psi_i \circ x : U \subset \mfk \to \R$.
 $f_i$ ist glatt und es gelten folgende Eigenschaften nach Definition:
 \begin{itemize}
 \item $\psi(U)- \psi(U_0) = \psi(x(q)) - \psi(x(p)) = f(q)- f(p)$
@@ -122,7 +122,7 @@ Seien $(x, U)$ und $(\tilde{x}, \tilde{U})$ zwei Karten um $p \in \mfk$.
 
 Dann gilt:
 \begin{align}
-\pdv{\tilde{x}_i} \big\vert_p  = \sum_j \underbrace{\pdv{\tilde{x}_i} \big\vert_p  (x_j)}_{\in \real} \pdv{x_j} \big\vert_p 
+\pdv{\tilde{x}_i} \big\vert_p  = \sum_j \underbrace{\pdv{\tilde{x}_i} \big\vert_p  (x_j)}_{\in \R} \pdv{x_j} \big\vert_p 
 \end{align}
 (In der lineare Algebra hatten Transformation die ähnliche gestalt: $\tilde{v}_i = \sum_j a_{i j } v_j$)
 \end{satz}
@@ -166,9 +166,9 @@ Dann gilt:
 
 \begin{satz}
 Sei $f: \mfk \to \mfka$ glatt und sei $(x, U)$ eine Karte von $\mfk$ um $p$ und $(y, V)$ eine Karte von $\mfka$ um $p$.
-Setze $f_j = y_j \circ f$ mit $f_j : \mfk \to \real$, dann gilt:
+Setze $f_j = y_j \circ f$ mit $f_j : \mfk \to \R$, dann gilt:
 \begin{align}
-\underbrace{\dd f \big\vert_p ( \pdv{x_i} \big\vert_p)}_{\in T_{f(p)}\mfk} = \sum_j \underbrace{\pdv{x_i}\big\vert_p (f_j)}_{\in \real} \underbrace{\pdv{y_j} \big\vert_{f(p)}}_{\in T_{f(p)}\mfka}
+\underbrace{\dd f \big\vert_p ( \pdv{x_i} \big\vert_p)}_{\in T_{f(p)}\mfk} = \sum_j \underbrace{\pdv{x_i}\big\vert_p (f_j)}_{\in \R} \underbrace{\pdv{y_j} \big\vert_{f(p)}}_{\in T_{f(p)}\mfka}
 \end{align}
 \end{satz}
 
