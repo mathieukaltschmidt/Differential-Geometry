@@ -8,30 +8,27 @@
 \setlength\PreviewBorder{2mm}
 \usepackage{xcolor}
 
-
 \begin{document}
   \begin{tikzpicture}
     \node (p1) at (0, 0) {};
-    \node (p2) at (2, 2) {};
-    \node (p3) at (4, 1) {};
+    \node (p2) at (2, 2.5) {};
+    \node (p3) at (4.5, 1) {};
      \path[fill,cyan!15]plot [smooth cycle,tension=1] coordinates {(p1) (p2) (p3)};
      \path[draw]plot [smooth cycle,tension=1] coordinates {(p1) (p2) (p3)};
 	%Punkte auf Karte
-	\filldraw (1.0,0.5)  circle (0.2pt);
-	\filldraw (3.0,1.0)circle (0.2pt);	
-	\node at (0.78,0.5)  {$p$};
-	\node at (3.22,1.0){$q$};
-	\node at (1.0,1.2)  {$U$};	
-	\node at (3.0,1.7) {$\tilde{U}$};
-	\node at (0.1,2.0) {$\mathcal{M}$};
+	%Punkt 1
+	\filldraw (1.4,0.8)  circle (0.5pt);
+    \draw(1.4,0.8) circle (0.5);
+	\node at (1.2, 0.8)  {$p$};
+	%Punkt 2
+    \draw(2.8,1.2) circle (0.5);
+	\filldraw (2.8,1.2)circle (0.5pt);	
+	\node at (3.0,1.2){$q$};
 	
-	\begin{scope} [fill opacity = .4]
-    \draw(1.0,0.5) circle (0.4);
-    \draw(3.0,1.0) circle (0.4);
-    \end{scope}
-    
-    
-    
+	\node at (1.2,1.5)  {$U$};	
+	\node at (2.9,2.) {$\tilde{U}$};
+	\node at (0.15,2.4) {$\mathcal{M}$};
+
   \end{tikzpicture}
 \end{document}
 

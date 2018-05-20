@@ -1,0 +1,23 @@
+\documentclass[border=5mm]{standalone}
+
+\usepackage{pst-eucl,pstricks-add}
+
+\begin{document}
+
+\def\psR{3}
+\def\psM{0,0}
+\def\psr{1}
+\def\psm{0,0}
+
+\begin{pspicture}(-3,-3)(3,3)
+
+\pnode(\psR;0){Start}\pnode(\psm){m}\pnode[\psr,0](\psm){mA}
+\pnode(Start){C2}
+\multido{\iA=1+1}{23}{%
+  \psCircleTangents(C2)(\psm){\psr}
+  \pstInterLC[PointSymbol=none,PointName=none]{C2}{CircleT1}{psM}{Start}{C1}{C2} 
+  \psline[linecolor=red](C1)(C2)}
+\pscircle(\psm){\psr}
+\end{pspicture}
+
+\end{document}

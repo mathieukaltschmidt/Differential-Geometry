@@ -13,12 +13,12 @@
 
 \tikzset{
   state/.style={circle,draw,minimum size=6ex},
-  arrow/.style={-latex, shorten >=1ex, shorten <=1ex}}
+  arrow/.style={-latex, shorten >=2ex, shorten <=1ex}}
   
 \begin{document}
 		
 \begin{tikzpicture}[scale=8]
-\tikzstyle{every node}=[font=\LARGE]	
+\tikzstyle{every node}=[font=\huge]	
 % Fläche (Rechteck)
 	\path[name path=Grundfläche,fill,cyan!15] (0,0,0) -- (0,0,-1) -- (1.2,0,-1) -- (1.2,0,0) -- (0,0,0);
 	\draw[] (0,0,0) -- (1.2,0,0);
@@ -46,31 +46,31 @@
     \path[draw, black]plot [smooth cycle,tension=1] coordinates {(q1) (q2) (q3)};
     
 % Menge Rechts innen
-    \node (q1) at (2.4, 0.1) {};
-    \node (q2) at (2.4, 0.3) {};
-    \node (q3) at (2.8, 0.2) {};
+    \node (q1) at (2.3, 0.1) {};
+    \node (q2) at (2.3, 0.3) {};
+    \node (q3) at (2.7, 0.2) {};
     \path[draw, black]plot [smooth cycle,tension=1] coordinates {(q1) (q2) (q3)};
 
 % Beschriftung
 	\filldraw (0.7,0.15)   circle (0.2pt);
-	\node at (0.74,0.14)   {$p$};
-	\node at (0.7,0.3)   {$U$};
+	\node at (0.76,0.15)   {$p$};
+	\node at (0.5,0.25)   {$U$};
 	\node at (0.95,0.2)   {$U'$};		
-	\node at (0.8,0.45)   {$\mathcal{M}$};
-	\node at (2.5,0.45)   {$V$};
-	\node at (2.7,0.3)   {$V'$};		
-	\node at (1.15,-0.4)   {$\mathbb{R}$};	
-	\filldraw (2.5,0.2)   circle (0.2pt);
-	\node at (2.58,0.2)   {$x(p)$};	
+	\node at (0.7,0.45)   {$\mathcal{M}$};
+	\node at (2.55,0.45)   {$V$};
+	\node at (2.8,0.2)   {$V'$};		
+	\node at (1.15,-0.4)   {\huge{$\mathbb{R}$}};	
+	\filldraw (2.38,0.2)   circle (0.2pt);
+	\node at (2.5,0.2)   {$x(p)$};	
 	
 %Beschriftung der Abbildungen
-\node at (1.5,0.5)   {$x$};
-\node at (0.75,-0.2)   {$f$};	
-\node at (1.9,-0.2)   {$\psi = f \circ x^{-1}$};	
+\node at (1.6,0.55)   {$x$};
+\node at (0.75,-0.3)   {$f$};	
+\node at (2.2,-0.3)   {$\psi = f \circ x^{-1}$};	
 % Pfeil für Abbildungen	
-	\draw [arrow, bend angle=30, bend left]  (0.7,0.15)  to (2.3,0.3) ;
-	\draw [arrow, bend angle=30, bend right]  (0.7,0.15)  to (1.1,-0.4) ;
-	\draw [arrow, bend angle=30, bend left]  (2.4,0.1)  to (1.2,-0.4) ;
+	\draw [thick, arrow, bend angle=30, bend left]  (0.7,0.18)  to (2.3,0.31) ;
+	\draw [thick, arrow, bend angle=30, bend right]  (0.7,0.12)  to (1.1,-0.4) ;
+	\draw [thick, arrow, bend angle=30, bend left]  (2.3,0.08)  to (1.2,-0.4) ;
 	%\node at (5,3.4)   {$x_\alpha$};
 	%\draw [arrow, bend angle=45, bend right]  (0.5,0)  to (7.5,-5) ;
 	%\node at (5,-4.2)   {$x_\beta$};	

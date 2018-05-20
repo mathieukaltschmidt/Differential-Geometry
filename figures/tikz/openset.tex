@@ -12,18 +12,18 @@
 \begin{document}
   \begin{tikzpicture}
     \node (p1) at (0, 0) {};
-    \node (p2) at (1.5, 1.5) {};
-    \node (p3) at (1.8, 0.5) {};
+    \node (p2) at (1.5, 0.8) {};
+    \node (p3) at (1.8, 0) {};
      \path[fill,cyan!15]plot [smooth cycle,tension=1] coordinates {(p1) (p2) (p3)};
      \path[draw]plot [smooth cycle,tension=1] coordinates {(p1) (p2) (p3)};
         
 	%Punkte auf Karte
-	\filldraw (1.2,0.75)   circle (0.2pt);
-	\node at (1.05,0.75)   {$p$};
-	\node at (0.4,1.4) {$U$};
+	\filldraw (1.2,0.3)   circle (0.3pt);
+	\node at (1.05,0.3)   {$p$};
+	\node at (0.4,0.8) {$U$};
 	
-	\begin{scope} [fill opacity = .4]
-    \draw(1.2,0.75) circle (0.4);
+	\begin{scope} [fill opacity = .5]
+    \draw(1.2,0.3) circle (0.35);
     \end{scope}
     
     
