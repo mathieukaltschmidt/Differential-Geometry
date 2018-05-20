@@ -31,28 +31,28 @@
     \node (p1) at (0.4, 0.1) {};
     \node (p2) at (0.9, 0.3) {};
     \node (p3) at (1.0, 0.1) {};
-    \path[draw,fill, myblue!15]plot [smooth cycle,tension=1] coordinates {(p1) (p2) (p3)};
+    \path[draw,fill, myblue!10]plot [smooth cycle,tension=1] coordinates {(p1) (p2) (p3)};
     \path[draw,black]plot [smooth cycle,tension=1] coordinates {(p1) (p2) (p3)};
     
 %Menge 2 in Rechteck
     \node (p4) at (0.6, 0.1) {};
     \node (p5) at (0.7, 0.25) {};
     \node (p6) at (0.9, 0.1) {};
-    \path[draw,fill,myblue!30]plot [smooth cycle,tension=1] coordinates {(p4) (p5) (p6)};
+    \path[draw,fill,myblue!50]plot [smooth cycle,tension=1] coordinates {(p4) (p5) (p6)};
     \path[draw,black]plot [smooth cycle,tension=1] coordinates {(p4) (p5) (p6)};
     
 % Menge Rechts
     \node (q1) at (2.3, 0) {};
     \node (q2) at (2.3, 0.4) {};
     \node (q3) at (2.9, 0.2) {};
-    \path[fill,myred!15]plot [smooth cycle,tension=1] coordinates {(q1) (q2) (q3)};
+    \path[fill,myred!10]plot [smooth cycle,tension=1] coordinates {(q1) (q2) (q3)};
     \path[draw, black]plot [smooth cycle,tension=1] coordinates {(q1) (q2) (q3)};
     
 % Menge Rechts innen
     \node (q1) at (2.3, 0.1) {};
     \node (q2) at (2.3, 0.3) {};
     \node (q3) at (2.7, 0.2) {};
-    \path[draw, fill, myred!30]plot [smooth cycle,tension=1] coordinates {(q1) (q2) (q3)};
+    \path[draw, fill, myred!50]plot [smooth cycle,tension=1] coordinates {(q1) (q2) (q3)};
     \path[draw, black]plot [smooth cycle,tension=1] coordinates {(q1) (q2) (q3)};
 
 % Beschriftung
