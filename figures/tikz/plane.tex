@@ -7,7 +7,8 @@
 \PreviewEnvironment{tikzpicture}
 \setlength\PreviewBorder{2mm}
 \usepackage{xcolor}
-
+\definecolor{myred}{RGB}{196,19,47} 
+\definecolor{myblue}{RGB}{0,139,139}
 
 \begin{document}
 		
@@ -16,7 +17,7 @@
 %erstes Bild	
 	
 	%Füllen der Grundfläche
-	\path[name path=Grundfläche,fill,cyan!15] (0,0,0) -- (0,0,-1) -- (1.2,0,-1) -- (1.2,0,0) -- (0,0,0);
+	\path[name path=Grundfläche,fill,myblue!30] (0,0,0) -- (0,0,-1) -- (1.2,0,-1) -- (1.2,0,0) -- (0,0,0);
 	
 	%Rand
 	\draw[thin] (0,0,0) -- (1.2,0,0);
@@ -25,8 +26,8 @@
 	\draw[thin] (1.2,0,-1) -- (1.2,0,0);
 	
 	%Vektoren
-	\draw[ultra thick,color=red!80!black,->] (0.4,0,-0.4) -- (0.4,0,-0.8);
-	\draw[ultra thick,color=red!80!black,->] (0.8,0,-0.4) -- (0.8,0,-0.8);
+	\draw[ultra thick,color=myred,->] (0.4,0,-0.4) -- (0.4,0,-0.8);
+	\draw[ultra thick,color=myred,->] (0.8,0,-0.4) -- (0.8,0,-0.8);
 	\node at (0.03,0,-1.25) {\Large$\vec{v}$};
 	\draw[->] (0.07,0,-1.12) [out=270, in=150] to  (0.36,0,-0.6);
 	

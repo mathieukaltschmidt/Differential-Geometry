@@ -10,6 +10,8 @@
 \PreviewEnvironment{tikzpicture}
 \setlength\PreviewBorder{2mm}
 \usepackage{xcolor}
+\definecolor{myred}{RGB}{196,19,47} 
+\definecolor{myblue}{RGB}{0,139,139}
 
 \tikzset{
   state/.style={circle,draw,minimum size=6ex},
@@ -24,14 +26,14 @@
 	
 	% fibre bundle
 
-	\draw[-, color=red] (0.3,-0.2) to  (0.3,0.3);	
-	\draw[-, color=red] (0.4,-0.2) to  (0.4,0.3);	
-	\draw[-, color=red] (0.5,-0.2) to  (0.5,0.3);	
-	\draw[-, color=red] (0.6,-0.2) to  (0.6,0.3);
+	\draw[-, color=myred] (0.3,-0.2) to  (0.3,0.3);	
+	\draw[-, color=myred] (0.4,-0.2) to  (0.4,0.3);	
+	\draw[-, color=myred] (0.5,-0.2) to  (0.5,0.3);	
+	\draw[-, color=myred] (0.6,-0.2) to  (0.6,0.3);
 
 	% arrows
 	\draw [arrow, bend angle=40, bend right] (0.3,0.0) to (0.2,-0.45) ;	
-	\draw [arrow, bend angle=40, bend right]  (0.6,-0.45)  to (0.6,0.0) ;
+	\draw [arrow, bend angle=40, bend right]  (0.6,-0.45)  to (0.6,0) ;
 
 	\draw (0.6,0.1)  arc (260:360:0.1 and 0.05);
 	% text	

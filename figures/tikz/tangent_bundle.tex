@@ -2,6 +2,8 @@
 
 \usepackage{pst-eucl,pstricks-add}
 
+\definecolor{myred}{RGB}{196,19,47} 
+
 \begin{document}
 
 \def\psR{3}
@@ -16,7 +18,7 @@
 \multido{\iA=1+1}{23}{%
   \psCircleTangents(C2)(\psm){\psr}
   \pstInterLC[PointSymbol=none,PointName=none]{C2}{CircleT1}{psM}{Start}{C1}{C2} 
-  \psline[linecolor=red](C1)(C2)}
+  \psline[linecolor=myred](C1)(C2)}
 \pscircle(\psm){\psr}
 \end{pspicture}
 

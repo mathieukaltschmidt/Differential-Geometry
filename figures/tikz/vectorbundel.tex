@@ -7,10 +7,12 @@
 \PreviewEnvironment{tikzpicture}
 \setlength\PreviewBorder{2mm}
 \usepackage{xcolor}
+\definecolor{myred}{RGB}{196,19,47} 
+\definecolor{myblue}{RGB}{0,139,139}
 
 \begin{document}
 \begin{tikzpicture}[>=stealth]
-\draw[name path=Grundfläche,fill,cyan!15](2,0)--(4,0)node[midway,below]{}arc(0:70:4)--(90:2)arc(90:0:2)--cycle;
+\draw[name path=Grundfläche,fill,myblue!30](2,0)--(4,0)node[midway,below]{}arc(0:70:4)--(90:2)arc(90:0:2)--cycle;
 \draw[name path=Grundfläche](2,0)--(4,0)node[midway,below]{}arc(0:70:4)--(90:2)arc(90:0:2)--cycle;
 
 

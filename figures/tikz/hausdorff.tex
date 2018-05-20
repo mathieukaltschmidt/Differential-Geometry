@@ -1,6 +1,10 @@
 \documentclass{standalone}
 \usepackage{tikz} 
-\usetikzlibrary{shapes}
+\usetikzlibrary{shapes,patterns}
+
+\definecolor{myred}{RGB}{196,19,47} 
+\definecolor{myblue}{RGB}{0,139,139}
+
 \usepackage{pgfplots}
 \usepgfplotslibrary{fillbetween}
 \usepackage[active,tightpage]{preview}  %generates a tightly fitting border around the work
@@ -13,17 +17,25 @@
     \node (p1) at (0, 0) {};
     \node (p2) at (2, 2.5) {};
     \node (p3) at (4.5, 1) {};
-     \path[fill,cyan!15]plot [smooth cycle,tension=1] coordinates {(p1) (p2) (p3)};
+     %\path[fill,cyan!15]plot [smooth cycle,tension=1] coordinates {(p1) (p2) (p3)};
      \path[draw]plot [smooth cycle,tension=1] coordinates {(p1) (p2) (p3)};
 	%Punkte auf Karte
+	
+	
 	%Punkt 1
+	\path[fill,color=myred!30](1.4,0.8) circle (0.5);
 	\filldraw (1.4,0.8)  circle (0.5pt);
     \draw(1.4,0.8) circle (0.5);
-	\node at (1.2, 0.8)  {$p$};
+
 	%Punkt 2
+	\filldraw (2.8,1.2)circle (0.5pt);
     \draw(2.8,1.2) circle (0.5);
-	\filldraw (2.8,1.2)circle (0.5pt);	
+	\path[fill, color=myblue!30] (2.8,1.2) circle (0.5);
+	
+	\begin{scope}
+	\node at (1.2, 0.8)  {$p$};
 	\node at (3.0,1.2){$q$};
+	\end{scope}
 	
 	\node at (1.2,1.5)  {$U$};	
 	\node at (2.9,2.) {$\tilde{U}$};
