@@ -3,7 +3,7 @@
 \section{Tangentialbündel}
 Wir wollen nun alle Tangentialräume einer Mannigfaltigkeit $\mfk$ gemeinsam betrachten.
 \begin{align}
-T\mfk = \bigcup_{p\in \mfk} T_{p}\mfk = \{ (p, V) \vert p \in \mfk, v \in T_{p}\mfk \} 
+T\mfk = \bigsqcup_{p\in \mfk} T_{p}\mfk = \{ (p, V) \vert p \in \mfk, v \in T_{p}\mfk \} 
 \end{align}
 Wir wollen nun die Struktur einer differenzierbaren Mannigfaltigkeit. 
 Das heißt wir müssen eine Topologie und eine $\cinf$-Struktur auf $T\mfk$ definieren.
@@ -14,7 +14,7 @@ Das heißt wir müssen eine Topologie und eine $\cinf$-Struktur auf $T\mfk$ defi
 Sei $(x, U)$ eine Karte von $\mfk^m$. 
 Dann definieren wir eine Karte $(\overline{x}, \overline{U})$ von $T\mfk$ wie folgt:
 \begin{align}
-&\overline{U} = \pi^{-1}(U) = \bigcup_{p\in\mfk} T_{p}\mfk \\
+&\overline{U} = \pi^{-1}(U) = \bigsqcup_{p\in\mfk} T_{p}\mfk \\
 &\overline{x}: \overline{U} \to x(U) \times \R^m \subset \R^{2m} \\
 &(p, V) \mapsto (x(p), \xi)
 \end{align}
@@ -23,7 +23,7 @@ Wobei $\xi = (\xi^1, \dots, \xi^m) \in \R^m$ gegeben ist durch:
 v = \sum_{i=1}^{m} \xi_i \pdv{x_i} \big\vert_p, \quad \forall p \in U.
 \end{align}
 Wir haben noch keine Topologie auf $T\mfk$ definiert, das heißt $\overline{x}$ ist nur eine bijektive Abbildung zwischen Mengen.
-Wir können allerdings nicht sagen ob es ein Homöomorphismus oder Diffeomorphismus ist.
+Wir können allerdings nicht sagen ob es ein Homöomorphismus oder ein Diffeomorphismus ist.
 Allerdings können wir Kartenwechsel betrachten.\\
 Seien $(\overline{x}, \overline{U})$ und $(\overline{y}, \overline{U}')$ zwei Karten. 
 Betrachte die Abbildungen:
@@ -62,13 +62,6 @@ so dass:
 \item $\forall p \in \mfk$ hat $E_p:= \pi^{-1}( \{ p \})$ die Struktur eines $\R$-Vektorraums der Dimension $k$.
 $E_p$ heißt Faser von $E$ über $p$.
 \item Für alle $p$ in $\mfk$ existiert eine Umgebung $U$ von $p$ in $\mfk$ und ein Diffeomorphismus.
-\begin{align}
-\begin{xy}
-\xymatrix@=0.2\linewidth{
-      \phi: U \times \R^k \ar[rr] \ar[rd]_{pr_1}  &     &  \pi^{-1}(U) \ar[dl]^{\pi}  \\
-                             &  U  &}
-\end{xy}
-\end{align}
 Für diesen gilt:
 \begin{itemize}
 \item $\pi \circ \phi = p r_1$
@@ -80,6 +73,13 @@ Für diesen gilt:
 $\phi$ heißt lokale Trivialisierung von $E$.
 \end{itemize}
 \end{enumerate}
+\begin{align}
+\begin{xy}
+\xymatrix@=0.15\linewidth{
+      \phi: U \times \R^k \ar[rr] \ar[rd]_{pr_1}  &     &  \pi^{-1}(U) \ar[dl]^{\pi}  \\
+                             &  U  &}
+\end{xy}
+\end{align}
 \end{defs}
 \begin{bem}
 Ein Vektorbündel ist ein Tripel $(\pi, E, \mfk)$ aber wir schreiben oft nur $E$. Hierbei wird $E$ Totalraum und $\mfk$ Basis genannt.
@@ -120,16 +120,16 @@ k (l, x) &:= (l, k x)
 Nun wollen wir uns damit beschäftigen wie wir Vektorbündel konstruieren können.
 Angenommen uns wäre das folgende gegeben:
 \begin{enumerate}
-\item $E_p, p\in \mfk$ eine Familie von Vektorräumen der Dimension $k$
-\item $(U_\alpha)_{\alpha \in \atlas}$ eine offene Überdeckung von $\mfk$
-\item $\forall \alpha \in \atlas$, $p\in U_\alpha$ gibt es den folgenden Isomorphismus:
+\item $E_p$ (mit $p\in \mfk$) eine Familie von Vektorräumen der Dimension $k$
+\item $(U_\alpha)_{\alpha \in A}$ eine offene Überdeckung von $\mfk$
+\item $\forall \alpha \in A$, $p\in U_\alpha$ gibt es den folgenden Isomorphismus:
 \begin{align}
 \phi_{\alpha, p}: \R^\alpha \to E_p
 \end{align}
 \end{enumerate}
 Setze 
 \begin{align}
-&E = \cup_{p \in \mfk} E_p\\
+&E = \bigcup_{p \in \mfk} E_p\\
 &\pi : E \to \mfk\\
 &(p, V) \mapsto p\\
 &\phi_\alpha: U_\alpha \times \R^k \to E \big\vert_{U_\alpha}\\

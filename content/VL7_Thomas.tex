@@ -110,8 +110,8 @@ Ein Schnitt von $E$ entlang von $f$ ist eine glatte Abbildung $\delta : \mfka \t
 \comm{\cdot}{\cdot} : \mathfrak{X}(\mfk) \times \mathfrak{X}(\mfk) \to \mathfrak{X}(\mfk)\\
 \comm{x}{y} f := x(y(f)) - y(x(f))
 \end{align}
-Hier bleibt als Übung zu zeigen, dass $\comm{x}{y}$ tatsächlich ein neues Vektorfeld ist.
-Mit der Lie-Klammer ist $\mathfrak{X}(\mfk)$ eine Lie-Algebra.
+Hier bleibt als Übung zu zeigen, dass $\comm{x}{y}$ tatsächlich ein neues Vektorfeld ist.\\
+Zusammen mit der Lie-Klammer ist $\mathfrak{X}(\mfk)$ eine Lie-Algebra.
 \end{defs}
 
 \begin{defs}[Zusammenhang]
@@ -121,18 +121,17 @@ Ein Zusammenhang auf $E$ ist eine Abbildung
 \covd : \mathfrak{X}(\mfk) \times \Gamma(E) \to \Gamma (E) \\
 (x, s) \mapsto \covd (x, s) = \covd_x s
 \end{align}
-Wobei folgende EIgenschaften erfüllt sind:
+Wobei folgende Eigenschaften erfüllt sind:
 \begin{enumerate}
-\item $\covd$ ist tensoriell in $x$. 
-Das bedeuetet:
+\item $\covd$ ist tensoriell in $x$: 
 \begin{align}
-\covd_{x_1 + x_2} s = \covd_{x_1} s + \covd_{x_2} s \\
-\covd_{\phi x} s = \phi \covd_x s
+&\covd_{x_1 + x_2} s = \covd_{x_1} s + \covd_{x_2} s \\
+&\covd_{\phi x} s = \phi \ \covd_x s
 \end{align}
 \item $\covd$ ist eine Derivation in s:
 \begin{align}
-\covd_x (s_1 + s_2) = \covd_x s_1 + \covd_x s_2\\
-\covd_x (\phi s) = x(\phi) s + \phi \covd_x  s
+&\covd_x (s_1 + s_2) = \covd_x s_1 + \covd_x s_2\\
+&\covd_x (\phi s) = x(\phi) s + \phi \ \covd_x  s
 \end{align}
 \end{enumerate}
 \end{defs}
@@ -148,8 +147,8 @@ E = T\mfk\\
 \begin{bsp}
 Sei $E = \mfk \times \R^k$ das tirivale Bündel mit
 \begin{align}
-s: \mfk \to E \\
-p \mapsto (p, \sigma(p))
+&s: \mfk \to E \\
+&p \mapsto (p, \sigma(p))
 \end{align}
 wobei $\sigma = (\sigma_1, \dots, \sigma_k)$, $\sigma_i \in \mathcal{F}(\mfk)$.
 Dann ist der kanonische Zusammenhang gegeben als:
@@ -172,7 +171,7 @@ dann folgt daraus, dass
 \begin{lem}
 \label{lem:lokalisierung2}
 $s_1, s_2 \in \Gamma(\mfk)$ und $s_1 = s_2$ in einer Umgebung von $p$,
-dass folgt daraus, dass
+daraus folgt, dass
 \begin{align}
 (\covd_{x} s_1)(p) = (\covd_{x} s_2) (p).
 \end{align}
@@ -182,8 +181,8 @@ dass folgt daraus, dass
 Wähle $\phi \in \mathcal{F}(\mfk)$ mit $\supp \phi \subseteq U$ und $\phi = 1$ auf einer Umgebung $V \subset U$ von p.
 Dann gilt 
 \begin{align}
-\phi s_1 = \phi s_2 \\
-\covd_x(\phi s_1)(p) = \covd_x(\phi s_2)(p)
+&\phi s_1 = \phi s_2 \\
+&\covd_x(\phi s_1)(p) = \covd_x(\phi s_2)(p)
 \end{align}
 Für die linke Seite ist
 \begin{align}

@@ -1,7 +1,7 @@
 % !TeX root = ..//diffgeo_main.tex
 
-Als nächstes möchten wir Lemma \ref{lem:lokalisierung1} beweis.
-Allerdings können wir gleich etwas allgemeineres beweisen wodurch Lemma \ref{lem:lokalisierung1} auch gleizeitig bewiesen wird.
+Als nächstes möchten wir Lemma \ref{lem:lokalisierung1} beweisen.
+Allerdings können wir gleich etwas allgemeineres beweisen wodurch Lemma \ref{lem:lokalisierung1} sofort klar ist.
 
 \begin{lem}
 \label{lem:tensorielllokalisierung}
@@ -24,7 +24,7 @@ Lemma \ref{lem:lokalisierung1} folgt sofort aus diesem Lemma, da die Abbildung
 tensoriell ist.
 
 \begin{bew}[Lemma \ref{lem:tensorielllokalisierung}]
-Sei $U$ eine Umgebung von $p$ unf $\phi = (s_1, \dots, s_k)$ ein lokaler Rahmen auf $U$.
+Sei $U$ eine Umgebung von $p$ und $\phi = (s_1, \dots, s_k)$ ein lokaler Rahmen auf $U$.
 Sei außerdem $\varphi$ eine Bumpfunktion mit $\supp \varphi \subset U$ und $\varphi (p) = 1$.
 Wir schreiben 
 \begin{align}
@@ -43,7 +43,7 @@ Analog rechnet man mit $\tilde{s}$
 \end{align}
 Da $\sigma_i = \tilde{\sigma}_i$ und $\varphi(p)=1$ folgt nun die Aussage
 \begin{align}
-\mathcal{L}(s)(p) = \mathcal{L}(\tilde{s})(p)
+\mathcal{L}(s)(p) = \mathcal{L}(\tilde{s})(p).
 \end{align}
 \end{bew}
 
@@ -54,12 +54,11 @@ T^{n}_{s} (\mfk) = \left( \bigotimes^n_{i=1} T \mfk \right) \otimes \left(\bigot
 \end{align}
 In anderen Worten ist ein Tensorfeld vom Typ $(n,s)$ eine Abbildung
 \begin{align}
-B : \underbrace{\mathfrak{X}(\mfk) \times \cdots \times \mathfrak{X}(\mfk)}_{s \ \mathrm{mal}} \ to \underbrace{\mathfrak{X}(\mfk) \times \cdots \times \mathfrak{X}(\mfk)}_{n \ \mathrm{mal}},
+B : \underbrace{\mathfrak{X}(\mfk) \times \cdots \times \mathfrak{X}(\mfk)}_{s \ \mathrm{mal}} \to \underbrace{\mathfrak{X}(\mfk) \times \cdots \times \mathfrak{X}(\mfk)}_{n \ \mathrm{mal}},
 \end{align}
 die tensoriell in jedem Argument ist.\\
-Lemma \ref{lem:tensorielllokalisierung} saft uns, dass jede Abbildung $B$ kommt aus einem Vektorfeld.
+Lemma \ref{lem:tensorielllokalisierung} sagt uns, dass jede Abbildung $B$ aus einem Vektorfeld kommt.
 \end{defs}
-
 An dieser Stelle wollen wir noch einmal kurz einige Fakten über Tensoren sammeln.
 Ein Tensor vom Rang $n$ ist:
 \begin{align}
@@ -158,14 +157,14 @@ Sei $E = \mfk \times \R^k$.
 \begin{align}
 \covd^\omega_x s = (p, x_(\sigma) + \omega_p (x_p)\sigma_p)
 \end{align}
-Aus dem Satz von eben folgt, dass $covd^\omega_x s$ alle Zusammenhänge auf $E$ sind.
+Aus dem Satz von eben folgt, dass $\covd^\omega_x s$ alle Zusammenhänge auf $E$ sind.
 Aus der Lokalisierung folgt
 \begin{align}
 \phi : U \times \R^k \to E\big\vert_U.
 \end{align}
 \end{bsp}
 Wir stellen uns die Frage wie wir Zusammenhänge mithilfe einer $1$-Form finden können.
-Dies ist mithilfe von Zusammnehangsformen bezüglich eines lokalen Rahmens möglich.
+Dies ist mithilfe von Zusammenhangsformen bezüglich eines lokalen Rahmens möglich.
 Sei $\phi = (s_1, \dots, s_k)$ ein lokaler Rahmen von $E$ über $U$ und sei $x \in \mathfrak{X}(\mfk)$.
 Zudem sind $\covd_x s_1, \dots, \covd_x s_k \in \Gamma(E)$.
 Diese lassen sich wie folgt darstellen:
