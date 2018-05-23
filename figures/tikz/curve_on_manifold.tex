@@ -1,0 +1,35 @@
+\documentclass{standalone}
+\usepackage{tikz} 
+\usetikzlibrary{shapes,patterns}
+
+\definecolor{myred}{RGB}{196,19,47} 
+\definecolor{myblue}{RGB}{0,139,139}
+
+\usepackage{pgfplots}
+\usepgfplotslibrary{fillbetween}
+\usepackage[active,tightpage]{preview}  %generates a tightly fitting border around the work
+\PreviewEnvironment{tikzpicture}
+\setlength\PreviewBorder{2mm}
+\usepackage{xcolor}
+
+\begin{document}
+  \begin{tikzpicture}
+  
+    \node (p1) at (0, 0) {};
+    \node (p2) at (2, 1.3) {};
+    \node (p3) at (3.5, 0) {};
+    \path[draw]plot [smooth cycle,tension=1] coordinates {(p1) (p2) (p3)};
+
+	%Kurve
+	\draw[-] (0.9,0.3) [out=300, in=150] to  (2.8,0.7);
+	
+	\node at (0.16,1.3) {$\mathcal{M}$};
+	
+	% arrow
+	\node at (0.7,-0.6) {$f$};
+	\draw[->] (1.0,-0.6) [out=10, in=-50] to  (2.0,0.45);
+  \end{tikzpicture}
+\end{document}
+
+
+	
