@@ -1,0 +1,105 @@
+% !TeX root = ..//diffgeo_main.tex
+
+Unser nächster Schritt ist es nun die Parallelverschiebung zu definieren.
+Auf dem Weg dorthin ist unser erstes Ziel zunächst die kovariante Ableitung von Schnitten längs einer Abbildung zu definieren.
+\begin{enumerate}
+\item Zu Schnitten längs einer Abbildung:
+\begin{align}
+\begin{xy}
+  \xymatrix@=0.2\linewidth{
+          &   E \ar[d]_{\pi} \\
+      \mfka \ar[ur]^{s^\mfka} \ar[r]_f  &   \mfk
+  }
+\end{xy}
+\end{align}
+Eine Abbildung $s: \mfka \to E$ heißt Schnitt längs $f: \mfka \to \mfk$ falls:
+\begin{enumerate}[label=\roman*]
+  \item $s^\mfka$ ist glatt
+  \item Das obere Diagramm kommutiert: $f = \pi \circ s^\mfka$
+\end{enumerate}
+Notation: $\Gamma_f (E)$\\
+Wichter Spezialfall: $\mfka = I$, das heißt $f$ ist eine Kurve falls $E = T\mfk$
+\begin{align}
+\begin{xy}
+  \xymatrix@=0.2\linewidth{
+          &   T\mfk \ar[d]_{\pi} \\
+      I \ar[ur]^{s^I} \ar[r]_f  &   \mfk
+  }
+\end{xy}
+\end{align}
+\item Wollen $\covd: \mathfrak{X}(\mfka) \times \Gamma_f (E) \to \Gamma_f (E)$.
+\end{enumerate}
+\begin{defs}[Kovariante Ableitung längs eines Schnittes]
+Sei $\phi = (s_1, \dots, s_k)$ ein lokaler Rahmen von $E$ über $U$ und $s \in \Gamma_f (U)$. 
+Dann ist:
+\begin{align}
+s = \sum^{k}_{i=1} \sigma_i (s_i \circ f)
+\end{align}
+Dann definieren wir die kovariante Ableitung längs $f$ wie folgt:
+\begin{align}
+\covd^{f}_x s &= \sum^k_{j=1} \left( x(\sigma_j) + \sum^k_{i=1} \omega_{ij}(f_\ast x)\sigma_i \right) s_j \circ f\\
+&= x(\sigma) + (f^\ast \omega)(x) \sigma
+\end{align}
+Die Wohldefinertheit soll als Übung gezeigt werden.
+\end{defs}
+\begin{satz}
+Die kovariante Ableitung $\covd^f$ längs $f$
+\begin{align}
+\covd^f: \mathfrak{X}(\mfka) \times \Gamma_f (E) \to \Gamma_f (E),
+\end{align}
+ist tensoriell im ersten Argument und derivativ im zweiten Argument.
+\end{align}
+\end{satz}
+Wenn wir die Schnitte $\Gamma_f (E)$ mit $\Gamma(f^\ast E)$ identifizieren, dann erhalten wir den zurückgezogenen Zusammenhang
+\begin{align}
+f^\ast \covd : \mathfrak{X}(\mfka) \to \Gamma(f^\ast E) \to \Gamma(f^\ast E).
+\end{align}
+
+\begin{satz}
+Sei $s^\mfk \in \Gamma(E)$, $q \in \mfka$ und $v\in T_q \mfka$.
+Dann gilt:
+\begin{align}
+\covd^f_v (s\circ f) = \covd_{f^\ast v} s
+\end{align}
+Die wichtigste Situation ist hierbei die folgende:
+\begin{align}
+\begin{xy}
+  \xymatrix@=0.2\linewidth{
+          &   T\mfk \ar[d]_{\pi} \\
+      c : I  \ar[r]_f  &   \mfk
+  }
+\end{xy}
+\end{align}
+Hier gilt
+\begin{align}
+\covd_t s := \covd^c_{\pdv{t}} s
+\end{align}
+\end{satz}
+
+\begin{bem}
+Sei $c$ so gewählt, dass $\dot{c}(t) = 0$, das heißt $c(x)=p$.\\
+\textbf{Achtung:} $\covd_t s$ kann ungleich Null sein, selbst wenn $\dot{c}(t) = 0$.
+Zum Beispiel: $c(t)=0$ und $s \in \Gamma_c (E)$, dann muss $s(t)\in E_p$ nicht konstant sein.
+Dann ist $\covd_t s = \pdv_t s $ Ableitung um $s(1)$ als Abbildung in $E_p \cong \R^k$.
+\end{bem}
+Als nächstes wollen wir nun die kovariante Ableitung längs von Kurven verwenden, um die Parallelverschiebung zu definieren.
+\begin{defs}[Parallelität]
+Sei $c: I \to \mfk$ eine glatte Kurve und $(\pi, E, /mfk)$ ein Vektorbündel.
+Ein Schnitt $s^I \in \Gamma_c (E)$ heißt parallel längs $c$ falls 
+\begin{align}
+\covd^c_t s = 0.
+\end{align}
+\end{defs}
+\begin{bem}
+Wenn $s_1$ und $s_2$ parallel sind, so sind auf Linearkombinationen $\alpha s_1 + \beta s_1$ ($\forall \alpha, \beta \in \R$) parallel.
+\end{bem}
+In einem lokalen Rahmen bedeutet $\covd^c_t s = 0$ folgendes:
+\begin{align}
+\dot{\sigma} + \omega(\dot{c}) \sigma = 0.
+\end{align}
+Dies ist eine gewöhnliche Differentialgleichung erster Ordnung.
+
+\begin{lem}
+Sei $t_0 \in I$ und $x \in E_{c(t_0)}$ dann existiert genau ein paralleler Schnitt $s$ längs $c$ mit $s(t_0 = x)$
+
+\end{lem}
