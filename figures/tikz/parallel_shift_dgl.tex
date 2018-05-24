@@ -14,69 +14,75 @@
 
 \begin{document}
   \begin{tikzpicture}
+  
   	% Mannigfaltigkeit
-		%Füllen der Grundfläche
+	%Füllen der Grundfläche
 	%\path[name path=Grundfläche,fill,myblue!30] (0,0,0) -- (0,0,-1) -- (1.2,0,-1) -- (1.2,0,0) -- (0,0,0);
-	
 	%Rand
 	\draw[thin] (-1,0) -- (4.5,0);
 	\draw[thin] (4.5,0) -- (5.5,2);
 	\draw[thin] (5.5,2) -- (0,2);
 	\draw[thin] (0,2) -- (-1,0);  	
-  	
-  	
-%    \node (p1) at (-0.4, 0) {};
-%    \node (p2) at (0.5, 2.4) {};
-%    \node (p3) at (4.5, 2) {};
-%    \node (p4) at (4, -0.2) {};
-%    \path[draw]plot [smooth cycle,tension=1] coordinates {(p1) (p2) (p3) (p4)};
+  	% Mannigfaltigkeit als 'blob'
+	%    \node (p1) at (-0.4, 0) {};
+	%    \node (p2) at (0.5, 2.4) {};	
+	%    \node (p3) at (4.5, 2) {};
+	%    \node (p4) at (4, -0.2) {};
+	%    \path[draw]plot [smooth cycle,tension=1] coordinates {(p1) (p2) (p3) (p4)};
+	
 	%Kurve
 	\draw[-] (1,1.3) [out=280, in=100] to  (3.9,0.9);
 	\filldraw (1,1.3)circle (1pt);
 	\filldraw (3.9,0.9)circle (1pt);
-	
-	% Flächen E_p
-	% Fläche Basis
-%	\draw[thin] (0,0) -- (0.5,0.2);
-%	\draw[thin] (0.5,0.2) -- (0.5,1.2);
-%	\draw[thin] (0.5,1.2) -- (0,1);
-%	\draw[thin] (0,1) -- (0,0);
 
 	% Ebene 1
-	\draw[thin] (0,3.4) -- (0.5,3.6);
-	\draw[thin] (0.5,3.6) -- (0.5,5.0);
-	\draw[thin] (0.5,5.0) -- (0,4.8);
-	\draw[thin] (0,4.8) -- (0,3.4);
-	\filldraw (0.25,4.17) circle (1pt);
+	\draw[thin] (0,3.08) -- (0.5,3.28);
+	\draw[thin] (0.5,3.28) -- (0.5,4.68);
+	\draw[thin] (0.5,4.68) -- (0,4.48);
+	\draw[thin] (0,4.48) -- (0,3.08);
+	\filldraw (0.25,3.85) circle (1pt);
 	% Ebene 2
-	\draw[thin] (1,3.63) -- (1.5,3.83);
-	\draw[thin] (1.5,3.83) -- (1.5,5.23);
-	\draw[thin] (1.5,5.23) -- (1,5.03);
-	\draw[thin] (1,5.03) -- (1,3.63);
-	\filldraw (1.25,4.4) circle (1pt);
+	\draw[thin] (1,3.31) -- (1.5,3.51);
+	\draw[thin] (1.5,3.51) -- (1.5,4.91);
+	\draw[thin] (1.5,4.91) -- (1,4.71);
+	\draw[thin] (1,4.71) -- (1,3.31);
+	\filldraw (1.25,4.08) circle (1pt);
 	% Ebene 3
-	\draw[thin] (2,3.5) -- (2.5,3.7);
-	\draw[thin] (2.5,3.7) -- (2.5,5.1);
-	\draw[thin] (2.5,5.1) -- (2,4.9);
-	\draw[thin] (2,4.9) -- (2,3.5);
-	\filldraw (2.25,4.27) circle (1pt);
+	\draw[thin] (2,3.70) -- (2.5,3.90);
+	\draw[thin] (2.5,3.90) -- (2.5,5.30);
+	\draw[thin] (2.5,5.30) -- (2,5.10);
+	\draw[thin] (2,5.10) -- (2,3.70);
+	\filldraw (2.25,4.47) circle (1pt);
 	% Ebene 4
-	\draw[thin] (3,3.5) -- (3.5,3.7);
-	\draw[thin] (3.5,3.7) -- (3.5,5.1);
-	\draw[thin] (3.5,5.1) -- (3,4.9);
-	\draw[thin] (3,4.9) -- (3,3.5);
-	\filldraw (3.25,4.27) circle (1pt);
+	\draw[thin] (3,4.09) -- (3.5,4.29);
+	\draw[thin] (3.5,4.29) -- (3.5,5.69);
+	\draw[thin] (3.5,5.69) -- (3,5.49);
+	\draw[thin] (3,5.49) -- (3,4.09);
+	\filldraw (3.25,4.86) circle (1pt);
 	% Ebene 5
-	\draw[thin] (4,3.5) -- (4.5,3.7);
-	\draw[thin] (4.5,3.7) -- (4.5,5.1);
-	\draw[thin] (4.5,5.1) -- (4,4.9);
-	\draw[thin] (4,4.9) -- (4,3.5);
-	\filldraw (4.25,4.27) circle (1pt);
+	\draw[thin] (4,4.37) -- (4.5,4.57);
+	\draw[thin] (4.5,4.57) -- (4.5,5.97);
+	\draw[thin] (4.5,5.97) -- (4,5.77);
+	\draw[thin] (4,5.77) -- (4,4.37);
+	\filldraw (4.25,5.14) circle (1pt);
 	
 	% Kurven auf E_p
-	\draw[thick, dotted, -] (-0.6,4.8) [out=280, in=100] to  (5.3,4.9);
-	\filldraw  (-0.6,4.8) circle (1pt);
-	\filldraw (5.3,4.9) circle (1pt);
+	\draw[thick, dotted, -] (-0.6,4.5) [out=280, in=100] to  (5.3,4.5);
+	\filldraw  (-0.6,4.5) circle (1pt);
+	\filldraw (5.3,4.5) circle (1pt);
+	
+	% Vektoren	
+	\draw[thick,color=myred,->] (0.25,3.85) -- (0.3,4.5);
+	\draw[thick,color=myred,->] (1.25,4.08) -- (1.4,4.6);
+	\draw[thick,color=myred,->] (2.25,4.47)  -- (2.4,4.05);
+	\draw[thick,color=myred,->] (3.25,4.86) -- (3.1,4.35);
+	\draw[thick,color=myred,->] (4.25,5.14) -- (4.15,5.64);
+	
+	% text	
+	\node at (0,0.5) {$\mathcal{M}$};
+	% arrow
+	\node at (1.5,5.9) {$E_p$};
+	\draw[<-] (0.3,4.7) [out=100, in=-90] to  (1.5,5.7);
 
   \end{tikzpicture}
 \end{document}

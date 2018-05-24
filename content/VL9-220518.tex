@@ -60,28 +60,26 @@ Wenn wir die Schnitte $\Gamma_f (E)$ mit $\Gamma(f^\ast E)$ identifizieren, dann
 \begin{align}
 f^\ast \covd : \mathfrak{X}(\mfka) \to \Gamma(f^\ast E) \to \Gamma(f^\ast E).
 \end{align}
-
 \begin{satz}
 Sei $s^\text{{\begin{tiny}$\mfk$\end{tiny}}} \in \Gamma(E)$, $q \in \mfka$ und $v\in T_q \mfka$.
 Dann gilt:
 \begin{align}
 \covd^f_v (s\circ f) = \covd_{f^\ast v} s
 \end{align}
-Die wichtigste Situation ist hierbei die folgende:
+Die wichtigste Situation ist hierbei der Fall der Kurven also mit $\mfka = I$ und $E = T\mfk$.
+%\begin{align}
+%\begin{xy}
+%  \xymatrix@=0.2\linewidth{
+%          &   T\mfk \ar[d]_{\pi} \\
+%      c : I  \ar[r]_f  &   \mfk
+%  }
+%\end{xy}
+%\end{align}
+Hier gilt nämlich
 \begin{align}
-\begin{xy}
-  \xymatrix@=0.2\linewidth{
-          &   T\mfk \ar[d]_{\pi} \\
-      c : I  \ar[r]_f  &   \mfk
-  }
-\end{xy}
-\end{align}
-Hier gilt
-\begin{align}
-\covd_t s := \covd^c_{\pdv{t}} s
+\covd_t s := \covd^c_{\pdv{t}} s.
 \end{align}
 \end{satz}
-
 \begin{bem}
 Sei $c$ so gewählt, dass $\dot{c}(t) = 0$, das heißt $c(x)=p$.\\
 \textbf{Achtung:} $\covd_t s$ kann ungleich Null sein, selbst wenn $\dot{c}(t) = 0$.
@@ -96,6 +94,12 @@ Ein Schnitt $s^I \in \Gamma_c (E)$ heißt parallel längs $c$ falls
 \covd^c_t s = 0.
 \end{align}
 \end{defs}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\linewidth]{figures/tikz/parallel_shift_dgl.pdf}
+\label{img:parallel_shift:dgl}
+\caption{Lösung für die Parallelität auf Vektorbündel}
+\end{figure} 
 \begin{bem}
 Wenn $s_1$ und $s_2$ parallel sind, so sind auf Linearkombinationen $\alpha s_1 + \beta s_1$ ($\forall \alpha, \beta \in \R$) parallel.
 \end{bem}
@@ -138,7 +142,7 @@ Damit erhalten wir für die kovariante Ableitung:
 \covd_t s &= \sum^{k}_{i=1} \covd_t (\sigma_i s_i)\\
 &= \sum^{k}_{i=1} (\partial_t \sigma_i) s_i. 
 \end{align}
-Bezüglich des parallelen Rahmens ist die kovariante Ableitung also gerade die standard Ableitung.
+Bezüglich des parallelen Rahmens ist die kovariante Ableitung also gerade die Standardableitung.
 \begin{bem}
 Parallelverschiebung kann man allgemein längs Stückweiser glatter Kurven $c$ defineren.
 \end{bem}
