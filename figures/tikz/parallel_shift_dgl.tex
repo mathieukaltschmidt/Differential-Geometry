@@ -12,6 +12,7 @@
 \setlength\PreviewBorder{2mm}
 \usepackage{xcolor}
 
+
 \begin{document}
   \begin{tikzpicture}
   
@@ -19,20 +20,22 @@
 	%Füllen der Grundfläche
 	%\path[name path=Grundfläche,fill,myblue!30] (-1,0) -- (4.5,0) -- (5.5,2) -- (0,2) -- (-1,0);
 	%Rand
-	\draw[thin] (-1,0) -- (4.5,0);
-	\draw[thin] (4.5,0) -- (5.5,2);
-	\draw[thin] (5.5,2) -- (0,2);
-	\draw[thin] (0,2) -- (-1,0);  	
-  	% Mannigfaltigkeit als 'blob'
-	%    \node (p1) at (-0.4, 0) {};
-	%    \node (p2) at (0.5, 2.4) {};	
-	%    \node (p3) at (4.5, 2) {};
-	%    \node (p4) at (4, -0.2) {};
-	%    \path[draw]plot [smooth cycle,tension=1] coordinates {(p1) (p2) (p3) (p4)};
-	
+	% base manifold
+  \draw[thin] (-1,0)
+   to[out=-10,in=170] (4.5,0)
+    to[out=70,in=-130] (5.5,2) 
+    to[out=170,in=-10] (0,2) 
+    to[out=-130,in=70] cycle;
+    
+	%\draw[thin] (-1,0) -- (4.5,0);
+	%\draw[thin] (4.5,0) -- (5.5,2);
+	%\draw[thin] (5.5,2) -- (0,2);
+	%\draw[thin] (0,2) -- (-1,0);  	
+
+
 	%Kurve
-	\draw[-] (1,1.3) [out=280, in=100] to  (3.9,0.9);
-	\filldraw (1,1.3)circle (1pt);
+	\draw[-, thick, color=myred] (0.5,1.3) [out=280, in=100] to  (3.9,0.9);
+	\filldraw (0.5,1.3)circle (1pt);
 	\filldraw (3.9,0.9)circle (1pt);
 
 	%Ebenen
@@ -66,7 +69,11 @@
 	\draw[thick, dotted, -] (-0.6,4.5) [out=280, in=100] to  (5.3,4.5);
 	\filldraw  (-0.6,4.5) circle (1pt);
 	\filldraw (5.3,4.5) circle (1pt);
-	
+	\path[fill,color=white] (0.01,3.1) -- (0.25,3.3) -- (0.25,4.5) -- (0.01,4.3) -- (0.01,3.1);
+	\path[fill,color=white] (1.005,3.4) -- (1.25,3.6) -- (1.25,4.8) -- (1.005,4.6) -- (1.005,3.4);
+	\path[fill,color=white] (2.015,3.8) -- (2.25,4.1) -- (2.25,5.0) -- (2.015,4.9) -- (2.015,3.9);
+	\path[fill,color=white] (3.01,4.1) -- (3.25,4.3) -- (3.25,5.5) -- (3.01,5.3) -- (3.01,4.1);
+	\path[fill,color=white] (4.01,4.7) -- (4.25,4.7) -- (4.25,5.5) -- (4.01,5.3) -- (4.01,4.7);				
 	% Vektoren	
 	\draw[thick,color=myred,->] (0.25,3.85) -- (0.3,4.5);
 	\draw[thick,color=myred,->] (1.25,4.08) -- (1.4,4.7);
@@ -82,14 +89,14 @@
 	\filldraw (4.25,5.14) circle (1pt);
 	
 	% Text	
-	\node at (0,0.5) {$\mathcal{M}$};
-	\node at (0.7,1.6) {$(t_0)$};
-	\node at (4.2,0.6) {$(t_1)$};
-	\node at (1.5,5.9) {$E_p$};
-	\draw[<-] (0.3,4.7) [out=100, in=-90] to  (1.5,5.7);
+	\node at (-0.1,0.45) {$\mathcal{M}$};
+	\node at (0.3,1.6) {$(t_0)$};
+	\node at (4.1,0.6) {$(t_1)$};
+	\node at (0.8,5.8) {$E_p$};
+	\draw[<-] (0.3,4.7) [out=100, in=-90] to  (0.8,5.6);
 	
-	\node at (5.2,3.25) {$E_q$};
-	\draw[->] (5.2,3.5) [out=100, in=-90] to  (4.3,4.4);
+	\node at (5.0,3.25) {$E_q$};
+	\draw[->] (5.0,3.5) [out=100, in=-90] to  (4.3,4.4);
 
   \end{tikzpicture}
 \end{document}

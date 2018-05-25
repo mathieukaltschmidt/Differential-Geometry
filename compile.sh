@@ -1,0 +1,3 @@
+xelatex diffgeo_main
+biber diffgeo_main
+xelatex diffgeo_main
