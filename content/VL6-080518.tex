@@ -45,13 +45,13 @@ Wir erhalten zusammen die Folgende Übergangsmatrix:
 \begin{align}
 g_{\alpha \beta} = g_{\alpha \beta}'(p) \oplus g_{\alpha \beta}''(p)
 \end{align}
-Diese Abbildung ist glatt und somit ergibt sich somit ein neues Vektorbündel.
+Diese Abbildung ist glatt und somit ergibt sich ein neues Vektorbündel.
 
 \subsection{Homomorphismenbündel}
 Es seien die Daten wie eben schon gegeben.
 Das Homomorphismenbündel
 \begin{align}
-\mathrm{Hom}_p := \mathrm{Hom}(E_{p}', E_{p}'')
+\mathrm{Hom}_p := \mathrm{Hom}(E_{p}', E_{p}''),
 \end{align}
 ist wie folgt gegeben:
 \begin{align}
@@ -62,8 +62,7 @@ f &\mapsto \phi_{\alpha \ p} \circ f \circ (\phi_{\alpha \ p}')^{-1}
 \subsection{Duales Bündel}
 Sei ein Vektorbündel $(\pi, E, \mfk)$ gegeben. 
 Wir wollen nun das sogenannte duale Vektorbündel konstruieren.
-Hierbei führen wir folgende Notation ein $E^* = \mathrm{Hom}(E, \R)$.
-Hierbei ist $\R$ das triviale Vektorbündel vom Rang $1$.
+Wir führen hier die goldende Notation ein $E^* = \mathrm{Hom}(E, \R)$, wobei $\R$ das triviale Vektorbündel vom Rang $1$ ist.
 Ein wichtiges Beispiel ist hierbei das Kotangentialbündel $T^{*}\mfk = \mathrm{Hom}(T\mfk , \R)$.
 $T^{*}_{p}\mfk$ heißt der Kotangentialraum.\\
 Sei $f: \mfk \to \R$ eine glatte Abbildung.
@@ -89,7 +88,7 @@ Seien $(x, U)$ und $(y, U')$ zwei Karten um p.
 \subsection{Alternierendes Vektorbündel}
 Das Alternierende Vektorbündel
 \begin{align}
-\wedge^m(E', E'')_p &:= \wedge^m(E_{p}', E_{p}'')\\
+\wedge^m(E', E'')_p :&= \wedge^m(E_{p}', E_{p}'')\\
 &= \{ f: \underbrace{E_{p}' \times \dots \times E_{p}'}_{n-\mathrm{mal}} \to E_{p}'' \}
 \end{align}
 Wobei $f$ multilinear und alternierend ist. 
@@ -98,7 +97,7 @@ Wobei $f$ multilinear und alternierend ist.
 &f \mapsto ((v_1, \dots, v_n) \mapsto \phi_{\alpha p}''( f(\phi_{\alpha p})^{-1} (v_1), \dots f(\phi_{\alpha p})^{-1} (v_n)) )
 \end{align}
 Es bleibt zu zeigen, dass $g_{\alpha \beta}$ glatt ist.\\
-Es gilt 
+Es gilt: 
 \begin{align}
 \wedge^1 (E', E'') &= \mathrm{Hom}(E', E'')\\
 \wedge^1 (T\mfk, \R) &= T^{*}\mfk
@@ -124,17 +123,17 @@ Ein paar $(f, L)$ von glatten Abbildungen $f: \mfk \to \mfk'$ und $L: E \to E'$ 
 \end{defs}
 
 \begin{bsp}
-Seien $\mfk$,$\mfk'$ glatte Mannigfaltigkeiten und $f:\mfk \to \mfk'$ glatt.
+Seien $\mfk$, $\mfk'$ glatte Mannigfaltigkeiten und $f:\mfk \to \mfk'$ glatt.
 Dann ist $(f, \dd f)$ eine Bündel-Abbildung von $T\mfk$ nach $T\mfk'$.
 \end{bsp}
 
 \begin{defs}[Unterbündel]
-Sei $(\pi, E, \mfk)$ ein Vektorbündel mit Rang $k$.
+Sei $(E, \pi, \mfk)$ ein Vektorbündel mit Rang $k$.
 Eine Untermannigfaltigkeit $E' \subset E$ ist ein Unterbündel vom Rang $k'$ falls
 \begin{align}
 \pi \big\vert_{E'}: E' \to \mfk,
 \end{align}
-Ein Vektorbündel ist.
+ein Vektorbündel ist.
 \end{defs}
 
 \begin{bsp}[Unterbündel] \leavevmode
@@ -152,7 +151,7 @@ ist ein Unterbündel.
 \end{enumerate}
 \end{bsp}
 \begin{defs}[Schnitte von Vektorbündeln]
-Sei $(\pi, E, \mfk)$ ein Vektorbündel.
+Sei $(E, \pi, \mfk)$ ein Vektorbündel.
 Eine glatte Abbildung $s:\mfk \to E$ heißt Schnitt von $E$, falls $\pi \circ s = \id\big\vert_{\mfk}$.
 Wir bezeichnen die Schnitte von $E$ mit $\Gamma (E)$.
 Sei $U \subset \mfk$. 
@@ -172,23 +171,18 @@ Ein Schnitt von $E$ über $U$ ist eine Abbildung $s : U \to E$ mit $\pi \circ s 
 \end{align}
 \item Schnitte von $T\mfk$ heißen Vektorfelder.
 Wir bezeichnen die Vektorfelder $V: \mfk \to T\mfk$ mit $\mathfrak{X}(\mfk)$.
-
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.4\linewidth]{figures/tikz/vectorfield_on_manifold.pdf}
 \caption{Beispiel für ein Vektorfeld}
 \label{img:bspvektorfeld}
 \end{figure} 
-
 \end{itemize}
 \end{bsp}
-
-
 \begin{satz}
 \label{satz:SchnitteModul}
 Der Raum der Schnitte $\Gamma (E)$ ist ein Modul über $\mathcal{F}(\mfk)$.
 \end{satz}
-
 \begin{bew}[Satz \ref{satz:SchnitteModul}]
 Seien $s_1, s_2 \in \Gamma (E)$, so ist $s_1 + s_2 \in \Gamma (E)$
 \begin{align}
@@ -201,7 +195,7 @@ Sei $\phi \in \mathcal{F}(\mfk), s\in \Gamma(E)$, so ist $\phi \circ s \in \Gamm
 \end{bew}
 
 \begin{lem}
-Sei $(\pi, E, \mfk)$ ein Vektorbündel und $p \in \mfk$.
+Sei $(E, \pi, \mfk)$ ein Vektorbündel und $p \in \mfk$.
 Dann gilt für alle $x \in E_p$ existiert ein Schnitt $s \in \Gamma (E)$, so dass $s(p)=x$
 \end{lem}
 \begin{bew}
@@ -231,7 +225,7 @@ s(p) = ( \varphi(p), \varphi(p) \xi ) = \varphi (p \xi) = x
 \end{bew}
 
 \begin{defs}[Lokaler Rahmen]
-Sei $(\pi, E, \mfk)$ ein Vektorbündel vom Rang $k$ und $U \subset \mfk$.
+Sei $(E, \pi, \mfk)$ ein Vektorbündel vom Rang $k$ und $U \subset \mfk$.
 Ein Rahmen von $E$ über $U$ ist ein $k$-Tupel.
 $(s_1, \dots, s_k)$ von glatten Schnitten über $U$ (das heißt $s_i \in \Gamma_i (E)$), so dass für alle $p \in U$
 $s_1 (p), \dots, s_k (p)$ eine Basis von $E_p$ bilden.

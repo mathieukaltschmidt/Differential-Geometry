@@ -5,7 +5,7 @@ Wir wollen nun alle Tangentialräume einer Mannigfaltigkeit $\mfk$ gemeinsam bet
 \begin{align}
 T\mfk = \bigsqcup_{p\in \mfk} T_{p}\mfk = \{ (p, V) \vert p \in \mfk, v \in T_{p}\mfk \} 
 \end{align}
-Wir wollen nun die Struktur einer differenzierbaren Mannigfaltigkeit. 
+Dies soll nun die Struktur einer differenzierbaren Mannigfaltigkeit haben. 
 Das heißt wir müssen eine Topologie und eine $\cinf$-Struktur auf $T\mfk$ definieren.
 \begin{align}
 \pi: T\mfk &\to \mfk \\
@@ -22,9 +22,7 @@ Wobei $\xi = (\xi^1, \dots, \xi^m) \in \R^m$ gegeben ist durch:
 \begin{align}
 v = \sum_{i=1}^{m} \xi_i \pdv{x_i} \big\vert_p, \quad \forall p \in U.
 \end{align}
-Wir haben noch keine Topologie auf $T\mfk$ definiert, das heißt $\overline{x}$ ist nur eine bijektive Abbildung zwischen Mengen.
-Wir können allerdings nicht sagen ob es ein Homöomorphismus oder ein Diffeomorphismus ist.
-Allerdings können wir Kartenwechsel betrachten.\\
+Wir können aber Kartenwechsel betrachten.\\
 Seien $(\overline{x}, \overline{U})$ und $(\overline{y}, \overline{U}')$ zwei Karten. 
 Betrachte die Abbildungen:
 \begin{align}
@@ -38,19 +36,12 @@ Da $y\circ x^{-1}$ Diffeomorphismus ist, ist $\overline{y} \circ \overline{x}^{-
 Nun können wir die Topologie auf $T\mfk$ definieren.
 $O \subset T\mfk$ offen, falls $\overline{x}(O\cap \overline{U})$ offen in $V \times \R^m$ ist für alle Karten $(x, U) \in \atlas_\mfk$ (bzw $(\overline{x}, \overline{U}) \in \atlas_{T\mfk}$)
 
-\begin{figure}[H]
-\centering
-\includegraphics[scale=0.7]{figures/tikz/tangent_bundle.pdf}
-\caption{Darstellung des Tangentialbündel eines Kreises}
-\label{img:tangent_bundle}
-\end{figure}
-
 \begin{satz}
 $T\mfk$ mit dieser Topologie ist eine topologische Mannigfaltigkeit und $\atlas_{T\mfk}$ eine differenzierbare Struktur.
 \end{satz}
 \section{Vektorbündel}
 $T\mfk$ hat die Struktur einer glatten Mannigfaltigkeit.
-Allerdings hat es noch mehr, nämchlich die eines Vektorbündels, was wir nun definieren.
+Allerdings hat es noch mehr, nämlich die eines Vektorbündels, was wir nun definieren.
 \begin{defs}[Vektorbündel]
 Sei $\mfk$ eine differenzierbare Mannigfaltigkeit.
 Ein $\R$-Vektorbündel vom $\rang$ $k$ über $\mfk$ ist eine differenzierbare Mannigfaltigkeit mit einer glatten surjektiven Abbildung:
@@ -61,14 +52,13 @@ so dass:
 \begin{enumerate}
 \item $\forall p \in \mfk$ hat $E_p:= \pi^{-1}( \{ p \})$ die Struktur eines $\R$-Vektorraums der Dimension $k$.
 $E_p$ heißt Faser von $E$ über $p$.
-\item Für alle $p$ in $\mfk$ existiert eine Umgebung $U$ von $p$ in $\mfk$ und ein Diffeomorphismus.
-Für diesen gilt:
+\item Für alle $p$ in $\mfk$ existiert eine Umgebung $U$ von $p$ in $\mfk$ und ein Diffeomorphismus, für den gilt:
 \begin{itemize}
 \item $\pi \circ \phi = p r_1$
 \item Für alle $q \in U$ ist die Abbildung
 \begin{align}
-\phi\big\vert_q : \{ q \} \times \R^k &\to E_q\\
-\{ q, \xi \} &\mapsto \phi_q (\xi) := \phi(q, \xi)
+&\phi\big\vert_q : \{ q \} \times \R^k \to E_q\\
+&\{ q, \xi \} \mapsto \phi_q (\xi) := \phi(q, \xi)
 \end{align}
 $\phi$ heißt lokale Trivialisierung von $E$.
 \end{itemize}
@@ -82,7 +72,7 @@ $\phi$ heißt lokale Trivialisierung von $E$.
 \end{align}
 \end{defs}
 \begin{bem}
-Ein Vektorbündel ist ein Tripel $(\pi, E, \mfk)$ aber wir schreiben oft nur $E$. Hierbei wird $E$ Totalraum und $\mfk$ Basis genannt.
+Ein Vektorbündel ist ein Tripel $(E, \pi, \mfk)$ aber wir schreiben oft nur $E$. Hierbei wird $E$ Totalraum und $\mfk$ Basis genannt.
 \end{bem}
 \begin{figure}[H]
 \centering
@@ -102,6 +92,13 @@ Ein Vektorbündel ist ein Tripel $(\pi, E, \mfk)$ aber wir schreiben oft nur $E$
 &\pi: T\mfk \to \mfk\\
 &(p, V) \to V
 \end{align}
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.7]{figures/tikz/tangent_bundle.pdf}
+\caption{Darstellung des Tangentialbündels eines Kreises}
+\label{img:tangent_bundle}
+\end{figure}
+
 \item Tautologisches Bündel
 \begin{align}
 &\mfk = \R \mathbb{P}^n\\
@@ -135,7 +132,7 @@ Setze
 &\phi_\alpha: U_\alpha \times \R^k \to E \big\vert_{U_\alpha}\\
 &(p, \xi) \mapsto (p, \phi_{\alpha, p}(\xi)).
 \end{align}
-Nun stellt sich die Frage unter welchen Vorraussetzungen $(\pi, E, \mfk)$ ein Vektorbündel ist.
+Nun stellt sich die Frage unter welchen Vorraussetzungen $(E, \pi, \mfk)$ ein Vektorbündel ist.
 \begin{lem}
 \label{lem:vorraussetzungenvektorbündel}
 Sei $\mfk$ eine glatte Mannigfaltigkeit, $E$ eine Menge und die Abbildung $\pi: E\to\mfk$ surjektiv.
@@ -156,8 +153,7 @@ mit einer glatten Abbildung $\tau: U_\alpha \cap U_\beta \to \mathrm{GL}(k, \R)$
 Dann existiert eine eindeutige Struktur als glattes $k$-dim Vektorbündel über $\mfk$ für die $\varphi^{-1}_{\alpha}$ lokale Trivialisierungen sind.
 \end{lem}
 \begin{bew}[Lemma \ref{lem:vorraussetzungenvektorbündel}]
-Sei  $p\in\mfk$. 
-Setze $E_p := \pi^{-1}(\{ p \})$. 
+Sei  $p\in\mfk$ und setze $E_p := \pi^{-1}(\{ p \})$. 
 Falls $p\in U_\alpha$, dann ist 
 \begin{align}
 \varphi_\alpha \big\vert_p : E_p \to \{ p \} \times \R^k.
