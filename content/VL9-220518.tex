@@ -42,7 +42,7 @@ Dann ist:
 \begin{align}
 s = \sum^{k}_{i=1} \sigma_i (s_i \circ f)
 \end{align}
-Dann definieren wir die kovariante Ableitung längs $f$ wie folgt:
+Wir definieren die kovariante Ableitung längs $f$ als:
 \begin{align}
 \covd^{f}_x s &= \sum^k_{j=1} \left( x(\sigma_j) + \sum^k_{i=1} \omega_{ij}(f_\ast x)\sigma_i \right) s_j \circ f\\
 &= x(\sigma) + (f^\ast \omega)(x) \sigma
@@ -89,21 +89,15 @@ Dann ist $\covd_t s = \pdv{t} s $ Ableitung um $s(1)$ als Abbildung in $E_p \con
 Als nächstes wollen wir nun die kovariante Ableitung längs von Kurven verwenden, um die Parallelverschiebung zu definieren.
 \begin{defs}[Parallelität]
 Sei $c: I \to \mfk$ eine glatte Kurve und $(E, \pi, \mfk)$ ein Vektorbündel.
-Ein Schnitt $s^I \in \Gamma_c (E)$ heißt parallel längs $c$ falls 
+Ein Schnitt $s^I \in \Gamma_c (E)$ heißt parallel längs $c$, falls 
 \begin{align}
 \covd^c_t s = 0.
 \end{align}
 \end{defs}
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.7\linewidth]{figures/tikz/parallel_shift_dgl.pdf}
-\label{img:parallel_shift:dgl}
-\caption{Lösung für die Parallelität auf Vektorbündel}
-\end{figure} 
 \begin{bem}
-Wenn $s_1$ und $s_2$ parallel sind, so sind auch Linearkombinationen $\alpha s_1 + \beta s_1$ ($\forall \alpha, \beta \in \R$) parallel.
+Wenn $s_1$ und $s_2$ parallel sind, so ist auch $\alpha s_1 + \beta s_1$ ($\forall \alpha, \beta \in \R$) parallel.
 \end{bem}
-In einem lokalen Rahmen bedeutet $\covd^c_t s = 0$ folgendes:
+In einem lokalen Rahmen bedeutet $\covd^c_t s = 0$:
 \begin{align}
 \dot{\sigma} + \omega(\dot{c}) \sigma = 0.
 \end{align}
@@ -115,6 +109,12 @@ Sei $c$ eine glatte Kurve mit $c(t_0) = p$ und $c(t_1)=q$ ($t_0, t_1 \in I$).
 Setze $P_c(x) = s(t_1)$ wobei $s$ der eindeutig bestimmte parallele Schnitt längs $s(t_0) = x$ ist.
 \begin{defs}[Parallelverschiebung]
 $P_c : E_p \to E_q$ heißt Parallelverschiebung längs $c$.
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\linewidth]{figures/tikz/parallel_shift_dgl.pdf}
+\label{img:parallel_shift:dgl}
+\caption{Parallelverschiebung}
+\end{figure} 
 \end{defs}
 \begin{lem}
 \label{lem:BasisVB}
@@ -125,10 +125,10 @@ Falls $s^I_1 (t_0), \dots, s^I_k (t_0)$ eine Basis von $E_{c(t_0)}$ ist, so ist 
 \begin{align}
 s^I_i (t) = Ps^I_i (t_0)
 \end{align}
-Da $P$ invertierbar ist folgt, dass $s^I_1 (t), \dots, s^I_k (t)$
+Da $P$ invertierbar ist folgt die Aussage.% , dass $s(^I_1 (t), \dots, s^I_k (t))$
 \end{bew}
 \begin{defs}[Paralleler Rahmen]
-Ein $k$-Tupel von Schnitten $\phi = (s_1, \dots, s_k)$ längs $c$ heißt Rahmen von $E$ längs $c$, falls $s_1(t), \dots s_k(t)$ eine Basis von $E_{c(t)}$ für alle $t \in I$ ist.
+Ein $k$-Tupel von Schnitten $\phi = (s_1, \dots, s_k)$ längs $c$ heißt Rahmen von $E$ längs $c$, falls $(s_1(t), \dots s_k(t))$ eine Basis von $E_{c(t)}$ für alle $t \in I$ ist.
 $\phi = (s_1, \dots, s_k)$ heißt paralleler Rahmen, falls alle $s_i$ parallel sind.
 \end{defs}
 \textit{Warum sind parallele Rahmen für uns interessant?}\\
