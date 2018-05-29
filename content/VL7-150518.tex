@@ -108,9 +108,9 @@ Ein Schnitt von $E$ entlang von $f$ ist eine glatte Abbildung $\delta : \mfka \t
 \begin{defs}[Lie-Klammern]
 \begin{align}
 &\comm{\cdot}{\cdot} : \mathfrak{X}(\mfk) \times \mathfrak{X}(\mfk) \to \mathfrak{X}(\mfk)\\
-&\comm{x}{y} f := x(y(f)) - y(x(f))
+&\comm{X}{Y} f := X(Y(f)) - Y(X(f))
 \end{align}
-Hier bleibt als Übung zu zeigen, dass $\comm{x}{y}$ tatsächlich ein neues Vektorfeld ist.\\
+Hier bleibt als Übung zu zeigen, dass $\comm{X}{Y}$ tatsächlich ein neues Vektorfeld ist.\\
 Zusammen mit der Lie-Klammer ist $\mathfrak{X}(\mfk)$ eine Lie-Algebra.
 \end{defs}
 
@@ -119,25 +119,25 @@ Sei $(E, \pi, \mfk)$ ein Vektorbündel vom Rang $k$.
 Ein Zusammenhang auf $E$ ist eine Abbildung
 \begin{align}
 &\covd : \mathfrak{X}(\mfk) \times \Gamma(E) \to \Gamma (E) \\
-&(x, s) \mapsto \covd (x, s) = \covd_x s
+&(X, s) \mapsto \covd (X, s) = \covd_X s
 \end{align}
 Wobei folgende Eigenschaften erfüllt sind:
 \begin{enumerate}
-\item $\covd$ ist tensoriell in $x$: 
+\item $\covd$ ist tensoriell in $X$: 
 \begin{align}
-&\covd_{x_1 + x_2} s = \covd_{x_1} s + \covd_{x_2} s \\
-&\covd_{\phi x} s = \phi \ \covd_x s
+&\covd_{X_1 + X_2} s = \covd_{X_1} s + \covd_{X_2} s \\
+&\covd_{\phi X} s = \phi \ \covd_X s
 \end{align}
 \item $\covd$ ist eine Derivation in s:
 \begin{align}
-&\covd_x (s_1 + s_2) = \covd_x s_1 + \covd_x s_2\\
-&\covd_x (\phi s) = x(\phi) s + \phi \ \covd_x  s
+&\covd_X (s_1 + s_2) = \covd_X s_1 + \covd_X s_2\\
+&\covd_X (\phi s) = X (\phi) s + \phi \ \covd_X  s
 \end{align}
 \end{enumerate}
 \end{defs}
 
 Wir führen hier die folgende Notation ein:
-$\covd_x s$ heißt die kovariante Ableitung von $s$ in Richtung $x$.\\
+$\covd_X s$ heißt die kovariante Ableitung von $s$ in Richtung $X$.\\
 \textbf{Wichtiger Spezialfall}:
 \begin{align}
 &E = T\mfk\\
@@ -153,17 +153,17 @@ Sei $E = \mfk \times \R^k$ das triviale Bündel mit
 wobei $\sigma = (\sigma_1, \dots, \sigma_k)$, $\sigma_i \in \mathcal{F}(\mfk)$.
 Dann ist der kanonische Zusammenhang gegeben als:
 \begin{align}
-(\covd_x s)(p) = (p, x_p(\sigma_1), \dots, x_p(\sigma_k))
+(\covd_X s)(p) = (p, X_p(\sigma_1), \dots, X_p(\sigma_k))
 \end{align}
-Wir benutzen die folgende Notation: $\covd_x s = x(\sigma)$.
+Wir benutzen die folgende Notation: $\covd_X s = X(\sigma)$.
 \end{bsp}
 
 \begin{lem}
 \label{lem:lokalisierung1}
-$x_1, x_2 \in \mathfrak{X}(\mfk)$ und $x_1(p) = x_2(p)$,
+$X_1, X_2 \in \mathfrak{X}(\mfk)$ und $X_1(p) = X_2(p)$,
 dann folgt daraus, dass 
 \begin{align}
-(\covd_{x_1} s)(p) = (\covd_{x_2} s) (p).
+(\covd_{X_1} s)(p) = (\covd_{X_2} s) (p).
 \end{align}
 
 \end{lem}
@@ -173,7 +173,7 @@ dann folgt daraus, dass
 $s_1, s_2 \in \Gamma(\mfk)$ und $s_1 = s_2$ in einer Umgebung von $p$,
 daraus folgt, dass
 \begin{align}
-(\covd_{x} s_1)(p) = (\covd_{x} s_2) (p).
+(\covd_{X} s_1)(p) = (\covd_{X} s_2) (p).
 \end{align}
 \end{lem}
 
@@ -182,14 +182,14 @@ Wähle $\phi \in \mathcal{F}(\mfk)$ mit $\supp \phi \subseteq U$ und $\phi = 1$ 
 Dann gilt 
 \begin{align}
 &\phi s_1 = \phi s_2 \\
-&\covd_x(\phi s_1)(p) = \covd_x(\phi s_2)(p)
+&\covd_X(\phi s_1)(p) = \covd_X(\phi s_2)(p)
 \end{align}
 Für die linke Seite ist
 \begin{align}
-\covd_x(\phi s_1)(p) = \underbrace{x(p)}_{=0} s_1(p) + \underbrace{\phi(p)}_{=1} \covd_x s_1(p) = D_x s_1 (p).
+\covd_X(\phi s_1)(p) = \underbrace{X(p)}_{=0} s_1(p) + \underbrace{\phi(p)}_{=1} \covd_X s_1(p) = \covd_X s_1 (p).
 \end{align}
 Das gleiche gilt für die rechte Seite und somit folgt die Aussage:
 \begin{align}
-(\covd_{x} s_1)(p) = (\covd_{x} s_2) (p).
+(\covd_{X} s_1)(p) = (\covd_{X} s_2) (p).
 \end{align}
 \end{bew}

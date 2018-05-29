@@ -44,8 +44,8 @@ s = \sum^{k}_{i=1} \sigma_i (s_i \circ f)
 \end{align}
 Wir definieren die kovariante Ableitung längs $f$ als:
 \begin{align}
-\covd^{f}_x s &= \sum^k_{j=1} \left( x(\sigma_j) + \sum^k_{i=1} \omega_{ij}(f_\ast x)\sigma_i \right) s_j \circ f\\
-&= x(\sigma) + (f^\ast \omega)(x) \sigma
+\covd^{f}_X s &= \sum^k_{j=1} \left( X(\sigma_j) + \sum^k_{i=1} \omega_{ij}(f_\ast X)\sigma_i \right) s_j \circ f\\
+&= X(\sigma) + (f^\ast \omega)(X) \sigma
 \end{align}
 Die Wohldefinertheit soll als Übung gezeigt werden.
 \end{defs}
@@ -67,14 +67,6 @@ Dann gilt:
 \covd^f_v (s\circ f) = \covd_{f^\ast v} s
 \end{align}
 Die wichtigste Situation ist hierbei der Fall der Kurven also mit $\mfka = I$ und $E = T\mfk$.
-%\begin{align}
-%\begin{xy}
-%  \xymatrix@=0.2\linewidth{
-%          &   T\mfk \ar[d]_{\pi} \\
-%      c : I  \ar[r]_f  &   \mfk
-%  }
-%\end{xy}
-%\end{align}
 Hier gilt nämlich
 \begin{align}
 \covd_t s := \covd^c_{\pdv{t}} s.
@@ -103,7 +95,7 @@ In einem lokalen Rahmen bedeutet $\covd^c_t s = 0$:
 \end{align}
 Dies ist eine gewöhnliche Differentialgleichung erster Ordnung.
 \begin{lem}
-Sei $t_0 \in I$ und $x \in E_{c(t_0)}$ dann existiert genau ein paralleler Schnitt $s$ längs $c$ mit $s(t_0 = x)$.
+Sei $t_0 \in I$ und $X \in E_{c(t_0)}$ dann existiert genau ein paralleler Schnitt $s$ längs $c$ mit $s(t_0 = x)$.
 \end{lem}
 Sei $c$ eine glatte Kurve mit $c(t_0) = p$ und $c(t_1)=q$ ($t_0, t_1 \in I$).
 Setze $P_c(x) = s(t_1)$ wobei $s$ der eindeutig bestimmte parallele Schnitt längs $s(t_0) = x$ ist.

@@ -13,7 +13,7 @@
 \usepackage{xcolor}
 
 \begin{document}
-  \begin{tikzpicture}
+  \begin{tikzpicture}[scale=1]
 	% Mannigfaltigkeit  
     \node (p1) at (0, 0) {};
     \node (p2) at (2, 1.3) {};
@@ -22,9 +22,9 @@
 	\node at (0.16,1.3) {$\mathcal{M}$};
 	
 	% Kurve
-	\draw[-,color=myred] (0.9,0.3) [out=300, in=150] to  (2.8,0.7);
-	\filldraw (0.9,0.3) circle (1pt);
-	\filldraw (2.8,0.7) circle (1pt);
+	\draw[-, thick, color=myred] (0.9,0.3) [out=300, in=150] to  (2.8,0.7);
+	\filldraw (0.9,0.3) circle (1.3pt);
+	\filldraw (2.8,0.7) circle (1.3pt);
 		
 
 	% Arrow

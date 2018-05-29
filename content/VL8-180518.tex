@@ -19,7 +19,7 @@ Sei weiterhin $p\in \mfk$ und $s, \tilde{s} \in \Gamma(E)$ mit $s(p) = \tilde{s}
 Lemma \ref{lem:lokalisierung1} folgt sofort aus diesem Lemma, da die Abbildung
 \begin{align}
 &\covd_\cdot s : \mathfrak{X}(\mfk) \to \Gamma (E)\\
-& x \mapsto \covd_x s
+& X \mapsto \covd_X s
 \end{align}
 tensoriell ist.
 
@@ -52,7 +52,7 @@ Ein Tensorfeld vom Typ $(n, s)$ ist ein glatter Schnitt des Bündels
 \begin{align}
 T^{n}_{s} (\mfk) = \left( \bigotimes^n_{i=1} T \mfk \right) \otimes \left(\bigotimes^s_{i=1} T^{s*} \mfk\right).
 \end{align}
-In anderen Worten ist ein Tensorfeld vom Typ $(n,s)$ eine Abbildung
+In anderen Worten ist ein Tensorfeld vom Typ $(n, s)$ eine Abbildung
 \begin{align}
 B : \underbrace{\mathfrak{X}(\mfk) \times \cdots \times \mathfrak{X}(\mfk)}_{s \ \mathrm{mal}} \to \underbrace{\mathfrak{X}(\mfk) \times \cdots \times \mathfrak{X}(\mfk)}_{n \ \mathrm{mal}},
 \end{align}
@@ -75,7 +75,7 @@ s(p) = (p, \sigma(p)), \quad s \in \Gamma(\mfk \times \R^k),
 wobei $\sigma = (\sigma_1, \dots, \sigma_k)$ mit $\sigma_i \in \mathcal{F}(\mfk)$.
 Dann ist der kanonische Zusammenhang gegeben durch:
 \begin{align}
-\covd_x s = (x(\sigma_1), \dots, x(\sigma_k))
+\covd_X s = (X(\sigma_1), \dots, X(\sigma_k))
 \end{align}
 \end{bsp}
 
@@ -94,7 +94,7 @@ w^{ij}_p :T_p \mfk \to \R.
 \begin{defs}
 Mit einer $1$-Form kann folgender Zusammenhang definiert werden:
 \begin{align}
-(\covd^\omega_x s)(p) = (p, x_p(\sigma) + \omega_p(x_p) \sigma(p))
+(\covd^\omega_X s)(p) = (p, X_p(\sigma) + \omega_p(X_p) \sigma(p))
 \end{align}
 \end{defs}
 
@@ -104,7 +104,7 @@ Sei $(E, \pi, \mfk)$ ein Vektorbündel und $\covd$ ein Zusammenhang auf $E$.
 Weiterhin sei $\omega$ eine $1$-Form mit Werten in $\mathrm{Hom}(E, E)$.
 Dann ist 
 \begin{align}
-D^\omega_x s = \covd_x s + \omega(x) s,
+\covd^\omega_X s = \covd_X s + \omega(X) s,
 \end{align}
 ein Zusammenhang auf $E$
 \end{satz}
@@ -113,16 +113,16 @@ Umgehrt gilt ebenso der folgende Satz:
 Seien $\covd$ und $\covd'$ zwei Zusammenhänge auf $E$.
 Dann definiert 
 \begin{align}
-\omega(x) s = \covd'_x s - \covd_x s
+\omega(X) s = \covd'_X s - \covd_X s
 \end{align}
 eine $1$-Form mit Werten in $\mathrm{Hom}(E, E)$.
 \end{satz}
 \begin{bsp}
 Sei $E = \mfk \times \R^k$. 
 \begin{align}
-\covd^\omega_x s = (p, x(\sigma) + \omega_p (x_p)\sigma_p)
+\covd^\omega_X s = (p, X(\sigma) + \omega_p (X_p)\sigma_p)
 \end{align}
-Aus dem Satz von eben folgt, dass $\covd^\omega_x s$ alle Zusammenhänge auf $E$ sind.
+Aus dem Satz von eben folgt, dass $\covd^\omega_X s$ alle Zusammenhänge auf $E$ sind.
 Aus der Lokalisierung folgt
 \begin{align}
 \phi : U \times \R^k \to E\big\vert_U.
@@ -130,19 +130,19 @@ Aus der Lokalisierung folgt
 \end{bsp}
 Wir stellen uns die Frage wie wir Zusammenhänge mit einer $1$-Form finden können.
 Dies ist mithilfe von Zusammenhangsformen bezüglich eines lokalen Rahmens möglich.
-Sei $\phi = (s_1, \dots, s_k)$ ein lokaler Rahmen von $E$ über $U$ und sei $x \in \mathfrak{X}(\mfk)$.
-Zudem sind $\covd_x s_1, \dots, \covd_x s_k \in \Gamma(E)$.
+Sei $\phi = (s_1, \dots, s_k)$ ein lokaler Rahmen von $E$ über $U$ und sei $X \in \mathfrak{X}(\mfk)$.
+Zudem sind $\covd_X s_1, \dots, \covd_X s_k \in \Gamma(E)$.
 Diese lassen sich wie folgt darstellen:
 \begin{align}
-\covd_x s_i = \sum_{i=1}^k \omega_{ij}(x) s_j
+\covd_X s_i = \sum_{i=1}^k \omega_{ij}(x) s_j
 \end{align}
-Wobei die $1$-Form $\omega_{ij}(x): U \to \R$ glatt und tensoriell in $x$ ist.
+Wobei die $1$-Form $\omega_{ij}(x): U \to \R$ glatt und tensoriell in $X$ ist.
 Es ist $s = \sum_i \sigma_i s_i$. 
 Damit erhält man:
 \begin{align}
-\covd_x s &= \sum (x(\sigma_i)s_i + \sigma_i + \sigma_i \covd_x s_i)\\
-&= \sum_j x(\sigma_j)s_j + \sum_{j=1}^k \sum_{i=1}^k \sigma_i \omega_{ij} s_j\\
-&= \sum_j \left[ x(\sigma_j) + \sum:i \sigma_i \omega_{ij}(x) \right] s_j
+\covd_X s &= \sum (X(\sigma_i)s_i + \sigma_i + \sigma_i \covd_X s_i)\\
+&= \sum_j X(\sigma_j)s_j + \sum_{j=1}^k \sum_{i=1}^k \sigma_i \omega_{ij} s_j\\
+&= \sum_j \left[ X(\sigma_j) + \sum:i \sigma_i \omega_{ij}(X) \right] s_j
 \end{align}
 
 
