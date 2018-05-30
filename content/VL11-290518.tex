@@ -11,7 +11,7 @@ Dann gilt:
 \end{align}
 
 \begin{bew}[Beweis von Gleichung \ref{eq:parallelcovd}]
-Für $Y$ definiert in einer Umgebung von $P_y$ ist der Wert $(\nabla_X Y)(p)$ vollständig bestimmt durch Restriktion von $Y$ auf die Kurve $c$ mit $c'(0) = X_p$.
+Für $Y$, definiert in einer Umgebung von $p_y$, ist der Wert $(\nabla_X Y)(p)$ vollständig bestimmt durch Restriktion von $Y$ auf die Kurve $c$ mit $c'(0) = X_p$.
 Expandiere $Y$ als Linearkombination paralleler Vektorfelder längs $c$.
 
 Sei $\{ \hat{w}_1, \dots, \hat{w}_n \}$ eine Basis von $T_p \mfk$.
@@ -24,7 +24,7 @@ Mit Koeffizienten $a_i: (-\epsilon , \epsilon) \to \R$.\\
 Betrachte:
 \begin{align}
 \lim\limits_{t \rightarrow 0} \frac{1}{t} \left( P^{-1}_{c(t)} Y(t) - Y(0)\right) &=  \lim\limits_{t \rightarrow 0} \frac{1}{t} \left( \sum^m_{i=1} (a_i (t) - a_i (0)) \cdot w_i (0) \right)\\
-&= \sum^m_{i=1} (\dv{t} a_i (t)) \big\vert_{t=0} w_i (0)\\
+&= \sum^m_{i=1} \left( \dv{t} a_i (t) \right) \big\vert_{t=0} w_i (0)\\
 &= \covd_t \left( \sum^m_{i=1} a_i w_i \right) \big\vert_{t=0}\\
 &= \nabla_X Y
 \end{align}
@@ -68,21 +68,20 @@ Das bedeutet also falls $\nabla_{\pdv{t}}Z = 0$, dann gilt $R=0$.
 Mit anderen Worten $R=0$ ist eine notwendige Bedingung für die Parallelität.
 Man kann zeigen, dass $R \equiv 0$ auch hinreichend ist.\\
 
-Betrachte nun die folgende SItuation:
+Betrachte nun die folgende Situation:
 % Hier Grafik einfügen
 
-Sei $f$ glatt und $f(0)=p$. 
-Außerdem ist
+Sei $f$ glatt und $f(0)=p$ und sei außerdem
 \begin{align}
-& \dd f \big\vert_0 (\pdv{x}) = f_x (0) = u\\
-& \dd f (\pdv{y}) = f_y(0) = v.
+& \dd f \big\vert_0 \left( \pdv{x} \right) = f_x (0) = u\\
+& \dd f \left( \pdv{y}\right) = f_y(0) = v.
 \end{align}
 Es sei eine Familie von Kurven $c_s$ wobei $0 \leq s \leq 1$ und $c_s (0) = c_s(1) = 0$.
-$P_s$ sei die Parallelverschiebung längs $c_s$.
+$P_s$ ist die Parallelverschiebung längs $c_s$.
 Wir definieren
 \begin{align}
-c : I \times I &\to \mfk
-(s, t) &\mapsto c(s,t),
+&c : I \times I \to \mfk\\
+&(s, t) \mapsto c(s,t)
 \end{align}
 wie folgt:
 \begin{align}
@@ -95,7 +94,6 @@ f(0, 4s(1-t)) & \nicefrac{3}{4} \leq t \leq 1
 \end{array}
 \right. 
 \end{align}
-
 \begin{satz}
 Sei $p \in \mfk$, $u$, $v \in T_p \mfk$ und $f: U \to \mfk$ sei wie oben definiert.
 $P_s$ sei die Parallelverschiebung längs $c_s$ von $c_s(0) = p$ nach $c_s(1) = 0$.
@@ -105,7 +103,6 @@ Dann gilt:
 \end{align}
 \end{satz}
 
-
 \chapter{Riemannsche Mannigfaltigkeiten}
 
 \section{Wiederholung: Symmetrische Bilinearform}
@@ -113,8 +110,8 @@ Dann gilt:
 \begin{itemize}
 \item Eine symmetrische Bilinearform $B: V \times V \to \R$ ist nicht entartet, falls:
 \begin{align}
-B(v, w) = 0, \quad \forall w \in V\\
-\Rightarrow v = 0.
+&B(v, w) = 0, \quad \forall w \in V\\
+&\Rightarrow v = 0.
 \end{align}
 \item $\mathrm{Index}(B) = \max \{ \dim W \vert W \subset V $ ist UR mit $\dim n$ und $B\vert_{W \times W}$ ist negativ definit. $\}$
 \end{itemize}
@@ -123,21 +120,21 @@ Es existiert eine Basis ${b_1, \dots b_n}$ von $V_i$, so dass
 \begin{align}
 c(s, t) = \left\{
 \begin{array}{ll}
-0 & i \neq j \\
+\hphantom{-} 0 & i \neq j \\
 -1 & 1\leq i \leq \mathrm{Index}(B)\\
-1 & \mathrm{Index}(B) + 1 \leq i \leq n\\
+\hphantom{-} 1 & \mathrm{Index}(B) + 1 \leq i \leq n\\
 \end{array}
 \right. 
 \end{align}
 \begin{defs}[Bilinearform zurückholen]
 Seien $V$, $W$ $\R$- Vektorräume und $B_V : V \times V \to \R$ eine nicht-entartete symmetrische Bilinearform.
 sei außerdem $\phi : W \to V$ eine lineare Abbildung.
-Dann ist
+Dann ist die zurückgeholte Bilinearform:
 \begin{align}
 (\phi^\ast B_V) (w_1, w_2) := B(\phi(w_1), \phi(w_2))
 \end{align}
 \end{defs}
-\begin{bem}
+\begin{bem}\leavevmode
 \begin{itemize}
 \item $(\phi^\ast B_V)$ ist eine symmetrische Bilinearform, die entartet sein kann.
 \item Wenn $B_V$ positiv definit und $\phi$ injektiv ist, dann folgt daraus, dass $(\phi^\ast B_V)$ positiv definit ist.
@@ -145,8 +142,8 @@ Dann ist
 \end{bem}
 
 \begin{defs}[Isometrie]
-Seien $V$, $W$ $\R$- Vektorräume mit nicht-entarteten Bilinearformen $B_V$ und $B_W$.\\
-$\phi: W \to V$ heißt Isometrie, falls $(\phi^\ast B_V) = B_W$
+Seien $V$, $W$ $\R$- Vektorräume mit nicht-entarteten Bilinearformen $B_V$ und $B_W$.
+$\phi: W \to V$ heißt Isometrie, falls $(\phi^\ast B_V) = B_W$.
 \end{defs}
 
 \section{Riemannsche Metriken}
@@ -162,15 +159,15 @@ ist glatt in $p \in \mfk$.
 \end{defs}
 
 
-\begin{bem}
+\begin{bem}\leavevmode
 \begin{itemize}
-\item Eine solche Metrik heißt Riemannsch, wenn $g_p$ positiv definit für alle $p$ in $\mfk$ ist.
+\item Eine solche Metrik heißt Riemannsch, wenn $g_p$ positiv definit für alle $p$ in $\mfk$.
 \item Eine solche Metrik heißt Lorentz-Metrik, falls $\mathrm{Index} (g_p) = 1$ für alle $p$ in $\mfk$.
 \end{itemize}
 \end{bem}
 
 \textbf{Zu Semi-Riemannsch}:
-Index potentiall $\geq 1$, aber auch Riemannsche Metriken werden als Semi-Riemannsch bezeichnet.
+Index potentill $\geq 1$, aber auch Riemannsche Metriken werden als Semi-Riemannsch bezeichnet.
 
 
 
