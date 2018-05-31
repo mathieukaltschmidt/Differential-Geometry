@@ -67,22 +67,22 @@ Ein wichtiges Beispiel ist hierbei das Kotangentialbündel $T^{*}\mfk = \mathrm{
 $T^{*}_{p}\mfk$ heißt der Kotangentialraum.\\
 Sei $f: \mfk \to \R$ eine glatte Abbildung.
 \begin{align}
-\dd f \big\vert_p : T_p \mfk \to T_{f(p)}\R \cong \R
+\dd f \eval_p : T_p \mfk \to T_{f(p)}\R \cong \R
 \end{align}
-Es gilt $\dd f\big\vert_p \in T_p^* \mfk \subset T^* \mfk$.
+Es gilt $\dd f\eval_p \in T_p^* \mfk \subset T^* \mfk$.
 Sei $x: U \to x(U)$ eine Karte 
 \begin{align}
-\dd x \big\vert_p : T_p \mfk \to \rn
+\dd x \eval_p : T_p \mfk \to \rn
 \end{align}
-Die so definierten Differentiale $\{ \dd x^1 \big\vert_p, \dots , \dd x^n \big\vert_p \}$ bilden eine Basis für $T_p^* \mfk$.
+Die so definierten Differentiale $\{ \dd x^1 \eval_p, \dots , \dd x^n \eval_p \}$ bilden eine Basis für $T_p^* \mfk$.
 \begin{itemize}
-\item $\dd x^i \big\vert_p$ heißen Kotangentialvektoren
-\item $\pdv{x^i} \big\vert_p$ heißen Tangentialvektoren
+\item $\dd x^i \eval_p$ heißen Kotangentialvektoren
+\item $\pdv{x^i} \eval_p$ heißen Tangentialvektoren
 \end{itemize}
 Seien $(x, U)$ und $(y, U')$ zwei Karten um p.
 \begin{align}
-\pdv{x^i}\big\vert_p &= \sum_j a^j_i \pdv{y^j} \big\vert_p, \quad a^j_i = \pdv{y^j}{x^i} \\
-\dd x^k &= \sum b^k_l \dd y^l \big\vert_p = \sum \pdv{x^k}{y^l} \dd y^l \big\vert_p
+\pdv{x^i}\eval_p &= \sum_j a^j_i \pdv{y^j} \eval_p, \quad a^j_i = \pdv{y^j}{x^i} \\
+\dd x^k &= \sum b^k_l \dd y^l \eval_p = \sum \pdv{x^k}{y^l} \dd y^l \eval_p
 \end{align}
 
 \subsection{Alternierendes Vektorbündel}
@@ -108,7 +108,7 @@ Seien $(E, \pi, \mfk)$ und $(E', \pi, \mfk')$ Vektorbündel.
 Ein paar $(f, L)$ von glatten Abbildungen $f: \mfk \to \mfk'$ und $L: E \to E'$ heißt Bündelabbildung falls:
 \begin{itemize}
 \item $\pi' \circ L = f \circ \pi$
-\item $L\big\vert_{E_p}$ ist $\R$-linear
+\item $L\eval_{E_p}$ ist $\R$-linear
 \end{itemize}
 
 
@@ -131,7 +131,7 @@ Dann ist $(f, \dd f)$ eine Bündel-Abbildung von $T\mfk$ nach $T\mfk'$.
 Sei $(E, \pi, \mfk)$ ein Vektorbündel mit Rang $k$.
 Eine Untermannigfaltigkeit $E' \subset E$ ist ein Unterbündel vom Rang $k'$ falls
 \begin{align}
-\pi \big\vert_{E'}: E' \to \mfk,
+\pi \eval_{E'}: E' \to \mfk,
 \end{align}
 ein Vektorbündel ist.
 \end{defs}
@@ -152,7 +152,7 @@ ist ein Unterbündel.
 \end{bsp}
 \begin{defs}[Schnitte von Vektorbündeln]
 Sei $(E, \pi, \mfk)$ ein Vektorbündel.
-Eine glatte Abbildung $s:\mfk \to E$ heißt Schnitt von $E$, falls $\pi \circ s = \id\big\vert_{\mfk}$.
+Eine glatte Abbildung $s:\mfk \to E$ heißt Schnitt von $E$, falls $\pi \circ s = \id\eval_{\mfk}$.
 Wir bezeichnen die Schnitte von $E$ mit $\Gamma (E)$.
 Sei $U \subset \mfk$. 
 Ein Schnitt von $E$ über $U$ ist eine Abbildung $s : U \to E$ mit $\pi \circ s = \id_U$.
@@ -201,7 +201,7 @@ Dann gilt für alle $x \in E_p$ existiert ein Schnitt $s \in \Gamma (E)$, so das
 \begin{bew}
 Wähle eine lokale Trivialisierung von $E$ auf $W \ni p$
 \begin{align}
-\phi: W \times \R^k \to \pi^{-1}(W) = E\big\vert_W
+\phi: W \times \R^k \to \pi^{-1}(W) = E\eval_W
 \end{align}
 und eine glatte Funktion $\varphi \in \mathcal{F}(\mfk)$ mit $\varphi(p)=1$ und $\supp(\varphi) \subset W$.
 Sei $\xi \in \R^k$, so dass $\phi (p, \xi)=x$.

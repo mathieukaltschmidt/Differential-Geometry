@@ -1,0 +1,73 @@
+\documentclass{standalone}
+\usepackage{tikz} 
+\usetikzlibrary{shapes,patterns}
+
+\definecolor{myred}{RGB}{196,19,47} 
+\definecolor{myblue}{RGB}{0,139,139}
+
+\usepackage{pgfplots}
+\usepgfplotslibrary{fillbetween}
+\usepackage[active,tightpage]{preview}  %generates a tightly fitting border around the work
+\PreviewEnvironment{tikzpicture}
+\setlength\PreviewBorder{2mm}
+\usepackage{xcolor}
+
+\begin{document}
+  \begin{tikzpicture}
+  
+	% Mannigfaltigkeit  
+    \node (p1) at (0, 0) {};
+    \node (p2) at (2, 1.3) {};
+    \node (p3) at (4, 1) {};
+    \node (p3) at (4, 0) {};    
+    \node (p4) at (1.5, -1.5) {};
+    \node (p5) at (0.5, -1) {};
+    \node (p5) at (1, -0.6) {};
+    \path[draw] plot [smooth cycle,tension=1] coordinates {(p1) (p2) (p3) (p4) (p5)};
+
+	% Parallel Transport
+	\draw[dotted, -] (1.3,-0.7) to (1.3,0.8);
+	\draw[->] (1.3,-0.2) to (1.3,0.1);	
+	\draw[->] (1.3,0.2) to (1.3,0.5);	
+	\draw[->] (1.3,0.6) to (1.3,0.9);
+
+	\draw[dotted, -] (1.65,-0.7) to (1.65,0.8);
+	\draw[->] (1.65,-0.2) to (1.65,0.1);	
+	\draw[->] (1.65,0.2) to (1.65,0.5);	
+	\draw[->] (1.65,0.6) to (1.65,0.9);		
+		
+	\draw[dotted, -] (2,-0.7) to (2,0.8);
+	\draw[->] (2,-0.2) to (2,0.1);	
+	\draw[->] (2,0.2) to (2,0.5);	
+	\draw[->] (2,0.6) to (2,0.9);		
+
+
+	\draw[dotted,-] (2.35, -0.7) to (2.35, 0.8);
+	\draw[->] (2.35, -0.2) to (2.35, 0.1);	
+	\draw[->] (2.35, 0.2) to (2.35, 0.5);	
+	\draw[->] (2.35, 0.6) to (2.35, 0.9);
+	
+	\draw[dotted, -] (2.7, -0.7) to (2.7, 0.8);
+	\draw[->] (2.7, -0.2) to (2.7, 0.1);	
+	\draw[->] (2.7, 0.2) to (2.7, 0.5);	
+	\draw[->] (2.7, 0.6) to (2.7, 0.9);			
+	
+	% Kurve
+	\draw[-, thick, color=myred] (0.8,-0.2)to  (3.2,-0.2);
+	
+	% Beschriftung
+	% Punkt p
+	\filldraw (1.3,-0.2) circle (1pt);
+	\node at (0.1,-1.1) {$p$};
+	\draw[-] (0.3,-1.1) [out=10, in=-120] to  (1.3,-0.2);
+	% Kurve c
+	\node at (3.38,0.4) {$c$};
+	\draw[->] (3.3,0.25) to  (3.1,-0.18);
+	% Mannigfaltigkeit M
+	\node at (0.1,1.3) {$\mathcal{M}$};
+
+  \end{tikzpicture}
+\end{document}
+
+
+	
