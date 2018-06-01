@@ -20,7 +20,7 @@ v = \sum_{i=1}^{m} v(x_i) \pdv{x_i}\eval_{p} = \sum_{i=1}^{m} \xi \pdv{x_i}\eval
 \begin{bew}[Satz \ref{satz:BasisTPM} Teil 1]
 Es gilt die lineare Unabhängigkeit:
 \begin{align}
-\pdv{x_1}\eval_{p} (x^j) = \delta_{i j}
+\pdv{x_i}\eval_{p} (x^j) = \delta_{i j}
 \end{align}
 Jetzt muss noch gezeigt werden, dass $(\pdv{x_1}\eval_{p}, \dots, \pdv{x_m}\eval_{p})$ ein Erzeugendensystem für $\tspace{p}$ ist.
  Dafür benötigen wir allerdings zunächst ein Hilfslemma.
@@ -47,19 +47,19 @@ Wobei $f_i (p) = \pdv{x_i}\eval_{p} (f)$.
 
 Nach der Abbildung gilt:
 \begin{align}
-\psi(U) - \psi(U_0) = \int^1_0 \dv{t} \psi(t U + (1- t) U_0) \dd t
+\psi(u) - \psi(u_0) = \int^1_0 \dv{t} \psi(t u + (1- t) u_0) \dd t
 \end{align}
-Hierbei ist $U=x(q)$ mit $q \in \mfk$ und $U_0 = x(p)$.
+Hierbei ist $u=x(q)$ mit $q \in \mfk$ und $u_0 = x(p)$.
 \begin{align}
-\psi(U) - \psi(U_0) = \sum_i (U^i- U^i_0) \int^1_0 \underbrace{\dv{\psi}{U'} (t U + (1 - t) U_0) \dd t}_{:= \psi_i (U)}
+\psi(u) - \psi(u_0) = \sum_i (u^i- u^i_0) \int^1_0 \underbrace{\dv{\psi}{u'} (t u + (1 - t) u_0) \dd t}_{:= \psi_i (u)}
 \end{align}
 Setze $f_i = \psi_i \circ x : U \subset \mfk \to \R$.
 $f_i$ ist glatt und es gelten folgende Eigenschaften nach Definition:
 \begin{itemize}
-\item $\psi(U)- \psi(U_0) = \psi(x(q)) - \psi(x(p)) = f(q)- f(p)$
-\item $U^i = x^i (q)$
-\item $U_0^i = x^i(p)$
-\item $\psi_i (U) = \psi_i (x(1)) = f_i(q)$
+\item $\psi(u)- \psi(u_0) = \psi(x(q)) - \psi(x(p)) = f(q)- f(p)$
+\item $u^i = x^i (q)$
+\item $u_0^i = x^i(p)$
+\item $\psi_i (u) = \psi_i (x(1)) = f_i(q)$
 \end{itemize}
 Diese Eigenschaften können wir nun wie folgt verwenden:
 \begin{align}
@@ -71,11 +71,11 @@ f(q)- f(p) = \sum_{i=1}^n (x_i (q) - x_i (p)) f_i(q)
 &= \partial_i \psi \eval_{x(p)}\\
 &= \psi_i (x(p)) = f_i (p)
 \end{align}
-Da $\psi(U) = \psi(U_0) + \sum_i (U^i - U^i_0)\psi_i(U)$
+Da $\psi(u) = \psi(u_0) + \sum_i (u^i - u^i_0)\psi_i(u)$
 \begin{align}
-\Rightarrow \pdv{U_i} \psi \eval_{x(p)} = \psi_i(U) \eval_x(p) = \psi(x(p))
+\Rightarrow \pdv{u_i} \psi \eval_{x(p)} = \psi_i(u) \eval_x(p) = \psi(x(p))
 \end{align}
-Und somit gilt schließlich $f_i (p) = \pdv{U_i} \eval_p (f)$.
+Und somit gilt schließlich $f_i (p) = \pdv{u_i} \eval_p (f)$.
 \end{bew}
 
 Nun können wir unseren Beweis fortführen.
@@ -104,7 +104,7 @@ Dann gilt:
 \begin{align}
 \pdv{\tilde{x}_i} \eval_p  = \sum_j \underbrace{\pdv{\tilde{x}_i} \eval_p  (x_j)}_{\in \R} \pdv{x_j} \eval_p 
 \end{align}
-(In der lineare Algebra hatten Transformation die ähnliche Gestalt: $\tilde{v}_i = \sum_j a_{i j } v_j$)
+(In der linearen Algebra hatten Transformationen die ähnliche Gestalt: $\tilde{v}_i = \sum_j a_{i j } v_j$)
 \end{satz}
 \begin{defs}[Differential, Ableitung]
 Seien $\mfk$ und $\mfka$ differenzierbare Mannigfaltigkeiten und $f: \mfk \to \mfka$ glatt.
@@ -115,7 +115,7 @@ v &\mapsto \dd f \eval_p (v),
 \end{align}
 welche definiert ist durch:
 \begin{align}
-\underbrace{\dd f \eval_p (v)}_{T_{f(p)}\mfka} \underbrace{(\phi)}_{\in \mathcal{F}(\mfk)} = \underbrace{v(\phi \circ f)}_{\in \mathcal{F}(\mfka)}, \quad \forall p \in \mathcal{F}(\mfka)
+\underbrace{\dd f \eval_p (v)}_{T_{f(p)}\mfka} \underbrace{(\phi)}_{\in \mathcal{F}(\mfka)} = \underbrace{v(\phi \circ f)}_{\in \mathcal{F}(\mfka)}, \quad \forall \phi \in \mathcal{F}(\mfka)
 \end{align}
 \end{defs}
 Fakt: $\dd f \eval_p$ ist linear.
@@ -135,9 +135,9 @@ Dann gilt:
 
 \begin{bew}[Satz \ref{satz:Kettenregel}] \leavevmode
 \begin{align}
-\dd (g \circ f) \eval_{p} (v (\phi)) &= v(\phi \circ g \circ f) \\
+\dd (g \circ f) \eval_{p} (v) (\phi) &= v(\phi \circ g \circ f) \\
 &= \dd f \eval_p (v)(\phi \circ g) \\
-&= \dd g \eval_{f(\phi)} \circ \dd f \eval_p (v) (\phi)
+&= \dd g \eval_{f(p)} \circ \dd f \eval_p (v) (\phi)
 \end{align}
 \end{bew}
 
@@ -155,7 +155,7 @@ Sei $f: \mfk \to \mfka$ glatt und es gelte $\dim\mfk=m$, $\dim{\mfka} = n$.
 \item $\rang f$ in $p$ ist $\rang \dd f \big \vert_p $.
 \item $p\in\mfk$ heißt regulärer Punkt ($\in\mfk$)  $\Leftrightarrow \rang\dd f \eval_p=\dim\mfka$.
 \item $q\in\mfka$ heißt reguläreer Wert ($\in\mfka$) $\Leftrightarrow \forall p \in f	^{-1}(q)$ sind reguläre Punkte.
-\item $f$ heißt Submersion $\Leftrightarrow$ $f$ surjektiv und alle $p\in\mfk$ reguläre Punkte sind.
+\item $f$ heißt Submersion $\Leftrightarrow$ $f$ surjektiv und alle $p\in\mfk$ sind reguläre Punkte.
 \item $f$ heißt Immersion $\Leftrightarrow$ $\dd f \eval_p$ injektiv für alle $p \in \mfk$
 \end{enumerate}
 \end{defs}
@@ -210,17 +210,17 @@ ein Diffeomorphismus.
 \end{satz}
 Sei $f: \mfk \to \mfka$ glatt und es gelte $\dim\mfk=m$, $\dim{\mfka} = n$.
 \begin{enumerate}
-\item Sei $\rang_p f = r$. 
+\item Sei $\rang_p f = r$ und $v \in V$ und $V \subseteq \R^m$. 
 Dann existiert zu jeder Karte  $(y, U')$ um $f(p)$ eine Karte $(x, U)$ um $p$, so dass
 \begin{align}
-y \circ f \circ x^{-1}(U_1, \dots, U_m) = (U_1, \dots, U_r, \phi_{r+1}(U), \dots, \phi_n(U)).
+y \circ f \circ x^{-1}(v_1, \dots, v_m) = (v_1, \dots, v_r, \phi_{r+1}(v), \dots, \phi_n(v)).
 \end{align}
 Falls $y(f(p))=0$, so kann man $x$ so wählen, dass $x(p)=0$ und $\phi_j (0) = 0$ ($\forall j > r$).
 
 \item Sei $\rang f = r$ auf einer Umgebung von $p$.
 Dann gibt es Karten $(x, U)$, $(y, U')$, so dass 
 \begin{align}
-y\circ f \circ x^{-1} (U_1, \dots, U_m).
+y\circ f \circ x^{-1} (v_1, \dots, v_m).
 \end{align}
 
 \end{enumerate}
@@ -232,7 +232,7 @@ Setze
 \begin{align}
 \hat{A} = (\hat{A})_{i j} = (\partial_i \hat{\phi}_j),
 \end{align}
-mit $\phi \circ y \circ f \circ x^{-1}$.
+mit $\phi = y \circ f \circ x^{-1}$.
 Da $\rang_p f = r$, können wir ohne Beschränkung der Allgemeinheit annehmen, dass
 \begin{align}
 \det \tilde{A} \neq 0.
@@ -260,20 +260,20 @@ Mit Hilfe des Umkehrsatzes folgt, dass $x$ ein lokaler Diffeomorphismus ist
 und eine Umgebung $U$ um den Punkt $p$ existiert und eine Umbegungen $V$ von $0$ in $\rn$, 
 sodass $x: \mfk \to V$ eine Karte ist und
 \begin{align}
-\phi (U_1, \dots, U_m) &= y \circ f \circ x^{-1}(U_1, \dots, U_m) \\
-&= (U_1, \dots, U_r, \phi_{r+1}(U), \dots, \phi_m (U)).
+\phi (v_1, \dots, v_m) &= y \circ f \circ x^{-1}(v_1, \dots, v_m) \\
+&= (v_1, \dots, v_r, \phi_{r+1}(v), \dots, \phi_m (v)).
 \end{align}
-Wobei $\phi_k$ glatt auf $U'$ sint mit $\phi_i(0)=0$. 
+Wobei $\phi_k$ glatt auf $U'$ sind mit $\phi_i(0)=0$. 
 Betrachte die Jacobi-Matrix:
 \begin{align}
 A_{i j} = (\partial _i \phi_j )_{i j} = \begin{pmatrix}
 \mathds{1} & 0 \\ 
-\star & \partial_i \phi_i
+\star & \partial_i \phi_j
 \end{pmatrix} 
 \end{align}
 Da $\rang \phi = r$ in einer Umgebung von $U=0$ hat folgt:
 \begin{align}
-\partial_i \phi_j \quad \forall i, j > r.
+\partial_i \phi_j = 0 \quad \forall i, j > r.
 \end{align}
 \end{bew}
 

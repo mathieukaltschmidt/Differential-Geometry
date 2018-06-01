@@ -3,20 +3,20 @@
 \section{Tangentialbündel}
 Wir wollen nun alle Tangentialräume einer Mannigfaltigkeit $\mfk$ gemeinsam betrachten.
 \begin{align}
-T\mfk = \bigsqcup_{p\in \mfk} T_{p}\mfk = \{ (p, V) \vert p \in \mfk, v \in T_{p}\mfk \} 
+T\mfk = \bigsqcup_{p\in \mfk} T_{p}\mfk = \{ (p, v) \vert p \in \mfk, v \in T_{p}\mfk \} 
 \end{align}
 Dies soll nun die Struktur einer differenzierbaren Mannigfaltigkeit haben. 
 Das heißt wir müssen eine Topologie und eine $\cinf$-Struktur auf $T\mfk$ definieren.
 \begin{align}
 \pi: T\mfk &\to \mfk \\
-(p,V) &\mapsto p
+(p,v) &\mapsto p
 \end{align}
 Sei $(x, U)$ eine Karte von $\mfk^m$. 
 Dann definieren wir eine Karte $(\overline{x}, \overline{U})$ von $T\mfk$ wie folgt:
 \begin{align}
-&\overline{U} = \pi^{-1}(U) = \bigsqcup_{p\in\mfk} T_{p}\mfk \\
+&\overline{U} = \pi^{-1}(U) = \bigsqcup_{p\in U} T_{p}\mfk \\
 &\overline{x}: \overline{U} \to x(U) \times \R^m \subset \R^{2m} \\
-&(p, V) \mapsto (x(p), \xi)
+&(p, v) \mapsto (x(p), \xi)
 \end{align}
 Wobei $\xi = (\xi^1, \dots, \xi^m) \in \R^m$ gegeben ist durch:
 \begin{align}
@@ -26,10 +26,10 @@ Wir können aber Kartenwechsel betrachten.\\
 Seien $(\overline{x}, \overline{U})$ und $(\overline{y}, \overline{U}')$ zwei Karten. 
 Betrachte die Abbildungen:
 \begin{align}
-\overline{y} \circ \overline{x}^{-1} \circ \underbrace{x (\overline{U} \cap \overline{U}')}_{x(U \cap U') \times \R^m} \to \underbrace{\overline{y}(\overline{U} \cap \overline{U}')}_{y(U \cap U') \times \R^m}
+\overline{y} \circ \overline{x}^{-1} : \underbrace{x (\overline{U} \cap \overline{U}')}_{x(U \cap U') \times \R^m} \to \underbrace{\overline{y}(\overline{U} \cap \overline{U}')}_{y(U \cap U') \times \R^m}
 \end{align}
 \begin{align}
-(x,\xi) \mapsto (y\circ x^{-1}(U), \eta) 
+(v,\xi) \mapsto (y \circ \underbrace{x^{-1}(v)}_{v \in T \mfk\eval_{\overline{U} \cup \overline{U}'}}, \eta) 
 \end{align}
 Wobei $\eta = \dd (y \circ x^{-1})\eval_U \xi$.\\
 Da $y\circ x^{-1}$ Diffeomorphismus ist, ist $\overline{y} \circ \overline{x}^{-1}$ ein Isomorphimus.
@@ -60,6 +60,7 @@ $E_p$ heißt Faser von $E$ über $p$.
 &\phi\eval_q : \{ q \} \times \R^k \to E_q\\
 &\{ q, \xi \} \mapsto \phi_q (\xi) := \phi(q, \xi)
 \end{align}
+ein Isomorphismus.
 $\phi$ heißt lokale Trivialisierung von $E$.
 \end{itemize}
 \end{enumerate}
@@ -84,13 +85,13 @@ Ein Vektorbündel ist ein Tripel $(E, \pi, \mfk)$ aber wir schreiben oft nur $E$
 \begin{enumerate}
 \item Triviales Bündel:
 \begin{align}
-&E = \mfka \times \R^k \to \mfk\\
+&\pi : E = \mfk \times \R^k \to \mfk\\
 &(p, \xi) \mapsto p
 \end{align}
 \item Tangentialbündel 
 \begin{align}
 &\pi: T\mfk \to \mfk\\
-&(p, V) \to V
+&(p, v) \to p
 \end{align}
 \begin{figure}[H]
 \centering
@@ -121,14 +122,14 @@ Angenommen uns wäre das folgende gegeben:
 \item $(U_\alpha)_{\alpha \in A}$ eine offene Überdeckung von $\mfk$
 \item $\forall \alpha \in A$, $p\in U_\alpha$ gibt es den folgenden Isomorphismus:
 \begin{align}
-\phi_{\alpha, p}: \R^\alpha \to E_p
+\phi_{\alpha, p}: \R^k \to E_p
 \end{align}
 \end{enumerate}
 Setze 
 \begin{align}
 &E = \bigcup_{p \in \mfk} E_p\\
 &\pi : E \to \mfk\\
-&(p, V) \mapsto p\\
+&(p, v) \mapsto p\\
 &\phi_\alpha: U_\alpha \times \R^k \to E \eval_{U_\alpha}\\
 &(p, \xi) \mapsto (p, \phi_{\alpha, p}(\xi)).
 \end{align}
@@ -138,11 +139,11 @@ Nun stellt sich die Frage unter welchen Vorraussetzungen $(E, \pi, \mfk)$ ein Ve
 Sei $\mfk$ eine glatte Mannigfaltigkeit, $E$ eine Menge und die Abbildung $\pi: E\to\mfk$ surjektiv.
 Sei $\{ U_\alpha \}$ eine offene Überdeckung von $\mfk$ zusammen mit bijektiven Abbildungen
 \begin{align}
-\phi^{-1}_{\alpha} = \varphi: \pi^{-1}(U_\alpha) \to U_\alpha \times \R^\alpha,
+\phi^{-1}_{\alpha} = \varphi: \pi^{-1}(U_\alpha) \to U_\alpha \times \R^k,
 \end{align}
 die $pr_1 \circ \varphi_\alpha = \pi$ erfüllen, so dass wann immer $U_\alpha \cap U_\beta \neq \emptyset$, dann ist 
 \begin{align}
-\varphi_\alpha \circ \varphi_{\beta}^{-1} \to (U_\alpha \cap U_\beta) \times \R^k,
+\varphi_\alpha \circ \varphi_{\beta}^{-1} : (U_\alpha \cup U_\beta) \times \R^k \to (U_\alpha \cap U_\beta) \times \R^k,
 \end{align}
 von der Form:
 \begin{align}
@@ -159,7 +160,7 @@ Falls $p\in U_\alpha$, dann ist
 \varphi_\alpha \eval_p : E_p \to \{ p \} \times \R^k.
 \end{align}
 Definiere eine Vektorraumstruktur auf $E_p$ durch die Forderung, dass die Abbildung $\varphi_\alpha \eval_p$ ein Isomorphismus ist.
-Durch verkleinern von $U_\alpha$ und hinzunahme von weiteren offenen Mengen kann man annehmen, dass jedes $U_\alpha$ diffeomorph zu $\overline{U}_\alpha \subseteq \R^m$ ist.
+Durch Verkleinern von $U_\alpha$ und Hinzunahme von weiteren offenen Mengen kann man annehmen, dass jedes $U_\alpha$ diffeomorph zu $\overline{U}_\alpha \subseteq \R^m$ ist.
 Verknüpfung von $\varphi_\alpha$ mit einem solchen Diffeomorphismus liefert eine Bijektion:
 \begin{align}
 \pi^{-1} (U_\alpha) \to \overline{U}_\alpha \times \R^k .
@@ -174,16 +175,16 @@ v = \sum_{i=1}^{m} \xi_i \pdv{x_i}\eval_p
 Definiere:
 \begin{align}
 \varphi: \pi^{-1} (U) &\to U \times \R^m\\
-v &\mapsto (p, V)
+v &\mapsto (p, v)
 \end{align}
 Dort wo $(x)$ und $(\overline{x})$ überlappen.
 \begin{align}
 \pdv{x_i} \eval_p &= (\pdv{\overline{x}_j}{x_i})\pdv{\overline{x}_j} \eval\\
-v &= \sum_{j=1}^{m} \xi_j \pdv{\overline{x}_j}  \eval_p = \sum_{ji1}^{m} \xi_i \pdv{\overline{x}_i}  \eval_p \\
+v &= \sum_{j=1}^{m} \xi_j \pdv{\overline{x}_j}  \eval_p = \sum_{ji1}^{m} \xi_i \pdv{x_i}  \eval_p \\
 &= \sum_{i, j}^{m} \xi_i \pdv{\overline{x}_j}{x_i}  \pdv{\overline{x}_j}\eval_p\\
-&\Rightarrow \overline{\xi}_j = \sum_i v_i \pdv{\overline{x}_j}{x_i}
+&\Rightarrow \overline{\xi}_j = \sum_i v_i \left( \pdv{\overline{x}_j}{x_i} \right)
 \end{align}
 \begin{align}
-\varphi \circ \varphi^{-1}(x, v) = (x, \overline{v}) = (x, \tau(x) v)
+\overline{\varphi} \circ \varphi^{-1}(x, v) = (x, \overline{v}) = (x, \tau(x) v)
 \end{align}
 Wobei nun $\tau(x)$ gegeben ist durch $\pdv{\overline{x}_j}{x_i}$.\\

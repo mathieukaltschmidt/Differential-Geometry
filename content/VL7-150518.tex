@@ -8,7 +8,7 @@ Sei $(s_1, \dots, s_k)$ ein lokaler Rahmen über $U\subset\mfk$.
 Dann ist 
 \begin{align}
 \phi : U \times \R^k \to E \eval_U\\
-(p, \xi) \to \sum^k_{i=1} \xi_i s_i (p),
+(p, \xi) \mapsto \sum^k_{i=1} \xi_i s_i (p),
 \end{align}
 eine lokale Trivialisierung
 \item  Aus einer lokalen Trivialisierung folgt ein lokaler Rahmen.
@@ -74,7 +74,7 @@ wobei $g^j_i : U \cap V \to \R$.
 Setze $g(p) = (g^j_i (p))^k_{i,j =1}$
 \begin{align}
 &g(p)(t_1(p), \dots , t_k(p)) = (s_1(p), \dots, s_k(p))\\
-&g: U \cap V \ni p \to g(p) \in \mathrm{GL}(E\eval_p)
+&g: U \cap V \ni p \mapsto g(p) \in \mathrm{GL}(E\eval_p)
 \end{align}
 sei $s \in \Gamma_{U \cap V} (E)$ und Hauptteile $\sigma_\phi$, $\sigma_\psi$, dann ist
 \begin{align}
@@ -100,10 +100,22 @@ Der Pullback von $E$ über $f$ ist das Vektorbündel $f^* E$ welches definiert i
 
 
 \begin{defs}
-Ein Schnitt von $E$ entlang von $f$ ist eine glatte Abbildung $\delta : \mfka \to E$, so dass $\pi \circ s = f$. 
+Ein Schnitt von $E$ entlang von $f$ ist eine glatte Abbildung $s : \mfka \to E$, so dass $\pi \circ s = f$. 
 \end{defs}
 
 \section{Zusammenhang und kovariante Ableitung}
+
+\begin{defs}
+\begin{align}
+&\mathfrak{X}(\mfk) \times \mathcal{F}(\mfk) \to \mathcal{F}(\mfk)\\
+&X, \phi \mapsto X(\phi)
+\end{align}
+Wobei
+\begin{align}
+X(\phi)(p):= X_p (\phi)
+\end{align}
+\end{defs}
+
 
 \begin{defs}[Lie-Klammern]
 \begin{align}

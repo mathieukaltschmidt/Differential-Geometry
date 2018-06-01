@@ -14,8 +14,8 @@ Dann existiert $(U_\alpha)_{\alpha \in A}$ eine offene Überdeckung, sodass für
 \end{align}  
 Wir definieren:
 \begin{align}
-&\mathcal{E}_p := E_p \oplus E_{p}\\
-&\mathcal{E} = \bigcup_{p \in \mfk} \mathcal{E}_p
+&\mathcal{E}_p := E_p \oplus E_{p}'\\
+&\mathcal{E} = \bigsqcup_{p \in \mfk} \mathcal{E}_p
 \end{align}
 \begin{align}
 &\Phi_{\alpha, p}: \R^k \oplus \R^{k'} \to E_P \oplus E_{p}'\\
@@ -37,13 +37,13 @@ Wir nennen $\mathcal{E}$ die Whitney-Summe von $E$ und $E'$ und schreiben:
 \subsection{Tensorbündel}
 Es seien $E'$ und $E''$ Vektorbündel über $\mfk$ und $(U_\alpha)$ sei wie oben definiert.
 \begin{align}
-(E' \oplus E'')_p &:= E_{p}'\oplus E_{p}''\\
-\phi_{\alpha \ p} : \R^{k'} \times \R^{k''} &\to E_{p}' \oplus E_{p}''\\
-(v, w) &\mapsto \phi_{\alpha \ p}'(v) \oplus \phi_{\alpha \ p}'' (w)
+(E' \otimes E'')_p &:= E_{p}'\otimes E_{p}''\\
+\phi_{\alpha \ p} : \R^{k'} \times \R^{k''} &\to E_{p}' \otimes E_{p}''\\
+(v, w) &\mapsto \phi_{\alpha \ p}'(v) \otimes \phi_{\alpha \ p}'' (w)
 \end{align}
 Wir erhalten zusammen die Folgende Übergangsmatrix:
 \begin{align}
-g_{\alpha \beta} = g_{\alpha \beta}'(p) \oplus g_{\alpha \beta}''(p)
+g_{\alpha \beta} = g_{\alpha \beta}'(p) \otimes g_{\alpha \beta}''(p)
 \end{align}
 Diese Abbildung ist glatt und somit ergibt sich ein neues Vektorbündel.
 
@@ -51,12 +51,12 @@ Diese Abbildung ist glatt und somit ergibt sich ein neues Vektorbündel.
 Es seien die Daten wie eben schon gegeben.
 Das Homomorphismenbündel
 \begin{align}
-\mathrm{Hom}_p := \mathrm{Hom}(E_{p}', E_{p}''),
+\mathrm{Hom}_p (E', E'') := \mathrm{Hom}(E_{p}', E_{p}''),
 \end{align}
 ist wie folgt gegeben:
 \begin{align}
 &\phi_{\alpha \ p} : \mathrm{Hom}(\R^{k'}, \R^{k''}) \to \mathrm{Hom}(E_{p}', E_{p}'')\\
-&f \mapsto \phi_{\alpha \ p} \circ f \circ (\phi_{\alpha \ p}')^{-1}
+&f \mapsto \phi_{\alpha \ p}'' \circ f \circ (\phi_{\alpha \ p}')^{-1}
 \end{align}
 
 \subsection{Duales Bündel}
@@ -88,13 +88,13 @@ Seien $(x, U)$ und $(y, U')$ zwei Karten um p.
 \subsection{Alternierendes Vektorbündel}
 Das Alternierende Vektorbündel
 \begin{align}
-\wedge^m(E', E'')_p :&= \wedge^m(E_{p}', E_{p}'')\\
-&= \{ f: \underbrace{E_{p}' \times \dots \times E_{p}'}_{n-\mathrm{mal}} \to E_{p}'' \}
+\wedge^m (E', E'')_p :&= \wedge^m (E_{p}', E_{p}'')\\
+&= \{ f: \underbrace{E_{p}' \times \dots \times E_{p}'}_{m-\mathrm{mal}} \to E_{p}'' \}
 \end{align}
 Wobei $f$ multilinear und alternierend ist. 
 \begin{align}
-&\phi_{\alpha \ p}: \wedge^n (\R^{k'}, \R^{k''}) \to \wedge^n (E_{p}', E_{p}'')\\
-&f \mapsto ((v_1, \dots, v_n) \mapsto \phi_{\alpha p}''( f(\phi_{\alpha p})^{-1} (v_1), \dots f(\phi_{\alpha p})^{-1} (v_n)) )
+&\phi_{\alpha \ p}: \wedge^m (\R^{k'}, \R^{k''}) \to \wedge^m (E_{p}', E_{p} '') \\
+&f \mapsto ((v_1, \dots, v_m) \mapsto \phi_{\alpha \ p} '' (f^{-1}(\phi_{\alpha \ p}) ' (v_1), \dots f^{-1}(\phi_{\alpha \ p}') (v_m)))
 \end{align}
 Es bleibt zu zeigen, dass $g_{\alpha \beta}$ glatt ist.\\
 Es gilt: 
@@ -140,7 +140,7 @@ ein Vektorbündel ist.
 \begin{enumerate}
 \item $S^n \subset \R^{n+1}$
 \begin{align}
-TS^m \cong \{ (p,x)\in S^n \times \R^{n+1} \vert x \perp p \} \subset \underbrace{S^n \times \R^{n+1}}_{\mathrm{triviales} \ \mathrm{Bündel}}
+TS^n \cong \{ (p,x)\in S^n \times \R^{n+1} \vert x \perp p \} \subset \underbrace{S^n \times \R^{n+1}}_{\mathrm{triviales} \ \mathrm{Bündel}}
 \end{align}
 ist ein Unterbündel
 \item $\R \mathbb{P}^n$ mit dem tautologischen Bündel 
@@ -170,7 +170,7 @@ Ein Schnitt von $E$ über $U$ ist eine Abbildung $s : U \to E$ mit $\pi \circ s 
 &p \mapsto 0 \in E_p
 \end{align}
 \item Schnitte von $T\mfk$ heißen Vektorfelder.
-Wir bezeichnen die Vektorfelder $V: \mfk \to T\mfk$ mit $\mathfrak{X}(\mfk)$.
+Wir bezeichnen die Menge der Vektorfelder $V: \mfk \to T\mfk$ mit $\mathfrak{X}(\mfk)$.
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.4\linewidth]{figures/tikz/vectorfield_on_manifold.pdf}
@@ -186,11 +186,11 @@ Der Raum der Schnitte $\Gamma (E)$ ist ein Modul über $\mathcal{F}(\mfk)$.
 \begin{bew}[Satz \ref{satz:SchnitteModul}]
 Seien $s_1, s_2 \in \Gamma (E)$, so ist $s_1 + s_2 \in \Gamma (E)$
 \begin{align}
-(s_1 + s_2)(p) := s_1 (p) p s_2 (p)
+(s_1 + s_2)(p) := s_1 (p) + s_2 (p)
 \end{align}
 Sei $\phi \in \mathcal{F}(\mfk), s\in \Gamma(E)$, so ist $\phi \circ s \in \Gamma (E)$
 \begin{align}
-(\phi \circ s) (p) := \phi (p) s(p).
+(\phi  s) (p) := \phi (p) s(p).
 \end{align}
 \end{bew}
 
@@ -220,7 +220,7 @@ $s$ ist glatt, da folgendes gilt:
 \item $s$ ist $0$ auf einer Umgebung von $\mfk \setminus W$
 \end{itemize}
 \begin{align}
-s(p) = ( \varphi(p), \varphi(p) \xi ) = \varphi (p \xi) = x
+s(p) = ( \phi(p), \phi(p) \xi ) = \phi (p , \xi) = x
 \end{align}
 \end{bew}
 

@@ -49,7 +49,7 @@ Ein topologischer Raum ist eine Menge $X$ zusammen mit einer Menge $\mathcal{O} 
 \end{defs}
 \begin{bsp}
 \begin{enumerate}
-	\item[a)] $( X, \mathcal{O} = \mathcal{P}(x) )$
+	\item[a)] $( X, \mathcal{O} = \mathcal{P}(X) )$
 	\item[b)] $N \subset X$ Teilmenge. Dann ist auch $(N,\mathcal{O}_1)$ ein topologischer Raum, wobei $\mathcal{O}_1$ wie folgt gegeben ist:\\
 	\center{$V \in \mathcal{O}_1 \Leftrightarrow \ \exists \ U \in \mathcal{O}$, sodass $V= N \cap U$}
 \end{enumerate}
@@ -64,7 +64,7 @@ Teilmengen topologischer Räume sind topologische Räume.
 \begin{defs}[Topologische Mannigfaltigkeiten]
 Eine topologische Mannigfaltigkeit ist ein topologischer Raum $\mathcal{M}$ der Dimension $n$ mit folgenden Eigenschaften:
 \begin{enumerate}
-	\item[i)] $\mathcal{M}$ ist hausdorffsch. Das heißt $\forall \ p, q \in \mathcal{M}$ mit $p \neq q \  \exists$ \ zwei disjunkte, offene Umgebungen $U \in p$ und $V \in q$ wobei $U, V \in \mathcal{O}$
+	\item[i)] $\mathcal{M}$ ist hausdorffsch. Das heißt $\forall \ p, q \in \mathcal{M}$ mit $p \neq q \  \exists$ \ zwei disjunkte, offene Umgebungen $U \ni p$ und $V \ni q$ wobei $U, V \in \mathcal{O}$
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.4\linewidth]{figures/tikz/hausdorff.pdf}
@@ -72,7 +72,9 @@ Eine topologische Mannigfaltigkeit ist ein topologischer Raum $\mathcal{M}$ der 
 \label{img:hausdorff}
 \end{figure} 	
 	\item[ii)] \textbf{2. Abzählbarkeitsaxiom}  \\
-	$\mathcal{M}$ hat eine abzählbare Basis der Topologie, das heißt es existieren abzählbar viele Mengen $\{U_1, \dots, U_k, \dots\}$ offener Teilmengen mit $U_i \in \mathcal{O}$, sodass $\forall p \in \mathcal{M}$ und alle Umgebungen $U$ von $p$ gibt es ein $K$ sodass $p \in U_k \subseteq U$.
+	$\mathcal{M}$ hat eine abzählbare Basis der Topologie, das heißt es existiert eine abzählbare Menge $\{U_1, \dots, U_k, \dots\}$ 
+	offener Teilmengen oder abzählbar viele offene Mengen $U_1, \dots, U_k, \dots$ mit $U_i \in \mathcal{O}$, 
+	sodass $\forall p \in \mathcal{M}$ und alle Umgebungen $U$ von $p$ gibt es ein $K$ sodass $p \in U_k \subseteq U$.
 	\item [iii)] $\mathcal{M}$ ist homöomorph zu $\mathbb{R}^n$, das heißt $\forall p \in \mathcal{M}$ existiert eine Umgebung $U$ von $p$ und ein \bfseries Homöomorphismus \normalfont $X: U \rightarrow V \subseteq \mathbb{R}^n$ (offen).
 \end{enumerate} 
 \end{defs}
@@ -81,7 +83,7 @@ Eine topologische Mannigfaltigkeit ist ein topologischer Raum $\mathcal{M}$ der 
 	Das Paar $(X, U)$ heißt \textbf{Karte} von $\mathcal{M}$ um $p$. \\
 	Eine Menge $\mathcal{A} = \{(x_{\alpha},U_{\alpha})_{\alpha \in \mathcal{A}}\}$ von Karten heißt \textbf{Atlas} von $\mathcal{M}$, falls \\
 	\begin{align}
-	\bigcup\limits_{\alpha \in \mathcal{A}} = \mathcal{M}
+	\bigcup\limits_{\alpha \in \mathcal{A}} U_\alpha = \mathcal{M}
 	\end{align}
 \end{defs}
 \end{minipage}
@@ -110,13 +112,12 @@ Dies ist ein Homöomorphismus.
 
 \end{defs}
 Nun wollen wir, dass $x_{\alpha}\circ x_{\beta}^{-1}$ Diffeomorphismen sind.
-
 \begin{defs}
 Sei $ \mathcal{M}$ eine topologische Mannigfaltigkeit.
 \begin{enumerate}
 	\item[a)] Ein Atlas $\mathcal{A} = \{(x_{\alpha},U_{\alpha})\}$ auf $\mathcal{M}$ heißt $C^{\infty}$-Atlas, falls alle Kartenwechsel $x_{\alpha}\circ x_{\beta}^{-1}$ mit $\alpha, \beta \in A \ C^{\infty}$-Diffeomorphismen sind.
 	\item[b)] Sei $\mathcal{A}$ ein $C^{\infty}$-Atlas von $\mathcal{M}$. \\
-	Eine Karte $(x,U)$ ist verträglich mit $\mathcal{A}$, falls $x \circ x^{-1}$ ein $C^{\infty}$-Diffeomorphismus ist.
+	Eine Karte $(x,U)$ ist verträglich mit $\mathcal{A}$, falls $x \circ x_\alpha^{-1}$ ein $C^{\infty}$-Diffeomorphismus ist.
 \end{enumerate}
 \end{defs}
 Gegeben ein $C^{\infty}$-Atlas, so kann man diesen zu einem \textit{maximalen} $C^{\infty}$-Atlas vervollständigen. Maximal bedeutet hierbei, dass der Atlas nicht strikt in einem anderen enthalten ist.
