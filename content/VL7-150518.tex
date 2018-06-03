@@ -7,12 +7,12 @@ Sei $(E, \pi, \mfk)$ ein Vektorbündel vom Rang $k$.
 Sei $(s_1, \dots, s_k)$ ein lokaler Rahmen über $U\subset\mfk$.
 Dann ist 
 \begin{align}
-\phi : U \times \R^k \to E \big\vert_U\\
-(p, \xi) \to \sum^k_{i=1} \xi_i s_i (p),
+\phi : U \times \R^k \to E \eval_U\\
+(p, \xi) \mapsto \sum^k_{i=1} \xi_i s_i (p),
 \end{align}
 eine lokale Trivialisierung
 \item  Aus einer lokalen Trivialisierung folgt ein lokaler Rahmen.
-Sei $\phi: U \times \R^k \to E \big\vert_U$ eine lokale Trivialisierung.
+Sei $\phi: U \times \R^k \to E \eval_U$ eine lokale Trivialisierung.
 Dann ist $(s_1, \dots, s_k)$ ein lokaler Rahmen mit 
 \begin{align}
 s_i(p) = \phi (p, e_i),
@@ -23,17 +23,17 @@ wobei $\{ e_i \}$ die Standardbasis von $\R^k$ ist.
 \begin{bew}[Teil 1 Satz \ref{satz:lokalrahmentrivialisierung}]
 Es gilt, dass 
 \begin{align}
-\phi \big\vert_p : \{ p \} \times \R^k \to E \big\vert_p
+\phi \eval_p : \{ p \} \times \R^k \to E \eval_p
 \end{align}
 ein Isomorphismus ist.
 Außerdem hat
 \begin{align}
-\phi : U \times \R^k \to E \big\vert_U,
+\phi : U \times \R^k \to E \eval_U,
 \end{align}
 maximalen Rang.\\
 Für alle $p$ in $U$ existiert eine Umgebung $V \subset U$ von $p$, so dass die folgende Abbildung eine lokale Trivialisierung ist:
 \begin{align}
-\psi_V : V\times \R^k \to E \big\vert_V.
+\psi_V : V\times \R^k \to E \eval_V.
 \end{align}
 Dann gilt:
 \begin{align}
@@ -74,7 +74,7 @@ wobei $g^j_i : U \cap V \to \R$.
 Setze $g(p) = (g^j_i (p))^k_{i,j =1}$
 \begin{align}
 &g(p)(t_1(p), \dots , t_k(p)) = (s_1(p), \dots, s_k(p))\\
-&g: U \cap V \ni p \to g(p) \in \mathrm{GL}(E\big\vert_p)
+&g: U \cap V \ni p \mapsto g(p) \in \mathrm{GL}(E\eval_p)
 \end{align}
 sei $s \in \Gamma_{U \cap V} (E)$ und Hauptteile $\sigma_\phi$, $\sigma_\psi$, dann ist
 \begin{align}
@@ -90,9 +90,9 @@ Sei $E	\xrightarrow{\pi} \mfk$ ein Vektorbündel und $f : \mfka \to \mfk$ eine g
 Der Pullback von $E$ über $f$ ist das Vektorbündel $f^* E$ welches definiert ist durch:
 \begin{enumerate}
 \item $(f^* E)_{p \in \mfka} = \{ (p, x) \vert x \in E_{f(p)}\}$
-\item sei $\phi : U \times \R^k \to E\big\vert_U$ lokale Trivialisierung von $E$
+\item sei $\phi : U \times \R^k \to E\eval_U$ lokale Trivialisierung von $E$
 \begin{align}
-&f^* \phi : f^{-1} (U) \times \R^k \to (f^* E)\big\vert_{f^{-1}(U)}\\
+&f^* \phi : f^{-1} (U) \times \R^k \to (f^* E)\eval_{f^{-1}(U)}\\
 &(p, \xi) \mapsto (p, \phi(f(p), \xi)) 
 \end{align}
 \end{enumerate}
@@ -100,10 +100,22 @@ Der Pullback von $E$ über $f$ ist das Vektorbündel $f^* E$ welches definiert i
 
 
 \begin{defs}
-Ein Schnitt von $E$ entlang von $f$ ist eine glatte Abbildung $\delta : \mfka \to E$, so dass $\pi \circ s = f$. 
+Ein Schnitt von $E$ entlang von $f$ ist eine glatte Abbildung $s : \mfka \to E$, so dass $\pi \circ s = f$. 
 \end{defs}
 
 \section{Zusammenhang und kovariante Ableitung}
+
+\begin{defs}
+\begin{align}
+&\mathfrak{X}(\mfk) \times \mathcal{F}(\mfk) \to \mathcal{F}(\mfk)\\
+&X, \phi \mapsto X(\phi)
+\end{align}
+Wobei
+\begin{align}
+X(\phi)(p):= X_p (\phi)
+\end{align}
+\end{defs}
+
 
 \begin{defs}[Lie-Klammern]
 \begin{align}

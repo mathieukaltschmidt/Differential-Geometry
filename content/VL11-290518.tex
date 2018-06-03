@@ -1,7 +1,20 @@
 % !TeX root = ..//diffgeo_main.tex
+\section{Krümmung und Parallelverschiebung}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\linewidth]{figures/tikz/parallelshift_rn_vs_manifold.pdf}
+\label{img:parallelshift_rn_vs_manifold}
+\caption{Parallelverschiebung auf Kurve $c$ in $\R^n$ vs. auf beliebiger Mannigfaltigkeit $\mfk$}
+\end{figure} 
 
 Die kovariante Ableitung lässt sich durch Parallelverschiebung ausdrücken.
-Wir bezeichnen die Parallelverschiebung entlang $c$ mit $P_c$, wobei $c: (-\epsilon , \epsilon) \to \mfk$ eine Kurve in $\mfk$ ist.\\
+Wir bezeichnen die Parallelverschiebung entlang $c$ mit $P_c$, wobei $c: (-\epsilon , \epsilon) \to \mfk$ eine Kurve in $\mfk$ ist.
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\linewidth]{figures/tikz/parallel_shift_on_curve.pdf}
+\label{img:parallel_shift_on_curve}
+\end{figure} 
 Es gelte $c(0)=p$, $c'(0) = X_p$ und $Y$ sei ein glattes Vektorfeld auf $\mfk$.
 Dann gilt:
 
@@ -24,19 +37,25 @@ Mit Koeffizienten $a_i: (-\epsilon , \epsilon) \to \R$.\\
 Betrachte:
 \begin{align}
 \lim\limits_{t \rightarrow 0} \frac{1}{t} \left( P^{-1}_{c(t)} Y(t) - Y(0)\right) &=  \lim\limits_{t \rightarrow 0} \frac{1}{t} \left( \sum^m_{i=1} (a_i (t) - a_i (0)) \cdot w_i (0) \right)\\
-&= \sum^m_{i=1} \left( \dv{t} a_i (t) \right) \big\vert_{t=0} w_i (0)\\
-&= \covd_t \left( \sum^m_{i=1} a_i w_i \right) \big\vert_{t=0}\\
+&= \sum^m_{i=1} \left( \dv{t} a_i (t) \right) \eval_{t=0} w_i (0)\\
+&= \covd_t \left( \sum^m_{i=1} a_i w_i \right) \eval_{t=0}\\
 &= \nabla_X Y
 \end{align}
 \end{bew}
 
 \begin{defs}[Parallele Fortsetzung]
-Sei $p \in \mfk$ und $v \in T_p \mfk$, dann existiert ein paralleles Vektorbündel längs $c$ mit $X\big\vert_p = v$.\\
-$X\big\vert_p$ heißt parallele Fortsetzung von $v$.
+Sei $p \in \mfk$ und $v \in T_p \mfk$, dann existiert ein paralleles Vektorbündel längs $c$ mit $X\eval_p = v$.\\
+$X\eval_p$ heißt parallele Fortsetzung von $v$.
 \end{defs}
 Es sellt sich nun die folgende Frage:\\
-\textit{Kann man $v \in T_p \mfk$ zu einem parallelen Vektorfeld in einer Umgebung von $p$ fortsetzen
-(Also existiert ein Vektorfeld $X$ auf $\mfk$ in einer Umgebung $U$ von $p$, sodass $X\big\vert_p = v$ und $X$ parallel sind)?}\\
+\textit{Kann man $v \in T_p \mfk$ zu einem parallelen Vektorfeld in einer Umgebung von $p$ fortsetzen?
+Also existiert ein Vektorfeld $X$ auf $\mfk$ in einer Umgebung $U$ von $p$, sodass $X\eval_p = v$ und $X$ parallel sind?}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.6\linewidth]{figures/tikz/parallel_transport.pdf}
+\label{img:parallel_transport}
+\caption{Paralleltransport}
+\end{figure} 
 Gegeben sei 
 \begin{align}
 V: [0, 1] \times [0, 1] \to \mfk\\
@@ -45,7 +64,7 @@ V: [0, 1] \times [0, 1] \to \mfk\\
 Damit erhalten wir ein Vektorfeld $Z$ in einer Umgebung von $p$:
 \begin{align}
 \label{eq:vectorfieldz}
-\nabla_{\pdv{t}} Z \big\vert_{(t, 0)} = 0, \quad \nabla_{\pdv{\tau}} Z = 0
+\nabla_{\pdv{t}} Z \eval_{(t, 0)} = 0, \quad \nabla_{\pdv{\tau}} Z = 0
 \end{align}
 Wir hätten gerne, dass $\nabla_{\pdv{t}} Z = 0$.
 Es genügt zu zeigen, dass folgendes gilt:
@@ -69,14 +88,26 @@ Mit anderen Worten $R=0$ ist eine notwendige Bedingung für die Parallelität.
 Man kann zeigen, dass $R \equiv 0$ auch hinreichend ist.\\
 
 Betrachte nun die folgende Situation:
-% Hier Grafik einfügen
+\begin{figure}[H]
+\centering
+\includegraphics[width=1\linewidth]{figures/tikz/coordinates_r2_manifold.pdf}
+\label{img:coordinates_r2_manifold}
+\end{figure} 
+
 
 Sei $f$ glatt und $f(0)=p$ und sei außerdem
 \begin{align}
-& \dd f \big\vert_0 \left( \pdv{x} \right) = f_x (0) = u\\
+& \dd f \eval_0 \left( \pdv{x} \right) = f_x (0) = u\\
 & \dd f \left( \pdv{y}\right) = f_y(0) = v.
 \end{align}
 Es sei eine Familie von Kurven $c_s$ wobei $0 \leq s \leq 1$ und $c_s (0) = c_s(1) = 0$.
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.4\linewidth]{figures/tikz/variantion_of_closed_curve.pdf}
+\label{img:variantion_of_closed_curve}
+\caption{Variation der Kurve $c_0$}
+\end{figure} 
+
 $P_s$ ist die Parallelverschiebung längs $c_s$.
 Wir definieren
 \begin{align}

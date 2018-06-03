@@ -41,7 +41,7 @@ Analog rechnet man mit $\tilde{s}$
 \begin{align}
 \mathcal{L}(\tilde{s})(p) = \sum_{i = 1}^k \varphi (p) \tilde{\sigma}_i (p) \mathcal{L}((\varphi s_i)) (p) .
 \end{align}
-Da $\sigma_i = \tilde{\sigma}_i$ und $\varphi(p)=1$ folgt nun die Aussage
+Da $\sigma_i (p) = \tilde{\sigma}_i (p)$ und $\varphi(p)=1$ folgt nun die Aussage
 \begin{align}
 \mathcal{L}(s)(p) = \mathcal{L}(\tilde{s})(p).
 \end{align}
@@ -50,7 +50,7 @@ Da $\sigma_i = \tilde{\sigma}_i$ und $\varphi(p)=1$ folgt nun die Aussage
 \begin{defs}[Tensorfeld]
 Ein Tensorfeld vom Typ $(n, s)$ ist ein glatter Schnitt des Bündels
 \begin{align}
-T^{n}_{s} (\mfk) = \left( \bigotimes^n_{i=1} T \mfk \right) \otimes \left(\bigotimes^s_{i=1} T^{s*} \mfk\right).
+T^{n}_{s} (\mfk) = \left( \bigotimes^n_{i=1} T \mfk \right) \otimes \left(\bigotimes^s_{i=1} T_s^* \mfk\right).
 \end{align}
 In anderen Worten ist ein Tensorfeld vom Typ $(n, s)$ eine Abbildung
 \begin{align}
@@ -63,7 +63,7 @@ Lemma \ref{lem:tensorielllokalisierung} sagt uns, dass jede Abbildung $B$ aus ei
 Sei $B$ ein Tensorfeld vom Typ $(n, s)$, dann induziert $B$ für alle $p$ eine $s$-lineare Abbildung:
 \begin{align}
 &B_p: T_p \mfk^s \to T_p \mfk^n\\
-&(v_1, \dots, \v_s) \mapsto B_p (v_1, \dots, v_s)
+&(v_1, \dots, v_s) \mapsto B_p (v_1, \dots, v_s)
 \end{align}
 \end{kor}
 Wir wollen nun wieder zu Zusammenhängen zurückkehren.
@@ -83,8 +83,8 @@ Sei $\omega$ eine $1$-Form auf $\mfk$ mit Werten in Matrizen $\mathrm{Mat}_{k \t
 Das bedeutet, dass
 \begin{align}
 &\omega \in \Gamma(\mathrm{Hom}(T\mfk, \mathrm{Mat}_{k \times k}(\R))) \\
-&\omega_p: T\mfk \to \mathrm{Mat}_{k \times k}(\R) \\
-&\omega = (\omega{ij})^k_{i,j=1}
+&\omega_p: T_p \mfk \to \mathrm{Mat}_{k \times k}(\R) \\
+&\omega = (\omega_{ij})^k_{i,j=1}
 \end{align}
 $\omega_{ij}$ ist eine $1$-Form auf $\mfk$
 \begin{align}
@@ -125,7 +125,7 @@ Sei $E = \mfk \times \R^k$.
 Aus dem Satz von eben folgt, dass $\covd^\omega_X s$ alle Zusammenhänge auf $E$ sind.
 Aus der Lokalisierung folgt
 \begin{align}
-\phi : U \times \R^k \to E\big\vert_U.
+\phi : U \times \R^k \to E\eval_U.
 \end{align}
 \end{bsp}
 Wir stellen uns die Frage wie wir Zusammenhänge mit einer $1$-Form finden können.
@@ -140,7 +140,7 @@ Wobei die $1$-Form $\omega_{ij}(x): U \to \R$ glatt und tensoriell in $X$ ist.
 Es ist $s = \sum_i \sigma_i s_i$. 
 Damit erhält man:
 \begin{align}
-\covd_X s &= \sum (X(\sigma_i)s_i + \sigma_i + \sigma_i \covd_X s_i)\\
+\covd_X s &= \sum (X(\sigma_i)s_i + + \sigma_i \covd_X s_i)\\
 &= \sum_j X(\sigma_j)s_j + \sum_{j=1}^k \sum_{i=1}^k \sigma_i \omega_{ij} s_j\\
 &= \sum_j \left[ X(\sigma_j) + \sum:i \sigma_i \omega_{ij}(X) \right] s_j
 \end{align}
