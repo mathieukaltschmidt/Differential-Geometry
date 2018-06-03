@@ -1,0 +1,119 @@
+\chapter{Krümmung}
+
+\begin{defs}[Krümmungstensor]
+Der Krümmungstensor eines Zusammenhangs $\operatorname{D}$ auf $E$ ist die Abbildung:
+\begin{align*}
+\curv: \mathfrak{X}(\mfk) \times \mathfrak{X}(\mfk) \times \Gamma(E) \quad &\rightarrow \quad \Gamma(E) \\
+(X, Y, s) \quad &\mapsto \quad \curv(X,Y)s \\
+\end{align*}
+Hierbei gilt:  \quad $\curv(X,Y)s = \covd_X(\covd_Ys) - \covd_Y(\covd_Xs) - \covd_{[X,Y]}s$
+\end{defs}
+
+\textbf{Achtung:} Die Vorzeichen-Konvention ist in der Literatur im Allgemeinen nicht eindeutig!
+
+\begin{satz}
+Der Krümmungstensor ist tensoriell in $X, Y$ \& $s$. Außerdem ist er schiefsYmmetrisch in $X$ \& $Y$. 
+\begin{bew}
+\begin{itemize}
+\item $\curv(X,Y) = -\curv(Y,X)$ trivial $\Rightarrow$ SchiefsYmmetrie klar.
+\item zu zeigen: $\curv$ ist tensoriell in $s$, das heißt $\curv(X,Y)(\varphi s) = \varphi \curv(X,Y)s$
+
+	\begin{itemize}
+		\item[a)] $\covd_X(\covd_Y(\varphi s)) = \covd_X(Y(\varphi)s + \varphi\covd_Ys) = X(Y(\varphi))s + Y(\varphi)\covd_Xs + X(\varphi)\covd_Ys  + \varphi\covd_X(\covd_Ys)$
+		\item[b)] $-\covd_Y(\covd_X(\varphi s)) = -Y(X(\varphi))s + -X(\varphi)\covd_Ys - Y(\varphi)\covd_Xs  + \varphi\covd_Y(\covd_Xs)$
+		\item [c)] $-\covd_{[X,Y]}(\varphi s) = -[X,Y](\varphi)s - \varphi\covd_{[X,Y]}s$
+	\end{itemize}
+\end{itemize}
+\vspace{.5cm}
+$\Rightarrow \curv(X,Y) \varphi s = \varphi \covd_X(\covd_Ys) - \varphi \covd_Y(\covd_Xs) - \varphi \covd_{[X,Y]}s 
+= \varphi \curv(X,Y)s $
+\end{bew}
+\begin{itemize}
+\item  zu zeigen: $R$ ist tensoriell in X.
+\end{itemize}
+\begin{hlem}
+$[\varphi X,Y] = \varphi[X,Y] - Y(\varphi) X$
+\begin{bew}
+$[\varphi X,Y]f = \varphi X(Y(f)) - Y(\varphi X(f)) = \varphi X(Y(f)) - Y(\varphi) X(f) - \varphi Y(X(f))$
+\end{bew}
+\end{hlem}
+\begin{bew}
+\begin{align*}
+\curv(\varphi X, Y) s &= \covd_{\varphi X} (\covd_Ys) - \covd_Y(\covd_{\varphi X} s) - \covd_{[\varphi X,Y]}s \\
+&= \varphi \covd_X (\covd_Ys) - Y(\varphi) \covd_Xs - \varphi \covd_Y(\covd_Xs) - \covd_{\varphi [X,Y]}s + \covd_{Y(\varphi)X}s \\
+&= \varphi \curv(X,Y)s
+\end{align*}
+\end{bew}
+\end{satz}
+\begin{kor}
+$\curv_p: T_p\mfk \times T_p\mfk \times E_p  \rightarrow E_p$ ist punktweise definiert $\forall p \in \mfk$
+\end{kor}
+\begin{bem}
+In vielen Büchern wird zunächst der Fall $E= T\mfk$ diskutiert.
+\end{bem}
+
+\begin{bsp}
+1) \ Kanonischer Zusammenhang auf $\mfk \times \R^k:$
+\begin{align*}
+s \in \Gamma(E) \quad \longleftrightarrow \quad \sigma: \mfk \rightarrow \R^k 
+\end{align*}
+In diesen Fall ist der Krümmungstensor wie folgt gegeben:
+\begin{align*}
+R(X,Y)s &= \covd_X(\covd_Ys) - \covd_Y(\covd_Xs) - \covd_{[X,Y]}s \\
+			&= X(Y(\sigma)) - Y(X(\sigma)) - [X,Y]\sigma \\
+			&= 0
+\end{align*}
+\end{bsp}
+
+\begin{defs}
+\begin{itemize}
+	\item[a)] Ein Zusammenhang $\covd$ auf $E$ mit $R \equiv 0$ heißt flach.
+	\item[b)] Ein Vektorbündel $E$ mit flachem Zusammenhang heißt flaches Bündel.
+\end{itemize}
+\end{defs}
+
+\begin{bsp}
+2) \ Zusammenhang auf $\mfk \times \R^k$ gegeben durch eine $1$-Form mit Werten in $\operatorname{Mat}(k \times k,\R):$
+\begin{align*}
+\covd^{\omega}_X s &= X(\sigma) + \omega(X)\cdot\sigma \\
+							&= \sum_{j=1}^{k} (X(\sigma^{j}) + \sum_{i=1}^{k} \sigma^{i}\omega_i^{\phantom{i}j}(X))s_j \\
+							\phantom{.} \\
+\curv^{\omega}(X,Y)s &= \covd^{\omega}_X(\covd^{\omega}_Ys) - \covd^{\omega}_Y(\covd^{\omega}_Xs) - \covd^{\omega}_{[X,Y]}s \\
+&= \covd^{\omega}_X(Y(\sigma) + \omega(Y)\cdot\sigma) - \covd^{\omega}_Y(X(\sigma)+ \omega(X)\cdot\sigma) - [X,Y](\sigma) - \omega([X,Y]) \sigma \\
+\overset{\text{Übung!}}{\phantom{=}} &= X(Y(\sigma)) + X(\omega(Y))\sigma - Y(X(\sigma)) - Y(\omega(X))\sigma + \omega(X)\omega(Y)\sigma - \omega(Y)\omega(X)\sigma - [X,Y]\sigma - \omega([X,Y])\sigma \\
+&= \left( \underbrace{X(\omega(Y)) - Y(\omega(X)) - \omega([X,Y])}_{:= \dd\omega(X,Y)} - [\omega(X),\omega(Y)]\right) \sigma
+\end{align*}
+Hierbei wird $\dd$ äußeres Differential genannt.
+\end{bsp}
+\textbf{Lineare Zusammenhänge:} $ \quad E= T\mfk$ 
+\begin{align*}
+\nabla: \mathfrak{X}(\mfk) \times \mathfrak{X}(\mfk) \longrightarrow \mathfrak{X}(\mfk)
+\end{align*}
+
+\begin{align*}
+\text{\textbf{Krümmung}}:  \qquad \qquad \qquad\curv: \mathfrak{X}(\mfk) \times \mathfrak{X}(\mfk) \times \mathfrak{X}(\mfk) &\longrightarrow \mathfrak{X}(\mfk) \\
+\curv(X,Y)Z &= \nabla_X(\nabla_YZ) - \nabla_Y(\nabla_XZ) - \nabla_{[X,Y]}
+\end{align*}
+
+
+\begin{align*}
+\text{\textbf{Torsion}:} \qquad\qquad\qquad\qquad\qquad \tor: \mathfrak{X}(\mfk) \times \mathfrak{X}(\mfk) &\longrightarrow \mathfrak{X}(\mfk) \\
+(X,Y) &\longmapsto \tor(X,Y) := \nabla_XY -\nabla_YX - [X,Y]
+\end{align*}
+
+\begin{lem}
+$\tor$ ist tensoriell in $X$ und $Y$.
+\begin{bew}
+$\tor(X,Y) = -\tor(Y,X)  \longrightarrow$ z.z. $\tor$ tensoriell in $X$. 
+\begin{align*}
+\tor(\varphi X,Y) &= \nabla_{\varphi X}Y -  \nabla_Y(\varphi X) - [\varphi X,Y] \\
+						&= \varphi\tor(X,Y)
+\end{align*}
+\end{bew}
+\end{lem}
+
+\begin{defs}
+Ein Zusammenhang $\nabla$ heißt symmetrisch, falls $\tor \equiv 0$.
+\end{defs}
+
+\missingfigure{Hier fehlt noch ein kleiner Teil :)}

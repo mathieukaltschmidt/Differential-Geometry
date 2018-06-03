@@ -18,7 +18,6 @@
 %main content
 \setcounter{tocdepth}{1}
 \pagenumbering{arabic} % now set main numbering to arabic
-
 %lectures
 	\input{content/VL1-170418}
 	\input{content/VL2-190418}
@@ -29,11 +28,16 @@
 	\input{content/VL7-150518}
 	\input{content/VL8-180518}
 	\input{content/VL9-220518}
+	\input{content/VL10-240518}
 	\input{content/VL11-290518}
-%\appendix 
-\blankpage
+	
+%appendix
+\newpage
 \pagenumbering{Roman} %start capital roman numbering for appendices
 \pagestyle{plain}
+\part*{Anhang}
+\addcontentsline{toc}{chapter}{Anhang: Wiederholungen und Exkurse}	
+	\input{content/Exkurs_Tensoren}
 \addcontentsline{toc}{chapter}{Abbildungsverzeichnis}	
 \listoffigures
 
