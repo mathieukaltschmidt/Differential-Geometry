@@ -81,7 +81,8 @@ R(X,Y)s &= \covd_X(\covd_Ys) - \covd_Y(\covd_Xs) - \covd_{[X,Y]}s \\
 							\phantom{.} \\
 \curv^{\omega}(X,Y)s &= \covd^{\omega}_X(\covd^{\omega}_Ys) - \covd^{\omega}_Y(\covd^{\omega}_Xs) - \covd^{\omega}_{[X,Y]}s \\
 &= \covd^{\omega}_X(Y(\sigma) + \omega(Y)\cdot\sigma) - \covd^{\omega}_Y(X(\sigma)+ \omega(X)\cdot\sigma) - [X,Y](\sigma) - \omega([X,Y]) \sigma \\
-\overset{\text{Übung!}}{\phantom{=}} &= X(Y(\sigma)) + X(\omega(Y))\sigma - Y(X(\sigma)) - Y(\omega(X))\sigma + \omega(X)\omega(Y)\sigma - \omega(Y)\omega(X)\sigma - [X,Y]\sigma - \omega([X,Y])\sigma \\
+\overset{\text{Übung!}}{\phantom{=}} &= X(Y(\sigma)) + X(\omega(Y))\sigma - Y(X(\sigma)) - Y(\omega(X))\sigma + \omega(X)\omega(Y)\sigma \\
+& \phantom{=} - \omega(Y)\omega(X)\sigma - [X,Y]\sigma - \omega([X,Y])\sigma \\
 &= \left( \underbrace{X(\omega(Y)) - Y(\omega(X)) - \omega([X,Y])}_{:= \dd\omega(X,Y)} - [\omega(X),\omega(Y)]\right) \sigma
 \end{align*}
 Hierbei wird $\dd$ äußeres Differential genannt.
@@ -93,14 +94,14 @@ Hierbei wird $\dd$ äußeres Differential genannt.
 
 \begin{align*}
 \text{\textbf{Krümmung}}:\\
-&\qquad \qquad \qquad\curv: \mathfrak{X}(\mfk) \times \mathfrak{X}(\mfk) \times \mathfrak{X}(\mfk) &\longrightarrow \mathfrak{X}(\mfk) \\
-&\curv(X,Y)Z &= \nabla_X(\nabla_YZ) - \nabla_Y(\nabla_XZ) - \nabla_{[X,Y]}
+&\curv: \mathfrak{X}(\mfk) \times \mathfrak{X}(\mfk) \times \mathfrak{X}(\mfk) \longrightarrow \mathfrak{X}(\mfk) \\
+&\curv(X,Y)Z = \nabla_X(\nabla_YZ) - \nabla_Y(\nabla_XZ) - \nabla_{[X,Y]}
 \end{align*}
 
 
 \begin{align*}
 \text{\textbf{Torsion}:}\\
-&\qquad\qquad\qquad\qquad\qquad \tor: \mathfrak{X}(\mfk) \times \mathfrak{X}(\mfk) \longrightarrow \mathfrak{X}(\mfk) \\
+&\tor: \mathfrak{X}(\mfk) \times \mathfrak{X}(\mfk) \longrightarrow \mathfrak{X}(\mfk) \\
 &(X,Y) \longmapsto \tor(X,Y) := \nabla_XY -\nabla_YX - [X,Y]
 \end{align*}
 
