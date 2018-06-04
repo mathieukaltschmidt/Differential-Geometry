@@ -13,10 +13,10 @@ Hierbei gilt:  \quad $\curv(X,Y)s = \covd_X(\covd_Ys) - \covd_Y(\covd_Xs) - \cov
 \textbf{Achtung:} Die Vorzeichen-Konvention ist in der Literatur im Allgemeinen nicht eindeutig!
 
 \begin{satz}
-Der Krümmungstensor ist tensoriell in $X, Y$ \& $s$. Außerdem ist er schiefsYmmetrisch in $X$ \& $Y$. 
+Der Krümmungstensor ist tensoriell in $X, Y$ \& $s$. Außerdem ist er schiefsymmetrisch in $X$ \& $Y$. 
 \begin{bew}
 \begin{itemize}
-\item $\curv(X,Y) = -\curv(Y,X)$ trivial $\Rightarrow$ SchiefsYmmetrie klar.
+\item $\curv(X,Y) = -\curv(Y,X)$ trivial $\Rightarrow$ Schiefsymmetrie klar.
 \item zu zeigen: $\curv$ ist tensoriell in $s$, das heißt $\curv(X,Y)(\varphi s) = \varphi \curv(X,Y)s$
 
 	\begin{itemize}
@@ -30,7 +30,7 @@ $\Rightarrow \curv(X,Y) \varphi s = \varphi \covd_X(\covd_Ys) - \varphi \covd_Y(
 = \varphi \curv(X,Y)s $
 \end{bew}
 \begin{itemize}
-\item  zu zeigen: $R$ ist tensoriell in X.
+\item  zu zeigen: $\curv$ ist tensoriell in X.
 \end{itemize}
 \begin{hlem}
 $[\varphi X,Y] = \varphi[X,Y] - Y(\varphi) X$
@@ -50,7 +50,7 @@ $[\varphi X,Y]f = \varphi X(Y(f)) - Y(\varphi X(f)) = \varphi X(Y(f)) - Y(\varph
 $\curv_p: T_p\mfk \times T_p\mfk \times E_p  \rightarrow E_p$ ist punktweise definiert $\forall p \in \mfk$
 \end{kor}
 \begin{bem}
-In vielen Büchern wird zunächst der Fall $E= T\mfk$ diskutiert.
+In vielen Büchern wird zunächst der Fall $E = T\mfk$ diskutiert.
 \end{bem}
 
 \begin{bsp}
@@ -60,7 +60,7 @@ s \in \Gamma(E) \quad \longleftrightarrow \quad \sigma: \mfk \rightarrow \R^k
 \end{align*}
 In diesen Fall ist der Krümmungstensor wie folgt gegeben:
 \begin{align*}
-R(X,Y)s &= \covd_X(\covd_Ys) - \covd_Y(\covd_Xs) - \covd_{[X,Y]}s \\
+\curv(X,Y)s &= \covd_X(\covd_Ys) - \covd_Y(\covd_Xs) - \covd_{[X,Y]}s \\
 			&= X(Y(\sigma)) - Y(X(\sigma)) - [X,Y]\sigma \\
 			&= 0
 \end{align*}
@@ -93,18 +93,18 @@ Hierbei wird $\dd$ äußeres Differential genannt.
 \end{align*}
 
 \begin{align*}
-\text{\textbf{Krümmung}}:\\
-&\curv: \mathfrak{X}(\mfk) \times \mathfrak{X}(\mfk) \times \mathfrak{X}(\mfk) \longrightarrow \mathfrak{X}(\mfk) \\
+\text{\textbf{Krümmung}}: \qquad\qquad\qquad &\curv: \mathfrak{X}(\mfk) \times \mathfrak{X}(\mfk) \times \mathfrak{X}(\mfk) \longrightarrow \mathfrak{X}(\mfk) \\
 &\curv(X,Y)Z = \nabla_X(\nabla_YZ) - \nabla_Y(\nabla_XZ) - \nabla_{[X,Y]}
 \end{align*}
 
 
 \begin{align*}
-\text{\textbf{Torsion}:}\\
-&\tor: \mathfrak{X}(\mfk) \times \mathfrak{X}(\mfk) \longrightarrow \mathfrak{X}(\mfk) \\
+\text{\textbf{Torsion}:} \qquad\qquad\qquad &\tor: \mathfrak{X}(\mfk) \times \mathfrak{X}(\mfk) \longrightarrow \mathfrak{X}(\mfk) \\
 &(X,Y) \longmapsto \tor(X,Y) := \nabla_XY -\nabla_YX - [X,Y]
 \end{align*}
-
+%\text{\textbf{Torsion}:}\\
+%&\tor: \mathfrak{X}(\mfk) \times \mathfrak{X}(\mfk) \longrightarrow \mathfrak{X}(\mfk) \\
+%&(X,Y) \longmapsto \tor(X,Y) := \nabla_XY -\nabla_YX - [X,Y]
 \begin{lem}
 $\tor$ ist tensoriell in $X$ und $Y$.
 \begin{bew}
@@ -122,10 +122,9 @@ Ein Zusammenhang $\nabla$ heißt symmetrisch, falls $\tor \equiv 0$.
 
 
 \section{Krümmung und Prallelverschiebung}
-
 \begin{enumerate}
 \item Gegeben seien $u$, $v \in T_p \mfk$.
-Dann können wir $R_p (u, v) : E_p \to E_p$ als lineare Abbildung von $E_p$ nach $E_p$ auffassen.
+Dann können wir $\curv_p (u, v) : E_p \to E_p$ als lineare Abbildung von $E_p$ nach $E_p$ auffassen.
 \item Gegeben sei eine geschlossene ($c(0)= c(1) = p$) Kurve $c : I=[ 0, 1 ] \to \mfk$ (glatt).
 So liefert $P_c : E_p \to E_p$ einen Isomorphismus mit:
 \begin{align}
