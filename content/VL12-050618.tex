@@ -20,16 +20,15 @@ g_{ij}: &U \to \R \\
 
 glatte Funktionen und es gilt:
 \begin{align}
-g_p (X\eval_p, Y \eval_p) &= g_p ( \sum_i^m \xi^i X_j \eval_p, \sum_i^m \eta^i X_i \eval_p)\\
-&= \sum_{ij} \xi^j \eta^i \underbrace{g\eval_p (X_j \eval_p, X_i \eval_p)}_{g_{ij}(p)}
+g_p \left( X\eval_p, Y \eval_p \right) &= g_p \left( \sum_i^m \xi^i X_j \eval_p, \sum_i^m \eta^i X_i \eval_p \right) \\
+&= \sum_{ij} \xi^j \eta^i \underbrace{g\eval_p \left( X_j \eval_p, X_i \eval_p\right) }_{g_{ij}(p)}
 \end{align}
 
 \begin{defs}[Fundamentalmatrix]
 $(g_{ij})^m_{i, j = 1}$ heißt Fundamentalmatrix von $g$ bzgl. $(x, U)$
 \end{defs}
 
-\begin{bem}
-
+\begin{bem}\leavevmode
 \begin{enumerate}
 \item Matrix $(g_{ij})^m_{i, j = 1}$ ist symmetrisch, d.h. $g_{ij} = g_{ji}$ (Folgt aus Symmetrie von $g_p$)
 \item $(g_{ij})^m_{i, j = 1}$ ist invertierbar (Folgt aus der Tatsache, dass $g_p$ nicht entartet ist)
@@ -123,7 +122,7 @@ Unsere nächste Frage ist: wie verhält sich $g_{ij}$ unter Kartenwechsel?
 Seien $(x, U)$ und $(y, V)$ Karten von $p$.
 Dann gilt:
 \begin{align*}
-g^{y}_{ij} &= g(y_i, y_j)\\
+g^{y}_{ij} &= g(Y_i, Y_j)\\
 &= \sum^m_{k,l = 1} \pdv{y^i}(x^k \circ y^{-1}) \pdv{y^j} (x^l \circ y^{-1}) g^x_{kl}
 \end{align*}
 \end{lem}
@@ -134,7 +133,7 @@ y_i = \sum^m_{k=1} \pdv{y^i} (x^k \circ y^{-1}) \pdv{x^k}
 \end{align*}
 Daher gilt:
 \begin{align*}
-g^y_{ij} &= g(y_i, y_j)\\
+g^y_{ij} &= g(Y_i, Y_j)\\
 &= \sum^m_{k,l = 1} \pdv{y^i}(x^k \circ y^{-1}) \pdv{y^j} (x^l \circ y^{-1}) \underbrace{g\left( \pdv{x^l}, \pdv{x^k} \right)}_{= g^x_{lk}}
 \end{align*}
 \end{bew}
@@ -143,8 +142,8 @@ Nächstes Ziel: Führe ausgezeichneten Zusammenhang ein.
 Dazu benötigen wir zunächst ein Hilfslemma.
 Eine Semi-Riemannsche Metrik $g$ definiert einen Isomorphismus zwischen Tangentialbündel und Kotangentialbündel
 \begin{align}
-T \mfk \to T^\ast \mfk\\
-T_p \mfk \ni v \mapsto g_p (v, \cdot) \in T^\ast_p \mfk
+&T \mfk \to T^\ast \mfk\\
+&T_p \mfk \ni v \mapsto g_p (v, \cdot) \in T^\ast_p \mfk
 \end{align}
 
 \begin{hlem}
@@ -152,7 +151,7 @@ T_p \mfk \ni v \mapsto g_p (v, \cdot) \in T^\ast_p \mfk
 Auf einer Semi-Riemannschen Mannigfaltigkeit $(\mfk, g)$ gibt es eine Eins zu Eins Korrespondenz zwischen Vektorfeldern und $1$-Formen
 \begin{align}
 &\mathfrak{X}(\mfk) \to \Omega^1 (\mfk)\\
-& x \mapsto g(g, \cdot)
+& x \mapsto g(X, \cdot)
 \end{align}
 \end{hlem}
 
