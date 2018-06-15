@@ -216,31 +216,3 @@ Dieser Zusammenhang ist eindeutig durch die \textbf{Koszulformel} bestimmt:
 $\covd$ heißt \textbf{Levi-Civita-Zusammenhang}.
 \end{satz}
 
-\begin{bew}[Beweis Satz \ref{satz:koszulformel}]
-Zu zeigen:
-\begin{enumerate}
-\item Die beiden geforderten Eigenschaften bestimmen den Zusammenhang und Koszuformel ist erfüllt
-\end{enumerate}
-Die zweite geforderte Eigenschaft impliziert:
-\begin{align*}
-&X g(Y, Z) = g(\covd_X Y, Z) + g(Y, \covd_X Z)\\
-&Y g(X , Z) = g (\covd_Y X, Z) + g(X, \covd_Y Z)\\
-&Z g(X, Y) = g(\covd_Z X, Y) + g(X, \covd_Z Y)
-\end{align*}
-Daraus folgt:
-\begin{align*}
-X g(Y, Z) + Y g(X , Z) - Z g(X, Y) &= g(\covd_X Y + \covd_Y X, Z) + g(\covd_X Z - \covd_Z X , Y)\\
- & \phantom{=}+ g(\covd_Y Z - \covd_Z Y, X) \\
- &= 2 g(\covd_X Y, Z) - g(\comm{X}{Y}, Z) + g(\comm{X}{Z}, Y) + g(\comm{Y}{Z}, X)
-\end{align*}
-Damit ergibt sich
-\begin{align}
-2 g(\covd_X Y, Z) &= g(\comm{X}{Y}, Z) - g(\comm{X}{Z}, Y) - g(\comm{Y}{Z}, X)\\
-&\phantom{=} + X g(Y, Z) + Y g(X, Z) - Z g(X, Y)
-\end{align}
-Definiere $\covd : \mathfrak{X}(\mfk) \times \mathfrak{X}(\mfk) \to \mathfrak{X}(\mfk)$
-durch $\covd (X, Y)$, welches das eindeutig bestimmte glatte Vektorfeld ist, das die Koszulformel erfüllt.\\
-Es bleibt zu zeigen:
-$\covd : \mathfrak{X}(\mfk) \times \mathfrak{X}(\mfk) \to \mathfrak{X}(\mfk) $ ist ein Zusammenhang
-\end{bew}
-
