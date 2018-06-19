@@ -1,0 +1,26 @@
+\documentclass[border=5mm]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{shapes}
+\usepackage{pgfplots}
+\usepgfplotslibrary{fillbetween}
+\usepackage[active,tightpage]{preview}  %generates a tightly fitting border around the work
+\PreviewEnvironment{tikzpicture}
+\setlength\PreviewBorder{2mm}
+\usepackage{xcolor}
+\definecolor{myred}{RGB}{196,19,47} 
+\definecolor{myblue}{RGB}{0,139,139}
+
+\begin{document}
+	\begin{tikzpicture}
+
+%sphere
+	\shade[ball color = gray!90, opacity = 0.2] (0,0) circle (2cm);
+	\draw[thick, color=myred]  (0,-1.995) arc(270:90:0.5 and 1.995);
+	\draw (0,0) circle (2cm);
+	\draw (-2,0) arc (180:360:2 and 0.6);
+	\draw[dashed] (2,0) arc (0:180:2 and 0.6);
+	\draw[->] (-2.0, 2.0)--(-0.6,1);
+		\node at (-2.1,2.2)   {Geodäte};
+	\end{tikzpicture}
+\end{document}
+

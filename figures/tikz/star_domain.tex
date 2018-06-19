@@ -1,0 +1,41 @@
+\documentclass{standalone}
+\usepackage{tikz} 
+\usetikzlibrary{shapes}
+\usepackage{pgfplots}
+\usepgfplotslibrary{fillbetween}
+\usetikzlibrary{positioning,arrows}
+\usepackage[active,tightpage]{preview}  %generates a tightly fitting border around the work
+\PreviewEnvironment{tikzpicture}
+\setlength\PreviewBorder{2mm}
+\usepackage{xcolor}
+\definecolor{myred}{RGB}{196,19,47} 
+\definecolor{myblue}{RGB}{0,139,139}
+
+
+\tikzset{
+  state/.style={circle,draw,minimum size=6ex},
+  arrow/.style={-latex, shorten >=1ex, shorten <=1ex}}
+\begin{document}
+  \begin{tikzpicture}
+
+% Menge 1
+    \node (p1) at (0, 0) {};
+    \node (p2) at (3, 0) {};
+    \node (p3) at (3.2, 3) {};
+    \node (p4) at (0, 2.8) {};
+    \path[fill,myblue!30]plot [smooth cycle,tension=1] coordinates {(p1) (p2) (p3) (p4)};
+    \path[draw]plot [smooth cycle,tension=1] coordinates {(p1) (p2) (p3) (p4)};    
+    \filldraw (1.5,1.5) circle (2pt);
+    \node at (1.75, 1.2) {$0$};
+    \draw[->] (1.5,1.5)--(1.7, 3.45);
+    \draw[->] (1.5,1.5)--(1.4, -0.55);
+    \draw[->] (1.5,1.5)--(3.5, 0.8);
+    \draw[->] (1.5,1.5)--(-0.6, 1.5);
+    \draw[->] (1.5,1.5)--(-0.08, 0.12);    
+    \draw[->] (1.5,1.5)--(0.05, 2.8);    
+    \draw[->] (1.5,1.5)--(3.25, 2.8);            
+  \end{tikzpicture}
+\end{document}
+
+
+	

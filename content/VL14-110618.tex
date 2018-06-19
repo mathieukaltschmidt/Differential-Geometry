@@ -1,7 +1,5 @@
 % !TeX root = ..//diffgeo_main.tex
 
-HIER FEHLT EINE VORLESUNG
-
 \section{Geodätische}
 Eine Gerade im $\R^n$ ist
 \begin{align}
@@ -196,6 +194,14 @@ $\varphi \circ c_v (t) = \tilde{c}(t)$ ist eine Geodätische mit
 \begin{align}
 S^n = \{ x \in \R^{n+1} \vert \langle x, x\rangle  = 1\} \subset (\R^{n+1}, \langle \cdot, \cdot \rangle_{\mathrm{Eukl}})
 \end{align}
+Hier ist $T_p S^n = p^\perp$.
+Dies wird in Abbildung \ref{img:sphere_tangent_space} veranschaulicht.
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.4\linewidth]{figures/tikz/sphere_tangent_space.pdf}
+\caption{Veranschaulichung des Tangentialraumes des $S^n$ am Punkt $p$}
+\label{img:sphere_tangent_space}
+\end{figure} 	
 Für $u, v \in p^\perp$ gilt:
 \begin{align*}
 & \langle v, p \rangle = 0\\
@@ -233,10 +239,13 @@ $\fix (A) = E \cup S^n$ ist ein Kreis.
 &c_v : I_v S^n\\
 &c_v(t) = \cos (\alpha t) p + \sin (\alpha t) \frac{v}{\norm{v}}
 \end{align}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.4\linewidth]{figures/tikz/geodesic_sphere.pdf}
+\caption{Geodäte auf $S^n$}
+\label{img:sphere_tangent_space}
+\end{figure} 	
 Mit der Anfangsbedingung $\dot{c}_v (0) = v$ folgt $\alpha = \norm{v}$.\\
 Es folgt, dass $S^n$ vollständig ist, da $I_v = \R$
 \end{bsp}
 \textbf{Übung:} Finde Geodätische für den Hyperbolischen Raum $H^n$
-
-
-

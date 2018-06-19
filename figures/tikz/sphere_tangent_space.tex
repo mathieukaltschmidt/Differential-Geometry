@@ -1,0 +1,39 @@
+\documentclass[border=5mm]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{shapes}
+\usepackage{pgfplots}
+\usepgfplotslibrary{fillbetween}
+\usepackage[active,tightpage]{preview}  %generates a tightly fitting border around the work
+\PreviewEnvironment{tikzpicture}
+\setlength\PreviewBorder{2mm}
+\usepackage{xcolor}
+\definecolor{myred}{RGB}{196,19,47} 
+\definecolor{myblue}{RGB}{0,139,139}
+
+\begin{document}
+	\begin{tikzpicture}
+
+%plane
+\path[name path=Grundfläche,fill,myblue!30] (-2.2,0,2) -- (2.2,0,2) -- (2.2,0,-2) -- (-2.2,0,-2) -- (-2.2,0,2);
+
+\draw (-2.2,0,2) -- (2.2,0,2);
+\draw (2.2,0,2) -- (2.2,0,-2);
+\draw (2.2,0,-2) -- (-2.2,0,-2);
+\draw (-2.2,0,-2) -- (-2.2,0,2);
+
+%vector
+\node at (0,2.2,0) {$p$};
+\filldraw(0,2,0) circle (1pt);
+\draw[thick,color=myred, ->] (0,0,0) -- (0,2.00,0); 	
+\filldraw(0,0,0) circle (1.5pt);
+%\draw[->] (-0.48,2.6,0) [out=-20, in=90] to  (-0.05,2.06,0);
+
+
+%sphere
+	\shade[ball color = gray!90, opacity = 0.2] (0,0) circle (2cm);
+	\draw (0,0) circle (2cm);
+	\draw (-2,0) arc (180:360:2 and 0.6);
+	\draw[dashed] (2,0) arc (0:180:2 and 0.6);
+	\end{tikzpicture}
+\end{document}
+
