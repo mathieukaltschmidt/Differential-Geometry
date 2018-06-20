@@ -1,0 +1,69 @@
+\documentclass{standalone}
+\usepackage{tikz} 
+\usetikzlibrary{shapes}
+\usepackage{pgfplots}
+\usepgfplotslibrary{fillbetween}
+\usetikzlibrary{positioning,arrows}
+\usepackage[active,tightpage]{preview}  %generates a tightly fitting border around the work
+\PreviewEnvironment{tikzpicture}
+\setlength\PreviewBorder{2mm}
+\usepackage{xcolor}
+\definecolor{myred}{RGB}{196,19,47} 
+\definecolor{myblue}{RGB}{0,139,139}
+\usepackage{amssymb}
+\usepackage{amsmath}
+
+\tikzset{
+  state/.style={circle,draw,minimum size=6ex},
+  arrow/.style={-latex, shorten >=1ex, shorten <=1ex}}
+\begin{document}
+  \begin{tikzpicture}
+
+	% Tangentialraum
+	\path[name path=Grundfläche,fill,myblue!30] (-1.5,0,0) -- (-1.5,0,-4) -- (1.5,0,-4) -- (1.5,0,0) -- (-1.5,0,0);
+	%Rand
+	\draw[thin] (-1.5,0,0) -- (-1.5,0,-4);
+	\draw[thin] (-1.5,0,-4) -- (1.5,0,-4);
+	\draw[thin] (1.5,0,-4) -- (1.5,0,0);
+	\draw[thin] (1.5,0,0) -- (-1.5,0,0);
+	
+	% Kurven im Tangentialraum
+	\node at (-0.9,0,-3.3) {$\gamma$};
+	%Kurve
+	\draw[-] (-1,0,-3.2) [out=300, in=150] to  (1,0,-1.1);
+	\draw[-] (-0.8,0,-0.9)--(0.8, 0.1, -3.2); 
+	\filldraw (-0.8,0,-0.9)circle (1pt);
+	\node at (-0.9,0,-0.6) {$0_p$};	
+	%\filldraw (-0.11,0,-2.05)circle (1pt);
+	\filldraw (0,0,-1.75)circle (0.8pt);	
+	\draw [bend angle=45, bend right]  (-0.3, 0, -1.74)  to (0.3,0, -1.7) ;
+
+	   
+% Mannigfaltigkeit
+    \node (q1) at (6, -0.2) {};
+    \node (q2) at (8.5, -0.1) {};
+    \node (q3) at (8.5, 1.3) {};
+    \node (q4) at (6, 1.5) {};
+     \path[fill,myblue!30]plot [smooth cycle,tension=1] coordinates {(q1) (q2) (q3)(q4)};
+     \path[draw]plot [smooth cycle,tension=1] coordinates {(q1) (q2) (q3)(q4)};
+
+	% Kurven auf Mannigfaltigkeit
+	\node at (5.9,0,-3.5) {$c_v (t)$};
+	%Kurve
+	\draw[-] (5.5,0,-3.2) [out=300, in=150] to  (7.8,0,-0.9);
+	\draw[-] (5.7,0,-0.9)--(7.1, 0.1, -2.9); 
+	\filldraw (5.7,0,-0.9)circle (1pt);
+	\node at (5.6,0,-0.6) {$p$};	
+	%\filldraw (-0.11,0,-2.05)circle (1pt);
+	\filldraw (6.5,0,-1.75)circle (0.8pt);	
+	\draw [bend angle=45, bend right]  (6.2, 0, -1.74)  to (6.8,0, -1.7) ;
+
+\draw [arrow, bend angle=30, bend left]  (1.25,1.5)  to (6,1.5) ;
+\node at (3.7,2.5) {$\exp_p: U \to V \subseteq \mathcal{M}$};
+\node at (-1.5,1.5,0) {$U \subset T_p \mathcal{M}$}; 
+\node at (9,1.5,0) {$\mathcal{M}$}; 
+\end{tikzpicture}
+\end{document}
+
+
+

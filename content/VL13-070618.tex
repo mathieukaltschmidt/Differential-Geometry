@@ -30,12 +30,12 @@ $\covd : \mathfrak{X}(\mfk) \times \mathfrak{X}(\mfk) \to \mathfrak{X}(\mfk) $ i
 2g(\covd(\varphi X, Y),Z) &= 2g(\covd_{\varphi X}Y, Z) \\
 									\phantom{.}\\
 									 &= (\varphi X)(g(Y, Z)) + Y(g(\varphi X, Z)) - Z(g(\varphi X, Y)) \\
-									 &\phantom{ }- g(\varphi X, [Y, Z])  - g(Y, [\varphi X, Z]) + g(Z, [\varphi X,Y]) \\
+									 &\phantom{=}- g(\varphi X, [Y, Z])  - g(Y, [\varphi X, Z]) + g(Z, [\varphi X,Y]) \\
 									 \phantom{.}\\
 									 &= (\varphi X) g(Y, Z) + Y(\varphi)g(X, Z) +(\varphi Y)g(X, Z) \\
-									 &\phantom{ }- Z(\varphi)g(X, Y) - (\varphi Z) g(X, Y) - \varphi g(X, [Y, Z]) \\
-									 &\phantom{ }-\varphi g(Y, [X, Z]) + Z(\varphi) g(X, Y) - \varphi g(Z, [X, Y]) \\
-									 &\phantom{ }-Y(\varphi)g(Z, X)	\\
+									 &\phantom{=}- Z(\varphi)g(X, Y) - (\varphi Z) g(X, Y) - \varphi g(X, [Y, Z]) \\
+									 &\phantom{=}-\varphi g(Y, [X, Z]) + Z(\varphi) g(X, Y) - \varphi g(Z, [X, Y]) \\
+									 &\phantom{=}-Y(\varphi)g(Z, X)	\\
 									 \phantom{.}\\
 									 &= \varphi g(\covd_XY, Z)							 
 \end{align*}
@@ -45,9 +45,9 @@ $\covd : \mathfrak{X}(\mfk) \times \mathfrak{X}(\mfk) \to \mathfrak{X}(\mfk) $ i
 										&= g(X, [\varphi Y, Z]) - g(\varphi Y, [X, Z]) + g(Z, [X, \varphi Y]) \\
 										\phantom{.}\\
 										&= (\varphi X) g(Y, Z) + X(\varphi) g(Y, Z) + (\varphi Y)g(X, Z) \\
-										&\phantom{ }- (\varphi Z)g(X, Y) - Z(\varphi)g(X, Y) - \varphi g(X, [Y, Z]) \\
-										&\phantom{ }+ Z(\varphi)g(X, Y) - \varphi g(Y, [X, Z]) + \varphi g(Z, [X, Y]) \\
-										&\phantom{ }+ X(\varphi)g(Z, Y)\\
+										&\phantom{=} - (\varphi Z)g(X, Y) - Z(\varphi)g(X, Y) - \varphi g(X, [Y, Z]) \\
+										&\phantom{=}+ Z(\varphi)g(X, Y) - \varphi g(Y, [X, Z]) + \varphi g(Z, [X, Y]) \\
+										&\phantom{=}+ X(\varphi)g(Z, Y)\\
 										\phantom{.}\\
 										&= 2X(\varphi) g(Y, Z) + 2\varphi g(\covd_XY,Z)																										
 \end{align*}
@@ -88,8 +88,12 @@ Daraus erhalten wir eine Formel zur Berechnung der Christoffel-Symbole:
 \chapter{Geodätische}
 Geodätische sind Kurven, die das Konzept der Geraden im $\R^n$ auf Mannigfaltigkeiten verallgemeinern.
 Diese Verallgemeinerung ist über Zusammenhänge möglich.
-
-\missingfigure{Gerade}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.6\linewidth]{figures/tikz/linern.pdf}
+\caption{Gerade im $\R^n$}
+\label{img:linern}
+\end{figure} 
 \begin{defs}[Geodätische]
 Sei $\mfk$ eine Mannigfaltigkeit mit einem linearen Zusammenhang $\nabla$, $I \subseteq \R$ offen. Eine Kurve $c: I \longrightarrow \mfk$ ist eine Geodätische falls:
 \begin{align*} 
