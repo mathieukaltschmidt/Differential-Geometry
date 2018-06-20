@@ -5,33 +5,32 @@ Sie können verwendet werden um Winkel, Distanz bzw. Längen von Kurven zu messe
 
 \begin{defs}[(Semi-)Riemannsche Mannigfaltigkeit]
 Eine differenzierbare Mannigfaltigkeit $\mfk$ ausgestattet mit einer (Semi-)Riemannschen Metrik $g$, wird (Semi-)Riemannsche Mannigfaltigkeit genannt.\\
-\textbf{Notation:} $(\mfk, g)$
 \end{defs}
-
+\textbf{Notation:} $(\mfk, g)$\\
 Wir wollen nun (Semi-)Riemannsche Metrik $g$ in lokalen Koordinaten betrachten.
 Sei $(x, U)$ eine Karte von $\mfk$.
 Ferner bezeichnen wir mit $(X_1, \dots, X_n)$ den dazugehörigen lokalen Rahmen von $T\mfk \eval_U$,
 das heißt $X_i = \pdv{x_i}$.
 Dann sind 
 \begin{align}
-g_{ij}: &U \to \R \\
-& p \mapsto g_{ij} (p) := g\eval_p (X_i (p), X_j (p))
+g_{ij} : \ U &\to \R \\
+p & \mapsto g_{ij} (p) := g\eval_p (X_i (p), X_j (p))
 \end{align}
 
 glatte Funktionen und es gilt:
 \begin{align}
-g_p \left( X\eval_p, Y \eval_p \right) &= g_p \left( \sum_i^m \xi^i X_j \eval_p, \sum_i^m \eta^i X_i \eval_p \right) \\
-&= \sum_{ij} \xi^j \eta^i \underbrace{g\eval_p \left( X_j \eval_p, X_i \eval_p\right) }_{g_{ij}(p)}
+g_p \left( X\eval_p, \ Y \eval_p \right) &= g_p \left( \sum_i^m \xi^i X_j \eval_p, \ \sum_i^m \eta^i X_i \eval_p \right) \\
+&= \sum_{ij} \xi^j \eta^i \underbrace{g\eval_p \left( X_j \eval_p, \ X_i \eval_p\right) }_{g_{ij}(p)}
 \end{align}
 
 \begin{defs}[Fundamentalmatrix]
-$(g_{ij})^m_{i, j = 1}$ heißt Fundamentalmatrix von $g$ bzgl. $(x, U)$
+$(g_{ij})^m_{i, j = 1}$ heißt Fundamentalmatrix von $g$ bezüglich $(x, U)$.
 \end{defs}
 
 \begin{bem}\leavevmode
 \begin{enumerate}
-\item Matrix $(g_{ij})^m_{i, j = 1}$ ist symmetrisch, d.h. $g_{ij} = g_{ji}$ (Folgt aus Symmetrie von $g_p$)
-\item $(g_{ij})^m_{i, j = 1}$ ist invertierbar (Folgt aus der Tatsache, dass $g_p$ nicht entartet ist)
+\item Die Matrix $(g_{ij})^m_{i, j = 1}$ ist symmetrisch, d.h. $g_{ij} = g_{ji}$ (Folgt aus Symmetrie von $g_p$).
+\item $(g_{ij})^m_{i, j = 1}$ ist invertierbar (Folgt aus der Tatsache, dass $g_p$ nicht entartet ist).
 \end{enumerate}
 Die Inverse Matrix von$(g_{ij})^m_{i, j = 1}$ bezeichnen wir mit $(g^{ij})^m_{i, j = 1}$
 \end{bem}
@@ -40,7 +39,7 @@ Die Inverse Matrix von$(g_{ij})^m_{i, j = 1}$ bezeichnen wir mit $(g^{ij})^m_{i,
 \begin{itemize}
 \item[a)] Sei $V$ ein reeller $n$-dimensionaler Vektorraum und $\langle\cdot,\cdot\rangle$ eine nicht entartete Bilinearform auf $V$.
 Für $v, w \in T_p V$ gilt $g_p (v, w) := \langle v, w \rangle$.
-Sei $X: V \to V$ glat ($X$ Vektorfeld), dann gilt
+Sei $X: V \to V$ glatt ($X$ Vektorfeld), dann gilt:
 \begin{align}
 g_p (X(p), Y(p)) = \langle X(p), Y(p) \rangle
 \end{align}
@@ -48,7 +47,7 @@ ist glatt.
 Daraus folgt, dass $g$ eine Semi-Riemannsche Metrik ist.
 Es gilt:
 \begin{align*}
-g_p \left( \pdv{x_i} , \pdv{x_j} \right) &= \Big{\langle} \phi_p \left(\pdv{x_i}\right) , \phi_p \left( \pdv{x_j} \right) \Big\rangle
+g_p \left( \pdv{x_i} , \pdv{x_j} \right) &= \Big{\langle} \phi_p \left(\pdv{x_i}\right) , \phi_p \left( \pdv{x_j} \right) \Big\rangle\\
 &= \langle e_i, e_j \rangle = \delta_{ij}
 \end{align*}
 \item[b)] Sei $\mfk \subset \R^{n-k}$ eine $n$-dimensionale Untermannigfaltigkeit mit
@@ -58,23 +57,22 @@ g_p \left( \pdv{x_i} , \pdv{x_j} \right) &= \Big{\langle} \phi_p \left(\pdv{x_i}
 \end{align*}
 wobei $\phi_p$ injektiv und linear ist.
 Dann ist 
-\begin{align*}
+\begin{align}
+\label{eq:erstefundamentalform}
 g_p = \phi^\ast_p \langle \cdot , \cdot \rangle 
-\end{align*}
+\end{align}
 positiv definit.
-\begin{defs}
-Diese Metrik heißt erste Fundamentalform von $\mfk \subset \R^{n+k}$
-\end{defs}
 \end{itemize}
 \end{bsp}
-
+\begin{defs}[erste Fundamentalform]
+Die Metrik \ref{eq:erstefundamentalform} heißt erste Fundamentalform von $\mfk \subset \R^{n+k}$
+\end{defs}
 Als nächstes wollen wir die Existenz von Semi-Riemannschen Metriken zeigen.
 \begin{satz}
 \label{satz:existenz_metrik}
-Jede differenzierbare Mannigfaltigkeit kann mit einer Riemannschen Metrik ausgestattet werden.\\
-\textbf{Frage:} gilt dies auch für Semi-Riemannsche Metriken? Übung.
+Jede differenzierbare Mannigfaltigkeit kann mit einer Riemannschen Metrik ausgestattet werden.
 \end{satz}
-
+\textbf{Übung:} gilt dies auch für Semi-Riemannsche Metriken?
 \begin{bew}[Beweis Satz \ref{satz:existenz_metrik}]
 Sei $\{ (x_\alpha, U_\alpha) \}$ Atlas von $\mfk$.
 Setze
@@ -95,16 +93,16 @@ Es existiert ein $\alpha_0$, so dass $\varphi_{\alpha_0}(p) > 0$.
 \begin{align*}
 \Rightarrow g_p (v, v) \geq \varphi_{\alpha_0} (p) \eval{g_{\alpha_0}}_p (v, v) > 0.
 \end{align*} 
-\textbf{Wichtig:} Wir haben Wahlen getroffen. 
-$\Rightarrow$ Metrik $g$ ist nicht kanonisch.
-Unter Umständen können Metriken sehr verschiedene Eigenschaften haben.
 \end{bew}
-
-Seien $\mfk_1$, $\mfk_2$ differenzierbare Mannigfaltigkeiten und unsere Daten sind jetzt $(\mfk_1, g_1)$, $\mfk_2, g_2$.
+\textbf{Wichtig:} Wir haben in unserem Beweis Wahlen getroffen. 
+Daraus folgt, dass die Metrik $g$ nicht kanonisch ist.
+Unter Umständen können Metriken sehr verschiedene Eigenschaften haben.\\
+\begin{defs}[Isometrie]
+Seien $\mfk_1$, $\mfk_2$ differenzierbare Mannigfaltigkeiten und unsere Daten sind jetzt $(\mfk_1, g_1)$, $(\mfk_2, g_2)$.
 \begin{align*}
 \phi : \mfk_1 \to \mfk_2, \quad \text{Diffeomorphismus}
 \end{align*}
-Wir wollen zusätzlich, dass $\phi$ die Metriken erhält, das heißt
+Wir wollen zusätzlich, dass $\phi$ die Metriken erhält, also
 \begin{align}
 \phi^{\ast} g_2 = g_1
 \end{align}
@@ -114,7 +112,8 @@ wenn $\phi: \mfk_1 \to \mfk_2$ ein Diffeomorphismus mit
 \phi^\ast g_2 = g_1
 \end{align}
 existiert.
-Eine solche Abbildung heißt \textbf{Isometrie}.\\
+Eine solche Abbildung heißt \textbf{Isometrie}.
+\end{defs}
 
 Unsere nächste Frage ist: wie verhält sich $g_{ij}$ unter Kartenwechsel?
 \begin{lem}[Transformationsregel]
@@ -138,7 +137,7 @@ g^y_{ij} &= g(Y_i, Y_j)\\
 \end{align*}
 \end{bew}
 
-Nächstes Ziel: Führe ausgezeichneten Zusammenhang ein.
+\textbf{Nächstes Ziel:} Führe ausgezeichneten Zusammenhang ein.
 Dazu benötigen wir zunächst ein Hilfslemma.
 Eine Semi-Riemannsche Metrik $g$ definiert einen Isomorphismus zwischen Tangentialbündel und Kotangentialbündel
 \begin{align}
@@ -156,22 +155,20 @@ Auf einer Semi-Riemannschen Mannigfaltigkeit $(\mfk, g)$ gibt es eine Eins zu Ei
 \end{hlem}
 
 \begin{bew}[Beweis Hilfslemma \ref{hlem:formvfkorrespondenz}]
-Wir haben beweis einen Faserweisen Isomorphismus
+Wir haben bereits einen Faserweisen Isomorphismus
 \begin{align*}
 T_p\mfk \to T^\ast_p \mfk
 \end{align*}
-definiert.
-Zu zeigen bleibt:
-glattheit, das heißt $X$ glatt, dass ist $g(X, \cdot)$ glatt.
-Arbeite in Karte $(x, U)$, dann ist 
+definiert.\\
+Jetzt bleibt die Glattheit zu zeigen, was bedeutet, dass aus $X$ glatt folgt, dass $g(X, \cdot)$ glatt ist.
+Wir Arbeiten in den Karten $(x, U)$, denn dann ist
 \begin{align*}
 \left( \eval{\pdv{x_1}}_p, \dots,  \eval{\pdv{x_m}}_p \right)
 \end{align*}
 eine Basis von $T^\ast_p \mfk$.
-Dann gilt $g_p = \sum g_{ij} \dd{x^i} \otimes \dd{x^j}$.
-Das heißt:
+Es gilt $g_p = \sum g_{ij} \dd{x^i} \otimes \dd{x^j}$, was bedeutet, dass:
 \begin{align*}
-g_p (X, Y) &= g_{ij} \dd{x^i} \otimes \dd{x^j} \left( \sum \xi^k X_k, \eta^l, X_l\right)\\
+g_p (X, Y) &= g_{ij} \dd{x^i} \otimes \dd{x^j} \left( \sum \xi^k X_k, \eta^l X_l\right)\\
 &= \sum g_{ij} \xi^k \eta^l \delta_{ik} \delta_{kl}\\
 &= \sum g_{ij} xi^i \eta^j
 \end{align*}
@@ -180,24 +177,24 @@ Wir schreiben nun auch die $1$-Form in lokale Koordinaten:
 \begin{align}
 \phi = \sum_j \varphi_j \dd{x^j}
 \end{align}
-Zu Zeigen: sei $\phi = g(X, \cdot)$ dann sind ide Koeffizientenfunktionen glatt.
+Zu Zeigen: sei $\phi = g(X, \cdot)$, dann sind ide Koeffizientenfunktionen glatt.
 \begin{align*}
 \phi(Z) &= \sum_j \varphi_j \dd{x^j} \left( \sum \eta^l X_l \right)\\
 &= \sum_{j} v\varphi_j \eta^l \dd{x^j} (X_l)\\
 &= \sum_j \varphi_j \eta^j
 \end{align*}
-Nach obiger Rechnung haben wir also:
+Nach obiger Rechnung haben wir also
 \begin{align}
-\varphi_j = \sum^m_{i=1} g_{ij} \xi^i
+\varphi_j = \sum^m_{i=1} g_{ij} \xi^i.
 \end{align}
-dies ist eine glatte Funktion.
+Dies ist eine glatte Funktion.
 \end{bew}
 
 \section{Levi-Civita-Zusammenhang}
 
 \begin{satz}
 \label{satz:koszulformel}
-Sei $(\mfk, g)$ eine Semi-Riemannsche Mannigfaltigkeit, dann existiert auf $\mfk$ ein Zusammenhang mit den folgenden Eigenschaften:
+Sei $(\mfk, g)$ eine (Semi-) Riemannsche Mannigfaltigkeit, dann existiert auf $\mfk$ ein Zusammenhang mit den folgenden Eigenschaften:
 \begin{enumerate}
 \item $\covd$ ist Torsionsfrei:
 \begin{align}
@@ -205,7 +202,7 @@ Sei $(\mfk, g)$ eine Semi-Riemannsche Mannigfaltigkeit, dann existiert auf $\mfk
 \end{align}
 \item $\covd$ ist metrisch:
 \begin{align}
-X g(Y, Z) = g(\covd_X Y, Z) + g(Y, \covd_X Z), quad \forall X,Y,z \in \mathfrak{X}(\mfk)
+X g(Y, Z) = g(\covd_X Y, Z) + g(Y, \covd_X Z), \quad \forall X, Y, Z \in \mathfrak{X}(\mfk)
 \end{align}
 \end{enumerate}
 Dieser Zusammenhang ist eindeutig durch die \textbf{Koszulformel} bestimmt:
@@ -216,35 +213,4 @@ Dieser Zusammenhang ist eindeutig durch die \textbf{Koszulformel} bestimmt:
 $\covd$ heißt \textbf{Levi-Civita-Zusammenhang}.
 \end{satz}
 
-<<<<<<< HEAD
-=======
-\begin{bew}[Beweis Satz \ref{satz:koszulformel}]
-Zu zeigen:
-\begin{enumerate}
-\item Die beiden geforderten Eigenschaften bestimmen den Zusammenhang und Koszuformel ist erfüllt
-\end{enumerate}
-Die zweite geforderte Eigenschaft impliziert:
-\begin{align*}
-&X g(Y, Z) = g(\covd_X Y, Z) + g(Y, \covd_X Z)\\
-&Y g(X , Z) = g (\covd_Y X, Z) + g(X, \covd_Y Z)\\
-&Z g(X, Y) = g(\covd_Z X, Y) + g(X, \covd_Z Y)
-\end{align*}
-Daraus folgt:
-\begin{align*}
-X g(Y, Z) + Y g(X , Z) - Z g(X, Y) &= g(\covd_X Y + \covd_Y X, Z) + g(\covd_X Z - \covd_Z X , Y)\\
- & \phantom{=}+ g(\covd_Y Z - \covd_Z Y, X) \\
- &= 2 g(\covd_X Y, Z) - g(\comm{X}{Y}, Z) + g(\comm{X}{Z}, Y) + g(\comm{Y}{Z}, X)
-\end{align*}
-Damit ergibt sich
-\begin{align}
-2 g(\covd_X Y, Z) &= g(\comm{X}{Y}, Z) - g(\comm{X}{Z}, Y) - g(\comm{Y}{Z}, X)\\
-&\phantom{=} + X g(Y, Z) + Y g(X, Z) - Z g(X, Y)
-\end{align}
-Definiere $\covd : \mathfrak{X}(\mfk) \times \mathfrak{X}(\mfk) \to \mathfrak{X}(\mfk)$
-durch $\covd (X, Y)$, welches das eindeutig bestimmte glatte Vektorfeld ist, das die Koszulformel erfüllt.\\
-Es bleibt zu zeigen:
-$\covd : \mathfrak{X}(\mfk) \times \mathfrak{X}(\mfk) \to \mathfrak{X}(\mfk) $ ist ein Zusammenhang
 
-\end{bew}
-
->>>>>>> a3dd788163af556a42682fb864de5242277b6bab

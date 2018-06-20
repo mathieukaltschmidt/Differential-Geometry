@@ -23,23 +23,22 @@ Dann gilt:
 \end{align}
 
 \begin{bew}[Beweis von Gleichung \ref{eq:parallelcovd}]
-Für $Y$, definiert in einer Umgebung von $p_y$, ist der Wert $(\nabla_X Y)(p)$ vollständig bestimmt durch Restriktion von $Y$ auf die Kurve $c$ mit $c'(0) = X_p$.
+Für $Y$, definiert in einer Umgebung von $p$, ist der Wert $(\nabla_X Y)(p)$ vollständig bestimmt durch Restriktion von $Y$ auf die Kurve $c$ mit $c'(0) = X_p$.\\
 Expandiere $Y$ als Linearkombination paralleler Vektorfelder längs $c$.
-
 Sei $\{ \hat{w}_1, \dots, \hat{w}_n \}$ eine Basis von $T_p \mfk$.
 Sei $w_i : (-\epsilon, \epsilon) \to \mfk$ das parallele Vektorfeld längs $c$ mit $w_i(0) = \hat{w}_i$.
-Mit anderen Worten  $\{ w_1(t), \dots, w_n (t)\}$st eine Basis von $T_{c(t)}\mfk$.
-\begin{align}
+Mit anderen Worten: $\{ w_1(t), \dots, w_n (t)\}$ ist eine Basis von $T_{c(t)}\mfk$.
+\begin{align*}
 Y = \sum^m_{i=1} a_i w_i
-\end{align}
+\end{align*}
 Mit Koeffizienten $a_i: (-\epsilon , \epsilon) \to \R$.\\
 Betrachte:
-\begin{align}
+\begin{align*}
 \lim\limits_{t \rightarrow 0} \frac{1}{t} \left( P^{-1}_{c(t)} Y(t) - Y(0)\right) &=  \lim\limits_{t \rightarrow 0} \frac{1}{t} \left( \sum^m_{i=1} (a_i (t) - a_i (0)) \cdot w_i (0) \right)\\
 &= \sum^m_{i=1} \left( \dv{t} a_i (t) \right) \eval_{t=0} w_i (0)\\
 &= \covd_t \left( \sum^m_{i=1} a_i w_i \right) \eval_{t=0}\\
 &= \nabla_X Y
-\end{align}
+\end{align*}
 \end{bew}
 
 \begin{defs}[Parallele Fortsetzung]
@@ -56,10 +55,10 @@ Also existiert ein Vektorfeld $X$ auf $\mfk$ in einer Umgebung $U$ von $p$, soda
 \caption{Paralleltransport}
 \end{figure} 
 Gegeben sei 
-\begin{align}
+\begin{align*}
 V: [0, 1] \times [0, 1] \to \mfk\\
 (t, \tau) \mapsto V(t, \tau)
-\end{align}
+\end{align*}
 Damit erhalten wir ein Vektorfeld $Z$ in einer Umgebung von $p$:
 \begin{align}
 \label{eq:vectorfieldz}
@@ -67,17 +66,17 @@ Damit erhalten wir ein Vektorfeld $Z$ in einer Umgebung von $p$:
 \end{align}
 Wir hätten gerne, dass $\nabla_{\pdv{t}} Z = 0$.
 Es genügt zu zeigen, dass folgendes gilt:
-\begin{align}
+\begin{align*}
 \nabla_{\pdv{\tau}}\nabla_{\pdv{t}} Z = 0
-\end{align}
+\end{align*}
 \ref{eq:vectorfieldz} impliziert:
-\begin{align}
+\begin{align*}
 \nabla_{\pdv{t}}\nabla_{\pdv{\tau}} Z = 0
-\end{align}
+\end{align*}
 Es muss deshalb zwangsweise gelten:
-\begin{align}
+\begin{align*}
 \nabla_{\pdv{t}}\nabla_{\pdv{\tau}} Z - \nabla_{\pdv{\tau}}\nabla_{\pdv{t}} Z = 0.
-\end{align}
+\end{align*}
 Da $\comm{\pdv{\tau}}{\pdv{t}} = 0$ gilt, ist 
 \begin{align}
 \curv \left( \pdv{\tau}, \pdv{t} \right) Z = 0
@@ -95,10 +94,10 @@ Betrachte nun die folgende Situation:
 
 
 Sei $f$ glatt und $f(0)=p$ und sei außerdem
-\begin{align}
+\begin{align*}
 & \dd f \eval_0 \left( \pdv{x} \right) = f_x (0) = u\\
 & \dd f \left( \pdv{y}\right) = f_y(0) = v.
-\end{align}
+\end{align*}
 Es sei eine Familie von Kurven $c_s$ wobei $0 \leq s \leq 1$ und $c_s (0) = c_s(1) = 0$.
 \begin{figure}[H]
 \centering
@@ -109,10 +108,10 @@ Es sei eine Familie von Kurven $c_s$ wobei $0 \leq s \leq 1$ und $c_s (0) = c_s(
 
 $P_s$ ist die Parallelverschiebung längs $c_s$.
 Wir definieren
-\begin{align}
+\begin{align*}
 &c : I \times I \to \mfk\\
 &(s, t) \mapsto c(s,t)
-\end{align}
+\end{align*}
 wie folgt:
 \begin{align}
 c(s, t) = \left\{
@@ -139,10 +138,10 @@ Dann gilt:
 \begin{defs}[Entartung, Index]
 \begin{itemize}
 \item Eine symmetrische Bilinearform $B: V \times V \to \R$ ist nicht entartet, falls:
-\begin{align}
-&B(v, w) = 0, \quad \forall w \in V\\
+\begin{align*}
+&B(v, w) = 0\\
 &\Rightarrow v = 0.
-\end{align}
+\end{align*}
 \item $\mathrm{Index}(B) = \max \{ \dim W \vert W \subset V $ ist UR mit $\dim n$ und $B\vert_{W \times W}$ ist negativ definit. $\}$
 \end{itemize}
 \end{defs}
@@ -182,7 +181,7 @@ $\phi: W \to V$ heißt Isometrie, falls $(\phi^\ast B_V) = B_W$.
 Eine (Semi- ) Riemannsche Metrik auf einer differenzierbaren Mannigfaltigkeit $\mfk$, ist eine Familie von nicht-entarteten symmetrischen Bilinearformen 
 $(g_p)_{p \in \mfk}$ auf $T_p \mfk$, so dass für alle $X$, $Y$ $\in \mathfrak{X}(\mfk)$ gilt:
 \begin{align}
-&g_{\cdot} (X_\cdot, Y_\cdot): \mfk \to \R \\
+&g_{\bullet} (X_\bullet, Y_\bullet): \mfk \to \R \\
 & p \mapsto g_p (X_p, Y_p)
 \end{align}
 ist glatt in $p \in \mfk$.
