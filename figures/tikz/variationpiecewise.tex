@@ -1,0 +1,41 @@
+\documentclass[border=5mm]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{shapes}
+\usepackage{pgfplots}
+\usepgfplotslibrary{fillbetween}
+\usepackage[active,tightpage]{preview} 
+\usepackage{amssymb}
+\usetikzlibrary{positioning,arrows}
+\usepackage[active,tightpage]{preview}  %generates a tightly fitting border around the work
+\PreviewEnvironment{tikzpicture}
+\setlength\PreviewBorder{2mm}
+\usepackage{xcolor}
+\definecolor{myred}{RGB}{196,19,47} 
+\definecolor{myblue}{RGB}{0,139,139}
+  
+\begin{document}
+		
+\begin{tikzpicture}
+	% curves
+	% curve 1
+
+	\draw [-, bend angle=50, bend right] (0,0) to (2.4,1.2) ;	
+	\draw [-, bend angle=50, bend right] (2.4,1.2) to (4.5,2.7) ;	
+	% curve 2
+	\draw [-, bend angle=50, bend right] (0,0) to (2.7,0.5) ;	
+	\draw [-, bend angle=50, bend right] (2.7,0.5) to (4.5,2.7) ;	
+	% curve 3
+	\draw [-, bend angle=50, bend right] (0,0) to (2,2.2) ;	
+	\draw [-, bend angle=50, bend right] (2,2.2) to (4.5,2.7) ;	
+		
+	% Punkte	
+	\filldraw (0,0)   circle (1pt);
+	\filldraw (4.5, 2.7)   circle (1pt);	
+	\filldraw (2.4, 1.2)   circle (1pt);
+	\filldraw (2.7, 0.5)   circle (1pt);	
+	\filldraw (2, 2.2)   circle (1pt);		
+	% text	
+	\node at (-0.2,-0.1)   {$p$};
+	\node at (4.7,2.8)   {$q$};
+	\end{tikzpicture}
+\end{document}

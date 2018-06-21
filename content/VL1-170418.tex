@@ -88,17 +88,33 @@ Alternativ ist auch eine Definition über abgeschlossene Mengen und Umgebungen m
 \end{bem}
 
 \begin{bsp}
+\begin{itemize}
+\item[1.] Das Ihnen vermutlich am besten vertraute Beispiel ist das des Euklidischen Raums $\R^n$ ausgestattet mit der euklidischen Metrik
+\begin{align*}
+d(x,y) = \sqrt{\sum_i^n (x_i - y_i)^2}.
+\end{align*}
+\item[2.] Metrische Räume\\
+\end{itemize}
+Es gibt aber auch weniger anschauliche Beispiele:
+
+\begin{itemize}
+\item[3.] Diskrete offene Mengen
+\item[4.] Indiskrete Topologie
+\item[5.] Drei Punkte
+\item[6.] Hilbertwürfel
+\end{itemize}
+\end{bsp}
+
+Zum Schluss wollen wir noch ein paar natürliche Konstruktionen von topologischen Räumen aus gebenen topologischen Räumen diskutieren. 
+Diese liefern natürlich große Beispielklassen.:
+\begin{bsp}
 \begin{enumerate}
-	\item[a)] $( X, \mathcal{T} = \mathcal{P}(X) )$
-	\item[b)] $N \subset X$ Teilmenge. Dann ist auch $(N,\mathcal{T}_1)$ ein topologischer Raum, wobei $\mathcal{T}_1$ wie folgt gegeben ist:\\
+\item[i)] Produktopologie
+\item[ii)] Quotiententopologie
+\item[iii)] Teilraumtopologie. \\
+	Sei $N$ eine Teilmenge von $X$. Dann ist auch $(N,\mathcal{T}_1)$ ein topologischer Raum, wobei $\mathcal{T}_1$ wie folgt gegeben ist:\\
 	\center{$V \in \mathcal{T}_1 \Leftrightarrow \ \exists \ U \in \mathcal{T}$, sodass $V= N \cap U$}
 \end{enumerate}
-%\begin{figure}[h]
-%\centering
-%\includegraphics[width=0.35\linewidth]{figures/scan/teilmengetopologie.png}
-%\label{img:teilmengetopologie}
-%\end{figure}
-Teilmengen topologischer Räume sind topologische Räume.
 \end{bsp}
 
 \begin{defs}[Topologische Mannigfaltigkeiten]

@@ -27,7 +27,7 @@ Jetzt muss noch gezeigt werden, dass $(\pdv{x_1}\eval_{p}, \dots, \pdv{x_m}\eval
 \end{bew}
 
 \begin{hlem}
-\label{lem:DarstellungBasisTPM}
+\label{hlem:DarstellungBasisTPM}
 Sei $f: U \subset \mfk \to \R$ eine glatte Funktion.
 Dann existiert eine Umgebung $U' \subset U$ von $p$ ($p \in U'$) und eine glatte Funktion
 $f_i: U' \to \R$, so dass
@@ -43,16 +43,17 @@ Wobei $f_i (p) = \pdv{x_i}\eval_{p} (f)$.
 \centering
 \includegraphics[width=1\linewidth]{figures/tikz/lemma_tangentialvectors.pdf}
 \label{img:lemmaDarstellungBasisTPM}
+\caption{Veranschaulichung von Hilfslemma \ref{hlem:DarstellungBasisTPM}}
 \end{figure}
 
-Nach der Abbildung gilt:
-\begin{align}
+Nach Abbildung \ref{img:lemmaDarstellungBasisTPM} gilt:
+\begin{align*}
 \psi(u) - \psi(u_0) = \int^1_0 \dv{t} \psi(t u + (1- t) u_0) \dd t
-\end{align}
+\end{align*}
 Hierbei ist $u=x(q)$ mit $q \in \mfk$ und $u_0 = x(p)$.
-\begin{align}
+\begin{align*}
 \psi(u) - \psi(u_0) = \sum_i (u^i- u^i_0) \int^1_0 \underbrace{\dv{\psi}{u'} (t u + (1 - t) u_0) \dd t}_{:= \psi_i (u)}
-\end{align}
+\end{align*}
 Setze $f_i = \psi_i \circ x : U \subset \mfk \to \R$.
 $f_i$ ist glatt und es gelten folgende Eigenschaften nach Definition:
 \begin{itemize}
@@ -62,35 +63,35 @@ $f_i$ ist glatt und es gelten folgende Eigenschaften nach Definition:
 \item $\psi_i (u) = \psi_i (x(1)) = f_i(q)$
 \end{itemize}
 Diese Eigenschaften können wir nun wie folgt verwenden:
-\begin{align}
+\begin{align*}
 f(q)- f(p) = \sum_{i=1}^n (x_i (q) - x_i (p)) f_i(q)
-\end{align}
+\end{align*}
 
-\begin{align}
+\begin{align*}
 \pdv{x_i}\eval_{p} (f) &= \partial_i \underbrace{(f \circ x^{-1})}_{\psi} \big \vert_{x(p)} \\
 &= \partial_i \psi \eval_{x(p)}\\
 &= \psi_i (x(p)) = f_i (p)
-\end{align}
+\end{align*}
 Da $\psi(u) = \psi(u_0) + \sum_i (u^i - u^i_0)\psi_i(u)$
-\begin{align}
+\begin{align*}
 \Rightarrow \pdv{u_i} \psi \eval_{x(p)} = \psi_i(u) \eval_x(p) = \psi(x(p))
-\end{align}
+\end{align*}
 Und somit gilt schließlich $f_i (p) = \pdv{u_i} \eval_p (f)$.
 \end{bew}
 
 Nun können wir unseren Beweis fortführen.
 
 \begin{bew}[Satz \ref{satz:BasisTPM} Teil 2] \leavevmode
-\begin{align}
+\begin{align*}
 v(f) &= v(f(p) + \sum_i (x_i - x_i(p)) f_i) \\
 &= v(f(p)) + \sum_i v(x_i - x_i (p) f_i)
-\end{align}
+\end{align*}
 Benutze Produktregel
-\begin{align}
+\begin{align*}
 v(f) &= \sum_i (\underbrace{(x_i (p) - x_i (p)) v(f_i)}_{=0} + \underbrace{v(x_i - x_i (p))}_{=v(x_i)} f_i) \\
 &= \sum_i v(x_i) f_i \\
 &= \sum_i v(x_i) \pdv{x_i} \eval_p f 
-\end{align}
+\end{align*}
 \end{bew}
 
 \begin{satz}[Transformationsregel]
@@ -109,14 +110,14 @@ Dann gilt:
 \begin{defs}[Differential, Ableitung]
 Seien $\mfk$ und $\mfka$ differenzierbare Mannigfaltigkeiten und $f: \mfk \to \mfka$ glatt.
 Das \textbf{Differential (Ableitung)} von $f$ in $p$ ist die lineare Abbildung:
-\begin{align}
-\dd f \eval_p : \tspace{p} &\to T_{f(p)}\mfka \\
-v &\mapsto \dd f \eval_p (v),
-\end{align}
+\begin{align*}
+& \dd f \eval_p : \tspace{p} \to T_{f(p)}\mfka \\
+& v \mapsto \dd f \eval_p (v),
+\end{align*}
 welche definiert ist durch:
-\begin{align}
+\begin{align*}
 \underbrace{\dd f \eval_p (v)}_{T_{f(p)}\mfka} \underbrace{(\phi)}_{\in \mathcal{F}(\mfka)} = \underbrace{v(\phi \circ f)}_{\in \mathcal{F}(\mfka)}, \quad \forall \phi \in \mathcal{F}(\mfka)
-\end{align}
+\end{align*}
 \end{defs}
 Fakt: $\dd f \eval_p$ ist linear.
 \begin{satz}[Kettenregel]
@@ -134,11 +135,11 @@ Dann gilt:
 \end{satz}
 
 \begin{bew}[Satz \ref{satz:Kettenregel}] \leavevmode
-\begin{align}
+\begin{align*}
 \dd (g \circ f) \eval_{p} (v) (\phi) &= v(\phi \circ g \circ f) \\
 &= \dd f \eval_p (v)(\phi \circ g) \\
 &= \dd g \eval_{f(p)} \circ \dd f \eval_p (v) (\phi)
-\end{align}
+\end{align*}
 \end{bew}
 
 \begin{satz}
@@ -179,14 +180,14 @@ ein Diffeomorphismus ist.
 \begin{bew}[Satz \ref{satz:Umkehrsatz}] \leavevmode
 Nutze Karten um dies auf den euklidischen Fall zu führen.
 
-\begin{align}
+\begin{align*}
 \begin{xy}
   \xymatrix@=0.25\linewidth{
       \mfk \ar[r]^f \ar[d]_x    &   \mfka \ar[d]^y \\
       V\subseteq \R^m \ar[r]_\phi             &   V\subseteq \R^m    
   }
 \end{xy}
-\end{align}
+\end{align*}
 
 Seien $(x, U)$ und $(y, U')$ Karten von $\mfk$ und $\mfka$ um $p$ und $f(p)$.
 Ohne Beschränkung der Allgemeinheit gilt: $f(U) \subset U'$.
@@ -195,13 +196,13 @@ Umkehrsatz im $\rn$ auf $\phi$ anwenden:
 Es existieren Umgebungen $\hat{V}$ von $x(p)$ und $\hat{V}'$ von $y(f(p)) = \phi(x(p))$, so dass
 $\hat{\phi}\eval_{\hat{V}}$ ein Diffeomorphismus ist.
 Dann ist
-\begin{align}
+\begin{align*}
 f\eval_{x^{-1}(\hat{V})}: x^{-1}(\hat{V}) \to y^{-1}(\hat{V}')
-\end{align}
+\end{align*}
 ein Diffeomorphismus.
-\begin{align}
+\begin{align*}
 \phi = y \circ f \circ x^{-1} \Rightarrow f = y^{-1} \circ \phi \circ x
-\end{align}
+\end{align*}
 \end{bew}
 
 
@@ -216,7 +217,6 @@ Dann existiert zu jeder Karte  $(y, U')$ um $f(p)$ eine Karte $(x, U)$ um $p$, s
 y \circ f \circ x^{-1}(v_1, \dots, v_m) = (v_1, \dots, v_r, \phi_{r+1}(v), \dots, \phi_n(v)).
 \end{align}
 Falls $y(f(p))=0$, so kann man $x$ so wählen, dass $x(p)=0$ und $\phi_j (0) = 0$ ($\forall j > r$).
-
 \item Sei $\rang f = r$ auf einer Umgebung von $p$.
 Dann gibt es Karten $(x, U)$, $(y, U')$, so dass 
 \begin{align}
@@ -229,52 +229,52 @@ Wähle Karten und modifiziere diese geschickt.
 Sei $(y, U')$ eine Karte von $\mfka$ um $f(p)$.
 Sei $(\hat{x}, U)$ eine Karte von $\mfk$ um $p$ mit $\hat{x}(p) = 0$.
 Setze 
-\begin{align}
+\begin{align*}
 \hat{A} = (\hat{A})_{i j} = (\partial_i \hat{\phi}_j),
-\end{align}
+\end{align*}
 mit $\phi = y \circ f \circ x^{-1}$.
 Da $\rang_p f = r$, können wir ohne Beschränkung der Allgemeinheit annehmen, dass
-\begin{align}
+\begin{align*}
 \det \tilde{A} \neq 0.
-\end{align}
+\end{align*}
 Wobei hier nun $\tilde{A} = (\hat{A}_{i j})_{1 \leq i \leq r}$.
 Setze 
-\begin{align}
+\begin{align*}
 x_i = \left\{
 \begin{array}{ll}
 y_i \circ f & \quad 1 \leq i \leq r \\
 \hat{x}_i & \textrm{falls} \ r+1 \leq i \leq n \\
 \end{array}
 \right. 
-\end{align}
+\end{align*}
 Dann gilt $x(p)=0$ und 
-\begin{align}
+\begin{align*}
 \partial_i (x_j \circ \hat{x}^{-1})(0) = 
 \left(\begin{matrix}
 \partial_i \hat{\phi}_j (0) & \star \\ 
 0 & \mathds{1}
 \end{matrix} \right) .
-\end{align}
+\end{align*}
 Daraus folgt, dass $\rang x = m = \dim \mfk$ im Punkt $p$.
 Mit Hilfe des Umkehrsatzes folgt, dass $x$ ein lokaler Diffeomorphismus ist 
 und eine Umgebung $U$ um den Punkt $p$ existiert und eine Umbegungen $V$ von $0$ in $\rn$, 
 sodass $x: \mfk \to V$ eine Karte ist und
-\begin{align}
+\begin{align*}
 \phi (v_1, \dots, v_m) &= y \circ f \circ x^{-1}(v_1, \dots, v_m) \\
 &= (v_1, \dots, v_r, \phi_{r+1}(v), \dots, \phi_m (v)).
-\end{align}
+\end{align*}
 Wobei $\phi_k$ glatt auf $U'$ sind mit $\phi_i(0)=0$. 
 Betrachte die Jacobi-Matrix:
-\begin{align}
+\begin{align*}
 A_{i j} = (\partial _i \phi_j )_{i j} = \begin{pmatrix}
 \mathds{1} & 0 \\ 
 \star & \partial_i \phi_j
 \end{pmatrix} 
-\end{align}
+\end{align*}
 Da $\rang \phi = r$ in einer Umgebung von $U=0$ hat folgt:
-\begin{align}
+\begin{align*}
 \partial_i \phi_j = 0 \quad \forall i, j > r.
-\end{align}
+\end{align*}
 \end{bew}
 
 \begin{kor}

@@ -7,17 +7,17 @@ T\mfk = \bigsqcup_{p\in \mfk} T_{p}\mfk = \{ (p, v) \vert p \in \mfk, v \in T_{p
 \end{align}
 Dies soll nun die Struktur einer differenzierbaren Mannigfaltigkeit haben. 
 Das heißt wir müssen eine Topologie und eine $\cinf$-Struktur auf $T\mfk$ definieren.
-\begin{align}
+\begin{align*}
 \pi: T\mfk &\to \mfk \\
 (p,v) &\mapsto p
-\end{align}
+\end{align*}
 Sei $(x, U)$ eine Karte von $\mfk^m$. 
 Dann definieren wir eine Karte $(\overline{x}, \overline{U})$ von $T\mfk$ wie folgt:
-\begin{align}
+\begin{align*}
 &\overline{U} = \pi^{-1}(U) = \bigsqcup_{p\in U} T_{p}\mfk \\
 &\overline{x}: \overline{U} \to x(U) \times \R^m \subset \R^{2m} \\
 &(p, v) \mapsto (x(p), \xi)
-\end{align}
+\end{align*}
 Wobei $\xi = (\xi^1, \dots, \xi^m) \in \R^m$ gegeben ist durch:
 \begin{align}
 v = \sum_{i=1}^{m} \xi_i \pdv{x_i} \big\vert_p, \quad \forall p \in U.
@@ -25,12 +25,12 @@ v = \sum_{i=1}^{m} \xi_i \pdv{x_i} \big\vert_p, \quad \forall p \in U.
 Wir können aber Kartenwechsel betrachten.\\
 Seien $(\overline{x}, \overline{U})$ und $(\overline{y}, \overline{U}')$ zwei Karten. 
 Betrachte die Abbildungen:
-\begin{align}
+\begin{align*}
 \overline{y} \circ \overline{x}^{-1} : \underbrace{x (\overline{U} \cap \overline{U}')}_{x(U \cap U') \times \R^m} \to \underbrace{\overline{y}(\overline{U} \cap \overline{U}')}_{y(U \cap U') \times \R^m}
-\end{align}
-\begin{align}
+\end{align*}
+\begin{align*}
 (v,\xi) \mapsto (y \circ \underbrace{x^{-1}(v)}_{v \in T \mfk\eval_{\overline{U} \cup \overline{U}'}}, \eta) 
-\end{align}
+\end{align*}
 Wobei $\eta = \dd (y \circ x^{-1})\eval_U \xi$.\\
 Da $y\circ x^{-1}$ Diffeomorphismus ist, ist $\overline{y} \circ \overline{x}^{-1}$ ein Isomorphimus.
 Nun können wir die Topologie auf $T\mfk$ definieren.
@@ -39,15 +39,28 @@ $O \subset T\mfk$ offen, falls $\overline{x}(O\cap \overline{U})$ offen in $V \t
 \begin{satz}
 $T\mfk$ mit dieser Topologie ist eine topologische Mannigfaltigkeit und $\atlas_{T\mfk}$ eine differenzierbare Struktur.
 \end{satz}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.7]{figures/tikz/tangent_bundle.pdf}
+\caption{Darstellung des Tangentialbündels eines Kreises}
+\label{img:tangent_bundle}
+\end{figure}
 \section{Vektorbündel}
 $T\mfk$ hat die Struktur einer glatten Mannigfaltigkeit.
 Allerdings hat es noch mehr, nämlich die eines Vektorbündels, was wir nun definieren.
+\begin{figure}[H]
+\centering
+\includegraphics[scale=1.1]{figures/tikz/vectorbundel.pdf}
+\caption{Veranschaulichung eines Vektorbündels}
+\label{img:tangentialbuendel}
+\end{figure}
 \begin{defs}[Vektorbündel]
 Sei $\mfk$ eine differenzierbare Mannigfaltigkeit.
 Ein $\R$-Vektorbündel vom $\rang$ $k$ über $\mfk$ ist eine differenzierbare Mannigfaltigkeit mit einer glatten surjektiven Abbildung:
-\begin{align}
+\begin{align*}
 \pi: E \to \mfk,
-\end{align}
+\end{align*}
 so dass:
 \begin{enumerate}
 \item $\forall p \in \mfk$ hat $E_p:= \pi^{-1}( \{ p \})$ die Struktur eines $\R$-Vektorraums der Dimension $k$.
@@ -56,115 +69,101 @@ $E_p$ heißt Faser von $E$ über $p$.
 \begin{itemize}
 \item $\pi \circ \phi = p r_1$
 \item Für alle $q \in U$ ist die Abbildung
-\begin{align}
+\begin{align*}
 &\phi\eval_q : \{ q \} \times \R^k \to E_q\\
 &\{ q, \xi \} \mapsto \phi_q (\xi) := \phi(q, \xi)
-\end{align}
+\end{align*}
 ein Isomorphismus.
 $\phi$ heißt lokale Trivialisierung von $E$.
 \end{itemize}
 \end{enumerate}
-\begin{align}
+\begin{align*}
 \begin{xy}
 \xymatrix@=0.15\linewidth{
       \phi: U \times \R^k \ar[rr] \ar[rd]_{pr_1}  &     &  \pi^{-1}(U) \ar[dl]^{\pi}  \\
                              &  U  &}
 \end{xy}
-\end{align}
+\end{align*}
 \end{defs}
 \begin{bem}
 Ein Vektorbündel ist ein Tripel $(E, \pi, \mfk)$ aber wir schreiben oft nur $E$. Hierbei wird $E$ Totalraum und $\mfk$ Basis genannt.
 \end{bem}
-\begin{figure}[H]
-\centering
-\includegraphics[scale=1.1]{figures/tikz/vectorbundel.pdf}
-\caption{Veranschaulichung eines Vektorbündels}
-\label{img:tangentialbuendel}
-\end{figure}
 \begin{bsp} \leavevmode
 \begin{enumerate}
 \item Triviales Bündel:
-\begin{align}
-&\pi : E = \mfk \times \R^k \to \mfk\\
+\begin{align*}
+\pi : \ &E = \mfk \times \R^k \to \mfk\\
 &(p, \xi) \mapsto p
-\end{align}
+\end{align*}
 \item Tangentialbündel 
-\begin{align}
-&\pi: T\mfk \to \mfk\\
-&(p, v) \to p
-\end{align}
-\begin{figure}[H]
-\centering
-\includegraphics[scale=0.7]{figures/tikz/tangent_bundle.pdf}
-\caption{Darstellung des Tangentialbündels eines Kreises}
-\label{img:tangent_bundle}
-\end{figure}
+\begin{align*}
+\pi: \ &T\mfk \to \mfk\\
+&(p, v) \mapsto p
+\end{align*}
 
-\item Tautologisches Bündel
-\begin{align}
-&\mfk = \R \mathbb{P}^n\\
-&E = \{ (l, x) \vert l \in \R \mathbb{P}^n, x\in l \subset \R^{n+1} \}\\
-&\pi: E \to \mfk = \R \mathbb{P}^n\\
+\item Tautologisches Bündel\\
+Hierbei ist die Mannigfaltigkeit der Reell projektive Raum $\R \mathbb{P}^n$ und $E = \{ (l, x) \vert l \in \R \mathbb{P}^n, x\in l \subset \R^{n+1} \}$.
+\begin{align*}
+\pi: \ &E \to \R \mathbb{P}^n\\
 &(l, x) \mapsto l
-\end{align}
+\end{align*}
 Behauptung: Dies ist ein Vektorbündel vom $\rang$ $1$.
 Vektorraumstruktur auf $E_l$:
-\begin{align}
+\begin{align*}
 (l, x) + (l, y) &:= (l, x + y)\\
 k (l, x) &:= (l, k x)
-\end{align}
+\end{align*}
 \end{enumerate}
 \end{bsp}
 Nun wollen wir uns damit beschäftigen wie wir Vektorbündel konstruieren können.
 Angenommen uns wäre das folgende gegeben:
 \begin{enumerate}
-\item $E_p$ (mit $p\in \mfk$) eine Familie von Vektorräumen der Dimension $k$
-\item $(U_\alpha)_{\alpha \in A}$ eine offene Überdeckung von $\mfk$
+\item  Eine Familie von Vektorräumen $E_p$ (mit $p\in \mfk$) der Dimension $k$
+\item  Eine offene Überdeckung $(U_\alpha)_{\alpha \in A}$ von $\mfk$
 \item $\forall \alpha \in A$, $p\in U_\alpha$ gibt es den folgenden Isomorphismus:
 \begin{align}
 \phi_{\alpha, p}: \R^k \to E_p
 \end{align}
 \end{enumerate}
-Setze 
-\begin{align}
-&E = \bigcup_{p \in \mfk} E_p\\
-&\pi : E \to \mfk\\
+Setze $E = \bigcup_{p \in \mfk} E_p$ und definiere folgende Abbildungen:
+\begin{align*}
+\pi : \ &E \to \mfk\\
 &(p, v) \mapsto p\\
-&\phi_\alpha: U_\alpha \times \R^k \to E \eval_{U_\alpha}\\
+\phi_\alpha: \ &U_\alpha \times \R^k \to E \eval_{U_\alpha}\\
 &(p, \xi) \mapsto (p, \phi_{\alpha, p}(\xi)).
-\end{align}
+\end{align*}
 Nun stellt sich die Frage unter welchen Vorraussetzungen $(E, \pi, \mfk)$ ein Vektorbündel ist.
 \begin{lem}
 \label{lem:vorraussetzungenvektorbündel}
 Sei $\mfk$ eine glatte Mannigfaltigkeit, $E$ eine Menge und die Abbildung $\pi: E\to\mfk$ surjektiv.
 Sei $\{ U_\alpha \}$ eine offene Überdeckung von $\mfk$ zusammen mit bijektiven Abbildungen
-\begin{align}
+\begin{align*}
 \phi^{-1}_{\alpha} = \varphi: \pi^{-1}(U_\alpha) \to U_\alpha \times \R^k,
-\end{align}
+\end{align*}
 die $pr_1 \circ \varphi_\alpha = \pi$ erfüllen, so dass wann immer $U_\alpha \cap U_\beta \neq \emptyset$, dann ist 
-\begin{align}
+\begin{align*}
 \varphi_\alpha \circ \varphi_{\beta}^{-1} : (U_\alpha \cup U_\beta) \times \R^k \to (U_\alpha \cap U_\beta) \times \R^k,
-\end{align}
+\end{align*}
 von der Form:
-\begin{align}
+\begin{align*}
 \label{eq:konstruktionvektorbündel}
 (\varphi_\alpha \circ \varphi_{\beta}^{-1})(p, v) = (p, \tau(p) v)
-\end{align}
-mit einer glatten Abbildung $\tau: U_\alpha \cap U_\beta \to \mathrm{GL}(k, \R)$.
+\end{align*}
+mit einer glatten Abbildung $\tau: U_\alpha \cap U_\beta \to \mathrm{GL}(k, \R)$.\\
 Dann existiert eine eindeutige Struktur als glattes $k$-dim Vektorbündel über $\mfk$ für die $\varphi^{-1}_{\alpha}$ lokale Trivialisierungen sind.
 \end{lem}
 \begin{bew}[Lemma \ref{lem:vorraussetzungenvektorbündel}]
 Sei  $p\in\mfk$ und setze $E_p := \pi^{-1}(\{ p \})$. 
 Falls $p\in U_\alpha$, dann ist 
-\begin{align}
+\begin{align*}
 \varphi_\alpha \eval_p : E_p \to \{ p \} \times \R^k.
-\end{align}
+\end{align*}
 Definiere eine Vektorraumstruktur auf $E_p$ durch die Forderung, dass die Abbildung $\varphi_\alpha \eval_p$ ein Isomorphismus ist.
 Durch Verkleinern von $U_\alpha$ und Hinzunahme von weiteren offenen Mengen kann man annehmen, dass jedes $U_\alpha$ diffeomorph zu $\overline{U}_\alpha \subseteq \R^m$ ist.
 Verknüpfung von $\varphi_\alpha$ mit einem solchen Diffeomorphismus liefert eine Bijektion:
-\begin{align}
+\begin{align*}
 \pi^{-1} (U_\alpha) \to \overline{U}_\alpha \times \R^k .
-\end{align}
+\end{align*}
 Diese nutzen wir als Karte für $E$.
 Wegen Gleichung \ref{eq:konstruktionvektorbündel} bekommen wir eine glatte Struktur auf $E$.
 \end{bew}
@@ -173,18 +172,19 @@ Sei $(x, U)$ Karte von $\mfk$, $p\in U$, $v\in T_p \mfk$.
 v = \sum_{i=1}^{m} \xi_i \pdv{x_i}\eval_p
 \end{align}
 Definiere:
-\begin{align}
-\varphi: \pi^{-1} (U) &\to U \times \R^m\\
-v &\mapsto (p, v)
-\end{align}
-Dort wo $(x)$ und $(\overline{x})$ überlappen.
-\begin{align}
+\begin{align*}
+\varphi: \ &\pi^{-1} (U) \to U \times \R^m\\
+& v \mapsto (p, v),
+\end{align*}
+dort wo $(x)$ und $(\overline{x})$ überlappen.
+\begin{align*}
 \pdv{x_i} \eval_p &= (\pdv{\overline{x}_j}{x_i})\pdv{\overline{x}_j} \eval\\
 v &= \sum_{j=1}^{m} \xi_j \pdv{\overline{x}_j}  \eval_p = \sum_{ji1}^{m} \xi_i \pdv{x_i}  \eval_p \\
 &= \sum_{i, j}^{m} \xi_i \pdv{\overline{x}_j}{x_i}  \pdv{\overline{x}_j}\eval_p\\
 &\Rightarrow \overline{\xi}_j = \sum_i v_i \left( \pdv{\overline{x}_j}{x_i} \right)
-\end{align}
+\end{align*}
 \begin{align}
-\overline{\varphi} \circ \varphi^{-1}(x, v) = (x, \overline{v}) = (x, \tau(x) v)
+\overline{\varphi} \circ \varphi^{-1}(x, v) &= (x, \overline{v})\\
+ &= (x, \tau(x) v)
 \end{align}
 Wobei nun $\tau(x)$ gegeben ist durch $\pdv{\overline{x}_j}{x_i}$.\\
