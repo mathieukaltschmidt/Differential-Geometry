@@ -1,3 +1,4 @@
+% !TeX root = ..//diffgeo_main.tex
 \section{Die Exponentialabbildung}
 Wir betrachten eine Abbildung von $T\mfk \ \longrightarrow \ \mfk $, wobei die Mannigfaltigkeit mit dem Levi-Civita-Zusammenhang ausgestattet ist ( $\mfk = ( \mfk, \nabla) $). Die Abbildung hat die folgenden Eigenschaften:
 
@@ -129,7 +130,12 @@ Seien nachfolgend $p, q \in \mfk$.
 L: \Omega_{p, q} \longrightarrow \R
 \end{align*}
 Variation:
-\missingfigure{Variation?}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.35\linewidth]{figures/tikz/variation.pdf}
+\caption{Variation einer Kurve mit festem Anfangs- und Endpunkt.}
+\label{img:variation}
+\end{figure} 
 Betrachten wir eine $1$-Parameter Familie von Kurven:
 \begin{align*}
 I \ni s |\longrightarrow c_s \in \Omega_{p, q}
@@ -150,7 +156,12 @@ Mit $\mathcal{H}(0, t) = c(t)$ genau so, dass
 a= t_0 \leq t_1 \leq \cdots \leq t_m = b
 \end{align*}
 existiert, wobei $\mathcal{H}$ glatt auf $I > [t_i, t_{i+1}]$ ist.
-\missingfigure{Darstellung Intervall zwischen a und b}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.45\linewidth]{figures/tikz/variationpiecewise.pdf}
+\caption{Variation einer stückweise glatten Kurven vom Punkt $a$ nach $b$.}
+\label{img:variationpiecewise}
+\end{figure}
 Eine solche Variation heißt \textbf{eigentlich}, falls:
 \begin{align*}
 \mathcal{H}(s, a) &= c(a) \\
@@ -174,8 +185,12 @@ Dann existiert eine $1$-Parameter Variation $\mathcal{H}: I \times [a, b] \longr
 \mathcal{H}(s, t) = \expp_p{c(t)}(s(V(t)))
 \end{align*}
 \end{bew}
-\missingfigure{Beweis des Lemmas (Variationsfeld)}
-
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.45\linewidth]{figures/tikz/variation_field.pdf}
+\caption{Darstellung des Variationsfeldes}
+\label{img:variation_field}
+\end{figure}
 \begin{satz}
 Sei $c:[a, b] \longrightarrow \mfk$ proportional zur Bogenlänge parametrisiert. \\
 Sei $\mathcal{H}: I \times [a, b] \longrightarrow \mfk$ eine stückweise glatte $1$-Parameter Variation von c, $V$ das Vektorfeld $V=\partial_s\mathcal{H}(0,\cdot), c_s=\mathcal{H}(s,\cdot)$ und $L(s) = L(c(s))$. \\
