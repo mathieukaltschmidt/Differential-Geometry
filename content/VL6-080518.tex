@@ -139,21 +139,21 @@ ein Vektorbündel ist.
 \begin{bsp}[Unterbündel] \leavevmode
 \begin{enumerate}
 \item $S^n \subset \R^{n+1}$
-\begin{align}
+\begin{align*}
 TS^n \cong \{ (p,x)\in S^n \times \R^{n+1} \vert x \perp p \} \subset \underbrace{S^n \times \R^{n+1}}_{\mathrm{triviales} \ \mathrm{Bündel}}
-\end{align}
+\end{align*}
 ist ein Unterbündel
 \item $\R \mathbb{P}^n$ mit dem tautologischen Bündel 
-\begin{align}
+\begin{align*}
 \{ (l, x) \in \R \mathbb{P}^n \times \R^{n+1} \vert x \in l \} \subset \R\mathbb{P}^n \times \R^{n+1}
-\end{align}
+\end{align*}
 ist ein Unterbündel.
 \end{enumerate}
 \end{bsp}
 \begin{defs}[Schnitte von Vektorbündeln]
 Sei $(E, \pi, \mfk)$ ein Vektorbündel.
 Eine glatte Abbildung $s:\mfk \to E$ heißt Schnitt von $E$, falls $\pi \circ s = \id\eval_{\mfk}$.
-Wir bezeichnen die Schnitte von $E$ mit $\Gamma (E)$.
+Wir bezeichnen die Schnitte von $E$ mit $\Gamma (E)$.\\
 Sei $U \subset \mfk$. 
 Ein Schnitt von $E$ über $U$ ist eine Abbildung $s : U \to E$ mit $\pi \circ s = \id_U$.
 \begin{figure}[H]
@@ -165,12 +165,12 @@ Ein Schnitt von $E$ über $U$ ist eine Abbildung $s : U \to E$ mit $\pi \circ s 
 \begin{bsp}[Schnitte] \leavevmode
 \begin{itemize}
 \item Nullschnitt
-\begin{align}
-&s : \mfk \to E \\
+\begin{align*}
+s : \ & \mfk \to E \\
 &p \mapsto 0 \in E_p
-\end{align}
+\end{align*}
 \item Schnitte von $T\mfk$ heißen Vektorfelder.
-Wir bezeichnen die Menge der Vektorfelder $V: \mfk \to T\mfk$ mit $\mathfrak{X}(\mfk)$.
+Wir bezeichnen die Menge der \textbf{Vektorfelder} $V: \mfk \to T\mfk$ mit $\mathfrak{X}(\mfk)$.
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.4\linewidth]{figures/tikz/vectorfield_on_manifold.pdf}
@@ -195,33 +195,34 @@ Sei $\phi \in \mathcal{F}(\mfk), s\in \Gamma(E)$, so ist $\phi \circ s \in \Gamm
 \end{bew}
 
 \begin{lem}
+\label{lem:existenzschnitt}
 Sei $(E, \pi, \mfk)$ ein Vektorbündel und $p \in \mfk$.
-Dann gilt für alle $x \in E_p$ existiert ein Schnitt $s \in \Gamma (E)$, so dass $s(p)=x$
+Dann existiert für alle $x \in E_p$ ein Schnitt $s \in \Gamma (E)$, so dass $s(p)=x$
 \end{lem}
-\begin{bew}
+\begin{bew}[Lemma \ref{lem:existenzschnitt}]
 Wähle eine lokale Trivialisierung von $E$ auf $W \ni p$
-\begin{align}
+\begin{align*}
 \phi: W \times \R^k \to \pi^{-1}(W) = E\eval_W
-\end{align}
+\end{align*}
 und eine glatte Funktion $\varphi \in \mathcal{F}(\mfk)$ mit $\varphi(p)=1$ und $\supp(\varphi) \subset W$.
-Sei $\xi \in \R^k$, so dass $\phi (p, \xi)=x$.
+Sei $\xi \in \R^k$, so dass $\phi (p, \xi)=x$.\\
 Definiere:
-\begin{align}
+\begin{align*}
 s(q) = \left\{
 \begin{array}{ll}
 \phi(q, \varphi(q)\xi) & q\in W \\
 0_q & q \not\in W \\
 \end{array}
 \right.
-\end{align}
+\end{align*}
 $s$ ist glatt, da folgendes gilt:
 \begin{itemize}
 \item $s$ ist glatt auf $W$
 \item $s$ ist $0$ auf einer Umgebung von $\mfk \setminus W$
 \end{itemize}
-\begin{align}
+\begin{align*}
 s(p) = ( \phi(p), \phi(p) \xi ) = \phi (p , \xi) = x
-\end{align}
+\end{align*}
 \end{bew}
 
 \begin{defs}[Lokaler Rahmen]

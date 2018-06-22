@@ -6,7 +6,7 @@ Allerdings können wir gleich etwas allgemeineres beweisen wodurch Lemma \ref{le
 \begin{lem}
 \label{lem:tensorielllokalisierung}
 Sei $\mathcal{L}: \Gamma (E) \to \Gamma(E')$ eine tensorielle Abbildung. 
-Tensoriell bedeuetet hierbei, dass
+Tensoriell bedeutet hierbei, dass
 \begin{align}
 \mathcal{L}(\phi s) = \phi \mathcal{L}(s), \quad \forall \phi \in \mathcal{F}(\mfk)
 \end{align}
@@ -18,7 +18,7 @@ Sei weiterhin $p\in \mfk$ und $s, \tilde{s} \in \Gamma(E)$ mit $s(p) = \tilde{s}
 \end{lem}
 Lemma \ref{lem:lokalisierung1} folgt sofort aus diesem Lemma, da die Abbildung
 \begin{align}
-&\covd_\cdot s : \mathfrak{X}(\mfk) \to \Gamma (E)\\
+\covd_\bullet s : \ & \mathfrak{X}(\mfk) \to \Gamma (E)\\
 & X \mapsto \covd_X s
 \end{align}
 tensoriell ist.
@@ -31,41 +31,42 @@ Wir schreiben
 s = \sum_{i=1}^k \sigma_i s_i , \quad \tilde{s} = \sum_{i=1}^k \tilde{\sigma}_i s_i
 \end{align}
 mit $\sigma_i (p) = \tilde{\sigma}_i (p)$.
-\begin{align}
+\begin{align*}
 \mathcal{L}(s)(p) &= \varphi^2 (p) \mathcal{L}(s)(p)\\
 &= \mathcal{L}(\varphi^2 s)(p)\\
 &= \sum_{i = 1}^k \mathcal{L}((\varphi \sigma_i)(\varphi s_i)) (p)\\
 &= \sum_{i = 1}^k \varphi (p) \sigma_i (p) \mathcal{L}((\varphi s_i)) (p) 
-\end{align}
+\end{align*}
 Analog rechnet man mit $\tilde{s}$
 \begin{align}
 \mathcal{L}(\tilde{s})(p) = \sum_{i = 1}^k \varphi (p) \tilde{\sigma}_i (p) \mathcal{L}((\varphi s_i)) (p) .
 \end{align}
 Da $\sigma_i (p) = \tilde{\sigma}_i (p)$ und $\varphi(p)=1$ folgt nun die Aussage
-\begin{align}
+\begin{align*}
 \mathcal{L}(s)(p) = \mathcal{L}(\tilde{s})(p).
-\end{align}
+\end{align*}
 \end{bew}
 
 \begin{defs}[Tensorfeld]
 Ein Tensorfeld vom Typ $(n, s)$ ist ein glatter Schnitt des Bündels
-\begin{align}
+\begin{align*}
 T^{n}_{s} (\mfk) = \left( \bigotimes^n_{i=1} T \mfk \right) \otimes \left(\bigotimes^s_{i=1} T_s^* \mfk\right).
-\end{align}
-In anderen Worten ist ein Tensorfeld vom Typ $(n, s)$ eine Abbildung
-\begin{align}
+\end{align*}
+In anderen Worten: ein Tensorfeld vom Typ $(n, s)$ ist eine Abbildung
+\begin{align*}
 B : \underbrace{\mathfrak{X}(\mfk) \times \cdots \times \mathfrak{X}(\mfk)}_{s \ \mathrm{mal}} \to \underbrace{\mathfrak{X}(\mfk) \times \cdots \times \mathfrak{X}(\mfk)}_{n \ \mathrm{mal}},
-\end{align}
+\end{align*}
 die tensoriell in jedem Argument ist.\\
 Lemma \ref{lem:tensorielllokalisierung} sagt uns, dass jede Abbildung $B$ aus einem Vektorfeld kommt.
 \end{defs}
 \begin{kor}
 Sei $B$ ein Tensorfeld vom Typ $(n, s)$, dann induziert $B$ für alle $p$ eine $s$-lineare Abbildung:
-\begin{align}
-&B_p: T_p \mfk^s \to T_p \mfk^n\\
+\begin{align*}
+B_p: \ & T_p \mfk^s \to T_p \mfk^n\\
 &(v_1, \dots, v_s) \mapsto B_p (v_1, \dots, v_s)
-\end{align}
+\end{align*}
 \end{kor}
+
 Wir wollen nun wieder zu Zusammenhängen zurückkehren.
 \begin{bsp}[Kanonischer Zusammenhang]
 Wir wählen die Koordinaten wie folgt:
@@ -81,15 +82,15 @@ Dann ist der kanonische Zusammenhang gegeben durch:
 
 Sei $\omega$ eine $1$-Form auf $\mfk$ mit Werten in Matrizen $\mathrm{Mat}_{k \times k}(\R)$.
 Das bedeutet, dass
-\begin{align}
+\begin{align*}
 &\omega \in \Gamma(\mathrm{Hom}(T\mfk, \mathrm{Mat}_{k \times k}(\R))) \\
 &\omega_p: T_p \mfk \to \mathrm{Mat}_{k \times k}(\R) \\
 &\omega = (\omega_{ij})^k_{i,j=1}
-\end{align}
+\end{align*}
 $\omega_{ij}$ ist eine $1$-Form auf $\mfk$
-\begin{align}
+\begin{align*}
 w^{ij}_p :T_p \mfk \to \R.
-\end{align}
+\end{align*}
 
 \begin{defs}
 Mit einer $1$-Form kann folgender Zusammenhang definiert werden:
