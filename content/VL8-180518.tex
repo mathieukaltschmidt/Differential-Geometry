@@ -17,10 +17,10 @@ Sei weiterhin $p\in \mfk$ und $s, \tilde{s} \in \Gamma(E)$ mit $s(p) = \tilde{s}
 \end{align} 
 \end{lem}
 Lemma \ref{lem:lokalisierung1} folgt sofort aus diesem Lemma, da die Abbildung
-\begin{align}
+\begin{align*}
 \covd_\bullet s : \ & \mathfrak{X}(\mfk) \to \Gamma (E)\\
 & X \mapsto \covd_X s
-\end{align}
+\end{align*}
 tensoriell ist.
 
 \begin{bew}[Lemma \ref{lem:tensorielllokalisierung}]
@@ -92,7 +92,7 @@ $\omega_{ij}$ ist eine $1$-Form auf $\mfk$
 w^{ij}_p :T_p \mfk \to \R.
 \end{align*}
 
-\begin{defs}
+\begin{defs}[Zusammenhang über 1-Form]
 Mit einer $1$-Form kann folgender Zusammenhang definiert werden:
 \begin{align}
 (\covd^\omega_X s)(p) = (p, X_p(\sigma) + \omega_p(X_p) \sigma(p))
@@ -109,25 +109,28 @@ Dann ist
 \end{align}
 ein Zusammenhang auf $E$
 \end{satz}
+
 Umgehrt gilt ebenso der folgende Satz:
+
 \begin{satz}
 Seien $\covd$ und $\covd'$ zwei Zusammenhänge auf $E$.
 Dann definiert 
 \begin{align}
-\omega(X) s = \covd'_X s - \covd_X s
+\omega(X) s = \covd'_X s - \covd_X s,
 \end{align}
 eine $1$-Form mit Werten in $\mathrm{Hom}(E, E)$.
 \end{satz}
+
 \begin{bsp}
-Sei $E = \mfk \times \R^k$. 
+Sei $E = \mfk \times \R^k$. Dann ergibt sich:
 \begin{align}
-\covd^\omega_X s = (p, X(\sigma) + \omega_p (X_p)\sigma_p)
+\covd^\omega_X s = (p, X(\sigma) + \omega_p (X_p)\sigma_p).
 \end{align}
 Aus dem Satz von eben folgt, dass $\covd^\omega_X s$ alle Zusammenhänge auf $E$ sind.
 Aus der Lokalisierung folgt
-\begin{align}
+\begin{align*}
 \phi : U \times \R^k \to E\eval_U.
-\end{align}
+\end{align*}
 \end{bsp}
 Wir stellen uns die Frage wie wir Zusammenhänge mit einer $1$-Form finden können.
 Dies ist mithilfe von Zusammenhangsformen bezüglich eines lokalen Rahmens möglich.
@@ -140,10 +143,8 @@ Diese lassen sich wie folgt darstellen:
 Wobei die $1$-Form $\omega_{ij}(x): U \to \R$ glatt und tensoriell in $X$ ist.
 Es ist $s = \sum_i \sigma_i s_i$. 
 Damit erhält man:
-\begin{align}
+\begin{align*}
 \covd_X s &= \sum (X(\sigma_i)s_i + + \sigma_i \covd_X s_i)\\
 &= \sum_j X(\sigma_j)s_j + \sum_{j=1}^k \sum_{i=1}^k \sigma_i \omega_{ij} s_j\\
 &= \sum_j \left[ X(\sigma_j) + \sum_i \sigma_i \omega_{ij}(X) \right] s_j
-\end{align}
-
-
+\end{align*}

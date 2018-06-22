@@ -5,6 +5,7 @@ Auf dem Weg dorthin ist unser erstes Ziel zunächst die kovariante Ableitung von
 \begin{enumerate}
 \item Zu Schnitten längs einer Abbildung:
 \begin{align}
+\label{diag:schnittf}
 \begin{xy}
   \xymatrix@=0.2\linewidth{
           &   E \ar[d]_{\pi} \\
@@ -15,7 +16,7 @@ Auf dem Weg dorthin ist unser erstes Ziel zunächst die kovariante Ableitung von
 Eine Abbildung $s^\text{{\begin{tiny}$\mfka$\end{tiny}}} : \mfka \to E$ heißt Schnitt längs $f: \mfka \to \mfk$ falls:
 \begin{enumerate}
   \item[i)]  $s^\text{{\begin{tiny}$\mfka$\end{tiny}}}$ ist glatt
-  \item[ii)]  Das obere Diagramm kommutiert: $f = \pi \circ s^\text{{\begin{tiny}$\mfka$\end{tiny}}}$
+  \item[ii)]  Das Diagramm \ref{diag:schnittf} kommutiert: $f = \pi \circ s^\text{{\begin{tiny}$\mfka$\end{tiny}}}$
 \end{enumerate}
 Notation: $\Gamma_f (E)$\\
 \textbf{Wichtiger Spezialfall}: $\mfka = I$, das heißt $f$ ist eine Kurve falls $E = T\mfk$
@@ -36,6 +37,7 @@ Hier sieht das Diagramm dann wie folgt aus:
 \end{align}
 \item Wollen $\covd: \mathfrak{X}(\mfka) \times \Gamma_f (E) \to \Gamma_f (E)$.
 \end{enumerate}
+
 \begin{defs}[Kovariante Ableitung längs eines Schnittes]
 Sei $\phi = (s_1, \dots, s_k)$ ein lokaler Rahmen von $E$ über $U$ und $s \in \Gamma_f (U)$. 
 Dann ist:
@@ -45,15 +47,15 @@ s = \sum^{k}_{i=1} \sigma_i s_i \circ f
 Wir definieren die kovariante Ableitung längs $f$ als:
 \begin{align}
 \covd^{f}_X s &= \sum^k_{j=1} \left( X(\sigma_j) + \sum^k_{i=1} \omega_{ij}(f_\ast X)\sigma_i \right) s_j \circ f\\
-&"=" X(\sigma) + (f^\ast \omega)(X) \sigma
+&= X(\sigma) + (f^\ast \omega)(X) \sigma
 \end{align}
 Die Wohldefinertheit soll als Übung gezeigt werden.
 \end{defs}
 \begin{satz}
-Die kovariante Ableitung $\covd^f$ längs $f$
-\begin{align}
+Die kovariante Ableitung längs $f$
+\begin{align*}
 \covd^f: \mathfrak{X}(\mfka) \times \Gamma_f (E) \to \Gamma_f (E),
-\end{align}
+\end{align*}
 ist tensoriell im ersten Argument und derivativ im zweiten Argument.
 \end{satz}
 Wenn wir die Schnitte $\Gamma_f (E)$ mit $\Gamma(f^\ast E)$ identifizieren, dann erhalten wir den zurückgezogenen Zusammenhang
@@ -95,7 +97,7 @@ In einem lokalen Rahmen bedeutet $\covd^c_t s = 0$:
 \end{align}
 Dies ist eine gewöhnliche Differentialgleichung erster Ordnung.
 \begin{lem}
-Sei $t_0 \in I$ und $X \in E_{c(t_0)}$ dann existiert genau ein paralleler Schnitt $s$ längs $c$ mit $s(t_0 = x)$.
+Sei $t_0 \in I$ und $X \in E_{c(t_0)}$ dann existiert genau ein paralleler Schnitt $s$ längs $c$ mit $s(t_0) = x$.
 \end{lem}
 Sei $c$ eine glatte Kurve mit $c(t_0) = p$ und $c(t_1)=q$ ($t_0, t_1 \in I$).
 Setze $P_c(x) = s(t_1)$ wobei $s$ der eindeutig bestimmte parallele Schnitt längs $c$ mit $s(t_0) = x$ ist.
@@ -111,12 +113,12 @@ $P_c : E_p \to E_q$ heißt Parallelverschiebung längs $c$.
 \begin{lem}
 \label{lem:BasisVB}
 Sei $t_0 \in I$ und seien $s_1, \dots, s_k$ parallele Schnitte längs $c$.
-Falls $s^I_1 (t_0), \dots, s^I_k (t_0)$ eine Basis von $E_{c(t_0)}$ ist, so ist $s^I_1 (t), \dots, s^I_k (t)$ eine Basis von $E_{c(t)}$ für alle $t \in I$.
+Falls $(s^I_1 (t_0), \dots, s^I_k (t_0))$ eine Basis von $E_{c(t_0)}$ ist, so ist $(s^I_1 (t), \dots, s^I_k (t))$ eine Basis von $E_{c(t)}$ für alle $t \in I$.
 \end{lem}
 \begin{bew}[Lemma \ref{lem:BasisVB}]
-\begin{align}
+\begin{align*}
 s^I_i (t) = P_c s^I_i (t_0)
-\end{align}
+\end{align*}
 Da $P$ invertierbar ist folgt die Aussage.% , dass $s(^I_1 (t), \dots, s^I_k (t))$
 \end{bew}
 \begin{defs}[Paralleler Rahmen]
@@ -126,9 +128,9 @@ $\phi = (s_1, \dots, s_k)$ heißt paralleler Rahmen, falls alle $s_i$ parallel s
 \textit{Warum sind parallele Rahmen für uns interessant?}\\
 Wir betrachten den parallelen Rahmen $\phi = (s_1, \dots, s_k)$ und sei $s \in \Gamma_c (E)$.
 Das heißt 
-\begin{align}
+\begin{align*}
 s= \sum^{k}_{i=1} \sigma_i s_i.
-\end{align}
+\end{align*}
 Damit erhalten wir für die kovariante Ableitung:
 \begin{align}
 \covd_t s &= \sum^{k}_{i=1} \covd_t (\sigma_i s_i)\\
