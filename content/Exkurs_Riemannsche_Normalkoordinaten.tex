@@ -1,0 +1,78 @@
+\section{Riemannsche Normalkoordinaten}
+Wir lernen in diesem Exkurs einen neuen Satz an Koordinaten, die sog. \textbf{Riemannschen Normalkoordinaten} kennen. \\
+Die Idee liegt darin, den lokalen Diffeomorphismus 
+\begin{align*}
+\expp_p: V \longrightarrow U
+\end{align*}
+zu verwenden, um spezielle, an die Geometrie angepasste Koordinaten zu definieren. \\
+Für $p \in \mfk$ sein $E_1, E_2; \dots E_n$ eine Orthonormalbasis von $T_p\mfk$, das heißt:
+\begin{align*}
+\eval{g}_{p}(E_i, E_j) = \delta_{ij}
+\end{align*} 
+Dies impliziert:
+\begin{align*}
+E: \R^n &\longrightarrow T_p\mfk \\
+x &\mapsto \sum_{i=1}^{n} x_i E_i
+\end{align*}
+ist ein linearer Diffeomorphismus. \\
+Dann ist: $E^{-1} \circ \expp_p^{-1}: U \longrightarrow E^{-1}(V) \subseteq \R^n$ ein Diffeomorphismus, also eine Karte für $\mfk$. 
+\begin{defs}
+Die so erhaltenen Karten heißen \textbf{Riemannsche Normalkoordinaten.}
+\end{defs}
+\begin{satz}
+Sei $(M, g)$ eine Riemannsche Mannigfaltigkeit. Sei $p \in \mfk$ und seien $(x, U)$ die Riemannschen Normalkoordinaten von $p$. Dann gelten für:
+\begin{align*}
+g_{ij}: U &\longrightarrow \R \quad \text{erste Fundamentalform} \\
+\Gamma_{ij}^k:  U &\longrightarrow \R \quad \text{Christoffel-Symbole}
+\end{align*}
+\newpage
+die folgenden Aussagen:
+\begin{enumerate}
+\item $x(p) = 0$
+\item $g_{ij}(p) = \delta_{ij} $
+\item $\Gamma_{ij}^k(p) = 0$
+\end{enumerate}
+\end{satz}
+\begin{bew}
+\begin{enumerate}
+\item $x(p)=E^{-1} \circ \overbrace{\expp_p^{-1}}^{= 0} = E^{-1}(0) = 0$
+\item $g_{ij}(p)=g_p(x_i, x_j) = g_p(\eval{\dd\overbrace{(\expp \circ E)}^{= x^{-1}}}_{0}(e_i), \dd(\expp \circ E\eval{)}_{0}(e_j))$ \\
+\phantom{$g_{ij}(p)=g_p(x_i, x_j)$} = $g_p(\eval{\dd(\expp))}_{0}E_i, \eval{\dd(\expp)}_{0}E_j)$ \\
+\phantom{$g_{ij}(p)=g_p(x_i, x_j)$} =  $g_p(E_i, E_j)$ \\
+\phantom{$g_{ij}(p)=g_p(x_i, x_j)$} = $\delta_{ij}$
+\item $v \in \R^n$. Dann ist $c(\lambda)=\expp_p(t E_v)$ eine Geodätische mit $c(0)=p$ und $\dot{c}(0) = E_v$. \\
+Also erfüllt $c$ die Geodätengleichung ($\dot{\nabla_t}\dot{c} = 0$) \\
+\end{enumerate}
+\begin{align*}
+0 =  \ddot{c^k}(t) + \sum_{i, j = 1}^{n} \Gamma_{ij}^k(c(t))\dot{c}^{i}(t)\dot{c}^j(t) \quad \forall k
+\end{align*}
+Es gilt aber:
+\begin{align*}
+c^k(t) &= x^k(c(t)) = t\cdot v^k \\
+\dot{c}^k(t) &= v^k \\
+\ddot{c}^k(t) &= 0
+\end{align*}
+Damit erhalten wir: 
+\begin{align*}
+0=\sum_{i,j} \Gamma_{ij}^k(0)v^{i}v^j \quad (\star)
+\end{align*}
+Setze nun: 
+\begin{align*}
+\beta(v,w):= \sum_{i, j = 1}^n\Gamma_{ij}^k(0)v^{i}w^{j} &=  \sum_{i,j=1}^n\Gamma_{ji}^k(0)v^{i}w^{j} \\
+&= \sum_{i, j = 1}^n\Gamma_{ij}^k(0)v^{j}w^{i} = \beta(w, v)
+\end{align*}
+\newpage
+Damit folgt direkt:
+\begin{itemize}
+\item $\beta(v, v) = 0 \ \forall v \in \R^n$
+\item $\beta(v, w) = 0 \ \forall v,w \in \R^n$
+\item $\Gamma_{ij}^k(0) = 0 $
+\end{itemize}
+\end{bew}
+Einfacher Trick:
+\begin{align*}
+\beta(x+y, x+y) &= \beta(x, x) +  \beta(x, y) + \beta(y, x) + \beta(y, y)  \\
+&= \underbrace{\beta(x, x)}_{= 0} + \underbrace{\beta(y, y)}_{= 0} + 2\beta(x, y)
+\end{align*}
+Daraus folgt direkt: $\beta(x,y) = 0$. \
+Man nennt dies das \textbf{Polarisationsargument}.
