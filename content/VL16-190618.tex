@@ -40,30 +40,29 @@ Damit folgt, dass $c\eval_{[t_i, t_{i+1} ]}$ eine Geodätische ist.
     f(t_i) = \dot{c}(t_i - 0) - \dot{c}(t_i + 0) = 0
 \end{align}
 \end{bew}
-\section{$(\mfk, g)$ als metrischer Raum} 
-Ziel ist es jetzt zu zeigen, dass $(\mfk, d)$ ein metrischer Raum ist, wobei $d$ eine geeignet definierte Distanzfunktion ist.
+Zsection{$(\mfk, g)$ als metrischer Raum} 
+Ziel ist es jetzt zu zeigen, dass $(\mfk, d)$ ein metrischer Raum ist, 
+wobei $d$ eine geeignet definierte Distanzfunktion ist.
 Um dieses Ziel zu erreichen, benötigen wir zunächst ein paar Überlegungen zur Exponentialabbildung.
-In Abbildung \ref{img:exponentialfunction} kann eine wichtige geometrische Eigenschaft der Exponentialabbildung erkannt werden.
-Die Exponentialabbildung hat die folgende geometrische Eigenschaft:
 \begin{figure}[H]
 \centering
 \includegraphics[width=1\linewidth]{figures/tikz/exponentialfunction.pdf}
-\caption{Die Exponentialfunktion erhält Orthogonalität}
+\caption{Die Exponentialabbildung erhält Orthogonalität}
 \label{img:exponentialfunction}
 \end{figure} 
-Es ist zu sehen, dass der Strahl $t v$ auf radiale Geodätische $c_v(t) = \exp_p (t v)$ abgebildet wird.
+In Abbildung \ref{img:exponentialfunction} ist zu sehen, dass der Strahl $t v$ auf radiale Geodätische $c_v(t) = \exp_p (t v)$ abgebildet wird durch due Exponentialabbildung.
 $\exp_p$ erhält Orthogonalität zu den radialen Richtungen.
 Dies nennt man \textbf{radiale Isometrie}.
 \begin{lem}[Gaußlemma]
     \label{lem:gaußlemma}
     Sei $p \in \mfk$, $v \in T_p \mfk $ und $c_v(t) = \exp_p(tv)$ auf $[0, b]$ definiert.
-    Dann ist $\exp_p$ in einer offenen Umgebung von $\{ tv \vert t\in [a, b] \} \subset T_p \mfk$ definiert und es gilt.
+    Dann ist $\exp_p$ in einer offenen Umgebung von $\{ tv \vert t\in [a, b] \} \subset T_p \mfk$ definiert und es gilt:
     \begin{itemize}
      \item[a)] $\dd ( \exp_p \eval_{t v})(v) = \dot{c}_v(t)$
     \item [b)] Für $\eta \in T_{tv} ( T_p \mfk ) \cong T_p \mfk$ gilt:
-    \begin{align*}
+    \begin{align}
         g(d(\exp_p)_{tv} (\eta), d(\exp_{tv})(v)) = g(\eta, v)
-    \end{align*}
+    \end{align}
     \end{itemize}
 \end{lem}
 \begin{bew}[Beweis Gaußlemma \ref{lem:gaußlemma}]
@@ -93,12 +92,12 @@ Außerdem ist $c_s(t) = \exp_p (t(v+s\eta))$.
 \Rightarrow \partial_s L(0) = \frac{1}{\norm{v}}g(v, \eta)      
 \end{align}
 Wir können $\partial_s L(0)$ auch mittels der ersten Variation der Bogenlänge berechnen.
-\begin{align} 
+\begin{align*} 
 \partial_s L (0) &= \frac{1}{\norm{v}} g(v(t), \dot{c}_v (t))\eval^1_0\\
 &= \frac{1}{\norm{v}} (g(v(1), \dot{c}_v (1)) - g(v(0), \dot{c}_v (0)))\\
 \label{eq:variation2}
 &= \frac{1}{\norm{v}} (g(d(\exp_p)\eval_v (\eta), \dot{c}_v(1)) - g(v(0), \dot{c}_v (0)))
-\end{align}
+\end{align*}
 Die Gleichungen \ref{eq:variation1} und \ref{eq:variation2} implizieren die Behauptung, falls
 \begin{align*}
     g(v(0),\dot{c}_v (0)) = 0
@@ -136,4 +135,4 @@ Im $\R^2$ wäre die Distanz zwischen den Punkten $p$ und $q$ die Länge der rote
         \item Infimum muss nicht angenommen werden (Beispiel: $\R^2 / 0 $)
         \item Die Kürzeste Strecke ist im Allgemeinen nicht eindeutig.
      \end{itemize}
-\end{bem}
+ \end{bem}
