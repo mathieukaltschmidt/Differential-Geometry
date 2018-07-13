@@ -10,7 +10,7 @@ Im Folgenden ist $\mfk$ immer eine Zusammenhängende Riemansche Mannigfaltigkeit
 \begin{bsp}
     \label{bsp:geodvollstaendig}
     \begin{enumerate}
-        \item $(\R^n, g_{text{Eukl}})$ ist geodätisch vollständig
+        \item $(\R^n, g_{\text{Eukl}})$ ist geodätisch vollständig
         \item $B_1 (0) = \{ x \in \R^n \vert \norm{x} < 1 \}$ ist nicht geodätisch vollständig
     \end{enumerate}
 \end{bsp}
@@ -49,16 +49,29 @@ Aussage $vi)$ ist schwächer als die Aussage $i)$ - $v)$ (Vergleich: Beispiel \r
 \end{kor}
 \begin{bew}[Korollar \ref{kor:kompaktvoll}]
 Es genügt $iii)$ von Satz \ref{satz:hopfrinow} zu zeigen.\\
-$\overline{B}_r(p) \subset \mfk$ abgeschlossen und da $\mfk$ kompakt folgt, dass $\overline{B}_r (p) kompakt$ kompakt ist.    
+$\overline{B}_r(p) \subset \mfk$ abgeschlossen und da $\mfk$ kompakt folgt, dass $\overline{B}_r (p)$ kompakt ist.    
 \end{bew}
 
 \begin{bew}[Satz von Hopf-Rinow \ref{satz:hopfrinow}]
-    Die Beweisstruktur ist in der Abbildung bla zu sehen
+    Die Beweisstruktur ist in der Abbildung \ref{fig: proofhopfrinow} zu sehen
     \begin{figure}[H]
         \centering
         \includegraphics[width=0.5\linewidth]{figures/tikz/proofhopfrinow.pdf}
         \caption{Beweisstruktur für den Satz von Hopf-Rinow}
         \label{fig:proofhopfrinow}
-    \end{figure}
-\end{bew}<++>
+    \end{figure} 
+
+
+\textbf{zu a):}\\
+Sei $c : (\alpha , \beta) \to \mfk$ eine Geodätische mit maximalen Definitionsbereich.
+O.B.d.A nehmen wir an, dass $c$ nach der Bogenlänge parametrisiert ist. 
+Wir wollen Beweis per Widerspruch führen, das heißt wir nehmen an, dass $\beta < \infty$ (Der Fall $\alpha > - \infty$ wir analog durchgeführt).
+Dann gilt für eine Folge $t_i \in (\alpha , \beta)$ mit $t_i \to \beta$ für $i \to \infty$.
+\begin{align*}
+    \dd (c (t_i), c(t_j)) \leq L (c \eval_{[t_i , t_j ]}) = \abs{t_i - t_j}
+\end{align*}
+Folglich ist $(c(t_i))_{i \in \mathbb{N}}$ eine Cauchy-Folge in $(\mfk , \dd)$. 
+Da $(\mfk, \dd)$ vollständig ist folgt, dass $q \in \mfk$ existieren mit $c(t_i) \overset{i \to \infty}{\longrightarrow}q$.
+
+\end{bew}
 
