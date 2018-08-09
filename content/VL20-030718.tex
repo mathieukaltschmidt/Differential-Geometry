@@ -1,0 +1,91 @@
+\section{Satz von Bonnet-Myers}
+
+Unser nächstes Ziel wird es sein den Satz von Bonnet-Myers zu beweisen.
+Als Vorbereitung hierfür benötigen wr die zweite Variation der Energie.\\
+\textbf{Zur Erinnerung}:
+Ist $c_s$ eine glatte Variation von $c: [a, b] \to \mfk$ mit Variationsfeld
+$\xi$.
+dann ist die erste Variations der Energie, wie folgt gegeben:
+\begin{align}
+    \dv{s} E(c_s) \eval_{s=0} = - \int^b_a \langle \xi , \covd_t \dot{c} \rangle \dd t
+    + \langle \xi , \dot{c} \rangle \eval^b_a
+\end{align}
+
+\begin{satz}[Zweite Variation der Energie]
+Sei $c: [a, b]\to \mfk$ ein Geodätische und $c_s$ eine Variation von $c$,
+mit Variationsfeld $\xi$.
+Dann gilt:
+\begin{align}
+    \dv[2]{s} E(c_s) \eval_{y=0} = \int^b_a  \langle \covd_t \pdv{c_s}{s} , 
+    \pdv{c_s}{t} \rangle \dd t
+\end{align}
+
+\end{satz}
+
+\begin{bew}
+Wir wissen bereits:
+\begin{align*}
+    \dv{s} E(c_s) \eval_{s=0} = \int^b_a \langle \covd_t \pdv{c_s}{s} , 
+    \pdv{c_s}{s} \rangle \dd t
+\end{align*}
+Damit erhält man:
+\begin{align*}
+\dv[2]{s}E(c_s)\eval_{s=0}&=\int^b_a \langle\covd_s\covd_t\pdv{c_s}{s},\pdv{c_s}{t}\rangle + 
+\langle \covd_t \xi , \covd \pdv{c_s}{t} \eval_{s=0} \rangle \dd t \\
+&= \int^b_a \underbrace{\langle\covd_t\covd_s\pdv{c_s}{s}\eval_{s=0},\dot{c}\rangle}_{\ast}
++ \int^b_a \langle \curv (\xi , \dot{c})\xi , \dot{c}
++ \int^b_a \langle\covd_t\xi , \covd_t \xi\rangle\dd t 
+\end{align*}
+
+Betrachte $\ast$:
+\begin{align*}
+\ast &= \int^b_a\left( \pdv{t} \langle \covd_s \pdv{c_s}{s}\eval_{s=0}, c\pdv \right
+- \underbrace{\langle\covd_s\pdv{c_s}{s}\eval_{s=0} , 
+\covd_t \dot{c}}_{=0, \ \text{da $c$ Geodätische}} \right) \dd t \\
+&= \langle \covd_s \pdv{c_s}{s}\eval_{s=0}, \dot{c} \rangle \eval^b_a \\
+&= 0
+\end{align*}
+Die letzte Gleichung gilt, da wir Variation mit festen Endpunkten betrachten.
+\end{bew}
+
+\begin{defs}[Durchmesser]
+Sei $\mfk$ eine zusammenhängende Riemannsche Mannigfaltigkeit.
+Dann ist
+\begin{align}
+    \diam (\mfk):= \sup \{ d(p, q) \vert p, q \in \mfk \} \in (0, \infty]
+\end{align}
+der Durchmesser von $\mfk$.
+\end{defs}
+
+\begin{satz}[Satz von Bonnet-Myers]
+\label{satz:bonnetmyers}
+Sein $\mfk$ eine vollständige zusammenhängende Riemannsche Mannigfaltigkeit.
+Ferner sei $\kappa > 0$ so, dass $\text{ric} \leq \kappa (n - 1) g$ ist 
+(Das heißt $\text{ric} (\xi , \eta) \geq \kappa (n - 1) g( \xi \eta)$).
+Dann ist $\mfk$ kompakt und es gilt
+\begin{align}
+    \diam (\mfk) \leq \frac{\pi}{\sqrt{k}}
+\end{align}
+\end{satz}
+
+\begin{bew}{Beweis von Satz \ref{satz:bonnetmyers}}
+Seien $p, q \in \mfk$ mit $\p \neq q$.
+Da $\mfk$ Vollständig ist, liefert der Satz von Hopf-Rinow die Existenz einer minimalen
+nach Bogenlänge parametrisierten Geodätischen $\gamma: [0 , s] \to \mfk$ 
+mit $\gamma (0) =p$ und $\gamma (s) = q$.
+
+
+
+
+
+
+
+\end{bew}<++>
+
+\end{bew}<++>
+
+
+
+
+
+
