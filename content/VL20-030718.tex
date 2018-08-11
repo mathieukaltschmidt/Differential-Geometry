@@ -150,11 +150,67 @@ Mit anderen Worten: Variationsfelder von geodätischen Variationen sind Jacobi-F
 \end{defs}
 
 \begin{satz}
+\label{satz:eindeutigkeitjacobi}
 Sei $c_0 : I \to \mfk$ eine Geodätische und $t_0 \in I$.
 Dann gilt für alle $\xi, \eta \in T_{c(t_0)}\mfk$ existiert genau ein Jacobi-Feld $J$ 
 längs $c$ mit $J(t_0) = \xi$ und $\covd_t J (t_0) = \eta$
+\end{satz}
 
+\begin{bew}[Beweis Satz \ref{satz:eindeutigkeitjacobi}]
+Sei $e_i (t_0)$ $i\in \{ 1, m \}$ eine Orthonormalbasis von $T_{c(t_0)} \mfk$.
+Setze diese mittels Parallelverschiebung längs $c$ zu $e_i(t)$ fort.
+Schreibe
+\begin{align*}
+    J (t) = \sum^n_{j = 1} v^j (t) e_j (t)
+\end{align*}
+Dann gilt
+\begin{align*}
+    \covd^2_t J(t) = \sum^n_{j=1} \ddot{v}^j (t) e_j (t)
+\end{align*}
+Ferner gilt:
+\begin{align*}
+    \curv( \dot{c}(t), e_j (t)) \dot{c}(t) = \sum^n_{k=1} a^k_j (t) e_k (t)
+\end{align*}
+Da $J$ Jacobifeld gilt:
+\begin{align*}
+    \sum^n_{j=1} \ddot{v}^j (t) e_j(t) = \sum^n_{j,k=1}a^k_j v^j e_k \\
+    \Rightarrow \ddot{v}^i = \sum_j a^i_j v^j
+\end{align*}
+Dies ist ein lineares gewöhnliches Differentialgleichungssystem 2. Ordnung.
+Daraus folgt es existieren Lösungen, welche eindeutig durch Anfangswert
+und Anfangsgeschwindigkeit gegeben sind.
+\end{bew}
 
+\begin{bsp}
+
+\begin{itemize}
+\item $\mfk$ flach, d.h $\curv = 0$.
+Dann gilt:
+\begin{align*}
+\covd^2_t J = 0
+\end{align*}
+Jacobifelder sind dann von der Form:
+\begin{align*}
+J = \xi (t) + t \eta (t)
+\end{align*}
+wobei $\xi$ und $\eta$ parallel längs $c$ sind.
+
+\item $c$ Geodätische, dann ist $J(t) = (a + bt) \dot{c} (t)$ 
+    ein Jacobifeld längs $c$, da $\covd^2_t J(t) = 0$
+    \begin{align*}
+        \Rightarrow \curv (\dot{c},J) 
+        \dot{c} = (a + bt) \curv (\dot{c}, \dot{c})\dot{c} = 0
+    \end{align*}
+\end{itemize}
+\end{bsp}
+
+\begin{lem}
+Sei $J : I \to T \mfk$ ein Jacobifeld längs $c$ (Geodätische).
+Dann gilt $J(t_0) \perp \dot{c}(t_0)$ und $\covd_t J(t_0) \perp \dot{c}(t_0)$.
+Daraus folgt $J(t) \perp \dot{c}(t)$ und $\covd_t J(t)\perp\dot{c}(t)$ $\forall t \in I$
+\end{lem}
+
+\begin{bew}
 
 
 
