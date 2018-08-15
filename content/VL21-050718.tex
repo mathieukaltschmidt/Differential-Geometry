@@ -1,3 +1,5 @@
+% !TeX root = ..//diffgeo_main.tex
+
 \begin{lem}
 
 Sei $\Jac_\gamma \mfk$ der Vektorraum der Jacobifelder entlang $\gamma$, wobei 
@@ -136,8 +138,62 @@ Es gilt für das $J$ aus der Definition $J \perp \gamma'$.
 \end{lem}
 
 \begin{bew}
-Wir wissen, dass 
+    Wir wissen, dass $J_w (t) = t (\dd \exp_p)_{tv} (w)$ ist ein Jacobifeld längs $\gamma_v (t)$ mit $J_w (0)=0$
+    und $J_w ' (0) = w$.
+    Damit gilt:\\
+    $(\dd \exp_{p})_{tv}$ ist ausgeartet $\Leftrightarrow$ $w\in T_p\mfk$, $w\neq 0$,
+    dann ist $(\dd \exp_p)\eval_{tv} w= 0$\\
+    $\Leftrightarrow J_w(t)=0$ und $J_w(0)=0$\\
+    $\Leftrightarrow$ $p$ und $\gamma_v(t)$ sind konjugiert zueinander.
+\end{bew}
+
+
+\begin{bsp}
+\begin{enumerate}
+    \item Auf $(\R^n , \langle \cdot , \cdot \rangle_{\R^n})$ existieren keine konjugierten Punkte.\\
+    $J\in V_{\gamma_v}(\R^n)$ mit $J(0)=0$ und $J'(0)=w \perp v$ 
+    ist gegeben durch $J(t)=t W(t)$ wobei $W(t)$ durch parallelverschiebung aus 
+    $w\neq 0$ erhalten wird.\\
+    $\Rightarrow J(t)\neq 0$, für $t\neq 0 $
+\item Seien $x, y \in S^n$, dann sind $x$ und $y$ konjugiert zueinander
+    genau dann, wenn $x = -y$ gilt.\\
+    Sei $k=1$, $J$ mit $J(0)=0$ und $J'(0)=w \perp v$ ist gegeben durch:
+    \begin{align*}
+        J(t) = \sin (t) W(t)
+    \end{align*}
+    $W(t)$ Parallelverschiebung entlang $\gamma_v$ von $w \in T_p\mfk$.\\
+    $\Rightarrow J(t)=0 \Leftrightarrow t = \pi n$, wobei $n$ eine natürliche Zahl ist.
+\end{enumerate}
+\end{bsp}
+
+\textbf{Ziel:}
+Nutze Jacobifelder um Aussagen über den Verlauf von Geodätischen zu erhalten.
+
+\begin{lem}
+    Sei $(\mfk , g)$ eine Riemannsche Mannigfaltigkeit und 
+    $\gamma : [0,a] \to\mfk$ eine Geodätische mit
+    $\gamma (0) = p$ und $\gamma ' (0) = v$.
+    Sei ferner $w \in T_p\mfk$ mit
+    \begin{itemize}
+        \item $\langle w , w \rangle = 1$
+        \item $\langle v, v \rangle = 1$
+        \item $\langle v, w \rangle = 0$
+    \end{itemize}
+    Sei $J$ das Jacobifeld längs $\gamma$ mit $J(0)=0$ und $J'(0)=w$.
+    Dann gilt 
+    \begin{align*}
+        \abs{J(t)} &= \sqrt{\langle J(t) , J(t) \rangle} 
+        &= t - \frac{1}{6} k \underbrace{p}_{\in \text{span}(v, w)} t^3 + \mathcal{o}(t^5)
+    \end{align*}
+\end{lem}
+\begin{bew}
+Betrachte Taylorentwicklung von 
+\begin{align*}
+    f(t) = \langle J(t),J(t) \rangle 
+\end{align*}
+im Punkt $t=0$.
 \end{bew}<++>
+
 
 
 
