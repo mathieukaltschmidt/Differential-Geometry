@@ -17,9 +17,50 @@ $J$ ist eindeutig durch Anfangsbedingungen $(J(0),J'(0))\in\R^{2n}$ bestimmt.\\
 \textbf{Behauptung}: $f: \R\to\R; t \mapsto \langle J(t) , \gamma'(t)\rangle$
 ist linear.\\
 \textbf{Beweis der Behauptung}:
+\begin{align*}
+\dv{t}\langle J(t), \gamma'(t)\rangle &= \langle \covd_t J(t), \gamma'(t) \rangle 
++ \langle J(t),\underbrace{\covd_t \gamma'(t)}_{=0}\\
+&=  \langle J'(t) , \gamma'(t)\rangle
+\end{align*}
+Wobei wir $J'(t):=\covd_t J(t)$ definieren.
+\begin{align*}
+\dv[2]{t} \langle J(t), \gamma'(t)\rangle &= \langle J''(t), \gamma'(t)\rangle \\
+&= -\langle\curv(J, \gamma')\gamma', \gamma'\rangle\\
+&= 0
+\end{align*}
 
-
+In der vorletzten Gleichung wurde die Jacobi-Gleichung verwendet.
+Daraus folgt, dass $\langle J(t), \gamma'(t) \rangle = at + b$ gilt,
+wobei $b=\langle J(0), \gamma'(0) \rangle$ und $a = \langle J'(0), \gamma'(0)\rangle$.\\
+\textbf{zu b)}\\
+Aus $\langle J, \gamma' \rangle = 0 $ folgt $a = b = 0$.
+Das heißt die Bedingung beschreibt einen Untervektorraum der Kodimension $2$ im $2n$-dimensionalen
+Raum.\\
+\textbf{zu c)}\\
+Wenn zusätzlich $J(0)=0$ gilt folgt $b = 0$.
+Daher hat man einen Untervektorraum der Kodimension $1$ im $n$-dimensionalen Raum
+der Anfangsbedingung $J'(0)$.
 \end{bew}
+
+
+\begin{lem}
+    Sei $\gamma$ eine Geodätische $\gamma : [0,a]\to\mfk$.
+    Sei außerdem $J$ ein Jacobifeld entlang $\gamma$ mit 
+    $J(0)=0$, $J'(0)=w \in T_p\mfk$.
+    Dann gilt:
+    \begin{align*}
+        J(t) = t (d \exp_p)_{tv} (w)
+    \end{align*}
+\end{lem}
+
+\begin{satz}
+    Sei $\gamma : I \to \mfk$ eine Geodätische.
+    Sei $\xi$ ein glattes Vektorfeld längs $\gamma$.
+    Dann gilt\\
+    $\xi$ ist ein Jacobifeld $\leftrightarrow$ $\xi$ ist Variationsfeld einer Geodätischen Variation.
+\end{satz}
+
+
 
 
 
