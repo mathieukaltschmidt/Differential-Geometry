@@ -61,6 +61,90 @@ der Anfangsbedingung $J'(0)$.
 \end{satz}
 
 
+\begin{bew}
+``$\Leftarrow$`` bereits bewiesen.\\
+''$\Rightarrow$``\\
+Wähle $t_0\in I = [a, b]$ und eine glatte Kurve $c : (-\varepsilon, \varepsilon) \to \mfk$
+mit $c(0) = \gamma(t_0)$ und $\dot{c}(0)=\xi (t_0)$.
+Sei $\eta_1$/$\eta_2$  das parallele Vektorfeld längs $c$/$\gamma$ mit $\eta_1 (0) = \gamma' (t_0)$
+bzw. $\eta_2(0)=\covd_t \xi (t_0)$.
+Setze $\eta (s) = \eta_1 (s) + s \eta_2 (s)$ und
+$\gamma (s,t) = \exp_{c(s)} (\eta (s) (t-t_0))$.
+\begin{bem}
+    $\gamma (s,t)$ ist für $\abs{s}$ klein genug für alle $t$ in $[a, b]$ definiert.
+\end{bem}
+Daher gilt:
+\begin{align*}
+\gamma (0,t) &= \exp_{c(0)} (\eta_1(0) (t-t_0))\\
+&=\exp_{c(0)} (\dot{\gamma}(t_0) (t-t_0))\\
+&=\exp_{\gamma(t_0)} (\dot{\gamma}(t_0) (t-t_0)) 
+&= \gamma(t)
+\end{align*}
+Sei nun $J(t) = \pdv{\gamma}{s}(0,t)$, dann ist $J$ ein Jacobifeld.
+Zeige nun:
+\begin{itemize}
+    \item $J(t_0) = \xi (t_0)$
+    \item $J'(t_0) = \covd_t \xi (t_0)$
+\end{itemize}
+Erster Teil:
+\begin{align*}
+    J(t_0 ) - \pdv{\gamma}{s}(0,t_0) &= \dv{s}\eval_{s=0} \exp_{c(s)} (0)\\
+    &= \dot{c}(0)\\
+    &= \xi (t_0)
+\end{align*}
+Zweiter Teil:
+\begin{align*}
+J'(t_0) &= \covd_t \pdv{\gamma}{s}(0,t_0)\\
+&= \covd_s \pdv{\gamma}{t}(0,t_0)\\
+&= \covd_s \eta(0)\\
+&= \eta_2(0)\\
+&= \covd_t \xi (t_0)
+\end{align*}
+Daraus folgt, nun $\xi = J$ und daher ist $\xi$ das Variationsfeld einer geodätischen Variation.
+\end{bew}
+
+\begin{defs}[Konjugierte Punkte]
+Sei $p\in\mfk$ $\gamma : [ 0,a] \to\mfk$ Geodätische mit $\gamma (0) = p$.
+Ferner sei $t_0\in [0,a]$.
+Dann heißt $\gamma (t_0)$ konjugiert zu $p$ entlang $\gamma$,
+falls ein Jacobifeld $J$ entlang $\gamma$ existiert mit 
+$J\neq 0$ und $J(0) = J(t_0)=0$.
+\end{defs}
+\textbf{Fakt:}
+Es gilt für das $J$ aus der Definition $J \perp \gamma'$.
+
+\begin{bew}
+\begin{align*}
+    \langle J(t) , \gamma'(t) \rangle = at + b
+\end{align*}
+\begin{align*}
+    &J(0)=0 \Rightarrow b=0\\
+    &J(t_0) = 0 \Rightarrow a = 0 \Rightarrow J \perp \gamma
+\end{align*}
+
+\end{bew}
+
+
+\begin{lem}
+    Sei $p\in\mfk$ und $v\in T_p\mfk$.
+    Dann gilt
+    \begin{align*}
+        (\dd \exp_p)_{tv}: T_p\mfk \to T_{\gamma_v (t)} \mfk
+    \end{align*}
+    ist genau dann ausgeartet, wenn $p$ und $\gamma_\iota (t)$
+    zueinander entlang $\gamma_\iota$ konjugiert sind.
+\end{lem}
+
+\begin{bew}
+Wir wissen, dass 
+\end{bew}<++>
+
+
+
+
+
+
+
 
 
 
