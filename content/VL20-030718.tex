@@ -1,3 +1,4 @@
+% !TeX root = ..//diffgeo_main.tex
 \section{Satz von Bonnet-Myers}
 
 Unser nächstes Ziel wird es sein den Satz von Bonnet-Myers zu beweisen.
@@ -39,9 +40,8 @@ Damit erhält man:
 
 Betrachte $\ast$:
 \begin{align*}
-\ast &= \int^b_a\left( \pdv{t} \langle \covd_s \pdv{c_s}{s}\eval_{s=0}, c\pdv \right
-- \underbrace{\langle\covd_s\pdv{c_s}{s}\eval_{s=0} , 
-\covd_t \dot{c}}_{=0, \ \text{da $c$ Geodätische}} \right) \dd t \\
+\ast &= \int^b_a ( \pdv{t} \langle \covd_s \pdv{c_s}{s}\eval_{s=0}, 
+c \rangle - \underbrace{\langle\covd_s \pdv{c_s}{s} \eval_{s=0} , \covd_t \dot{c}\rangle}_{=0, \ \text{da $c$ Geodätische}} ) \dd t \\
 &= \langle \covd_s \pdv{c_s}{s}\eval_{s=0}, \dot{c} \rangle \eval^b_a \\
 &= 0
 \end{align*}
@@ -59,7 +59,7 @@ der Durchmesser von $\mfk$.
 
 \begin{satz}[Satz von Bonnet-Myers]
 \label{satz:bonnetmyers}
-Sein $\mfk$ eine vollständige zusammenhängende Riemannsche Mannigfaltigkeit.
+Sei $\mfk$ eine vollständige zusammenhängende Riemannsche Mannigfaltigkeit.
 Ferner sei $\kappa > 0$ so, dass $\text{ric} \leq \kappa (n - 1) g$ ist 
 (Das heißt $\text{ric} (\xi , \eta) \geq \kappa (n - 1) g( \xi \eta)$).
 Dann ist $\mfk$ kompakt und es gilt
@@ -69,7 +69,7 @@ Dann ist $\mfk$ kompakt und es gilt
 \end{satz}
 
 \begin{bew}{Beweis von Satz \ref{satz:bonnetmyers}}
-Seien $p, q \in \mfk$ mit $\p \neq q$.
+Seien $p, q \in \mfk$ mit $p \neq q$.
 Da $\mfk$ Vollständig ist, liefert der Satz von Hopf-Rinow die Existenz einer minimalen
 nach Bogenlänge parametrisierten Geodätischen $\gamma: [0 , s] \to \mfk$ 
 mit $\gamma (0) =p$ und $\gamma (s) = q$.
@@ -111,7 +111,7 @@ Da die Mannigfaltigkeit vollständig und beschränkt ist folgt, dass sie kompakt
 \begin{bem}
 Aus $k \geq \kappa$ folgt $\text{ric} \geq \kappa (n-1)g$,
 daher gilt die Aussage von Bonnet-Myers auch für $k \geq \kappa$.
-
+\end{bem}
 
 \section{Jacobi-Felder}
 
@@ -131,19 +131,16 @@ Sei $\xi (t) = \pdv{c(0,t)}{s}$ das zugehörige Variationsfeld, dann gilt:
 \begin{align*}
 \covd^2_t \xi (t) &= \covd_t \covd_t \pdv{s} c(s, t) \eval_{s=0}\\
 &= \covd_t \covd_s \pdv{t} c(s, t) \eval_{s=0}\\
-&= \underbrace{\covd_s \covd_t \pdv{t} c(s, t) \eval{s=0}}
-{=0, \ \text{da Geodätische Variation}} + 
+&= \underbrace{\covd_s \covd_t \pdv{t} c(s, t) \eval{s=0}}_{=0, \ \text{da Geodätische Variation}} + 
 \curv (\pdv{c(0, t)}{t} , \pdv{c(0, t)}{s}) \pdv{c(0,t)}{t}\\
 &= \curv ( \dot{c}_0 (t) , \xi (t)) \dot{c}_0 (t)
 \end{align*}
 
-\begin{def}[Jacobi-Gleichung]
+\begin{defs}[Jacobi-Gleichung]
 Die Gleichung
 \begin{align}
-    \covd^2_t \xi = \curv (\dot{c}_0 , \xi ) \dot{c}_0
+\covd^2_t \xi = \curv (\dot{c}_0 , \xi ) \dot{c}_0
 \end{align}
-
-
 heißt \textbf{Jacobi-Gleichung} und Lösungen davon heißen
 \textbf{Jacobi-Felder}.
 Mit anderen Worten: Variationsfelder von geodätischen Variationen sind Jacobi-Felder.
@@ -211,6 +208,75 @@ Daraus folgt $J(t) \perp \dot{c}(t)$ und $\covd_t J(t)\perp\dot{c}(t)$ $\forall 
 \end{lem}
 
 \begin{bew}
+\begin{align*}
+    \dv{t} \langle \covd_t J, \dot{c} \rangle &= \langle \covd^2_t J, \dot{c} \rangle + \langle \covd_t J , \underbrace{\covd_t \dot{c}}_{=0} \rangle \\
+&= \langle \curv (\dot{c} , J) \dot{c} , \dot{c} \rangle \\
+&= 0
+\end{align*}
+Daraus folgt
+\begin{align*}
+    \langle \covd_t J, \dot{c} = 0
+\end{align*}
+Da $\dv{t} \langle J , \dot{c} \rangle = \langle \covd_t J , \dot{c} \rangle = 0$
+folgt auch, dass $\langle J , \dot{c} \rangle = 0$.
+\end{bew}
+
+\begin{defs}[Verallgemeinerte Sinus- und Kosinusfunktion]
+
+    Für $k\in\R$, dann definieren wir die verallgmeinerte Sinusfunktion bzw 
+    Kosinusfunktion durch:
+
+\begin{align*}
+    s_k(t) = \left\{
+\begin{array}{ll}
+    \frac{1}{\sqrt{k}} \sin (\sqrt{k} t) & k > 0 \\
+    t & k = 0 \\
+    \frac{1}{\sqrt{\abs{k}}} \sinh (\sqrt{\abs{k}} t) & k < 0 \\
+\end{array}
+\right.
+\end{align*}
+
+\begin{align*}
+    c_k(t) = \left\{
+\begin{array}{ll}
+    \cos (\sqrt{k} t) & k > 0 \\
+    1 & k = 0 \\
+    \cosh (\sqrt{k} t) & k < 0 \\
+\end{array}
+\right.
+\end{align*}
+Diese Funktionen haben die folgenden Eigenschaften:
+\begin{itemize}
+    \item $k s^2_k + c^2_k = 1$
+    \item $s_k' = c_k$
+    \item $c_k' = - k s_k$
+    \item $s_k(0) = 0$
+    \item $c_k(0) = 1$
+\end{itemize}
+\end{defs}
+
+\begin{bsp}
+    Sei $(\mfk, g)$ mit konstanter Schnittkrümmung $k=\kappa$, $c$ eine nach 
+    Bogenlänge parametrisierte Geodätische und $\xi$ ein paralleles Vektorfeld längs $c$
+    mit $\xi \perp c$.
+    Setze $J(t) = (a s_k(t) + b c_k(t)) \xi(t)$ wobei $a, b \in \R$.
+    Dann gilt:
+\begin{align*}
+\covd^2_t J(t) &= (a \ddot{s}_k (t) + b \ddot{c}_k (t)) \xi (t)\\
+&= (- a k s_k (t) - b k c_k (t)) \xi (t) \\
+&= -k J(t)
+\end{align*}
+
+Für $\curv (\alpha, \eta) \chi = k ( \langle \eta, \chi \rangle \alpha
+- \langle \alpha ,\chi\rangle \eta)$ folgt:
+\begin{align*}
+\curv (\dot{c}, J) \dot{c} &= (a s_k (t) + b c_k(t))\curv (\dot{c}, \xi) \dot{c}\\
+&= (as_k + bc_k)k (\underbrace{\langle\xi,\dot{c}\rangle}_{=0}\dot{c}
+- \underbrace{\langle\dot{c},\dot{c}}_{=1}\xi)\\
+&= -k(as_k + bc_k)\xi\\
+&= - k J
+\end{align*}
+\end{bsp}
 
 
 

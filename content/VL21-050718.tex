@@ -1,0 +1,241 @@
+% !TeX root = ..//diffgeo_main.tex
+
+\begin{lem}
+
+Sei $\Jac_\gamma \mfk$ der Vektorraum der Jacobifelder entlang $\gamma$, wobei 
+$\mfk$ eine $n$-dimensionale Riemannsche Mannigfaltigkeit ist.
+Dann gilt:
+\begin{itemize}
+\item[a)] $\dim (\Jac_\gamma \mfk) = 2n$
+\item[b)] $\{ J \in \Jac_\gamma \mfk \vert J \perp \gamma' \}$ ist 
+    $(2n-2)$-dimensionaler Vektorraum
+\item[c)] $\{ J \in \Jac_\gamma \mfk \vert J \perp \gamma' , J(0)=0\}$ ist 
+    $(n-1)$-dimensionaler Vektorraum
+\end{itemize}
+Ferner gilt: $\langle J(t) , \gamma'(t) = at + b$ mit $a,b \in \R$.
+\end{lem}
+\begin{bew}
+$J$ ist eindeutig durch Anfangsbedingungen $(J(0),J'(0))\in\R^{2n}$ bestimmt.\\
+\textbf{Behauptung}: $f: \R\to\R; t \mapsto \langle J(t) , \gamma'(t)\rangle$
+ist linear.\\
+\textbf{Beweis der Behauptung}:
+\begin{align*}
+\dv{t}\langle J(t), \gamma'(t)\rangle &= \langle \covd_t J(t), \gamma'(t) \rangle 
++ \langle J(t),\underbrace{\covd_t \gamma'(t)}_{=0}\\
+&=  \langle J'(t) , \gamma'(t)\rangle
+\end{align*}
+Wobei wir $J'(t):=\covd_t J(t)$ definieren.
+\begin{align*}
+\dv[2]{t} \langle J(t), \gamma'(t)\rangle &= \langle J''(t), \gamma'(t)\rangle \\
+&= -\langle\curv(J, \gamma')\gamma', \gamma'\rangle\\
+&= 0
+\end{align*}
+
+In der vorletzten Gleichung wurde die Jacobi-Gleichung verwendet.
+Daraus folgt, dass $\langle J(t), \gamma'(t) \rangle = at + b$ gilt,
+wobei $b=\langle J(0), \gamma'(0) \rangle$ und $a = \langle J'(0), \gamma'(0)\rangle$.\\
+\textbf{zu b)}\\
+Aus $\langle J, \gamma' \rangle = 0 $ folgt $a = b = 0$.
+Das heißt die Bedingung beschreibt einen Untervektorraum der Kodimension $2$ im $2n$-dimensionalen
+Raum.\\
+\textbf{zu c)}\\
+Wenn zusätzlich $J(0)=0$ gilt folgt $b = 0$.
+Daher hat man einen Untervektorraum der Kodimension $1$ im $n$-dimensionalen Raum
+der Anfangsbedingung $J'(0)$.
+\end{bew}
+
+
+\begin{lem}
+    Sei $\gamma$ eine Geodätische $\gamma : [0,a]\to\mfk$.
+    Sei außerdem $J$ ein Jacobifeld entlang $\gamma$ mit 
+    $J(0)=0$, $J'(0)=w \in T_p\mfk$.
+    Dann gilt:
+    \begin{align*}
+        J(t) = t (d \exp_p)_{tv} (w)
+    \end{align*}
+\end{lem}
+
+\begin{satz}
+    Sei $\gamma : I \to \mfk$ eine Geodätische.
+    Sei $\xi$ ein glattes Vektorfeld längs $\gamma$.
+    Dann gilt\\
+    $\xi$ ist ein Jacobifeld $\leftrightarrow$ $\xi$ ist Variationsfeld einer Geodätischen Variation.
+\end{satz}
+
+
+\begin{bew}
+``$\Leftarrow$`` bereits bewiesen.\\
+''$\Rightarrow$``\\
+Wähle $t_0\in I = [a, b]$ und eine glatte Kurve $c : (-\varepsilon, \varepsilon) \to \mfk$
+mit $c(0) = \gamma(t_0)$ und $\dot{c}(0)=\xi (t_0)$.
+Sei $\eta_1$/$\eta_2$  das parallele Vektorfeld längs $c$/$\gamma$ mit $\eta_1 (0) = \gamma' (t_0)$
+bzw. $\eta_2(0)=\covd_t \xi (t_0)$.
+Setze $\eta (s) = \eta_1 (s) + s \eta_2 (s)$ und
+$\gamma (s,t) = \exp_{c(s)} (\eta (s) (t-t_0))$.
+\begin{bem}
+    $\gamma (s,t)$ ist für $\norm {s}$ klein genug für alle $t$ in $[a, b]$ definiert.
+\end{bem}
+Daher gilt:
+\begin{align*}
+\gamma (0,t) &= \exp_{c(0)} (\eta_1(0) (t-t_0))\\
+&=\exp_{c(0)} (\dot{\gamma}(t_0) (t-t_0))\\
+&=\exp_{\gamma(t_0)} (\dot{\gamma}(t_0) (t-t_0)) 
+&= \gamma(t)
+\end{align*}
+Sei nun $J(t) = \pdv{\gamma}{s}(0,t)$, dann ist $J$ ein Jacobifeld.
+Zeige nun:
+\begin{itemize}
+    \item $J(t_0) = \xi (t_0)$
+    \item $J'(t_0) = \covd_t \xi (t_0)$
+\end{itemize}
+Erster Teil:
+\begin{align*}
+    J(t_0 ) - \pdv{\gamma}{s}(0,t_0) &= \dv{s}\eval_{s=0} \exp_{c(s)} (0)\\
+    &= \dot{c}(0)\\
+    &= \xi (t_0)
+\end{align*}
+Zweiter Teil:
+\begin{align*}
+J'(t_0) &= \covd_t \pdv{\gamma}{s}(0,t_0)\\
+&= \covd_s \pdv{\gamma}{t}(0,t_0)\\
+&= \covd_s \eta(0)\\
+&= \eta_2(0)\\
+&= \covd_t \xi (t_0)
+\end{align*}
+Daraus folgt, nun $\xi = J$ und daher ist $\xi$ das Variationsfeld einer geodätischen Variation.
+\end{bew}
+
+\begin{defs}[Konjugierte Punkte]
+Sei $p\in\mfk$ $\gamma : [ 0,a] \to\mfk$ Geodätische mit $\gamma (0) = p$.
+Ferner sei $t_0\in [0,a]$.
+Dann heißt $\gamma (t_0)$ konjugiert zu $p$ entlang $\gamma$,
+falls ein Jacobifeld $J$ entlang $\gamma$ existiert mit 
+$J\neq 0$ und $J(0) = J(t_0)=0$.
+\end{defs}
+\textbf{Fakt:}
+Es gilt für das $J$ aus der Definition $J \perp \gamma'$.
+
+\begin{bew}
+\begin{align*}
+    \langle J(t) , \gamma'(t) \rangle = at + b
+\end{align*}
+\begin{align*}
+    &J(0)=0 \Rightarrow b=0\\
+    &J(t_0) = 0 \Rightarrow a = 0 \Rightarrow J \perp \gamma
+\end{align*}
+
+\end{bew}
+
+
+\begin{lem}
+    Sei $p\in\mfk$ und $v\in T_p\mfk$.
+    Dann gilt
+    \begin{align*}
+        (\dd \exp_p)_{tv}: T_p\mfk \to T_{\gamma_v (t)} \mfk
+    \end{align*}
+    ist genau dann ausgeartet, wenn $p$ und $\gamma_\iota (t)$
+    zueinander entlang $\gamma_\iota$ konjugiert sind.
+\end{lem}
+
+\begin{bew}
+    Wir wissen, dass $J_w (t) = t (\dd \exp_p)_{tv} (w)$ ist ein Jacobifeld längs $\gamma_v (t)$ mit $J_w (0)=0$
+    und $J_w ' (0) = w$.
+    Damit gilt:\\
+    $(\dd \exp_{p})_{tv}$ ist ausgeartet $\Leftrightarrow$ $w\in T_p\mfk$, $w\neq 0$,
+    dann ist $(\dd \exp_p)\eval_{tv} w= 0$\\
+    $\Leftrightarrow J_w(t)=0$ und $J_w(0)=0$\\
+    $\Leftrightarrow$ $p$ und $\gamma_v(t)$ sind konjugiert zueinander.
+\end{bew}
+
+
+\begin{bsp}
+\begin{enumerate}
+    \item Auf $(\R^n , \langle \cdot , \cdot \rangle_{\R^n})$ existieren keine konjugierten Punkte.\\
+    $J\in V_{\gamma_v}(\R^n)$ mit $J(0)=0$ und $J'(0)=w \perp v$ 
+    ist gegeben durch $J(t)=t W(t)$ wobei $W(t)$ durch parallelverschiebung aus 
+    $w\neq 0$ erhalten wird.\\
+    $\Rightarrow J(t)\neq 0$, für $t\neq 0 $
+\item Seien $x, y \in S^n$, dann sind $x$ und $y$ konjugiert zueinander
+    genau dann, wenn $x = -y$ gilt.\\
+    Sei $k=1$, $J$ mit $J(0)=0$ und $J'(0)=w \perp v$ ist gegeben durch:
+    \begin{align*}
+        J(t) = \sin (t) W(t)
+    \end{align*}
+    $W(t)$ Parallelverschiebung entlang $\gamma_v$ von $w \in T_p\mfk$.\\
+    $\Rightarrow J(t)=0 \Leftrightarrow t = \pi n$, wobei $n$ eine natürliche Zahl ist.
+\end{enumerate}
+\end{bsp}
+
+\textbf{Ziel:}
+Nutze Jacobifelder um Aussagen über den Verlauf von Geodätischen zu erhalten.
+
+\begin{lem}
+    Sei $(\mfk , g)$ eine Riemannsche Mannigfaltigkeit und 
+    $\gamma : [0,a] \to\mfk$ eine Geodätische mit
+    $\gamma (0) = p$ und $\gamma ' (0) = v$.
+    Sei ferner $w \in T_p\mfk$ mit
+    \begin{itemize}
+        \item $\langle w , w \rangle = 1$
+        \item $\langle v, v \rangle = 1$
+        \item $\langle v, w \rangle = 0$
+    \end{itemize}
+    Sei $J$ das Jacobifeld längs $\gamma$ mit $J(0)=0$ und $J'(0)=w$.
+    Dann gilt 
+    \begin{align*}
+        \norm{J(t)} &= \sqrt{\langle J(t) , J(t) \rangle} \\
+        &= t - \frac{1}{6} k \underbrace{p}_{\in \text{span}(v, w)} t^3 + \mathcal{O}(t^5)
+    \end{align*}
+\end{lem}
+\begin{bew}
+Betrachte Taylorentwicklung von 
+\begin{align*}
+    f(t) = \langle J(t),J(t) \rangle 
+\end{align*}
+im Punkt $t=0$.
+\begin{align*}
+    f(t) = f(0) + f'(0)t + \frac{1}{2} f''(0)t^2 + \frac{1}{6} f^{(3)} (0) t^3 + \frac{1}{4!} f^{(4)}(0) t^4 + \mathcal{O}(t^5)
+\end{align*}
+\begin{itemize}
+    \item $f(0)=0$
+    \item $f'(t)= 2 \langle J'(t),J(t) \rangle$
+    \item $f'(0)=0$
+    \item $f''(t) = 2 \langle J''(t), J(t) \rangle + 2\langle J'(t) , J'(t)\rangle$
+    \item $f''(0) = 2 \langle J'(0) , J'(0) \rangle = 2 \langle w,w \rangle = 2$
+    \item $f^{(3)}(t) 2 \langle J^{(3)} , J \rangle + 2 \langle J'' , J' \rangle
+        + 2 \langle J'' , J' \rangle + 2 \langle J' , J'' \rangle$
+    \item $f^{(3)} = 6 \langle J'' , J' \rangle 
+        = - 6 \langle \curv (J(0) , \gamma '(0))\gamma '(0) , J'(0)\rangle 
+        = 0$
+    \item $f^{(4)} (0) = \gamma \langle J^{(3)},J'(0)\rangle + 6 \langle J''(0), J''(0) \rangle$
+\end{itemize}
+Es gilt $f^{(4)}(0) = - \gamma k_{\text{span}(v,w)}(p)$.
+Man erhält insgesamt:
+\begin{align}
+    \norm{J(t)}^2 &= t^2 - \frac{1}{3} k_{\text{span}(v,w) (p)t^4 + \mathcal{O}(t^6)}\\
+    \norm{J(t)}=t - \frac{1}{6} k_{\text{span}(v,w) (p)t^3 + \mathcal{O}(t^5)}\\
+\end{align}
+\end{bew}
+\textbf{Folgerung:}\\
+\begin{itemize}
+    \item Für $\curv = 0$ folgt $f^{(k)}(0)=0$ für alle $k>0$.
+        Somit gilt: $\norm{J(t)}=t$.
+    \item Sei $\underbrace{k_{\text{span}(v,w)} (p)}_{=:c} < 0$, dann folgt
+        $\norm{J(t)} = t + \abs{c}t^3$
+    \item Sei $c>0$, dann hat $\norm{J(t)}=t-\abs{c}t^3$ ein lokales Maximum (``Geodätische laufen zusammen'')
+\end{itemize}
+
+<++>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
