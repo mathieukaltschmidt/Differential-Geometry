@@ -73,7 +73,7 @@ bzw. $\eta_2(0)=\covd_t \xi (t_0)$.
 Setze $\eta (s) = \eta_1 (s) + s \eta_2 (s)$ und
 $\gamma (s,t) = \exp_{c(s)} (\eta (s) (t-t_0))$.
 \begin{bem}
-    $\gamma (s,t)$ ist für $\abs{s}$ klein genug für alle $t$ in $[a, b]$ definiert.
+    $\gamma (s,t)$ ist für $\norm {s}$ klein genug für alle $t$ in $[a, b]$ definiert.
 \end{bem}
 Daher gilt:
 \begin{align*}
@@ -182,8 +182,8 @@ Nutze Jacobifelder um Aussagen über den Verlauf von Geodätischen zu erhalten.
     Sei $J$ das Jacobifeld längs $\gamma$ mit $J(0)=0$ und $J'(0)=w$.
     Dann gilt 
     \begin{align*}
-        \abs{J(t)} &= \sqrt{\langle J(t) , J(t) \rangle} 
-        &= t - \frac{1}{6} k \underbrace{p}_{\in \text{span}(v, w)} t^3 + \mathcal{o}(t^5)
+        \norm{J(t)} &= \sqrt{\langle J(t) , J(t) \rangle} \\
+        &= t - \frac{1}{6} k \underbrace{p}_{\in \text{span}(v, w)} t^3 + \mathcal{O}(t^5)
     \end{align*}
 \end{lem}
 \begin{bew}
@@ -192,8 +192,39 @@ Betrachte Taylorentwicklung von
     f(t) = \langle J(t),J(t) \rangle 
 \end{align*}
 im Punkt $t=0$.
-\end{bew}<++>
+\begin{align*}
+    f(t) = f(0) + f'(0)t + \frac{1}{2} f''(0)t^2 + \frac{1}{6} f^{(3)} (0) t^3 + \frac{1}{4!} f^{(4)}(0) t^4 + \mathcal{O}(t^5)
+\end{align*}
+\begin{itemize}
+    \item $f(0)=0$
+    \item $f'(t)= 2 \langle J'(t),J(t) \rangle$
+    \item $f'(0)=0$
+    \item $f''(t) = 2 \langle J''(t), J(t) \rangle + 2\langle J'(t) , J'(t)\rangle$
+    \item $f''(0) = 2 \langle J'(0) , J'(0) \rangle = 2 \langle w,w \rangle = 2$
+    \item $f^{(3)}(t) 2 \langle J^{(3)} , J \rangle + 2 \langle J'' , J' \rangle
+        + 2 \langle J'' , J' \rangle + 2 \langle J' , J'' \rangle$
+    \item $f^{(3)} = 6 \langle J'' , J' \rangle 
+        = - 6 \langle \curv (J(0) , \gamma '(0))\gamma '(0) , J'(0)\rangle 
+        = 0$
+    \item $f^{(4)} (0) = \gamma \langle J^{(3)},J'(0)\rangle + 6 \langle J''(0), J''(0) \rangle$
+\end{itemize}
+Es gilt $f^{(4)}(0) = - \gamma k_{\text{span}(v,w)}(p)$.
+Man erhält insgesamt:
+\begin{align}
+    \norm{J(t)}^2 &= t^2 - \frac{1}{3} k_{\text{span}(v,w) (p)t^4 + \mathcal{O}(t^6)}\\
+    \norm{J(t)}=t - \frac{1}{6} k_{\text{span}(v,w) (p)t^3 + \mathcal{O}(t^5)}\\
+\end{align}
+\end{bew}
+\textbf{Folgerung:}\\
+\begin{itemize}
+    \item Für $\curv = 0$ folgt $f^{(k)}(0)=0$ für alle $k>0$.
+        Somit gilt: $\norm{J(t)}=t$.
+    \item Sei $\underbrace{k_{\text{span}(v,w)} (p)}_{=:c} < 0$, dann folgt
+        $\norm{J(t)} = t + \abs{c}t^3$
+    \item Sei $c>0$, dann hat $\norm{J(t)}=t-\abs{c}t^3$ ein lokales Maximum (``Geodätische laufen zusammen'')
+\end{itemize}
 
+<++>
 
 
 
