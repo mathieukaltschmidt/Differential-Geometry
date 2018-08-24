@@ -1,5 +1,6 @@
-\chapter{Raumkurven}
-Wir wollen uns in diesem Kapitel genauer mit Raumkurven und deren Eigenschaften befassen. Wir werden sehen, dass sich Kurven bei bekannter Krümmung und Windung konstruieren lassen. Beginnen wollen wir zunächst einmal mit den wichtigsten Definitionen die grundlegend für das Verständnis der Theorie der Raumkurven sind.
+\chapter{Elementare Differentialgeometrie}
+\section{Raumkurven}
+Wir wollen uns in diesem Kapitel genauer mit elementaren Konzepten der Differentialgeometrie befassen. Wir beginnen zunächst einmal mit der Theorie der Raumkurven und deren Eigenschaften. Wir werden sehen, dass die Konstruktion von Kurven bei bekannter Krümmung und Torsion möglich ist. Zuerst wollen wir die  wichtigsten Definitionen die grundlegend für das Verständnis der Theorie der Raumkurven sind einführen.
 \begin{defs}
 	Sei $c: I \rightarrow \R$ eine nach der Bogenlänge parametrisierte Kurve, also $\norm{T(s)} = \norm{\dot{c}(s)} = 1 \ \forall s \in I$. \\
 	Dann gelten die folgenden Aussagen:
@@ -84,6 +85,56 @@ Auch hier erlauben wir uns einige \textbf{Bemerkungen:}
 	Dann existiert genau eine nach Bogenlänge parametrisierte Kurve $c:[0,b]\rightarrow\R^3$ mit Krümmung $\mathcal{K}$, Torsion $\tau$ und $c(0) = \xi_0$, $\dot{c}(0) = T_0$ sowie $\ddot{c}(o) = \mathcal{K}(0)\mathcal{N}_0$.
 \end{satz}
 \begin{bew}
+Sei 
+\begin{align}
+K(s)= \begin{pmatrix}	
+	\phantom{-}0 & \phantom{-}\mathcal{K}(s) & \phantom{-}0 \\
+	-\mathcal{K}(s) & \phantom{-}0 & \phantom{-}\tau(s) \\
+	\phantom{-}0 & -\tau(s) & \phantom{-}0
+	\end{pmatrix}\tag{$\star$}	
+\end{align}
+Dann existiert genau eine differenzierbare Funktion $F: [0,b]\rightarrow \R^{n \times n}$ mit $\dot{F} = K$ sowie
+\begin{align*}
+F(0)=\begin{pmatrix}
+	T_0 \\ \mathcal{N}_0 \\ T_0 \times \mathcal{N}_0 \end{pmatrix}
+\end{align*}
+
+Dies folgt aus dem Existenz- und Eindeutigkeitssatz von Lösungen linearer Differentialgleichungen. Es gilt:
+\begin{align*}
+	\frac{\dd}{\dd s} F F^{\mathsf{T}} &= \dot{F}(s) F(s)^{\mathsf{T}} + F(s) \dot{F}(s)^{\mathsf{T}}\\
+	&= K(s)F(s)F(s)^{\mathsf{T}} + F(s)F(s)^{\mathsf(T)}K(s)^{\mathsf{T}} 
+\end{align*}
+Damit erhalten wir mit $X(s) = F(s)F(s)^{\mathsf{T}} $ die eindeutige Lösung der Differentialgleichung:
+\begin{align*}
+	\dot{X} = KX + XK^{\mathsf{T}}
+\end{align*}
+mit $X(0) = F(0)F(0)^{\mathsf(T)} = \mathds{1}$. \\
+
+Aber $X(S) = \mathds{1}$ ist auch eine Lösung von $\dot{X} = KX + XK^{\mathsf{T}}$, weil $K + K^{\mathsf{T}} = 0$. \\
+
+Daraus folgt: $\mathds{1} = F(s)F(s)^{\mathsf{T}}$. Außerdem wissen wir dadurch: $\operatorname{det}(F(s)) \in \left\{-1, +1\right\}$. \\
+Für die Stetigkeit benutzen wir 
+\begin{align*}
+\operatorname{det}(F(s)) = \operatorname{det}(F(0)) = \mathds{1} \Rightarrow F(s) \in \operatorname{SO}(3) \ \ \forall s \in [0,b]
+\end{align*}
+Seien $T, \mathcal{N}$ und $\mathcal{B}$ die Komponenten von $F$, also $F=\left(T,\mathcal{N},\mathcal{B}\right)^{\mathsf{T}}$. 
+Sei $c(s) = c_0 + \int_0^s T(t) \dd t$. \\
+Sei $(T',\mathcal{N}',\mathcal{B}')$ das begleitende Dreibein von $c$.
+\begin{itemize}
+	\item $T'(s) = \dot{c}(s) = T(s)$.
+	\item $\mathcal{K}(s) = \norm{\dot{T}'(s)}= \norm{\dot{T}(s)} = \norm{\mathcal{K}(s)\mathcal{N}(s)} = \abs{\mathcal{K}(s)} = \mathcal{K}(s)$.
+	\item $\mathcal{N}'(s) = \frac{1}{\mathcal{K}'(s)}\cdot\dot{T}'(s) = \frac{1}{\mathcal{K}(s)} \cdot T(s) \overset{(\star)}{=} \frac{1}{\mathcal{K}(s)}\mathcal{K}(s)\mathcal{N}(s) = \mathcal{N}(s)$.
+	\item $\mathcal{B}'(s) = T'(s) \times \mathcal{N}'(s) = T(s) \times \mathcal{N}(s)$, weil $\left(T,\mathcal{N},\mathcal{B}\right)$ positiv orientierte ONB ist.
+	\item $\tau'(s) = \left<\dot{\mathcal{N}}'(s),\mathcal{B}'(s)\right> = \left<\dot{\mathcal{N}}(s),\mathcal{B}(s)\right> = \left<-\mathcal{K}(s)T(s)+\tau(s)\mathcal{B}(s),\mathcal{B}(s)\right> = \tau(s)$
+	\item $c(0) = c_0, \dot{c}(0) = T(0), \ddot{c}(0) = \dot{T}'(0) =\dot{T}(0) = \mathcal{K}(0)\mathcal{N}(0)= \mathcal{K}(0)\mathcal{N}_0$
+\end{itemize}
+
+
+
+
+Es bleibt noch die Eindeutigkeit zu zeigen: \\
+
+Die Kurve $c$ ist eindeutig bestimmt durch $c_0$ und $T$ und $T$ sowie $\mathcal{N}$ und $\mathcal{B}$ sind eindeutig durch $T_0$, $\mathcal{N}_0$, $\mathcal{B}_0$ und die Frenet-Gleichungen festgelegt.
 	%TODO Hier fehlt noch der Beweis (Blatt 4+5+Anfang6!)
 \end{bew}
 

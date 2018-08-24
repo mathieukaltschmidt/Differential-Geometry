@@ -9,6 +9,7 @@
 %math and theorems
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{dsfont}
 \usepackage[amsmath,thmmarks,hyperref]{ntheorem}
 \usepackage{mathtools}
 \usepackage{dsfont}
@@ -52,7 +53,8 @@
 
 %color settings
 \definecolor{myred}{RGB}{196,19,47} 
-\definecolor{myblue}{RGB}{0,139,139}
+\definecolor{myblue}{RGB}{65,105,225}
+\definecolor{mygray}{RGB}{102, 102, 142}
 
 
 %for empty pages at the beginning of the document
@@ -63,21 +65,66 @@
 	\null%
 	\clearpage}
 
-% Page layout for beginning of chapter
+% Page Layout For Beginning Of Chapter
 \fancypagestyle{plain}{%
 	\fancyhf{}  % clear all header and footer fields 
-	\fancyfoot[C]{- \thepage\hspace{3pt}-} 
+	\fancyfoot[C]{%
+        	\colorbox{mygray}{\color{white}\textbf{\thepage}}}
 	\renewcommand{\headrulewidth}{0pt}
 	\renewcommand{\footrulewidth}{0pt}}
 
-%page layout for the other pages
+% Page Layout For The Other Pages
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[LE]{\textit{\nouppercase{\leftmark}}}
-\fancyhead[RO]{\textit{\nouppercase{\rightmark}}}
-\fancyfoot[C]{- \thepage\hspace{3pt}-}
+\fancyhead[LE]{\footnotesize\nouppercase{\color{mygray}\leftmark}}
+\fancyhead[RO]{\footnotesize\nouppercase{\color{mygray}\rightmark}}
+	\fancyfoot[C]{%
+        	\colorbox{mygray}{\color{white}\textbf{\thepage}}}
+	
 \renewcommand{\headrulewidth}{0.2pt}
 \renewcommand{\footrulewidth}{0pt}
+
+\usepackage{calc}
+
+
+% Chapter Layout
+\usepackage[explicit]{titlesec}
+	\newcommand\titlefontsize{\Large}
+    \newcommand\chapternumberfontsize{\Huge}
+    \newcommand\parttitlefontsize{\Large}
+	\newcommand*\chapterlabel{}
+    	\titleformat
+			{\chapter} % command
+			[display] % shape
+			{\bfseries\color{mygray}} % format
+			{\colorbox{mygray}{            	\chapternumberfontsize{\textcolor{white}{\thechapter.}}}\hspace{5pt}\huge{\chaptertitlename} % 
+                \\[12pt]
+                \fontsize{20}{24}\selectfont \color{black}{#1}
+     		} % label 
+			{0pt} % sep
+			{
+    			\vspace{-10pt}
+                \rule{\textwidth}{1pt}
+			} % before-code
+			[
+				\vspace{-0.5cm}
+			] % after-code
+    	\titleformat
+			{name=\chapter,numberless} % command
+			[display] % shape
+			{\bfseries\color{mygray}} % format
+			{
+                \fontsize{16}{19.2}\selectfont{#1}
+			} % label 
+			{0pt} % sep
+			{
+    			\vspace{-10pt}
+                \rule{\textwidth}{1pt}
+			} % before-code
+			[
+				\vspace{-1cm}
+			] % after-code            
+
 
 % titles and stuff
 \setkomafont{chapter}{\normalfont\bfseries\huge}
@@ -172,4 +219,4 @@ doi=false
 
 %always use hyperref at the end of the preamble!
 \usepackage[colorlinks=True]{hyperref}
-\hypersetup{allcolors=myred}
+\hypersetup{allcolors=myblue}

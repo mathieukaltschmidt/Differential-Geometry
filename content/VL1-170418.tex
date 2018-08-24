@@ -1,19 +1,31 @@
 % !TeX root = ..//diffgeo_main.tex
 \chapter{Differenzierbare Mannigfaltigkeiten}
 \section*{Worum geht es in der Differentialgeometrie?}
-In den ersten Semestern des Matheamatikstudiums wird Analysis in linearen Vektorräumen und  metrischen Räumen betrieben. 
+In den ersten Semestern des Mathematikstudiums wird Analysis in linearen Vektorräumen und  metrischen Räumen betrieben. 
 Zudem wurden eventuell Banachräume und Hilberträume betrachtet.
 Zentrale Objekte dieser Vorlseung sind sogenannte \textbf{Riemannsche Mannigfaltigkeiten} (diese werden in Abschnitt \ref{chapter:riemannschemannigfaltigkeiten}  eingeführt).
 Dies sind differenzierbare Mannigfaltigkeiten ausgestattet mit einer Riemannschen Metrik, d.h. einem Objekt, 
 welches es uns erlaubt alle wichtigen geometrischen Größen zu beschreiben, wie zum Beispiel Winkel, Längen, etc.
-Riemannsche Mannigfaltigkeiten oder allgemeiner differenzierbare Mannigfaltigkeiten sind im Allgemeinen weder lineare Vektorräume noch metrische Räume 
-\footnote{Der fortgeschrittene Leser könnte nun einwenden, dass wir Riemannsche Mannigfaltigkeiten mit der Struktur eines metrischen Raumes ausstatten können. 
+Riemannsche Mannigfaltigkeiten oder allgemeiner differenzierbare Mannigfaltigkeiten sind im Allgemeinen weder lineare Vektorräume noch metrische Räume.
+Der fortgeschrittene Leser könnte nun einwenden, dass wir Riemannsche Mannigfaltigkeiten mit der Struktur eines metrischen Raumes ausstatten können. 
 Dies stimmt, aber das wissen wir jetzt noch nicht! 
-A priori sind Riemannsche Mannigfaltigkeiten keine metrsichen Räume. 
-Mehr dazu in Abschnitt \ref{chapter:riemannschemannigfaltigkeiten}}.\\
+A priori sind Riemannsche Mannigfaltigkeiten keine metrischen Räume. 
+Mehr dazu in Abschnitt \ref{chapter:riemannschemannigfaltigkeiten}
+. \\
 Unser Ziel ist es die Konzepte der Analysis und Geometrie auf diese differenzierbaren Mannigfaltigkeiten zu übertragen.
 Somit bleibt die Frage: was sind überhaupt differenzierbare Mannigfaltigkeiten?
-Dies ist Gegenstand dieses Kapitels.
+Dies ist Gegenstand dieses Kapitels.\\
+Wir beginnen zunächst einmal mit einer kurzen Gegenüberstellung der bereits bekannten Konzepte aus dem $\mathbb{R}^n$ mit den korrespondierenden Begriffen der Differentialgeometrie, welche wir in den kommenden Vorlesungen noch genauer kennenlernen werden. \\
+Differenzierbare Mannigfaltigkeiten sind topologische Mannigfaltigkeiten mit einer zusätzlichen Struktur, welche uns erlaubt Analysis auf der Mannigfaltigkeit zu betreiben ("wir wollen differenzieren können").\\
+Um diesen Satz mit Sinn zu füllen, müssen wir folgende Fragen klären:
+\begin{itemize}
+\label{item:frage1}
+\item[a)]  Was sind topologische Mannigfaltigkeiten?
+\label{item:frage2}
+\item[b)]  Was ist mit zusätzlicher Struktur gemeint?
+\end{itemize} \newpage
+
+Eine kurze Gegenüberstellung einiger Konzepte der Differentialgeometrie mit bereits bekannten Konzepten aus der Mathematik im $\R^n$ soll als kurze Einführung und Motivation für das Studium der Differentialgeometrie dienen.
 \begin{figure}[H]
 %Vergleich
 \begin{figure}[H]
@@ -30,17 +42,6 @@ $\mathbb{R}^n$ \vspace{5pt} & $\Huge\mathcal{M}$  \vspace{5pt} \tabularnewline \
 \vspace{5pt} Skalarprodukt & \vspace{5pt} Riemannsche Metrik \tabularnewline 
 \end{tabular}
 \end{figure} 
-
-Wir beginnen zunächst einmal mit einer kurzen Gegenüberstellung der bereits bekannten Konzepte aus dem $\mathbb{R}^n$ mit den korrespondierenden Begriffen der Differentialgeometrie, welche wir in den kommenden Vorlesungen noch genauer kennenlernen werden. \\
-
-Differenzierbare Mannigfaltigkeiten sind topologische Mannigfaltigkeiten mit einer zusätzlichen Struktur, welche uns erlaubt Analysis auf der Mannigfaltigkeit zu betreiben ("wir wollen differenzieren können").\\
-Um diesen Satz mit Sinn zu füllen, müssen wir folgende Fragen klären:
-\begin{itemize}
-\label{item:frage1}
-\item[a)]  Was sind topologische Mannigfaltigkeiten?
-\label{item:frage2}
-\item[b)]  Was ist mit zusätzlicher Struktur gemeint?
-\end{itemize}
 
 \section{Definitionen}
 Wir beginnen damit \hyperref[item:frage1]{a)} zu erläutern.
