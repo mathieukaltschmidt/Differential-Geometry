@@ -20,7 +20,37 @@ Dann gelten die folgenden Aussagen:
 \begin{bew}
 Wir beginnen zunächst einmal mit dem Beweis der dritten Aussage:
 \begin{align*}	
-g(\curv(X,Y)U,V)+g(\curv(X,Y)V,U) \overset{!}{=} 0
+g(\curv(X,Y)U,V)+g(\curv(X,Y)V,U) \overset{!}{=} 0 
+\end{align*}
+Dies ist analog zur Aussage:
+\begin{align*}
+g(\nabla_X(\nabla_YU)-\nabla_Y(\nabla_XU)-\nabla_{[X,Y]}U,V) +g(\nabla_X(\nabla_YV)-\nabla_Y(\nabla_XV)-\nabla_{[X,Y]}V,U) \overset{!}{=} 0
+\end{align*}
+Wir benutzen: $0 = X(Y(f))-Y(X(f))-[X,Y](f)\quad$ für $f = g(U,V)$. \quad  Dann folgt direkt: 
+\begin{align*}
+Y(g(U,V)) &= g(\nabla_YU,V) + g(U,\nabla_YV)\\
+X(Y(g(U,V))) &= g(\nabla_X(\nabla_YU),V) + g(\nabla_YU,\nabla_XV) + g(\nabla_XU,\nabla_YV) + g(U,\nabla_X(\nabla_YV)) \\
+[X,Y]g(U,V) &= g(\nabla_{[X,Y]}U,V)+g(U,\nabla_{[X,Y]}V)
+\end{align*}
+Das Einsetzen der Identitäten liefert uns schlussendlich:
+\begin{align*}
+	0 &= \color{myred}{g(\nabla_X(\nabla_YU),V)} \normalcolor+ \color{Blue}{g(\nabla_X(\nabla_YV),U)} \normalcolor+ \color{PineGreen}{g(\nabla_YU,\nabla_XV)} \normalcolor+ \color{BurntOrange}{g(\nabla_XU,\nabla_YV)} \\ \normalcolor
+	&- \color{myred}{g(\nabla_Y(\nabla_XU),V)} \normalcolor- \color{Blue}{g(\nabla_Y(\nabla_XV),U)} \normalcolor- \color{PineGreen}{g(\nabla_YU,\nabla_XV)} \normalcolor- \color{BurntOrange}{g(\nabla_XU,\nabla_YV)} \\ \normalcolor
+	&- \color{myred}{g(\nabla_{[X,Y]}U,V)} \normalcolor- \color{Blue}{g(U,\nabla_{[X,Y]}V)} \\ \normalcolor
+	&= \color{myred}{g(\curv(X,Y)U,V)} \normalcolor + \color{Blue}{g(\curv(X,Y)V,U)} 
+\end{align*}
+Wir setzen den Beweis fort. Nun folgt die vierte Aussage:
+\begin{align*}
+a) \qquad g(\curv(X,Y)U,V) &\overset{\tiny{(1)}}{=} -g(\curv(Y,X)U,v) \\
+&= \phantom{-}g(\curv(X,U)Y,V) + g(\curv(U,Y)X,V) \\
+b) \qquad g(\curv(X,Y)U,V) &\overset{\tiny{(3)}}{=} -g(\curv(X,Y)V,U) \\
+&\overset{\tiny{(2)}}{=} \phantom{-}g(\curv(Y,V)X,U) + g(\curv(V,X)Y,U) 
+\end{align*}
+Insgesamt liefern uns die Identitäten $a)$ und $b)$ zusammen:
+\begin{align*}
+	2g(\curv(X,Y)U,V) &= g(\curv(X,U)Y,V) + g(\curv(U,Y)X,V) + g(\curv(Y,V)X,U) + g(\curv(V,X)Y,U) \\
+	&= g(\curv(U,X)V,Y) + g(\curv(X,V)U,Y) + g(\curv(Y,U)V,X) + g(\curv(V,Y)U,X) \\
+	&= 2g(\curv(U,V)X,Y)
 \end{align*}
 %TODO Hier fehlt noch der Rest vom Beweis..
 \end{bew}
