@@ -1,0 +1,48 @@
+\documentclass[border=5mm]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{shapes,patterns}
+\usetikzlibrary{hobby}
+\usepackage{pgfplots}
+\usepgfplotslibrary{fillbetween}
+\usepackage[active,tightpage]{preview} 
+\PreviewEnvironment{tikzpicture}
+\setlength\PreviewBorder{2mm}
+\usepackage{xcolor}
+\definecolor{myred}{RGB}{196,19,47} 
+\definecolor{myblue}{RGB}{65,105,225}
+
+\begin{document}
+	\begin{tikzpicture}
+
+
+
+	
+%open ball with vector
+	\draw (0,0) circle (2cm);
+	\draw[ultra thick, color=myblue,->] (-0.5,-0.5) -- (0.5,0.5);
+	\node at (0.3,-0.4) {\LARGE\color{myblue}{$\vec{v}$}};
+	\node at (1,2.5) {\LARGE$B_{\varepsilon}(0)$};
+
+%connection
+	\draw[thin,->] (1.9,0.7) [out=20, in=160] to (8,0.7);
+
+%manifold with curves 
+ \draw (8,0) to [closed, curve through = {(8.1,0.6) (8.2,1) (8.9,1.2)  (9.5,1.7) (10.4,1.5) (11.5,2) (12,1.8) (11.7,0.6) (12.5,-0.5) (11.7,-1.1) (10,-1) (9.2,-1.7) (7.6,-.9)}] (8,0);
+ \node at (12.6,2.5) {\LARGE$B_{\varepsilon}(p)$};
+ 
+ \draw[-] (8.5,-0.8) [out=90, in=270] to  (11,0.9);
+ \filldraw (8.75,-0.3)circle (1.5pt);
+ \node at (8.6,0.1) {\LARGE$p$};
+ 
+ \filldraw (10.92,0.6)circle (1.5pt);
+ \node at (11.45,1.3) {\LARGE$q^{(1)}$};
+ 
+ \draw[dashed,-] (8.75,-0.3) [out=0, in=180] to  (13.3,-1.3);
+ \filldraw (13.3,-1.3)circle (1.5pt);
+ \node at (13.95,-1.2) {\LARGE$q^{(2)}$};
+
+	
+
+
+	\end{tikzpicture}
+\end{document}

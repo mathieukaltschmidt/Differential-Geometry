@@ -1,0 +1,42 @@
+\documentclass[border=5mm]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{shapes.misc,patterns}
+\tikzset{cross/.style={cross out, draw=black, minimum size=12*(#1-\pgflinewidth), inner sep=0pt, outer sep=0pt},
+	%default radius will be 1pt. 
+	cross/.default={1pt}}
+
+\usetikzlibrary{hobby}
+\usepackage{pgfplots}
+\usepgfplotslibrary{fillbetween}
+\usepackage[active,tightpage]{preview} 
+\PreviewEnvironment{tikzpicture}
+\setlength\PreviewBorder{2mm}
+\usepackage{xcolor}
+\definecolor{myred}{RGB}{196,19,47} 
+\definecolor{myblue}{RGB}{65,105,225}
+
+\begin{document}
+	\begin{tikzpicture}
+
+
+
+	
+%circle with point p
+	\draw (0,0) circle (2cm);
+	\filldraw (0,0) circle (1.5pt);
+	\node at (0,-0.5) {\LARGE$p$};
+	
+%curve through point p to  point q
+	\draw[-] (0,0) to [curve through = {(0.2,0.1) (1.2,1.8) (2, 1.8)}] (4,2.5);
+	\node at (2.3,2.1) {\LARGE$c$};
+	
+	\filldraw (4,2.5) circle (1.5pt);
+	\node at (4.4,2.55) {\LARGE$q$};
+	
+%cross at intersection point
+	\node[cross, rotate=40,color=myred] at (1.038,1.707) {};
+
+
+
+	\end{tikzpicture}
+\end{document}

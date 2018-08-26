@@ -16,7 +16,11 @@ Sei $\varepsilon>0$ und $B_{\varepsilon}(0) = \{ v \in T_p\mfk | \norm{v} < \var
 \item Dann ist $\forall v \in B_{\varepsilon}(0)$ die Geodätische $c_v$ die bis auf Umparametrisierungen eindeutige, kürzeste Verbindung von $p$ nach $q=\expp_p(v)$.
 \item Sei $q \notin B_{\varepsilon}(p)$. Dann gilt für jede Kurve $c$ von $p$ nach $q$: $L(c) < \varepsilon$.
 \end{enumerate}
-\missingfigure{Darstellung Punkt 2 des Hilfslemmas}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.65]{figures/tikz/lemma_geodesics}
+	\caption{Graphische Darstellung der zweiten Aussage des Lemmas}
+\end{figure}
 \end{lem}
 \begin{bew}
 Sei $c:[a, b] \longrightarrow \mfk$ Kurve mit $c(a)=p$ ud $c(b)=q=\expp_p(v)$ wobei für das Bild von $c$ gilt: $\operatorname{Im}(c) \subset B_{\varepsilon}(p)$. Setze:
@@ -61,13 +65,22 @@ Setze:
 a_0 &= \max\{t \ | \ c(t) = p\} \\
 b_0 &= \min\{t \ | \ c(t) \in \exp(\partial B_{\varepsilon}(0))\}
 \end{align*}
-oder $b_0=b$, wenn $c$ schon komplett in $B_{\varepsilon}$ liegt.
-\missingfigure{Visualisierung der Aussage}
+oder $b_0=b$, wenn $c$ schon komplett in $B_{\varepsilon}$ liegt. \\
+
+\hspace{11cm}
+\begin{minipage}[H]{.5\textwidth}
+\vspace{-1.2cm}
+\includegraphics[scale=0.7]{figures/tikz/curvelength}
+\end{minipage}
+
+
 Wir erhalten damit:
 \begin{align}
 L(c) &\geq L(\eval{c}_{[a_0, b_0]})  \nonumber \\
 &\geq L(\eval{c_v}_{[0, 1]}) = \norm{v}
 \end{align}
+
+
 mit Gleichheit wenn $c \equiv c_{[a_0, b_0]}$ eine Umparametrisierung von $\eval{c_v}_{[0, 1]}$ ist. Dies beweist Aussage $(1)$. Außerdem folgt aus $\norm{v} \geq \varepsilon$, falls $q\neq B_{\varepsilon}(p)$ die Aussage $(2)$.
 \end{bew}
 Mit diesem Wissen wollen wir nun den zuvor vorgestellten Satz beweisen.
@@ -88,11 +101,21 @@ Daraus folgt:
 \item $\dd(p, q) = \dd(q, p)$ ist ebenfalls klar! (Laufe die Kurve rückwärts ab)
 \item \underline{Dreiecksungleichung}: 
 \end{itemize}
+
+
+\begin{minipage}[H]{0.99\textwidth}
 Sei $\varepsilon>0$. Wähle $c_1$ und $c_2$ so, dass:
 \begin{align*}
 L(c_1) &\leq \dd(p, r) + \varepsilon \\
 L(c_2) &\leq \dd(r, q) + \varepsilon
 \end{align*}
+\end{minipage}
+\hspace{-3cm}
+\begin{minipage}[H]{.3\textwidth}
+\vspace{-1.7cm}
+\includegraphics[scale=0.7]{figures/tikz/dreiecksungleichung}
+\end{minipage} \\
+
 Die Kurve $c = c_1 \star c_2$ sei nun diejenige Kurve, die durch $c_1$ und $c_2$ gegeben ist.
 \begin{align*}
 \dd(p, q) \leq L(c) &= L(c_1) + L(c_2) \\
@@ -122,7 +145,11 @@ Wir definieren den Injektivitätsradius in $p$ als:
 \operatorname{injrad(p)} = \sup\{ r \ | \ \eval{\expp_p}_{B_r(0)}: B_r(0) \longrightarrow \expp_p(B_r(0)) \ \text{Diffeomorphismus}\}
 \end{align}
 \end{defs}
-\missingfigure{Inkektivitätsradius}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.6]{figures/tikz/injrad}
+	\caption{Darstellung der Bedeutung des Injektivitätsradius}
+\end{figure}
 Damit erhalten wir ein Kriterium für die im im Beweis des vorangegangenen Satzes verwendete Forderung nach "hinreichender Kleinheit":
 \begin{align}
 r(p) \ \text{hinreichend klein} \quad \Leftrightarrow \quad r(p) \leq \operatorname{injrad}(p)

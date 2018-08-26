@@ -27,10 +27,23 @@
 	\draw[thick, -, color=myred] (-2,0)--(2, 0);
 	\filldraw(-2,0) circle (2pt);	
 	\filldraw(2,0) circle (2pt);	
-	\node at (-2.4,0) {\huge{$p$}};
-	\node at (2.4,0) {\huge{$q$}};
+	\node at (-2.4,0) {\LARGE{$p$}};
+	\node at (2.4,0) {\LARGE{$q$}};
+	
+	%second example
+	\draw[thick, -, color=myred] (8,0)--(9.85, 0);
+	\draw[thick, -, color=myred] (10.15,0)--(12, 0);
+	\filldraw(8,0) circle (2pt);
+	\draw(10,0) circle (4pt);
+	\draw[->] (10.3,0.6) -- (10.1,.2);
+	\node at (10.35,0.85) {\Large ohne Null};
+	\filldraw(12,0) circle (2pt);	
+	\node at (7.6,0) {\LARGE{$p$}};
+	\node at (12.4,0) {\LARGE{$q$}};
+	
+	%description
+	\node at (-2,2.5) {\Large$\mathbb{R}^2$};
+	\node at (8.5,2.5) {\Large$\mathbb{R}^2\backslash \{0\}$};
+
   \end{tikzpicture}
 \end{document}
-
-
-	
