@@ -1,0 +1,231 @@
+% !TeX root = ..//diffgeo_main.tex
+\section{Flächen}
+\begin{defs}
+    Sei $n \leq N$ mit $n,N \in \mathbb{N}$.
+    $\mfk \subset \R^n$ heißt $n$-dim Untermannigfaltigkeit, falls $\forall p \in \mfk \exists U \subset \mfk$
+    offen und $\tilde{U} \subset \R^n$offen, und $\varphi : \tilde{U} \to U$ Homöomorphismus, so dass
+\begin{itemize}
+    \item $\varphi: \tilde{U} \to \R^n$ glatt
+    \item $\covd \varphi \eval_{\tilde{u}}$ ist injekiv $\forall \tilde{u}\in\tilde{U}$
+\end{itemize}
+Die Abbildung $\varphi \tilde{U} \to U $ heißt Parametrisierung.\\
+\textbf{Achtung}: $\varphi^{-1}$ sind Karten und nicht $\varphi$!
+\end{defs}
+\begin{defs}
+Sei $\mfk \subset \R^n$ eine $n$-dim Untermannigfaltigkeit mit $p\in \mfk$.
+Dann ist der Tangentialraum definiert als:
+\begin{align}
+    T_p\mfk = \{ x \in \R^n \vert \exists \ \text{Kurve} \ \gamma : I \to \mfk , \dot{\gamma}(0) = x \} 
+\end{align}
+Wobei $I \subset \R$ offen ist und $0 \in I$.
+\end{defs}
+
+\begin{satz}
+\begin{enumerate}
+    \item $T_p\mfk$ ist $n$-dim Untervektorraum von $\R^n$
+    \item Sei $\varphi : \tilde{U}\to U$ eine lokale Parametrisierung, $p\in\mfk$
+        $\tilde{u_0}\in \tilde{U}$, so dass $\varphi (\tilde{u_0})=0$
+\end{enumerate}
+Dann gilt:\\
+$T_p\mfk = \text{Bild} \covd \varphi\vert_{\tilde{u}_0}$ und 
+$\pdv{\varphi}{\tilde{u}^1}\eval_{\tilde{u}_0}, \dots , \pdv{\varphi}{\tilde{u}^n} \vert_{\tilde{u}_0}$ bilden Basis von $T_p\mfk$
+\end{satz}
+
+\begin{defs}[Erste Fundamentalform]
+    $\mfk \subset \R^n$ $n$-dim Untermannigfaltigkeit mit $p\in\mfk$.
+    Dann ist die erste Fundamentalform:
+    \begin{align}
+        g_p : T_p\mfk \times T_p \mfk \to \R
+    \end{align}
+    definiert durch $g_p (x_p , y_p) = \langle x_p , y_p \rangle_{\R^n}$.
+\end{defs}
+
+\begin{bsp}
+\begin{itemize}
+    \item[a)] Polarkoordinaten auf $\R^2 / \{ 0 \}$ $\varphi (r , \theta) = (r \cos \theta , r \sin \theta)$
+    \begin{align*}
+        \pdv{\varphi}{r} = ( \cos \theta , \sin \theta) \\
+        \pdv{\varphi}{\theta} = (-r \sin \theta , r \cos \theta)
+    \end{align*}
+    Somit erhält man $g_{ij} = \mqty(1 & 0 \\ 0 & 1) $
+\end{itemize}
+\end{bsp}
+Nun beschäftigen wir uns speziell mit Flächen.
+Hierbei interessiert uns besonders die Krümmung von Flächen.
+\begin{defs}[Einheitsnormalenvektorfeld]
+Sei $\mfk \subset \R^3$ eine $2$-dim Untermannigfaltigkeit (Also eine Fläche)
+und $p\in\mfk$.
+$N(p)\in\R^3$ heißt Einheitsnormalenvektor zu $\mfk$ in $p$ genau dann, wenn 
+$\norm{N(p)}=1$ und $N(p) \perp T_p\mfk$ ist.\\
+Das Einheitsnormalenvektorfeld ist die glatte Abbildung $N : \mfk \to \R^3$, so dass $N(p)$ Einheitsvektor für alle $p$.
+\end{defs}
+\begin{bem}
+\begin{itemize}
+    \item Es existieren immer genau zwei Einheitsvektorfelder. Wenn eine Parametrisierung $\varphi$ gegeben ist,
+        dann sind die Einheitsnormalenvektorfelder wie folgt gegeben:
+        \begin{align}
+            N(p) = \pm \frac{\pdv{\varphi}{u_1} \times \pdv{\varphi}{u_1}}{\norm{\pdv{\varphi}{u_1} \times \pdv{\varphi}{u_1}}} 
+        \end{align}
+    \item Es muss nicht immer ein Einheitsnormalenvektorfeld geben (siehe Möbiusband)
+\end{itemize}
+\end{bem}
+
+
+\begin{defs}
+    $\mfk$ heißt orientierbar, falls ein Einheitsnormalenvektorfeld existiert.
+\end{defs}
+
+Die Weingartenabbildung (shape operator) ist ein Maß für die Krümmung.
+Sie ist die Änderungsgeschwindigkeit des Tangentialraumes.
+Der Tangentialraum wird durch Einheitsvektoren beschrieben.
+Mit anderen Worten wir wollen wissen:
+wie ändert sich der Einheitsnormalenvektor, wenn man in Richtung eines Tangentialvektors geht.
+Sei $X$ die Änderungsrichtung, also $X \in T_p\mfk$.
+Das heißt wir sind an $\dd N_p(X)$ insteressiert.
+
+\begin{defs}[Weingartenabbildung]
+    Sei $\mfk$ eine orientierbare Fläche mit Einheitsnormalenvektorfeld $N$.
+    Dann ist Weingartenabbildung zu $p \in \mfk$:
+    \begin{align}
+        w_p (X) = - \dd N_p(X)
+    \end{align}
+\end{defs}
+
+\begin{bem}
+    $w_p: T_p\mfk \to T_p\mfk$, denn $\norm{N(p)}=1$. Daraus folgt $N(p)\in S^2 \forall p$.
+    Daraus folgt $N: \mfk \to S^2$ und schließlich gilt:
+    \begin{align*}
+        \dd N_p : T_p\mfk \to T_{N(\varphi)} S^2 = N(p)^\perp = T_p\mfk 
+    \end{align*}
+\end{bem}
+
+\begin{bem}
+    Alternative Definition der Weingartenabbildung:
+    Sei $p \in \mfk$ und $X\in T_p\mfk$.
+    Wähle eine Kurve $\gamma : I \to \mfk$ mit $\gamma (0) = p$ und $\dot{\gamma}(0) = X$.
+    Dann ist 
+    \begin{align}
+        w_p (X) = - \dv{t} N(\gamma (t))\eval_{t=0}
+    \end{align}
+    Diese Definition ist unabhängig von der Wahl von $\gamma$.
+\end{bem}
+
+
+\begin{bem}
+    Es gilt:
+    \begin{align*}
+        w (\pdv{\varphi}{u^i} = - \pdv{N}{u^i})
+    \end{align*}
+
+    Denn wenn man $\gamma(t) = \varphi (u+te) $ wählt, gilt
+    \begin{align*}
+        \pdv{t} N(\varphi (u + t e)) = \dv{N}{u^i}
+    \end{align*}
+\end{bem}
+
+\begin{bsp}
+    \begin{itemize}
+        \item[a)] Sei $\mfk = xy$Ebene. Dann gilt
+        \begin{align*}
+            w_p =\smqty(\zmat{2}{2}) 
+        \end{align*}
+        für alle $p \in \mfk$
+    \item Sei $\mfk$ der Zylinder.
+        Wir wählen $\varphi (\theta , z) = (\cos (\theta) , \sin (\theta) , 0)$ als Parametrisierung.
+        \begin{align*}
+            & w(\pdv{\varphi}{z}) = - \pdv{N}{z} = 0 \\
+            & w ( \pdv{\varphi}{\theta}) = - \pdv{N}{\theta} = ( \sin ( \theta) , \cos ( \theta) , 0 ) = - \pdv{\varphi}{\theta}
+        \end{align*}
+
+        Daraus folgt $w =\mqty(-1 & 0 \\ 0 & 0) $
+    \end{itemize}    
+\end{bsp}
+
+\begin{satz}
+$w_p$ ist selbstadjungiert bezüglich $g_p$, das heißt für alle $p\in\mfk$ gilt:
+\begin{align*}
+    g_p (X_p , w_p (Y_p)) = g_p (w_p (Y_p) , X_p)
+\end{align*}
+für alle $X_p, Y_p \in T_p\mfk$
+\end{satz}
+\begin{bew}
+    $g_p$ ist bilinear daher reicht es die Gleichung für eine Basis zu zeigen
+    \begin{align*}
+        g (X , w Y) &= g ( \pdv{\varphi}{u^i} , w (\pdv{\varphi}{u^j})) \\
+        &= \langle \pdv{\varphi}{u} , \underbrace{w ( \pdv{\varphi}{u^j})}_{- \pdv{N}{u^j}} \rangle \\
+        &= - \langle \pdv{varphi}{u^i} , \pdv{N}{u^j} \rangle \\
+        &= - \langle \frac{\partial^2 \varphi}{\partial u^i \partial u^j} , N \rangle\\
+        &= g ( w (\pdv{\varphi}{u^i}) , \pdv{\varphi}{u^j} )
+    \end{align*}
+
+    Daraus folgt schließlich:
+    \begin{align}
+        \langle \pdv{u^j} \pdv{\varphi}{u^i} , N \rangle + \langle \pdv{\varphi}{u^i} , \pdv{N}{u^j} = 0
+    \end{align} 
+\end{bew}
+
+\subsection{Zweite Fundamentalform}
+
+Wir wollen Krümmung von $\mfk$ mithilfe von Kurven beschreiben die in $\mfk$ verlaufen.
+Die Kurven die wir betrachten seien von der Form $ \gamma : I \to \mfk$ mit $\gamma (0) = p$ und $\dot{\gamma} (0)  = X$.\\
+\textbf{Betrachte:} $\ddot{\gamma } (0)$\\
+\textbf{Problem:} Falls wir $\ddot{\gamma} (0)$ als Maß für die Krümmung von $\mfk$ im Punkt $p$ in Richtung $X$ 
+auffassen, dann hängt Krümmung von der Wahl von $\gamma$ ab.\\
+Betrachte stattdessen: $\langle \ddot{\gamma} , N(p)$.
+\begin{defs}[Normalenkrümmung]
+    \begin{align}
+     \kappa_N = \langle \ddot{\gamma}(0) , N(p) \rangle
+    \end{align}
+    heißt Normalenkrümmung von $\gamma$ in $p$.
+
+\end{defs}
+\begin{satz}
+    \begin{align}
+        \kappa_N = g_p (X_p , w_p (X_p))
+    \end{align}
+
+    
+\end{satz}
+\begin{bew}
+    \begin{align*}
+        \langle \dot{\gamma}(t) , N ( \gamma (t)) \rangle = 0 , \ \forall t \\
+        \Rightarrow \langle \ddot{\gamma}(t) , N(\gamma (t))\rangle + \langle \dot{\gamma}(t) , \dv{t}N ( \gamma (t)) \rangle = 0   
+    \end{align*}
+
+    Setze $t=0$:
+    \begin{align}
+        \kappa_N + \langle X_p , - w_p (X_p) \rangle = 0
+    \end{align}
+\end{bew}
+
+\begin{defs}[Zweite Fundamentalform]
+    Die zweite Fundamentalform vin $\mfk$ in $p$ ist:
+    \begin{align}
+        \pi_p (X_p , Y_p) := g_p (X_p , w_p (Y_p))
+    \end{align}
+\end{defs}
+\begin{bem}
+    Die zweite Fundamentalform ist eine Symmetrische Bilinearform.
+\end{bem}
+
+\begin{defs}[Hauptkrümmung]
+    Die Hauptkrümmung von $\mfk$ in $p$ ist:
+    \begin{align}
+        & \kappa_1 = \min \pi_p (X , X) \\
+        & \kappa_2 = \max \pi_p (X  , X)
+    \end{align}
+
+    Dies sind die Eigentwerte der Weingartenabbildung.
+    $X$ heißen Hauptkrümmungsrichtungen.
+\end{defs}
+
+
+
+
+
+
+
+
+
+
+
