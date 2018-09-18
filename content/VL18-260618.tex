@@ -22,7 +22,7 @@ Im Folgenden ist $\mfk$ immer eine Zusammenhängende Riemansche Mannigfaltigkeit
 
 \begin{satz}[von Hopf-Rinow]
     \label{satz:hopfrinow}   
-    Sei $\mfk$ wie oben eine Zusammenhängende Reimannsche Mannigfaltigkeit. 
+    Sei $\mfk$ wie oben eine Zusammenhängende Riemannsche Mannigfaltigkeit. 
     Ferner sei $p \in \mfk$, dann sind folgende Aussagen äquivalent:
     \begin{itemize}
     \item[i)] $\mfk$ ist geodätisch vollständig im Punkt $p$
@@ -41,7 +41,7 @@ Im Folgenden ist $\mfk$ immer eine Zusammenhängende Riemansche Mannigfaltigkeit
 
 \begin{bem}
 Aussage $vi)$ ist schwächer als die Aussage $i)$ - $v)$ 
-(Vergleich: Beispiel \ref{geodvollstaendig}) 
+(Vergleich: Beispiel \ref{bsp:geodvollstaendig}) 
 \end{bem}
 
 
@@ -61,7 +61,7 @@ dass $\overline{B}_r (p)$ kompakt ist.
 \end{bew}
 
 \begin{bew}[Satz von Hopf-Rinow \ref{satz:hopfrinow}]
-    Die Beweisstruktur ist in der Abbildung \ref{fig: proofhopfrinow} zu sehen
+    Die Beweisstruktur ist in der Abbildung \ref{fig:proofhopfrinow} zu sehen
     \begin{figure}[H]
         \centering
         \includegraphics[width=0.5\linewidth]{figures/tikz/proofhopfrinow.pdf}
@@ -274,8 +274,11 @@ verbindet.
 Aufgrund von $(i)$ lässt sich $\gamma$ auf $[0, d (p, q)]$ fortsetzen.\\
 Es bleibt zu zeigen:
 $\gamma$ ist minimierende Geodätische von $p$ nach $q$.
-Setze dazu $I:= \{ t \in [0, d(p, q)] \vert d(0, d(p,q)) 
-\text{und} d(p, \gamma (t) ) + d (\gamma (t) , q) = d(p, q) \} $.\\
+Setze dazu 
+\begin{align*}
+    I:= \{ t \in [0, d(p, q)] \vert d(0, d(p,q)) \text{und} d(p, \gamma (t) ) + d (\gamma (t) , q) = d(p, q) \} .
+\end{align*}
+
 Zu zeigen:
 $t_0 = d(p,q)$, denn dann gilt:
 \begin{align*}
