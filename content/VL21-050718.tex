@@ -12,16 +12,16 @@ Dann gilt:
 \item[c)] $\{ J \in \Jac_\gamma \mfk \vert J \perp \gamma' , J(0)=0\}$ ist 
     $(n-1)$-dimensionaler Vektorraum
 \end{itemize}
-Ferner gilt: $\langle J(t) , \gamma'(t) = at + b$ mit $a,b \in \R$.
+Ferner gilt: $\langle J(t) , \gamma'(t)\rangle = at + b$ mit $a,b \in \R$.
 \end{lem}
 \begin{bew}
 $J$ ist eindeutig durch Anfangsbedingungen $(J(0),J'(0))\in\R^{2n}$ bestimmt.\\
-\textbf{Behauptung}: $f: \R\to\R; t \mapsto \langle J(t) , \gamma'(t)\rangle$
+\textbf{Behauptung}: $f: \R\to\R; \ t \mapsto \langle J(t) , \gamma'(t)\rangle$
 ist linear.\\
 \textbf{Beweis der Behauptung}:
 \begin{align*}
 \dv{t}\langle J(t), \gamma'(t)\rangle &= \langle \covd_t J(t), \gamma'(t) \rangle 
-+ \langle J(t),\underbrace{\covd_t \gamma'(t)}_{=0}\\
++ \langle J(t),\underbrace{\covd_t \gamma'(t)}_{=0}\rangle\\
 &=  \langle J'(t) , \gamma'(t)\rangle
 \end{align*}
 Wobei wir $J'(t):=\covd_t J(t)$ definieren.
@@ -51,7 +51,7 @@ der Anfangsbedingung $J'(0)$.
     $J(0)=0$, $J'(0)=w \in T_p\mfk$.
     Dann gilt:
     \begin{align*}
-        J(t) = t (d \exp_p)_{tv} (w)
+    J(t) = t \dd (\exp_p)_{tv} (w)
     \end{align*}
 \end{lem}
 
@@ -79,7 +79,7 @@ Daher gilt:
 \begin{align*}
 \gamma (0,t) &= \exp_{c(0)} (\eta_1(0) (t-t_0))\\
 &=\exp_{c(0)} (\dot{\gamma}(t_0) (t-t_0))\\
-&=\exp_{\gamma(t_0)} (\dot{\gamma}(t_0) (t-t_0)) 
+&=\exp_{\gamma(t_0)} (\dot{\gamma}(t_0) (t-t_0)) \\ 
 &= \gamma(t)
 \end{align*}
 Sei nun $J(t) = \pdv{\gamma}{s}(0,t)$, dann ist $J$ ein Jacobifeld.
