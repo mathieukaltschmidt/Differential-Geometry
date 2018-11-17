@@ -1,0 +1,205 @@
+% !TeX root = ..//diffgeo_main.tex
+\begin{satz}
+\label{satz:lokalrahmentrivialisierung}
+Sei $(E, \pi, \mfk)$ ein Vektorbündel vom Rang $k$.
+\begin{enumerate}
+\item Aus einem lokalen Rahmen folgt eine lokale Trivialisierung.
+Sei $(s_1, \dots, s_k)$ ein lokaler Rahmen über $U\subset\mfk$.
+Dann ist 
+\begin{align*}
+\phi : \ & U \times \R^k \to E \eval_U\\
+& (p, \xi) \mapsto \sum^k_{i=1} \xi_i s_i (p),
+\end{align*}
+eine lokale Trivialisierung
+\item  Aus einer lokalen Trivialisierung folgt ein lokaler Rahmen.
+Sei $\phi: U \times \R^k \to E \eval_U$ eine lokale Trivialisierung.
+Dann ist $(s_1, \dots, s_k)$ ein lokaler Rahmen mit 
+\begin{align*}
+s_i(p) = \phi (p, e_i),
+\end{align*} 
+wobei $\{ e_i \}$ die Standardbasis von $\R^k$ ist.
+\end{enumerate}
+\end{satz}
+\begin{bew}[Teil 1 Satz \ref{satz:lokalrahmentrivialisierung}]
+Es gilt, dass 
+\begin{align*}
+\phi \eval_p : \{ p \} \times \R^k \to E \eval_p
+\end{align*}
+ein Isomorphismus ist.
+Außerdem hat
+\begin{align*}
+\phi : U \times \R^k \to E \eval_U,
+\end{align*}
+maximalen Rang.\\
+Für alle $p$ in $U$ existiert eine Umgebung $V \subset U$ von $p$, so dass die folgende Abbildung eine lokale Trivialisierung ist:
+\begin{align*}
+\psi_V : V\times \R^k \to E \eval_V.
+\end{align*}
+Dann gilt:
+\begin{align}
+\psi^{-1}_V \circ  \phi (q, \xi) = (q, \underbrace{\psi^{-1}_q \circ \phi_q(\xi)}_{\mathrm{Isomorphismus}})
+\end{align}
+$\psi^{-1}_V \circ \phi : V \times \R^k \to V \times \R^k$ ist ein Diffeomorphismus.
+Daraus folgt, dass $\phi$ maximalen Rang auf $V$ und $U$ hat womit folgt, dass $\phi$ ein Diffeomorphismus ist.
+\end{bew}
+\begin{bew}[Teil 2 Satz \ref{satz:lokalrahmentrivialisierung}]
+Diese Aussage ist sofort klar, da $\phi_p$ ein Isomorphismus ist.
+\end{bew}
+
+Lokale Rahmen erlauben es uns mit Schnitten zu rechnen.
+
+\begin{defs}[Hauptteil]
+Sei $(s_1, \dots, s_k)$ ein lokaler Rahmen und $\phi$ die dazugehörige lokale Trivialisierung.
+Ferner sei $s \in \Gamma_U (E)$ über $U \subset \mfk$.
+Dann existiert eine glatte Abbildung
+\begin{align*}
+\sigma : U \to \R^k,
+\end{align*}
+so dass
+\begin{align}
+&s(p) = \sum^{k}_{i=1} \sigma_i (p) s_i(p)\\
+&\phi(p, \sigma(p)) = s(p).
+\end{align}
+$\sigma$ heißt der Hauptteil von $s$ bezüglich $\phi$.
+\end{defs}
+
+\begin{bem}
+Die Aussagen: $\sigma$ ist glatt und $s$ ist glatt sind äquivalent.\\
+
+Sei $(t_1, \dots t_k)$ ein lokaler Rahmen über $V$ und $\psi$ die dazugehörige lokale Trivialisierung, so dass $U \cap V \neq \emptyset$.
+Über $U \cap V$ gilt:
+\begin{align}
+s_i = \sum_j g^j_i t_j,
+\end{align}
+wobei $g^j_i : U \cap V \to \R$.
+Setze $g(p) = (g^j_i (p))^k_{i,j =1}$
+\begin{align}
+& g(p)(t_1(p), \dots , t_k(p)) = (s_1(p), \dots, s_k(p))\\
+& g: U \cap V \ni p \mapsto g(p) \in \mathrm{GL}(E\big\vert_p)
+\end{align}
+sei $s \in \Gamma_{U \cap V} (E)$ und Hauptteile $\sigma_\phi$, $\sigma_\psi$, dann ist
+\begin{align*}
+&\sigma^i_\phi = \sum^k_{j=1} g^j_i \sigma^j_{\psi}\\
+&\sigma_\phi = g \sigma_\psi\\
+&g : U \cap V \to \mathrm{GL} (k, \R)
+\end{align*}
+\end{bem}
+
+\begin{defs}[Pullback]
+Sei $(E, \pi, \mfk)$ ein Vektorbündel und $f : \mfka \to \mfk$ eine glatte Abbildung.
+Der Pullback von $E$ über $f$ ist das Vektorbündel $f^* E$ welches definiert ist durch:
+\begin{enumerate}
+\item $(f^* E)_{p \in \mfka} = \{ (p, x) \vert x \in E_{f(p)}\}$
+\item sei $\phi : U \times \R^k \to E\eval_U$ lokale Trivialisierung von $E$
+\begin{align}
+f^* \phi : \ & f^{-1} (U) \times \R^k \to (f^* E)\eval_{f^{-1}(U)}\\
+&(p, \xi) \mapsto (p, \phi(f(p), \xi)) 
+\end{align}
+\end{enumerate}
+\end{defs}
+
+
+\begin{defs}[Schnitt entlang Abbildung]
+Ein Schnitt von $E$ entlang von $f$ ist eine glatte Abbildung $s : \mfka \to E$, so dass $\pi \circ s = f$. 
+\end{defs}
+
+\section{Zusammenhang und kovariante Ableitung}
+
+\begin{defs}
+\begin{align*}
+&\mathfrak{X}(\mfk) \times \mathcal{F}(\mfk) \to \mathcal{F}(\mfk)\\
+&X: \phi \mapsto X(\phi)
+\end{align*}
+Wobei
+\begin{align}
+X(\phi)(p):= X_p (\phi)
+\end{align}
+\end{defs}
+
+\begin{defs}[Lie-Klammern]
+\begin{align}
+\comm{\cdot}{\cdot} : \ & \mathfrak{X}(\mfk) \times \mathfrak{X}(\mfk) \to \mathfrak{X}(\mfk)\\
+&\comm{X}{Y} \ f := X(Y(f)) - Y(X(f))
+\end{align}
+Zusammen mit der Lie-Klammer ist $\mathfrak{X}(\mfk)$ eine Lie-Algebra.\\
+(Hier bleibt als Übung zu zeigen, dass $\comm{X}{Y}$ tatsächlich ein neues Vektorfeld ist.)
+\end{defs}
+
+\begin{defs}[Zusammenhang]
+Sei $(E, \pi, \mfk)$ ein Vektorbündel vom Rang $k$.
+Ein Zusammenhang auf $E$ ist eine Abbildung
+\begin{align}
+\covd : \ & \mathfrak{X}(\mfk) \times \Gamma(E) \to \Gamma (E) \\
+&(X, s) \mapsto \covd (X, s) = \covd_X s
+\end{align}
+Wobei folgende Eigenschaften erfüllt sind:
+\begin{enumerate}
+\item $\covd$ ist tensoriell in $X$: 
+\begin{align*}
+&\covd_{X_1 + X_2} s = \covd_{X_1} s + \covd_{X_2} s \\
+&\covd_{\phi X} s = \phi \ \covd_X s
+\end{align*}
+\item $\covd$ ist eine Derivation in s:
+\begin{align*}
+&\covd_X (s_1 + s_2) = \covd_X s_1 + \covd_X s_2\\
+&\covd_X (\phi s) = X (\phi) s + \phi \ \covd_X  s
+\end{align*}
+\end{enumerate}
+\end{defs}
+
+\textbf{Notation:} $\covd_X s$ (Kovariante Ableitung von $s$ in Richtung $X$)\\
+\textbf{Wichtiger Spezialfall:}
+\begin{align*}
+&E = T\mfk\\
+&\covd: \underbrace{\mathfrak{X}(\mfk)}_{\mathrm{tensoriell}} \times \underbrace{\mathfrak{X}(\mfk)}_{\mathrm{derivativ}} \to \mathfrak{X}(\mfk)
+\end{align*}
+
+\begin{bsp}
+Sei $E = \mfk \times \R^k$ das triviale Bündel mit
+\begin{align*}
+s: \ & \mfk \to E \\
+&p \mapsto (p, \sigma(p))
+\end{align*}
+wobei $\sigma = (\sigma_1, \dots, \sigma_k)$, $\sigma_i \in \mathcal{F}(\mfk)$.
+Dann ist der kanonische Zusammenhang gegeben als:
+\begin{align}
+(\covd_X s)(p) = (p, X_p(\sigma_1), \dots, X_p(\sigma_k))
+\end{align}
+Wir benutzen die folgende Notation: $\covd_X s = X(\sigma)$.
+\end{bsp}
+
+\begin{lem}
+\label{lem:lokalisierung1}
+$X_1, X_2 \in \mathfrak{X}(\mfk)$ und $X_1(p) = X_2(p)$,
+dann folgt daraus, dass 
+\begin{align}
+(\covd_{X_1} s)(p) = (\covd_{X_2} s) (p).
+\end{align}
+
+\end{lem}
+
+\begin{lem}
+\label{lem:lokalisierung2}
+$s_1, s_2 \in \Gamma(\mfk)$ und $s_1 = s_2$ in einer Umgebung von $p$,
+daraus folgt, dass
+\begin{align}
+(\covd_{X} s_1)(p) = (\covd_{X} s_2) (p).
+\end{align}
+\end{lem}
+Wir beweisen zuerst das Lemma \ref{lem:lokalisierung2}.
+\begin{bew}[Lemma \ref{lem:lokalisierung2}]
+Wähle $\phi \in \mathcal{F}(\mfk)$ mit $\supp \phi \subseteq U$ und $\phi = 1$ auf einer Umgebung $V \subset U$ von p.
+Dann gilt 
+\begin{align}
+&\phi s_1 = \phi s_2 \\
+&\covd_X(\phi s_1)(p) = \covd_X(\phi s_2)(p)
+\end{align}
+Für die linke Seite ist
+\begin{align}
+\covd_X(\phi s_1)(p) = \underbrace{X(p)}_{=0} s_1(p) + \underbrace{\phi(p)}_{=1} \covd_X s_1(p) = \covd_X s_1 (p).
+\end{align}
+Das gleiche gilt für die rechte Seite und somit folgt die Aussage:
+\begin{align*}
+(\covd_{X} s_1)(p) = (\covd_{X} s_2) (p).
+\end{align*}
+\end{bew}

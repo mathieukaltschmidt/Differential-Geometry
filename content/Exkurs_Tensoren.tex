@@ -1,0 +1,47 @@
+\section{Tensoren \& Tensorrechnung}
+In diesem Abschnitt seien grundsätzlich alle $V$ endlichdimensionale Vektorräume. \\
+\begin{align*}
+\mathcal{L}(V_1,\dots, V_k, W) = &\text{ Menge aller multilinearen Abbildungen} \\
+&\phantom{ = } V_1 \times V_2 \times \dots \times V_k \longrightarrow W
+\end{align*}
+
+\begin{satz}
+Für diesen Fall existiert ein Isomorphismus
+\begin{align*}
+V_1 \otimes \cdots \otimes V_k \cong \mathcal{L}(V_1^*, \dots, V_k^*, \R)
+\end{align*}
+\end{satz}
+
+\begin{bem}
+\begin{align*}
+V^{**} &\cong V \\
+V_1^* \otimes \cdots \otimes V_k^* &\cong \mathcal{L}(V_1, \dots, V_k, \R)
+\end{align*}
+\end{bem}
+
+\begin{defs}
+Ein kovarianter $k$-Tensor auf $V$ ist ein Element in $\underbrace{V^*\otimes\cdots\otimes V^*}_{\text{k-mal}}$ , das heißt es handelt sich um eine multilineare Abbildung: $ V \times \cdots \times V \longrightarrow \R$
+\end{defs}
+\textbf{Beispiel:} Die Determinante ist ein kovarianter $k$-Tensor in $\R^k$.
+\begin{defs}
+Ein kontravarianter $k$-Tensor auf $V$ ist ein Element in $\underbrace{V\otimes\cdots\otimes V}_{\text{k-mal}}$ , das heißt es handelt sich um eine multilineare Abbildung: $ V^*\times \cdots \times V^* \longrightarrow \R$
+\end{defs}
+Typischerweise treten gemischte Tensoren auf, das heißt Elemente in:
+\begin{align*}
+\operatorname{T}^{(n, l)}V = \underbrace{V\otimes\cdots\otimes V}_{\text{n-mal}} \ \otimes \  \underbrace{V^*\otimes\cdots\otimes V^*}_{\text{l-mal}}
+\end{align*}
+
+\subsubsection*{Tensoren auf Mannigfaltigkeiten}
+$\tor^{(r, s)}T\mfk  := \bigsqcup_{p\in\mfk} \tor^{(r, s)}(T_p\mfk)$
+
+\begin{defs}
+Ein Tensorfeld vom Typ $(r,s)$ ist ein Schnitt von $\tor^{(r, s)}T\mfk$.
+\end{defs}
+
+\textbf{Übung:} Bestimmen sie den Typ der folgenden Tensoren:
+\begin{itemize}
+\item Vektorfelder
+\item $1$-Formen
+\item Torsion
+\item Krümmungstensor
+\end{itemize}

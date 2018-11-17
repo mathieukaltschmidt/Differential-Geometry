@@ -1,0 +1,53 @@
+\documentclass[border=5mm]{standalone}
+\usepackage{polyglossia}
+\usepackage{fontenc}
+\usepackage{tikz}
+\usetikzlibrary{shapes.misc,patterns,decorations.pathreplacing}
+\makeatletter
+\tikzset{manifold/.style={
+		to path={
+			\pgfextra{
+				\def\tikz@to@out{20}\tikz@to@switch@on
+			}
+			(\tikztostart) -- (\tikztostart -| \tikztotarget)
+			-- (\tikztotarget)
+			-- (\tikztostart |- \tikztotarget)
+			-- cycle
+			(\tikztotarget)
+			\tikztonodes
+		}
+}}
+\makeatother
+
+\usetikzlibrary{hobby}
+\usepackage{pgfplots}
+\usepgfplotslibrary{fillbetween}
+\usepackage[active,tightpage]{preview} 
+\PreviewEnvironment{tikzpicture}
+\setlength\PreviewBorder{2mm}
+\usepackage{xcolor}
+\definecolor{myred}{RGB}{196,19,47} 
+\definecolor{myblue}{RGB}{65,105,225}
+
+\begin{document}
+	\begin{tikzpicture}	
+	
+%defining structure of the manifold
+	\draw[-] (10,0.5) to [curve through = {(8,0.7)(6,1)(3,3)(0,0)(3,-3)(6,-1)(8,-0.7)}] (10,-0.5);
+	\draw (10,0.5) arc (90:270:0.3 and 0.5);
+	\draw (10,0.5) arc (90:270:-0.3 and 0.5);
+
+%shading and 3D look	
+	\shade[ball color = myblue, opacity = 0.4] (10,0.5) to [curve through = {(8,0.7)(6,1)(3,3)(0,0)(3,-3)(6,-1)(8,-0.7)}] (10,-0.5);
+	\shade[color = myblue] (10,0.5) arc (90:270:-0.3 and 0.5) arc (90:270:0.3 and -0.5);
+
+%nodes 
+	\node at (8.2,1.9) {\LARGE\textbf{injrad} klein}; 
+	\draw [thick, decoration={brace},decorate] (6.5,1.2) -- (10,1.2);
+	
+	\node at (7.6,-3.5) {\LARGE\textbf{injrad} groß};
+	\draw[thick, ->] (5.9,-3.5) [out=180, in=320] to (3.8,-2.9);
+
+
+	\end{tikzpicture}
+\end{document}

@@ -1,0 +1,144 @@
+\chapter{Krümmung 2.0}
+\section{Schnittkrümmung}
+Zur Erinnerung:
+\begin{align}
+	\curv(X,Y)Z = \covd_X(\covd_YZ)-\covd_Y(\covd_XZ)-\covd_{[X,Y]}Z
+\end{align}
+wobei $\covd$ ein gegebener Zusammenhang auf $\mfk$ ist. \\
+Wir wollen nun Riemannsche Mannigfaltigkeiten betrachten. Sei $(M,g)$ gegeben. Das bedeutet es existiert ein Levi-Civita-Zusammenhang auf $\mfk$. \\
+Auf einer Riemannschen Mannigfaltigkeit hat der Krümmungstensor mehr Symmetrien und wir können einfacher geometrische Krümmungsbegriffe definieren.
+\begin{satz}
+Seien $X, Y, U$ und $V \in $ V($\mfk$).
+Dann gelten die folgenden Aussagen:	
+\begin{enumerate}
+	\item $\curv(X,Y)Z = -\curv(Y,X)Z$
+	\item $\curv(X,Y)Z +\curv(Y,Z)X+\curv(Z,X)Y = 0$
+	\item $g(\curv(X,Y)U,V)=-g(\curv(X,Y)V,U)$
+	\item $g(\curv(X,Y)U,V)=g(\curv(U,V)X,Y)$
+\end{enumerate}
+\end{satz}
+\begin{bew}
+Wir beginnen zunächst einmal mit dem Beweis der dritten Aussage:
+\begin{align*}	
+g(\curv(X,Y)U,V)+g(\curv(X,Y)V,U) \overset{!}{=} 0 
+\end{align*}
+Dies ist analog zur Aussage:
+\begin{align*}
+g(\nabla_X(\nabla_YU)-\nabla_Y(\nabla_XU)-\nabla_{[X,Y]}U,V) +g(\nabla_X(\nabla_YV)-\nabla_Y(\nabla_XV)-\nabla_{[X,Y]}V,U) \overset{!}{=} 0
+\end{align*}
+Wir benutzen: $0 = X(Y(f))-Y(X(f))-[X,Y](f)\quad$ für $f = g(U,V)$. \\
+Dann folgt direkt: 
+\begin{align*}
+Y(g(U,V)) &= g(\nabla_YU,V) + g(U,\nabla_YV)\\
+X(Y(g(U,V))) &= g(\nabla_X(\nabla_YU),V) + g(\nabla_YU,\nabla_XV) + g(\nabla_XU,\nabla_YV) + g(U,\nabla_X(\nabla_YV)) \\
+[X,Y]g(U,V) &= g(\nabla_{[X,Y]}U,V)+g(U,\nabla_{[X,Y]}V)
+\end{align*}
+Das Einsetzen der Identitäten liefert uns schlussendlich:
+\begin{align*}
+	0 &= \color{myred}{g(\nabla_X(\nabla_YU),V)} \normalcolor+ \color{Blue}{g(\nabla_X(\nabla_YV),U)} \normalcolor+ \color{PineGreen}{g(\nabla_YU,\nabla_XV)} \normalcolor+ \color{BurntOrange}{g(\nabla_XU,\nabla_YV)} \\ \normalcolor
+	&- \color{myred}{g(\nabla_Y(\nabla_XU),V)} \normalcolor- \color{Blue}{g(\nabla_Y(\nabla_XV),U)} \normalcolor- \color{PineGreen}{g(\nabla_YU,\nabla_XV)} \normalcolor- \color{BurntOrange}{g(\nabla_XU,\nabla_YV)} \\ \normalcolor
+	&- \color{myred}{g(\nabla_{[X,Y]}U,V)} \normalcolor- \color{Blue}{g(U,\nabla_{[X,Y]}V)} \\ \normalcolor
+	&= \color{myred}{g(\curv(X,Y)U,V)} \normalcolor + \color{Blue}{g(\curv(X,Y)V,U)} 
+\end{align*}
+Wir setzen den Beweis fort. Nun folgt die vierte Aussage:
+\begin{align*}
+a) \qquad g(\curv(X,Y)U,V) &\overset{\tiny{(1)}}{=} -g(\curv(Y,X)U,v) \\
+&= \phantom{-}g(\curv(X,U)Y,V) + g(\curv(U,Y)X,V) \\
+b) \qquad g(\curv(X,Y)U,V) &\overset{\tiny{(3)}}{=} -g(\curv(X,Y)V,U) \\
+&\overset{\tiny{(2)}}{=} \phantom{-}g(\curv(Y,V)X,U) + g(\curv(V,X)Y,U) 
+\end{align*}
+Insgesamt liefern uns die Identitäten $a)$ und $b)$ zusammen:
+\begin{align*}
+	2g(\curv(X,Y)U,V) &= g(\curv(X,U)Y,V) + g(\curv(U,Y)X,V) + g(\curv(Y,V)X,U) + g(\curv(V,X)Y,U) \\
+	&= g(\curv(U,X)V,Y) + g(\curv(X,V)U,Y) + g(\curv(Y,U)V,X) + g(\curv(V,Y)U,X) \\
+	&= 2g(\curv(U,V)X,Y)
+\end{align*}
+
+\end{bew}
+
+\begin{defs}
+Nachfolgend treffen wir die Konvention:
+	\begin{align}
+	\curv(X,Y,U,V) = g(\curv(X,Y)U,V)	
+	\end{align}
+\end{defs}
+Wir setzen nun für alle $X,Y \in T_p\mfk$:
+\begin{align}
+	k(X,Y) =\curv(X,Y,Y,X)
+\end{align} 
+\begin{satz}
+	Der Krümmungstensor $\curv$ ist eindeutig durch $k$ bestimmt.
+\end{satz}
+\begin{bew}
+Zunächst einmal betrachten wir den Ausdruck
+\begin{align}
+3\curv(X,Y)Z &= \curv(X,Y+Z)(Y+Z) - \curv(X,Y)Y -\curv(X,Z)Z \nonumber \\ 
+&-\curv(Y,X+Z)(X+Z) + \curv(Y,X)X-\curv(Y,Z)Z \tag{$\dagger$}
+\end{align}
+Damit ergibt sich für den zweiten Teil:
+\begin{align}
+	2g(\curv(X,Y)Y,Z) = k(X+Z,Y) - k(X,Y) - k(Z,Y)
+\end{align}
+Es folgt insgesamt mit Hilfe der ersten und zweiten Gleichung:
+\begin{align}
+	6g(\curv(X,Y)Z,W) = 2g(\dagger,W) = \text{18 Terme in }k
+\end{align}
+\end{bew}
+\textbf{Problem:} $k$ hängt von der Wahl von $X$ und $Y$ ab. Wir wollen ein Objekt definieren, welches lediglich von der von $X$ und $Y$ aufgespannten Ebene abhängt. \\
+Sei $\tilde{X} = aX +bY$ sowie $\tilde{Y} = cX +dY$. Dann folgt:
+\begin{align}
+	k(\tilde{X},\tilde{Y}) &= g(\curv(\tilde{X},\tilde{Y})\tilde{Y},\tilde{X}) \nonumber \\
+	&= (ad-bc)^2 g(\curv(X,Y)Y,X) \nonumber\\
+	&= (ad-bc)^2 k(X,Y)
+\end{align}
+Wir müssen $k$ mit einer Größe skalieren, welche sich auf die gleiche Weise transformiert:
+\begin{align}
+	k_1(X,Y) = g(X,X)g(Y,Y) - g(X,Y)^2
+\end{align}
+Denn dann gilt nämlich:
+\begin{align}
+	k_1(\tilde{X},\tilde{Y}) = (ad-bc)^2 k_1(X,Y)
+\end{align}
+\begin{defs}[Schnittkrümmung]
+Sei $\sigma \subset T_p\mfk$ eine Ebene. Die Schnittkrümmung von $\nabla$ ist wie folgt definiert:
+\begin{align}
+	\mathcal{K}(\sigma) = \frac{k(X,Y)}{k_1(X,Y)} = \frac{g(\curv(X,Y)Y,X)}{g(X,X)g(Y,Y)-g(X,Y)^2} 
+\end{align}	
+für alle Basen $(X,Y)$ von $\sigma$.
+\end{defs}
+\begin{satz}
+Die Schnittkrümmungen von allen Ebenen in $T_p\mfk$ bestimmen $\curv_p$. Analog liefert uns die Aussage, dass für bekanntes $\curv$	alle $\mathcal{K}$ bekannt sind und umgekehrt.
+\end{satz}
+	
+\section{Ricci-Krümmung}
+Die Ricci-Krümmung ist eine wichtige "Vereinfachung" des Krümmungstensors. \\
+Zunächst, als Vorbereitung, definieren wir den \textbf{Ricci-Tensor:}
+\begin{align}
+	\operatorname{ric}_p(Y,Z) := \operatorname{tr}(\curv(-, Y)Z) \quad \in \R
+\end{align}
+das heißt bezüglich einer Orthonormalbasis von $T_p\mfk$, welche wir mit $E_i$ bezeichenen gilt: 
+\begin{align}
+	\operatorname{ric}_p(Y,Z) = \sum_{i=1}^{n} g_p(\curv(E_i,Y)Z,E_i)
+\end{align}
+\begin{defs}[Ricci-Krümmung]
+	Für einen Vektor $Y \in T_p\mfk$ ist die \textbf{Ricci-Krümmung in Richtung Y} definiert als:
+	\begin{align}
+		\operatorname{Ricci}(Y) = \frac{\operatorname{ric}_p(Y,Y)}{g_p(Y,Y)}
+	\end{align} 
+\end{defs}
+Durch Anwendung der Bianchi-Identität erhalten wir die nützliche Eigenschaft: 
+\begin{align}
+	\operatorname{ric}(X,Y) = \operatorname{ric}(Y,X)
+\end{align}
+\section{Skalarkrümmung}
+Die Kenntnis des Riemann-Tensors $\curv$ liefert 
+wie bereits zuvor erwähnt alle Schnittkrümmungen $\mathcal{K}$ und umgekehrt. Aus den $\mathcal{K}$ erhalten wir dann die Ricci-Krümmung und schließlich die Skalarkrümmung $\operatorname{Scal}$. \\
+Diese ist eine Abbildung $\mfk \rightarrow \R$, welche wir wie folgt definieren:
+\begin{align}
+	\operatorname{Scal}(p) = s(p) = \operatorname{tr}(\operatorname{Ricci_p}) 
+\end{align} 
+Also erhalten wir bezüglich einer Orthonormalbasis $E_i$ von $T_p\mfk$:
+\begin{align}
+	\operatorname{Scal}(p) &= \sum_{i,j = 1}^{n}g(\curv(E_i,E_j)E_j,E_i) \nonumber \\
+	&= \sum_{i}\operatorname{Ricci}(E_i)
+\end{align}

@@ -7,35 +7,63 @@
 \begin{document}
 	
 %title, abstract and toc	 
-\pagenumbering{roman} %start roman numbering before main text
+\pagenumbering{roman} % start roman numbering before main text
 \input{content/titlepage}
 {\renewcommand{\headrulewidth}{0pt} % kill headrule for abstract and toc
-	\addcontentsline{toc}{chapter}{Vorwort}
+	\addcontentsline{toc}{chapter}{\hspace{.6cm}Vorwort }
 	\include{content/abstract}
+	\addcontentsline{toc}{chapter}{\hspace{.6cm}Danksagung }
+	\include{content/acknowledgements}
 	\tableofcontents
 	\blankpage}
 }
 %main content
 \setcounter{tocdepth}{1}
 \pagenumbering{arabic} % now set main numbering to arabic
-
+\addcontentsline{toc}{part}{\hfill \Large Inhalt der Vorlesung }
 %lectures
 	\input{content/VL1-170418}
 	\input{content/VL2-190418}
 	\input{content/VL3-240418}
-	\input{content/VL4_Thomas}
-	\input{content/VL5_Thomas}
-	\input{content/VL6_Thomas}
-	\input{content/VL7_Thomas}
-	\input{content/VL8_Thomas}
-%\appendix 
-\blankpage
+	\input{content/VL4-260418}
+	\input{content/VL5-030518}
+	\input{content/VL6-080518}
+	\input{content/VL7-150518}
+	\input{content/VL8-180518}
+	\input{content/VL9-220518}
+	\input{content/VL10-240518}
+	\input{content/VL11-290518}
+	\input{content/VL12-050618}
+	\input{content/VL13-070618}
+	\input{content/VL14-120618}
+	\input{content/VL15-140618}
+	\input{content/VL16-190618}
+	\input{content/VL17-210618}
+	\input{content/VL18-260618}
+    \input{content/VL19-280618}
+    \input{content/VL20-030718}
+    \input{content/VL21-050718}
+    \input{content/VL22-120718}
+    \input{content/VL23}
+
+
+
+%appendix
+\newpage
 \pagenumbering{Roman} %start capital roman numbering for appendices
 \pagestyle{plain}
+
+\addcontentsline{toc}{part}{\hfill \Large Anhang}
+\part*{Anhang}
+\chapter{Wiederholungen und Exkurse}
+	\input{content/Exkurs_Tensoren}	
+\section{Explizite Rechnungen in Koordinaten}
+	\input{content/Exkurs_Christoffel_Symbole}
+	\input{content/Exkurs_Parallelverschiebung}
+	\input{content/Exkurs_Riemannsche_Normalkoordinaten}
+	
 \addcontentsline{toc}{chapter}{Abbildungsverzeichnis}	
 \listoffigures
-
-
-
-
 \end{document}
+
+

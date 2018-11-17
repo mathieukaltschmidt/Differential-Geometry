@@ -1,19 +1,25 @@
 % !TeX root = ..//diffgeo_main.tex
 \begin{hlem}[Existenz einer Glockenfunktion]
-Sei $U \subseteq M$ offen, $p \in U$. Dann $\exists \varphi \in \mathcal{F}(M)$, s. d. 
-\begin{enumerate}
+Sei $U \subseteq \mfk$ offen, $p \in U$. Dann existiert ein $\varphi \in \mathcal{F}(\mfk)$, s. d. 
+\begin{enumerate}\label{Glockenfunktion}
 \item$\operatorname{supp}\varphi\subseteq U$
-\item$\varphi$ auf einer Umgebung $U' \subset U$ von $p$ ist
+\item$\varphi=1$ auf einer Umgebung $U' \subset U$ von $p$ ist
 \end{enumerate}
 \end{hlem}
 
+\begin{figure}[H]
+\centering 
+\includegraphics[scale=0.8]{figures/tikz/bump_function.pdf}
+\caption{Visualisierung des Hilfslemmas  (\ref{Glockenfunktion}) \  ("bump function") }
+\end{figure}
+
 \begin{bew}
-Sei $(x, U)$ eine Karte um $\varphi$, $\varepsilon > 0$, s. d. $B_{2\varepsilon}(x(p))\subset V\subset \R^n$ und wähle $\psi:\R^n\rightarrow\R$ mit 
+Sei $(x, U)$ eine Karte um $p$, $\epsilon > 0$, s. d. $B_{2\varepsilon}(x(p))\subset V\subset \R^n$ und wähle $\psi:\R^n\rightarrow\R$ mit 
 \begin{align*}
 \left.
 \begin{array}{r}
-\operatorname{supp}(\varphi)\subset B_{2\varepsilon}(x(p))\\
-\varphi = 1 \text{ auf } B_\varepsilon
+\operatorname{supp}(\psi)\subset B_{2\epsilon}(x(p))\\
+\varphi = 1 \text{ auf } B_\epsilon
 \end{array}
 \right\} \text{ Resultat aus Analysis}\\
 \end{align*}
@@ -27,7 +33,7 @@ Setze $\varphi(q) = \left\{
 \end{bew}
 
 \begin{satz}[Eigenschaften des Tangentialraums]
-Für $v\in T_p M$ gilt:
+Für $v\in T_p \mfk$ gilt:
 \begin{enumerate}
 \item$v(\text{konstante Funktion}) = 0$
 \item Falls $f = g$ in einer Umgebung von $p$, so gilt $v(f) = v(g)$
@@ -47,7 +53,8 @@ Dann folgt $v(\varphi f) = v(\varphi g) \Leftrightarrow v(f) = v(g)$.
 
 \begin{bew}[zu 1]
 	$v(\lambda f) = \lambda v(f),\ \lambda \in \R,\ f\in \mathcal{F}(\R)$\\
-	\textit{zz:} $v(\lambda) = 0$. Aufgrund von $v(\lambda) = \lambda v(1)$ genügt es zu zeigen, dess $v(1) = 0$. Dies folgt aus der Produktregel
+	\textit{zz:} $v(\lambda) = 0$. 
+	Aufgrund von $v(\lambda) = \lambda v(1)$ genügt es zu zeigen, dass $v(1) = 0$. Dies folgt aus der Produktregel
 	\begin{align*}
 	v(1) = v(1*1) = 1v(1) + v(1)1 = 2v(1) \Rightarrow v(1) = 0
 	\end{align*}

@@ -1,0 +1,216 @@
+% !TeX root = ..//diffgeo_main.tex
+
+Mittels Riemannscher Metriken lassen sich die wesentlichen geometrischen Eigenschaften von Mannigfaltigkeiten beschreiben.
+Sie können verwendet werden um Winkel, Distanz bzw. Längen von Kurven zu messen.
+
+\begin{defs}[(Semi-)Riemannsche Mannigfaltigkeit]
+Eine differenzierbare Mannigfaltigkeit $\mfk$ ausgestattet mit einer (Semi-)Riemannschen Metrik $g$, wird (Semi-)Riemannsche Mannigfaltigkeit genannt.\\
+\end{defs}
+\textbf{Notation:} $(\mfk, g)$\\
+Wir wollen nun (Semi-)Riemannsche Metrik $g$ in lokalen Koordinaten betrachten.
+Sei $(x, U)$ eine Karte von $\mfk$.
+Ferner bezeichnen wir mit $(X_1, \dots, X_n)$ den dazugehörigen lokalen Rahmen von $T\mfk \eval_U$,
+das heißt $X_i = \pdv{x_i}$.
+Dann sind 
+\begin{align}
+g_{ij} : \ U &\to \R \\
+p & \mapsto g_{ij} (p) := g\eval_p (X_i (p), X_j (p))
+\end{align}
+
+glatte Funktionen und es gilt:
+\begin{align}
+g_p \left( X\eval_p, \ Y \eval_p \right) &= g_p \left( \sum_i^m \xi^i X_j \eval_p, \ \sum_i^m \eta^i X_i \eval_p \right) \\
+&= \sum_{ij} \xi^j \eta^i \underbrace{g\eval_p \left( X_j \eval_p, \ X_i \eval_p\right) }_{g_{ij}(p)}
+\end{align}
+
+\begin{defs}[Fundamentalmatrix]
+$(g_{ij})^m_{i, j = 1}$ heißt Fundamentalmatrix von $g$ bezüglich $(x, U)$.
+\end{defs}
+
+\begin{bem}\leavevmode
+\begin{enumerate}
+\item Die Matrix $(g_{ij})^m_{i, j = 1}$ ist symmetrisch, d.h. $g_{ij} = g_{ji}$ (Folgt aus Symmetrie von $g_p$).
+\item $(g_{ij})^m_{i, j = 1}$ ist invertierbar (Folgt aus der Tatsache, dass $g_p$ nicht entartet ist).
+\end{enumerate}
+Die Inverse Matrix von$(g_{ij})^m_{i, j = 1}$ bezeichnen wir mit $(g^{ij})^m_{i, j = 1}$
+\end{bem}
+
+\begin{bsp}
+\begin{itemize}
+\item[a)] Sei $V$ ein reeller $n$-dimensionaler Vektorraum und $\langle\cdot,\cdot\rangle$ eine nicht entartete Bilinearform auf $V$.
+Für $v, w \in T_p V$ gilt $g_p (v, w) := \langle v, w \rangle$.
+Sei $X: V \to V$ glatt ($X$ Vektorfeld), dann gilt:
+\begin{align}
+g_p (X(p), Y(p)) = \langle X(p), Y(p) \rangle
+\end{align}
+ist glatt.
+Daraus folgt, dass $g$ eine Semi-Riemannsche Metrik ist.
+Es gilt:
+\begin{align*}
+g_p \left( \pdv{x_i} , \pdv{x_j} \right) &= \Big{\langle} \phi_p \left(\pdv{x_i}\right) , \phi_p \left( \pdv{x_j} \right) \Big\rangle\\
+&= \langle e_i, e_j \rangle = \delta_{ij}
+\end{align*}
+\item[b)] Sei $\mfk \subset \R^{n-k}$ eine $n$-dimensionale Untermannigfaltigkeit mit
+\begin{align*}
+&\phi_p: T_p\mfk \to \R^{n+k}\\
+& [c] \mapsto \dv{t} \eval_{t=0} c(t)
+\end{align*}
+wobei $\phi_p$ injektiv und linear ist.
+Dann ist 
+\begin{align}
+\label{eq:erstefundamentalform}
+g_p = \phi^\ast_p \langle \cdot , \cdot \rangle 
+\end{align}
+positiv definit.
+\end{itemize}
+\end{bsp}
+\begin{defs}[erste Fundamentalform]
+Die Metrik \ref{eq:erstefundamentalform} heißt erste Fundamentalform von $\mfk \subset \R^{n+k}$
+\end{defs}
+Als nächstes wollen wir die Existenz von Semi-Riemannschen Metriken zeigen.
+\begin{satz}
+\label{satz:existenz_metrik}
+Jede differenzierbare Mannigfaltigkeit kann mit einer Riemannschen Metrik ausgestattet werden.
+\end{satz}
+\textbf{Übung:} gilt dies auch für Semi-Riemannsche Metriken?
+\begin{bew}[Beweis Satz \ref{satz:existenz_metrik}]
+Sei $\{ (x_\alpha, U_\alpha) \}$ Atlas von $\mfk$.
+Setze
+\begin{align*}
+(g_\alpha)_{ij} = \delta_{ij}
+\end{align*}
+Sei $\varphi_\alpha$ eine glatte Partition der Eins mit $\supp \varphi_\alpha \subseteq U_\alpha$.
+Dann setze:
+\begin{align*}
+g := \sum_\alpha \varphi_\alpha g_\alpha.
+\end{align*}
+$g$ ist hierbei nach Konstruktion glatt.\\
+Positivität: Sei $v \in T_p \mfk$, $v \neq 0$, dann gilt:
+\begin{align*}
+g_p (v, v) = \sum_\alpha \varphi_\alpha (p) \eval{g_\alpha}_p (v, v) \geq 0.
+\end{align*}
+Es existiert ein $\alpha_0$, so dass $\varphi_{\alpha_0}(p) > 0$.
+\begin{align*}
+\Rightarrow g_p (v, v) \geq \varphi_{\alpha_0} (p) \eval{g_{\alpha_0}}_p (v, v) > 0.
+\end{align*} 
+\end{bew}
+\textbf{Wichtig:} Wir haben in unserem Beweis Wahlen getroffen. 
+Daraus folgt, dass die Metrik $g$ nicht kanonisch ist.
+Unter Umständen können Metriken sehr verschiedene Eigenschaften haben.\\
+\begin{defs}[Isometrie]
+Seien $\mfk_1$, $\mfk_2$ differenzierbare Mannigfaltigkeiten und unsere Daten sind jetzt $(\mfk_1, g_1)$, $(\mfk_2, g_2)$.
+\begin{align*}
+\phi : \mfk_1 \to \mfk_2, \quad \text{Diffeomorphismus}
+\end{align*}
+Wir wollen zusätzlich, dass $\phi$ die Metriken erhält, also
+\begin{align}
+\phi^{\ast} g_2 = g_1
+\end{align}
+Das heißt vom Standpunkt der Riemannschen Geometrie sind $(\mfk_1, g_1)$ und $(\mfk_2, g_2)$ nicht zu unterscheiden,
+wenn $\phi: \mfk_1 \to \mfk_2$ ein Diffeomorphismus mit
+\begin{align}
+\phi^\ast g_2 = g_1
+\end{align}
+existiert.
+Eine solche Abbildung heißt \textbf{Isometrie}.
+\end{defs}
+
+Unsere nächste Frage ist: wie verhält sich $g_{ij}$ unter Kartenwechsel?
+\begin{lem}[Transformationsregel]
+\label{lem:Transformationsregel}
+Seien $(x, U)$ und $(y, V)$ Karten von $p$.
+Dann gilt:
+\begin{align*}
+g^{y}_{ij} &= g(Y_i, Y_j)\\
+&= \sum^m_{k,l = 1} \pdv{y^i}(x^k \circ y^{-1}) \pdv{y^j} (x^l \circ y^{-1}) g^x_{kl}
+\end{align*}
+\end{lem}
+\begin{bew}[Beweis Lemma \ref{lem:Transformationsregel}]
+Wir wissen:
+\begin{align*}
+y_i = \sum^m_{k=1} \pdv{y^i} (x^k \circ y^{-1}) \pdv{x^k}
+\end{align*}
+Daher gilt:
+\begin{align*}
+g^y_{ij} &= g(Y_i, Y_j)\\
+&= \sum^m_{k,l = 1} \pdv{y^i}(x^k \circ y^{-1}) \pdv{y^j} (x^l \circ y^{-1}) \underbrace{g\left( \pdv{x^l}, \pdv{x^k} \right)}_{= g^x_{lk}}
+\end{align*}
+\end{bew}
+
+\textbf{Nächstes Ziel:} Führe ausgezeichneten Zusammenhang ein.
+Dazu benötigen wir zunächst ein Hilfslemma.
+Eine Semi-Riemannsche Metrik $g$ definiert einen Isomorphismus zwischen Tangentialbündel und Kotangentialbündel
+\begin{align}
+&T \mfk \to T^\ast \mfk\\
+&T_p \mfk \ni v \mapsto g_p (v, \cdot) \in T^\ast_p \mfk
+\end{align}
+
+\begin{hlem}
+\label{hlem:formvfkorrespondenz}
+Auf einer Semi-Riemannschen Mannigfaltigkeit $(\mfk, g)$ gibt es eine Eins zu Eins Korrespondenz zwischen Vektorfeldern und $1$-Formen
+\begin{align}
+&\mathfrak{X}(\mfk) \to \Omega^1 (\mfk)\\
+& x \mapsto g(X, \cdot)
+\end{align}
+\end{hlem}
+
+\begin{bew}[Beweis Hilfslemma \ref{hlem:formvfkorrespondenz}]
+Wir haben bereits einen Faserweisen Isomorphismus
+\begin{align*}
+T_p\mfk \to T^\ast_p \mfk
+\end{align*}
+definiert.\\
+Jetzt bleibt die Glattheit zu zeigen, was bedeutet, dass aus $X$ glatt folgt, dass $g(X, \cdot)$ glatt ist.
+Wir Arbeiten in den Karten $(x, U)$, denn dann ist
+\begin{align*}
+\left( \eval{\pdv{x_1}}_p, \dots,  \eval{\pdv{x_m}}_p \right)
+\end{align*}
+eine Basis von $T^\ast_p \mfk$.
+Es gilt $g_p = \sum g_{ij} \dd{x^i} \otimes \dd{x^j}$, was bedeutet, dass:
+\begin{align*}
+g_p (X, Y) &= g_{ij} \dd{x^i} \otimes \dd{x^j} \left( \sum \xi^k X_k, \eta^l X_l\right)\\
+&= \sum g_{ij} \xi^k \eta^l \delta_{ik} \delta_{kl}\\
+&= \sum g_{ij} xi^i \eta^j
+\end{align*}
+Wir erhalten als $g(X, Y) = \sum g_{ij}$ für $X= \sum \xi^k X_k$ und $Y= \sum \eta^l Y_l$ beliebig.
+Wir schreiben nun auch die $1$-Form in lokale Koordinaten:
+\begin{align}
+\phi = \sum_j \varphi_j \dd{x^j}
+\end{align}
+Zu Zeigen: sei $\phi = g(X, \cdot)$, dann sind ide Koeffizientenfunktionen glatt.
+\begin{align*}
+\phi(Z) &= \sum_j \varphi_j \dd{x^j} \left( \sum \eta^l X_l \right)\\
+&= \sum_{j} v\varphi_j \eta^l \dd{x^j} (X_l)\\
+&= \sum_j \varphi_j \eta^j
+\end{align*}
+Nach obiger Rechnung haben wir also
+\begin{align}
+\varphi_j = \sum^m_{i=1} g_{ij} \xi^i.
+\end{align}
+Dies ist eine glatte Funktion.
+\end{bew}
+
+\section{Levi-Civita-Zusammenhang}
+
+\begin{satz}
+\label{satz:koszulformel}
+Sei $(\mfk, g)$ eine (Semi-) Riemannsche Mannigfaltigkeit, dann existiert auf $\mfk$ ein Zusammenhang mit den folgenden Eigenschaften:
+\begin{enumerate}
+\item $\covd$ ist Torsionsfrei:
+\begin{align}
+\covd_Y X - \covd_X Y = \comm{Y}{X}, \quad \forall X, Y \in \mathfrak{X}(\mfk)
+\end{align}
+\item $\covd$ ist metrisch:
+\begin{align}
+X g(Y, Z) = g(\covd_X Y, Z) + g(Y, \covd_X Z), \quad \forall X, Y, Z \in \mathfrak{X}(\mfk)
+\end{align}
+\end{enumerate}
+Dieser Zusammenhang ist eindeutig durch die \textbf{Koszulformel} bestimmt:
+\begin{align}
+2 g (\covd_X Y, Z) &= X g(Y, Z) + Y g(X, Z) - Z g(X, Y)\\
+&\phantom{=} - g(X, \comm{Y}{Z}) - g(Y, \comm{X}{Z}) + g(Z, \comm{X}{Y})
+\end{align}
+$\covd$ heißt \textbf{Levi-Civita-Zusammenhang}.
+\end{satz}
+
+

@@ -8,6 +8,8 @@
 \PreviewEnvironment{tikzpicture}
 \setlength\PreviewBorder{2mm}
 \usepackage{xcolor}
+\definecolor{myred}{RGB}{196,19,47} 
+\definecolor{myblue}{RGB}{0,139,139}
 
 
 \tikzset{
@@ -20,14 +22,14 @@
     \node (p1) at (0, 0.1) {};
     \node (p2) at (1, 1.5) {};
     \node (p3) at (1.9, 0.6) {};
-     \path[fill,cyan!15]plot [smooth cycle,tension=1] coordinates {(p1) (p2) (p3)};
+     \path[fill,myblue!30]plot [smooth cycle,tension=1] coordinates {(p1) (p2) (p3)};
      \path[draw]plot [smooth cycle,tension=1] coordinates {(p1) (p2) (p3)};    
 % Menge 2
     \node (q1) at (4, 0) {};
     \node (q2) at (5.5, 0) {};
     \node (q3) at (5.5, 1.0) {};
     \node (q4) at (4, 1.5) {};
-     \path[fill,cyan!15]plot [smooth cycle,tension=1] coordinates {(q1) (q2) (q3)(q4)};
+     \path[fill,myblue!30]plot [smooth cycle,tension=1] coordinates {(q1) (q2) (q3)(q4)};
      \path[draw]plot [smooth cycle,tension=1] coordinates {(q1) (q2) (q3)(q4)};
     
 % Punkte auf Mengen  

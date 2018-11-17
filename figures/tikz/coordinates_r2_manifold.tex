@@ -1,0 +1,75 @@
+\documentclass{standalone}
+\usepackage{tikz} 
+\usetikzlibrary{shapes}
+\usepackage{pgfplots}
+\usepgfplotslibrary{fillbetween}
+\usetikzlibrary{positioning,arrows}
+\usepackage[active,tightpage]{preview}  %generates a tightly fitting border around the work
+\PreviewEnvironment{tikzpicture}
+\setlength\PreviewBorder{2mm}
+\usepackage{xcolor}
+\definecolor{myred}{RGB}{196,19,47} 
+\definecolor{myblue}{RGB}{0,139,139}
+\usepackage{amssymb}
+\usepackage{physics}
+
+\tikzset{
+  state/.style={circle,draw,minimum size=6ex},
+  arrow/.style={-latex, shorten >=1ex, shorten <=1ex}}
+\begin{document}
+  \begin{tikzpicture}
+
+
+
+
+	% sphere
+	\shade[ball color = gray!90, opacity = 0.2] (7,0.5) circle (1cm);
+	\draw (7,0.5) circle (1cm);
+	\draw (6,0.5) arc (180:360:1 and 0.6);
+	\draw[dashed] (8,0.5) arc (0:180:1 and 0.6);
+	
+	% Fläche auf Kugel
+	\path[fill,myblue!30, opacity=0.6] (6.25,1.25) -- (6.25,-0.25) -- (7.75,-0.25) -- (7.75,1.25) -- (6.25,1.25);
+	% Rand
+	\draw (6.25,1.25) -- (6.25,-0.25);
+	\draw (6.25,-0.25) -- (7.75,-0.25);
+	\draw (7.75,-0.25) -- (7.75,1.25);
+	\draw (7.75,1.25) -- (6.25,1.25);
+	
+	\node at (6.9, 0.4) {\tiny{p}};	
+	\draw[thick, ->, color=myred] (7, 0.5) -- (7, 1);
+	\node at (6.8, 0.9) {\tiny{$v$}};
+	\draw[thick, ->, color=myred] (7, 0.5) -- (7.5, 0.5);
+	\node at (7.4, 0.3) {\tiny{$u$}};
+	\filldraw (7, 0.5) circle (0.6pt);
+
+	%R2
+	%Füllen der Grundfläche
+	\path[fill,myblue!30] (0,0,0) -- (0,0,-3) -- (2.2,0,-3) -- (2.2,0,0) -- (0,0,0);
+	%Rand
+	\draw (0,0,0) -- (2.2,0,0);
+	\draw (0,0,0) -- (0,0,-3);
+	\draw (0,0,-3) -- (2.2,0,-3);
+	\draw (2.2,0,-3) -- (2.2,0,0);
+	% Koordinatensystem R2
+
+	\node at (0.55,0,-1) {\tiny{0}};	
+	\draw[thick, ->, color=myred] (0.7,0,-1) -- (0.7,0,-2.2);
+	\node at (0.8,0.5,-1) {\tiny{$\pdv{y}$}};
+	\draw[thick, ->, color=myred] (0.7,0,-1) -- (1.7,0,-1);
+	\node at (1.5, -0.2, -1) {\tiny{$\pdv{x}$}};
+	\filldraw (0.7,0, -1) circle (0.6pt);
+		
+% Sonstige Beschriftung
+	\node at (0.8,1.6)   {$\mathbb{R}^2$};
+	\node at (8.5,1.6)   {$\mathcal{M}$};
+	\node at (4,2.0) {$f$};
+	\draw [arrow, bend angle=45, bend left]  (2.25,0.9)  to (5.95,0.9) ;
+	
+	
+      
+  \end{tikzpicture}
+\end{document}
+
+
+	

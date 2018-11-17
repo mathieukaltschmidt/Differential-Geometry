@@ -1,0 +1,40 @@
+\documentclass{standalone}
+\usepackage{tikz} 
+\usetikzlibrary{shapes,patterns}
+
+\definecolor{myred}{RGB}{196,19,47} 
+\definecolor{myblue}{RGB}{0,139,139}
+
+\usepackage{pgfplots}
+\usepgfplotslibrary{fillbetween}
+\usepackage[active,tightpage]{preview}  %generates a tightly fitting border around the work
+\PreviewEnvironment{tikzpicture}
+\setlength\PreviewBorder{2mm}
+\usepackage{xcolor}
+
+
+\begin{document}
+  \begin{tikzpicture}
+
+
+
+	% Arrows
+	\draw[thick,color=myred,->] (1,0.88) -- (1,1.38);
+	\draw[thick,color=myred,->] (1.5,0.92) -- (1.4,1.42);
+	\draw[thick,color=myred,->] (2,1.04) -- (1.9,1.54);
+	\draw[thick,color=myred,->] (2.5,1.19) -- (2.45,1.69);
+	\draw[thick,color=myred,->] (3,1.3) -- (3,1.8);
+	\draw[thick,color=myred,->] (3.5,1.32) -- (3.6,1.82);
+	\draw[thick,color=myred,->] (3.82,1.13) -- (4.25,1.43);
+
+	% Kurve
+	\draw[-] (0.5,1.3) [out=280, in=100] to  (3.9,0.9);
+	\filldraw (0.5,1.3)circle (1pt);
+	\filldraw (3.9,0.9)circle (1pt);	
+
+
+  \end{tikzpicture}
+\end{document}
+
+
+	

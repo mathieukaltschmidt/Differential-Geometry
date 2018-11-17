@@ -1,0 +1,283 @@
+% !TeX root = ..//diffgeo_main.tex
+\section{Satz von Bonnet-Myers}
+
+Unser nächstes Ziel wird es sein den Satz von Bonnet-Myers zu beweisen.
+Als Vorbereitung hierfür benötigen wr die zweite Variation der Energie.\\
+\textbf{Zur Erinnerung}:
+Ist $c_s$ eine glatte Variation von $c: [a, b] \to \mfk$ mit Variationsfeld
+$\xi$.
+dann ist die erste Variations der Energie, wie folgt gegeben:
+\begin{align}
+    \dv{s} E(c_s) \eval_{s=0} = - \int^b_a \langle \xi , \covd_t \dot{c} \rangle \dd t
+    + \langle \xi , \dot{c} \rangle \eval^b_a
+\end{align}
+
+\begin{satz}[Zweite Variation der Energie]
+Sei $c: [a, b]\to \mfk$ ein Geodätische und $c_s$ eine Variation von $c$,
+mit Variationsfeld $\xi$.
+Dann gilt:
+\begin{align}
+    \dv[2]{s} E(c_s) \eval_{y=0} = \int^b_a  \langle \covd_t \pdv{c_s}{s} , 
+    \pdv{c_s}{t} \rangle \dd t
+\end{align}
+
+\end{satz}
+
+\begin{bew}
+Wir wissen bereits:
+\begin{align*}
+    \dv{s} E(c_s) \eval_{s=0} = \int^b_a \langle \covd_t \pdv{c_s}{s} , 
+    \pdv{c_s}{s} \rangle \dd t
+\end{align*}
+Damit erhält man:
+\begin{align*}
+\dv[2]{s}E(c_s)\eval_{s=0}&=\int^b_a \langle\covd_s\covd_t\pdv{c_s}{s},\pdv{c_s}{t}\rangle + 
+\langle \covd_t \xi , \covd \pdv{c_s}{t} \eval_{s=0} \rangle \dd t \\
+&= \int^b_a \underbrace{\langle\covd_t\covd_s\pdv{c_s}{s}\eval_{s=0},\dot{c}\rangle}_{\ast}
++ \int^b_a \langle \curv (\xi , \dot{c})\xi , \dot{c}
++ \int^b_a \langle\covd_t\xi , \covd_t \xi\rangle\dd t 
+\end{align*}
+
+Betrachte $\ast$:
+\begin{align*}
+\ast &= \int^b_a ( \pdv{t} \langle \covd_s \pdv{c_s}{s}\eval_{s=0}, 
+c \rangle - \underbrace{\langle\covd_s \pdv{c_s}{s} \eval_{s=0} , \covd_t \dot{c}\rangle}_{=0, \ \text{da $c$ Geodätische}} ) \dd t \\
+&= \langle \covd_s \pdv{c_s}{s}\eval_{s=0}, \dot{c} \rangle \eval^b_a \\
+&= 0
+\end{align*}
+Die letzte Gleichung gilt, da wir Variation mit festen Endpunkten betrachten.
+\end{bew}
+
+\begin{defs}[Durchmesser]
+Sei $\mfk$ eine zusammenhängende Riemannsche Mannigfaltigkeit.
+Dann ist
+\begin{align}
+    \diam (\mfk):= \sup \{ d(p, q) \vert p, q \in \mfk \} \in (0, \infty]
+\end{align}
+der Durchmesser von $\mfk$.
+\end{defs}
+
+\begin{satz}[Satz von Bonnet-Myers]
+\label{satz:bonnetmyers}
+Sei $\mfk$ eine vollständige zusammenhängende Riemannsche Mannigfaltigkeit.
+Ferner sei $\kappa > 0$ so, dass $\text{ric} \leq \kappa (n - 1) g$ ist 
+(Das heißt $\text{ric} (\xi , \eta) \geq \kappa (n - 1) g( \xi \eta)$).
+Dann ist $\mfk$ kompakt und es gilt
+\begin{align}
+    \diam (\mfk) \leq \frac{\pi}{\sqrt{k}}
+\end{align}
+\end{satz}
+
+\begin{bew}{Beweis von Satz \ref{satz:bonnetmyers}}
+Seien $p, q \in \mfk$ mit $p \neq q$.
+Da $\mfk$ Vollständig ist, liefert der Satz von Hopf-Rinow die Existenz einer minimalen
+nach Bogenlänge parametrisierten Geodätischen $\gamma: [0 , s] \to \mfk$ 
+mit $\gamma (0) =p$ und $\gamma (s) = q$.
+Sei $e \in T_p \mfk$ mit $e \perp \dot{\gamma}(0)$ und $\norm{e}=1$.
+Sei $e(t)$ das längs $\gamma$ parallel fortgestzte Vektorfeld.
+Setze $\xi (t) := \sin (\frac{\pi}{\delta} t) e(t)$.
+Ferner sei $\gamma_s (t)$ eine Variation von $\gamma$ mit festen Endpunkten und
+Variationsfeld $\xi (t)$ (z.B. $\gamma_s (t) = \exp (s \xi (t))$).
+Da $\gamma$ eine minimale Geodätische ist (nach Konstruktion) gilt:
+\begin{align*}
+    \dv{s} \eval_{s=0}E(\gamma_s) = 0 \\
+\end{align*}
+Außerdem gilt:
+\begin{align*}
+0 \leq & \dv[2]{s}\eval_{s=0} \\
+&= \int^\delta_0 \left( \norm{\covd_t \xi}^2 - \langle \curv(\xi, \dot{\gamma}) \dot{\gamma}
+, \xi \rangle \right) \dd t\\
+&= \int^\delta_0 \left( \norm{ \frac{\pi}{\delta} \cos (\frac{\pi}{\delta} t) e(t) }^2
+- \sin^2 (\frac{\pi}{\delta}t) \langle \curv (e, \dot{\gamma})e \rangle \right) \dd t \\
+&= \int^\delta_0 \left( \frac{\pi^2}{\delta^2} \cos^2 (\frac{\pi}{\delta} t ) - 
+\sin^2 (\frac{\pi}{\delta} t ) k (e, \dot{\gamma}) \right) \dd t
+\end{align*}
+Wenn $e_1, \dots, e_{n-1}$ eine Orthonormalbasis von $\dot{\gamma} (0)^\perp$ ist, 
+so liefert obige Gleichung mit $e= e_j$ nach Summation über $j$:
+\begin{align*}
+0 &\leq \int^\delta_0 \left( (n-1) \frac{\pi^2}{\delta^2} 
+    \cos^2 (\frac{\pi}{\delta} t) - \sin^2 (\frac{\pi}{\delta}t ) 
+\text{ric}(\dot{\gamma}, \dot{\gamma}) \right) \dd t \\
+&\leq \int^\delta_0 \left( (n-1) \frac{\pi^2}{\delta^2} \cos^2 (\frac{\pi}{\delta}t ) 
+- \sin^2 (\frac{\pi}{\delta} ) (n-1)k \right) \dd t \\
+&= (n-1) \frac{\pi^2 - k \delta^2}{2\delta}
+\end{align*}
+Durch umformen erhält man
+\begin{align}
+    \delta \leq \frac{\pi}{\sqrt{k}} \Rightarrow \diam \mathrm{M} \leq \frac{\pi}{\sqrt{k}}
+\end{align}
+Da die Mannigfaltigkeit vollständig und beschränkt ist folgt, dass sie kompakt ist.
+\end{bew}
+\begin{bem}
+Aus $k \geq \kappa$ folgt $\text{ric} \geq \kappa (n-1)g$,
+daher gilt die Aussage von Bonnet-Myers auch für $k \geq \kappa$.
+\end{bem}
+
+\section{Jacobi-Felder}
+
+\begin{defs}[Geodätische Variation]
+Eine Variation von Kurven 
+$c: (-\varepsilon, \varepsilon) \times [a , b] \to \mfk$
+heißt geodätische Variation, falls:
+\begin{align*}
+    t \mapsto c_s(t) := c(s, t)
+\end{align*}
+
+eine Geodätische ist für alle $s\in (-\varepsilon, \varepsilon)$.
+\end{defs}
+
+Sei $\xi (t) = \pdv{c(0,t)}{s}$ das zugehörige Variationsfeld, dann gilt:
+
+\begin{align*}
+\covd^2_t \xi (t) &= \covd_t \covd_t \pdv{s} c(s, t) \eval_{s=0}\\
+&= \covd_t \covd_s \pdv{t} c(s, t) \eval_{s=0}\\
+&= \underbrace{\covd_s \covd_t \pdv{t} c(s, t) \eval_{s=0}}_{=0, \ \text{da Geodätische Variation}} + 
+\curv \left( \pdv{c(0, t)}{t} , \pdv{c(0, t)}{s}\right) \pdv{c(0,t)}{t}\\
+&= \curv ( \dot{c}_0 (t) , \xi (t)) \dot{c}_0 (t)
+\end{align*}
+
+\begin{defs}[Jacobi-Gleichung]
+Die Gleichung
+\begin{align}
+\covd^2_t \xi = \curv (\dot{c}_0 , \xi ) \dot{c}_0
+\end{align}
+heißt \textbf{Jacobi-Gleichung} und Lösungen davon heißen
+\textbf{Jacobi-Felder}.
+Mit anderen Worten: Variationsfelder von geodätischen Variationen sind Jacobi-Felder.
+\end{defs}
+
+\begin{satz}
+\label{satz:eindeutigkeitjacobi}
+Sei $c_0 : I \to \mfk$ eine Geodätische und $t_0 \in I$.
+Dann gilt für alle $\xi, \eta \in T_{c(t_0)}\mfk$ existiert genau ein Jacobi-Feld $J$ 
+längs $c$ mit $J(t_0) = \xi$ und $\covd_t J (t_0) = \eta$
+\end{satz}
+
+\begin{bew}[Beweis Satz \ref{satz:eindeutigkeitjacobi}]
+Sei $e_i (t_0)$ $i\in \{ 1, m \}$ eine Orthonormalbasis von $T_{c(t_0)} \mfk$.
+Setze diese mittels Parallelverschiebung längs $c$ zu $e_i(t)$ fort.
+Schreibe
+\begin{align*}
+    J (t) = \sum^n_{j = 1} v^j (t) e_j (t)
+\end{align*}
+Dann gilt
+\begin{align*}
+    \covd^2_t J(t) = \sum^n_{j=1} \ddot{v}^j (t) e_j (t)
+\end{align*}
+Ferner gilt:
+\begin{align*}
+    \curv( \dot{c}(t), e_j (t)) \dot{c}(t) = \sum^n_{k=1} a^k_j (t) e_k (t)
+\end{align*}
+Da $J$ Jacobifeld gilt:
+\begin{align*}
+    \sum^n_{j=1} \ddot{v}^j (t) e_j(t) = \sum^n_{j,k=1}a^k_j v^j e_k \\
+    \Rightarrow \ddot{v}^i = \sum_j a^i_j v^j
+\end{align*}
+Dies ist ein lineares gewöhnliches Differentialgleichungssystem 2. Ordnung.
+Daraus folgt es existieren Lösungen, welche eindeutig durch Anfangswert
+und Anfangsgeschwindigkeit gegeben sind.
+\end{bew}
+
+\begin{bsp}
+
+\begin{itemize}
+\item $\mfk$ flach, d.h $\curv = 0$.
+Dann gilt:
+\begin{align*}
+\covd^2_t J = 0
+\end{align*}
+Jacobifelder sind dann von der Form:
+\begin{align*}
+J = \xi (t) + t \eta (t)
+\end{align*}
+wobei $\xi$ und $\eta$ parallel längs $c$ sind.
+
+\item $c$ Geodätische, dann ist $J(t) = (a + bt) \dot{c} (t)$ 
+    ein Jacobifeld längs $c$, da $\covd^2_t J(t) = 0$
+    \begin{align*}
+        \Rightarrow \curv (\dot{c},J) 
+        \dot{c} = (a + bt) \curv (\dot{c}, \dot{c})\dot{c} = 0
+    \end{align*}
+\end{itemize}
+\end{bsp}
+
+\begin{lem}
+Sei $J : I \to T \mfk$ ein Jacobifeld längs $c$ (Geodätische).
+Dann gilt $J(t_0) \perp \dot{c}(t_0)$ und $\covd_t J(t_0) \perp \dot{c}(t_0)$.
+Daraus folgt $J(t) \perp \dot{c}(t)$ und $\covd_t J(t)\perp\dot{c}(t)$ $\forall t \in I$
+\end{lem}
+
+\begin{bew}
+\begin{align*}
+    \dv{t} \langle \covd_t J, \dot{c} \rangle &= \langle \covd^2_t J, \dot{c} \rangle + \langle \covd_t J , \underbrace{\covd_t \dot{c}}_{=0} \rangle \\
+&= \langle \curv (\dot{c} , J) \dot{c} , \dot{c} \rangle \\
+&= 0
+\end{align*}
+Daraus folgt
+\begin{align*}
+    \langle \covd_t J, \dot{c} = 0
+\end{align*}
+Da $\dv{t} \langle J , \dot{c} \rangle = \langle \covd_t J , \dot{c} \rangle = 0$
+folgt auch, dass $\langle J , \dot{c} \rangle = 0$.
+\end{bew}
+
+\begin{defs}[Verallgemeinerte Sinus- und Kosinusfunktion]
+
+    Für $k\in\R$, dann definieren wir die verallgmeinerte Sinusfunktion bzw 
+    Kosinusfunktion durch:
+
+\begin{align*}
+    s_k(t) = \left\{
+\begin{array}{ll}
+    \frac{1}{\sqrt{k}} \sin (\sqrt{k} t) & k > 0 \\
+    t & k = 0 \\
+    \frac{1}{\sqrt{\abs{k}}} \sinh (\sqrt{\abs{k}} t) & k < 0 \\
+\end{array}
+\right.
+\end{align*}
+
+\begin{align*}
+    c_k(t) = \left\{
+\begin{array}{ll}
+    \cos (\sqrt{k} t) & k > 0 \\
+    1 & k = 0 \\
+    \cosh (\sqrt{k} t) & k < 0 \\
+\end{array}
+\right.
+\end{align*}
+Diese Funktionen haben die folgenden Eigenschaften:
+\begin{itemize}
+    \item $k s^2_k + c^2_k = 1$
+    \item $s_k' = c_k$
+    \item $c_k' = - k s_k$
+    \item $s_k(0) = 0$
+    \item $c_k(0) = 1$
+\end{itemize}
+\end{defs}
+
+\begin{bsp}
+    Sei $(\mfk, g)$ mit konstanter Schnittkrümmung $k=\kappa$, $c$ eine nach 
+    Bogenlänge parametrisierte Geodätische und $\xi$ ein paralleles Vektorfeld längs $c$
+    mit $\xi \perp c$.
+    Setze $J(t) = (a s_k(t) + b c_k(t)) \xi(t)$ wobei $a, b \in \R$.
+    Dann gilt:
+\begin{align*}
+\covd^2_t J(t) &= (a \ddot{s}_k (t) + b \ddot{c}_k (t)) \xi (t)\\
+&= (- a k s_k (t) - b k c_k (t)) \xi (t) \\
+&= -k J(t)
+\end{align*}
+
+Für $\curv (\alpha, \eta) \chi = k ( \langle \eta, \chi \rangle \alpha
+- \langle \alpha ,\chi\rangle \eta)$ folgt:
+\begin{align*}
+\curv (\dot{c}, J) \dot{c} &= (a s_k (t) + b c_k(t))\curv (\dot{c}, \xi) \dot{c}\\
+&= (as_k + bc_k)k (\underbrace{\langle\xi,\dot{c}\rangle}_{=0}\dot{c}
+- \underbrace{\langle\dot{c},\dot{c}}_{=1}\rangle \xi\\
+&= -k(as_k + bc_k)\xi\\
+&= - k J
+\end{align*}
+\end{bsp}
+
+
+
+

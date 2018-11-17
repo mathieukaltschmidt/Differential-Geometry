@@ -1,0 +1,105 @@
+\documentclass{standalone}
+\usepackage{tikz} 
+\usetikzlibrary{shapes,patterns}
+
+\definecolor{myred}{RGB}{196,19,47} 
+\definecolor{myblue}{RGB}{0,139,139}
+
+\usepackage{pgfplots}
+\usepgfplotslibrary{fillbetween}
+\usepackage[active,tightpage]{preview}  %generates a tightly fitting border around the work
+\PreviewEnvironment{tikzpicture}
+\setlength\PreviewBorder{2mm}
+\usepackage{xcolor}
+
+
+\begin{document}
+  \begin{tikzpicture}
+  
+  	% Mannigfaltigkeit
+	%Füllen der Grundfläche
+	%\path[name path=Grundfläche,fill,myblue!30] (-1,0) -- (4.5,0) -- (5.5,2) -- (0,2) -- (-1,0);
+	%Rand
+	% base manifold
+  \draw (-1,0)
+   to[out=-10,in=170] (4.5,0)
+    to[out=70,in=-130] (5.5,2) 
+    to[out=170,in=-10] (0,2) 
+    to[out=-130,in=70] cycle;
+    
+	%\draw[thin] (-1,0) -- (4.5,0);
+	%\draw[thin] (4.5,0) -- (5.5,2);
+	%\draw[thin] (5.5,2) -- (0,2);
+	%\draw[thin] (0,2) -- (-1,0);  	
+
+
+	%Kurve
+	\draw[-, thick, color=myred] (0.5,1.3) [out=280, in=100] to  (3.9,0.9);
+	\filldraw (0.5,1.3)circle (1pt);
+	\filldraw (3.9,0.9)circle (1pt);
+
+	%Ebenen
+	% Ebene 1
+	\draw (0,3.08) -- (0.5,3.28);
+	\draw (0.5,3.28) -- (0.5,4.68);
+	\draw (0.5,4.68) -- (0,4.48);
+	\draw (0,4.48) -- (0,3.08);
+	% Ebene 2
+	\draw(1,3.31) -- (1.5,3.51);
+	\draw (1.5,3.51) -- (1.5,4.91);
+	\draw (1.5,4.91) -- (1,4.71);
+	\draw (1,4.71) -- (1,3.31);
+	% Ebene 3
+	\draw (2,3.70) -- (2.5,3.90);
+	\draw (2.5,3.90) -- (2.5,5.30);
+	\draw (2.5,5.30) -- (2,5.10);
+	\draw (2,5.10) -- (2,3.70);
+	% Ebene 4
+	\draw (3,4.09) -- (3.5,4.29);
+	\draw (3.5,4.29) -- (3.5,5.69);
+	\draw (3.5,5.69) -- (3,5.49);
+	\draw (3,5.49) -- (3,4.09);
+	% Ebene 5
+	\draw (4,4.37) -- (4.5,4.57);
+	\draw (4.5,4.57) -- (4.5,5.97);
+	\draw (4.5,5.97) -- (4,5.77);
+	\draw (4,5.77) -- (4,4.37);
+
+	% Kurven auf E_p
+	\draw[thick, dotted, -] (-0.6,4.5) [out=280, in=100] to  (5.3,4.5);
+	\filldraw  (-0.6,4.5) circle (1pt);
+	\filldraw (5.3,4.5) circle (1pt);
+	\path[fill,color=white] (0.01,3.1) -- (0.25,3.3) -- (0.25,4.5) -- (0.01,4.3) -- (0.01,3.1);
+	\path[fill,color=white] (1.005,3.4) -- (1.25,3.6) -- (1.25,4.8) -- (1.005,4.6) -- (1.005,3.4);
+	\path[fill,color=white] (2.015,3.8) -- (2.25,4.1) -- (2.25,5.0) -- (2.015,4.9) -- (2.015,3.9);
+	\path[fill,color=white] (3.01,4.1) -- (3.25,4.3) -- (3.25,5.5) -- (3.01,5.3) -- (3.01,4.1);
+	\path[fill,color=white] (4.01,4.7) -- (4.25,4.7) -- (4.25,5.5) -- (4.01,5.3) -- (4.01,4.7);				
+	% Vektoren	
+	\draw[thick,color=myred,->] (0.25,3.85) -- (0.3,4.5);
+	\draw[thick,color=myred,->] (1.25,4.08) -- (1.4,4.7);
+	\draw[thick,color=myred,->] (2.25,4.47)  -- (2.4,4.96);
+	\draw[thick,color=myred,->] (3.25,4.86) -- (3.15,5.35);
+	\draw[thick,color=myred,->] (4.25,5.14) -- (4.15,5.64);
+	
+	% Punte für Vektoren
+	\filldraw (0.25,3.85) circle (1pt);
+	\filldraw (1.25,4.08) circle (1pt);
+	\filldraw (2.25,4.47) circle (1pt);
+	\filldraw (3.25,4.86) circle (1pt);
+	\filldraw (4.25,5.14) circle (1pt);
+	
+	% Text	
+	\node at (-0.1,0.45) {$\mathcal{M}$};
+	\node at (0.3,1.6) {$(t_0)$};
+	\node at (4.1,0.6) {$(t_1)$};
+	\node at (0.8,5.8) {$E_p$};
+	\draw[<-] (0.3,4.7) [out=100, in=-90] to  (0.8,5.6);
+	
+	\node at (5.0,3.25) {$E_q$};
+	\draw[->] (5.0,3.5) [out=100, in=-90] to  (4.3,4.4);
+
+  \end{tikzpicture}
+\end{document}
+
+
+	

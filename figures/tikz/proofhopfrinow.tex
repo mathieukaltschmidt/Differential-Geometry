@@ -1,0 +1,51 @@
+\documentclass[border=5mm]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{shapes}
+\usepackage{pgfplots}
+\usepgfplotslibrary{fillbetween}
+\usepackage[active,tightpage]{preview} 
+\usepackage{amssymb}
+\usetikzlibrary{positioning,arrows}
+\usepackage[active,tightpage]{preview}  %generates a tightly fitting border around the work
+\PreviewEnvironment{tikzpicture}
+\setlength\PreviewBorder{2mm}
+\usepackage{xcolor}
+\definecolor{myred}{RGB}{196,19,47} 
+\definecolor{myblue}{RGB}{0,139,139}
+
+\tikzset{
+  state/.style={circle,draw,minimum size=6ex},
+  arrow/.style={-latex, shorten >=2ex, shorten <=1ex}}
+  
+\begin{document}
+		
+\begin{tikzpicture}
+
+
+\node at (0, 0)   {$v)$};
+\node at (1.5, 0)   {$ii)$};	
+\node at (3, 0)   {$i)$};	
+\node at (4.5, 0)   {$vi)$};	
+
+\node at (0.75, -1.3)   {$iv)$};	
+\node at (2.35, -1.3)   {$iii)$};	
+
+\draw [arrow]  (0.1,0)  to (1.5,0);
+\draw [arrow]  (1.6,0)  to (3,0);
+\draw [arrow]  (3.1,0)  to (4.5,0);
+
+\draw [arrow]  (2.15,-1.3) to (0.75,-1.3);
+
+\draw [arrow]  (0.1, -0.1) to (0.75, -1.3);
+\draw [arrow]  (2.9,-0.1) to (2.35, -1.3);
+	
+	
+\node at (0.75, 0.3)   {$a)$};
+\node at (2.25, 0.3)   {trivial};	
+\node at (3.75, 0.3)   {$e)$};
+
+\node at (1.55, -1.6)   {$c)$};
+\node at (0.15, -0.7)   {$b)$};
+\node at (2.85, -0.7)   {$d)$};
+	\end{tikzpicture}	
+\end{document}

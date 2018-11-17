@@ -1,12 +1,14 @@
 \documentclass{standalone}
 \usepackage{tikz} 
-\usetikzlibrary{shapes}
+\usetikzlibrary{shapes,patterns}
 \usepackage{pgfplots}
 \usepgfplotslibrary{fillbetween}
 \usepackage[active,tightpage]{preview}  %generates a tightly fitting border around the work
 \PreviewEnvironment{tikzpicture}
 \setlength\PreviewBorder{2mm}
 \usepackage{xcolor}
+\definecolor{myred}{RGB}{196,19,47} 
+\definecolor{myblue}{RGB}{0,139,139}
 
 
 \begin{document}
@@ -15,8 +17,6 @@
 	
 %erstes Bild	
 	
-	%Füllen der Grundfläche
-	\path[name path=Grundfläche,fill,cyan!15] (0,0,0) -- (0,0,-1) -- (1.2,0,-1) -- (1.2,0,0) -- (0,0,0);
 	
 	%Rand
 	\draw[thin] (0,0,0) -- (1.2,0,0);
@@ -24,13 +24,6 @@
 	\draw[thin] (0,0,-1) -- (1.2,0,-1);
 	\draw[thin] (1.2,0,-1) -- (1.2,0,0);
 	
-	%Punkte auf Karte
-	\filldraw (0.75,0.18)circle (0.2pt);
-	\node at (0.75,0.13) {$p$};
-	\node at (0.42,0.3) {$U$};	
-	\node at (1.2,0.3) {$\tilde{U}$};
-	\node at (0.75,0.45) {$\mathcal{M}$};
-
 % Sich überlappende Mengen
     \node (p1) at (0.6, 0.07) {};
     \node (p2) at (0.9, 0.17) {};
@@ -40,15 +33,17 @@
     \node (q2) at (0.7,0.25) {};
     \node (q3) at (1.1, 0.25) {};
     \node (q4) at (1.0, 0.1) {};
-    \path[draw, black]plot [smooth cycle,tension=1] coordinates {(q1) (q2) (q3)(q4)};
-    \path[draw, black]plot [smooth cycle,tension=1] coordinates {(p1) (p2) (p3)}; 
-
-	
-%	\begin{scope} [fill opacity = .4]
-%    \draw[draw = black] (0.8,0.2) circle (0.159);
-%    \draw[draw = black] (0.9,0.2) circle (0.159);
-%    \end{scope}
-
-		
+    \path[pattern=north west lines, pattern color=myblue!50]plot [smooth cycle,tension=1] coordinates {(q1) (q2) (q3)(q4)};
+    \path[pattern=north east lines, pattern color=myred!50]plot [smooth cycle,tension=1] coordinates {(p1) (p2) (p3)}; 
+       \path[draw, black]plot [smooth cycle,tension=1] coordinates {(q1) (q2) (q3)(q4)};	
+    \path[draw, black]plot [smooth cycle,tension=1] coordinates {(p1) (p2) (p3)}; 		
+    
+ %Punkte auf Karte
+    \filldraw (0.75,0.18)circle (0.2pt);
+    \node at (0.35,0.1) {$p$};
+    \draw[thin, ->] (0.39,0.1) parabola (0.72,0.17);
+    \node at (0.42,0.3) {$U$};	
+    \node at (1.2,0.3) {$\tilde{U}$};
+    \node at (0.75,0.45) {$\mathcal{M}$};
 	\end{tikzpicture}
 \end{document}

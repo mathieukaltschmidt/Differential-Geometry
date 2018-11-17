@@ -1,0 +1,38 @@
+\subsection{Parallelverschiebung}
+Auch für das in der Vorlesung eingeführte Konzept der Parallelverschiebung wollen wir nachfolgend ein explizites Beispiel liefern. \\
+\phantom{.}\\
+Sei $\gamma(t)$ die Kurve, die durch die Gleichungen $x = t, y = t$ und $z = t$  definiert wird. Grundlage der Berechnung ist die zuvor bereits verwendete Metrik
+\begin{align*}
+g= (1+x^2)\ \dd x\otimes \dd x + \dd y \otimes \dd y + \e^z \ \dd z \otimes \dd z)
+\end{align*} 
+Wie sieht der Paralleltransport entlang $\gamma$ aus? \\
+
+Der Anfangsvektor sei $\left(v_1(0), v_2(0), v_3(0) \right)^T$. Die Formel für den Paralleltransport lautet: 
+\begin{align*}
+\frac{\dd v(t)}{\dd t} + \sum_{j, k} \Gamma_{jk}^i \frac{\dd x^j}{\dd t} v^k =0
+\end{align*}
+Komponentenweises Einsetzen unter Berücksichtigung der im vorherigen Abschnitt berechneten Christoffel-Symbole liefert ein System aus drei Differentialgleichungen erster Ordnung:
+\begin{align*}
+\begin{cases}
+\frac{\dd v_1(t)}{\dd t} + \frac{t}{1+t^2}\underbrace{\frac{\dd x}{\dd t}}_{= 1} v_1(t) = 0 \\
+\frac{\dd v_2(t)}{\dd t} = 0 \\
+\frac{\dd v_2(t)}{\dd t} + \frac{1}{2} \underbrace{\frac{\dd z}{\dd t}}_{= 1} v_3(t)= 0 
+\end{cases}
+\end{align*}
+
+Die Lösungen dieser Differentialgleichungen ergeben sich zu:
+\begin{align*}
+	\begin{cases}
+		v_1(t) &= \frac{v_1(0)}{\sqrt{1+t^2}}\\
+	v_2(t) &= v_2(0) \\
+	 v_3(t)& = v_3(0)\e^{-\frac{t}{2}}
+	\end{cases}
+\end{align*}
+Seien $v(0) = \left(v_1(0), v_2(0), v_3(0) \right)^T$ sowie $w(0) = \left(w_1(0), w_2(0), w_3(0) \right)^T$ gegeben, dann gilt für die Vektorfelder, welche durch den Paralleltransport entlang $\gamma$ entstehen:
+\begin{align*}
+g(v(t),w(t)) = \underbrace{\sum_{i=1}^{3} v_i(0)w_i(0)}_{\text{const.}}
+\end{align*}
+Es ergibt sich schlussendlich:
+\begin{align*}
+x g(v,w) = g(\nabla_xv,w) + g(v,\nabla_xw) = 0.
+\end{align*}

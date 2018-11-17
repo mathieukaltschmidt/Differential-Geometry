@@ -7,6 +7,8 @@
 \PreviewEnvironment{tikzpicture}
 \setlength\PreviewBorder{2mm}
 \usepackage{xcolor}
+\definecolor{myred}{RGB}{196,19,47} 
+\definecolor{myblue}{RGB}{0,139,139}
 
 
 \begin{document}
@@ -16,7 +18,7 @@
 %erstes Bild	
 	
 	%Füllen der Grundfläche
-	\path[name path=Grundfläche,fill,cyan!15] (0,0,0) -- (0,0,-1) -- (1.2,0,-1) -- (1.2,0,0) -- (0,0,0);
+	\path[name path=Grundfläche,fill,myblue!30] (0,0,0) -- (0,0,-1) -- (1.2,0,-1) -- (1.2,0,0) -- (0,0,0);
 	
 	%Rand
 	\draw[thin] (0,0,0) -- (1.2,0,0);
@@ -29,13 +31,15 @@
 	\node at (0.25,0,-0.5) {\Large$P$};
 	\filldraw (0.9,0,-0.7)circle (0.2pt);
 	\node at (0.95,0,-0.5) {\Large$P'$};
+	
 
 		
 	%Kurve
 	\draw[thick, -] (0.3,0,-0.3) [out=300, in=150] to  (0.9,0,-0.7);
 	
 	% Tangentenvektor	
-	\draw[ultra thick, color=red!80!black,->] (0.6,0,-0.4) -- (0.7,0,-0.95);
+	%\draw[ thick, color=myred,->] (0.53,0,-0.05) -- (0.705,0,-0.9);
+	\draw[ thick, color=myred,->] (0.725,0.125,-0.07) -- (0.705,0,-0.9);
 	\filldraw(0.6,0,-0.4)circle (0.2pt);
 
 	\end{tikzpicture}

@@ -1,0 +1,150 @@
+% !TeX root = ..//diffgeo_main.tex
+
+Als nächstes möchten wir Lemma \ref{lem:lokalisierung1} beweisen.
+Allerdings können wir gleich etwas allgemeineres beweisen wodurch Lemma \ref{lem:lokalisierung1} sofort klar wird.
+
+\begin{lem}
+\label{lem:tensorielllokalisierung}
+Sei $\mathcal{L}: \Gamma (E) \to \Gamma(E')$ eine tensorielle Abbildung. 
+Tensoriell bedeutet hierbei, dass
+\begin{align}
+\mathcal{L}(\phi s) = \phi \mathcal{L}(s), \quad \forall \phi \in \mathcal{F}(\mfk)
+\end{align}
+gilt.\\
+Sei weiterhin $p\in \mfk$ und $s, \tilde{s} \in \Gamma(E)$ mit $s(p) = \tilde{s}(p)$, dann gilt
+\begin{align}
+\mathcal{L}(s)(p) = \mathcal{L}(\tilde{s})(p)
+\end{align} 
+\end{lem}
+Lemma \ref{lem:lokalisierung1} folgt sofort aus diesem Lemma, da die Abbildung
+\begin{align*}
+\covd_\bullet s : \ & \mathfrak{X}(\mfk) \to \Gamma (E)\\
+& X \mapsto \covd_X s
+\end{align*}
+tensoriell ist.
+
+\begin{bew}[Lemma \ref{lem:tensorielllokalisierung}]
+Sei $U$ eine Umgebung von $p$ und $\phi = (s_1, \dots, s_k)$ ein lokaler Rahmen auf $U$.
+Sei außerdem $\varphi$ eine Bumpfunktion mit $\supp \varphi \subset U$ und $\varphi (p) = 1$.\\
+Wir schreiben 
+\begin{align}
+s = \sum_{i=1}^k \sigma_i s_i , \quad \tilde{s} = \sum_{i=1}^k \tilde{\sigma}_i s_i
+\end{align}
+mit $\sigma_i (p) = \tilde{\sigma}_i (p)$.
+\begin{align*}
+\mathcal{L}(s)(p) &= \varphi^2 (p) \mathcal{L}(s)(p)\\
+&= \mathcal{L}(\varphi^2 s)(p)\\
+&= \sum_{i = 1}^k \mathcal{L}((\varphi \sigma_i)(\varphi s_i)) (p)\\
+&= \sum_{i = 1}^k \varphi (p) \sigma_i (p) \mathcal{L}((\varphi s_i)) (p) 
+\end{align*}
+Analog rechnet man mit $\tilde{s}$
+\begin{align}
+\mathcal{L}(\tilde{s})(p) = \sum_{i = 1}^k \varphi (p) \tilde{\sigma}_i (p) \mathcal{L}((\varphi s_i)) (p) .
+\end{align}
+Da $\sigma_i (p) = \tilde{\sigma}_i (p)$ und $\varphi(p)=1$ folgt nun die Aussage
+\begin{align*}
+\mathcal{L}(s)(p) = \mathcal{L}(\tilde{s})(p).
+\end{align*}
+\end{bew}
+
+\begin{defs}[Tensorfeld]
+Ein Tensorfeld vom Typ $(n, s)$ ist ein glatter Schnitt des Bündels
+\begin{align*}
+T^{n}_{s} (\mfk) = \left( \bigotimes^n_{i=1} T \mfk \right) \otimes \left(\bigotimes^s_{i=1} T_s^* \mfk\right).
+\end{align*}
+In anderen Worten: ein Tensorfeld vom Typ $(n, s)$ ist eine Abbildung
+\begin{align*}
+B : \underbrace{\mathfrak{X}(\mfk) \times \cdots \times \mathfrak{X}(\mfk)}_{s \ \mathrm{mal}} \to \underbrace{\mathfrak{X}(\mfk) \times \cdots \times \mathfrak{X}(\mfk)}_{n \ \mathrm{mal}},
+\end{align*}
+die tensoriell in jedem Argument ist.\\
+Lemma \ref{lem:tensorielllokalisierung} sagt uns, dass jede Abbildung $B$ aus einem Vektorfeld kommt.
+\end{defs}
+\begin{kor}
+Sei $B$ ein Tensorfeld vom Typ $(n, s)$, dann induziert $B$ für alle $p$ eine $s$-lineare Abbildung:
+\begin{align*}
+B_p: \ & T_p \mfk^s \to T_p \mfk^n\\
+&(v_1, \dots, v_s) \mapsto B_p (v_1, \dots, v_s)
+\end{align*}
+\end{kor}
+
+Wir wollen nun wieder zu Zusammenhängen zurückkehren.
+\begin{bsp}[Kanonischer Zusammenhang]
+Wir wählen die Koordinaten wie folgt:
+\begin{align}
+s(p) = (p, \sigma(p)), \quad s \in \Gamma(\mfk \times \R^k),
+\end{align}
+wobei $\sigma = (\sigma_1, \dots, \sigma_k)$ mit $\sigma_i \in \mathcal{F}(\mfk)$.
+Dann ist der kanonische Zusammenhang gegeben durch:
+\begin{align}
+\covd_X s = (X(\sigma_1), \dots, X(\sigma_k))
+\end{align}
+\end{bsp}
+
+Sei $\omega$ eine $1$-Form auf $\mfk$ mit Werten in Matrizen $\mathrm{Mat}_{k \times k}(\R)$.
+Das bedeutet, dass
+\begin{align*}
+&\omega \in \Gamma(\mathrm{Hom}(T\mfk, \mathrm{Mat}_{k \times k}(\R))) \\
+&\omega_p: T_p \mfk \to \mathrm{Mat}_{k \times k}(\R) \\
+&\omega = (\omega_{ij})^k_{i,j=1}
+\end{align*}
+$\omega_{ij}$ ist eine $1$-Form auf $\mfk$
+\begin{align*}
+w^{ij}_p :T_p \mfk \to \R.
+\end{align*}
+
+\begin{defs}[Zusammenhang über 1-Form]
+Mit einer $1$-Form kann folgender Zusammenhang definiert werden:
+\begin{align}
+(\covd^\omega_X s)(p) = (p, X_p(\sigma) + \omega_p(X_p) \sigma(p))
+\end{align}
+\end{defs}
+
+\begin{satz}
+\label{satz:zusammenhangausform}
+Sei $(E, \pi, \mfk)$ ein Vektorbündel und $\covd$ ein Zusammenhang auf $E$.
+Weiterhin sei $\omega$ eine $1$-Form mit Werten in $\mathrm{Hom}(E, E)$.
+Dann ist 
+\begin{align}
+\covd^\omega_X s = \covd_X s + \omega(X) s,
+\end{align}
+ein Zusammenhang auf $E$
+\end{satz}
+
+Umgehrt gilt ebenso der folgende Satz:
+
+\begin{satz}
+Seien $\covd$ und $\covd'$ zwei Zusammenhänge auf $E$.
+Dann definiert 
+\begin{align}
+\omega(X) s = \covd'_X s - \covd_X s,
+\end{align}
+eine $1$-Form mit Werten in $\mathrm{Hom}(E, E)$.
+\end{satz}
+
+\begin{bsp}
+Sei $E = \mfk \times \R^k$. Dann ergibt sich:
+\begin{align}
+\covd^\omega_X s = (p, X(\sigma) + \omega_p (X_p)\sigma_p).
+\end{align}
+Aus dem Satz von eben folgt, dass $\covd^\omega_X s$ alle Zusammenhänge auf $E$ sind.
+Aus der Lokalisierung folgt
+\begin{align*}
+\phi : U \times \R^k \to E\eval_U.
+\end{align*}
+\end{bsp}
+Wir stellen uns die Frage wie wir Zusammenhänge mit einer $1$-Form finden können.
+Dies ist mithilfe von Zusammenhangsformen bezüglich eines lokalen Rahmens möglich.
+Sei $\phi = (s_1, \dots, s_k)$ ein lokaler Rahmen von $E$ über $U$ und sei $X \in \mathfrak{X}(\mfk)$.
+Zudem sind $\covd_X s_1, \dots, \covd_X s_k \in \Gamma(E)$.
+Diese lassen sich wie folgt darstellen:
+\begin{align}
+\covd_X s_i = \sum_{i=1}^k \omega_{ij}(x) s_j
+\end{align}
+Wobei die $1$-Form $\omega_{ij}(x): U \to \R$ glatt und tensoriell in $X$ ist.
+Es ist $s = \sum_i \sigma_i s_i$. 
+Damit erhält man:
+\begin{align*}
+\covd_X s &= \sum (X(\sigma_i)s_i + + \sigma_i \covd_X s_i)\\
+&= \sum_j X(\sigma_j)s_j + \sum_{j=1}^k \sum_{i=1}^k \sigma_i \omega_{ij} s_j\\
+&= \sum_j \left[ X(\sigma_j) + \sum_i \sigma_i \omega_{ij}(X) \right] s_j
+\end{align*}
