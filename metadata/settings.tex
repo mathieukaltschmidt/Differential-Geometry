@@ -39,6 +39,7 @@
 \usepackage[labelfont=bf]{caption}
 \usepackage{wrapfig}
 \usepackage{physics}
+\usepackage{titlesec}
 
 %geometry
 \geometry{
@@ -81,6 +82,14 @@
 \setkomafont{title}{\normalfont\bfseries\Large}
 \setkomafont{author}{\normalfont\bfseries\Large}
 \setkomafont{date}{\normalfont\bfseries\Large}
+
+% chapter style
+\titleformat{\chapter}[display]
+{\normalfont\Large\filcenter\sffamily}
+{\titlerule[1pt]\vspace{1pt}\titlerule\vspace{1pc}%
+	\LARGE\MakeUppercase{\chaptertitlename} \thechapter}
+{1pc}
+{\titlerule\vspace{1pc}\Huge}
 
 %nice boxes
 \usepackage[many]{tcolorbox}    
