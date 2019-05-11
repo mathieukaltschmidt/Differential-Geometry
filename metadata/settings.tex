@@ -15,8 +15,8 @@
 \usepackage{dsfont}
 \usepackage[arrow, matrix, curve]{xy}
 \usepackage{nicefrac}
-\usepackage{ wasysym}
-\usepackage{upgreek}					%Griechische Buchstaben
+\usepackage{wasysym}
+\usepackage{upgreek} 
 
 %language settings and microtype
 \usepackage{fontspec} 
@@ -30,7 +30,6 @@
 \usepackage{microtype}
 
 %useful packages
-\usepackage{geometry}
 \usepackage[dvipsnames]{xcolor}
 \usepackage{graphicx}
 \usepackage{float}
@@ -43,21 +42,57 @@
 \usepackage[labelfont=bf]{caption}
 \usepackage{wrapfig}
 \usepackage{physics}
-<<<<<<< HEAD
-\usepackage{titlesec}
-=======
 \usepackage{enumitem}
 \usepackage{xr} % cross referencing
->>>>>>> cc0fa646afe5d11a08b4f6a58d3ccf2145a2bd8d
 
-%geometry
-\geometry{
-	width=150mm,
-	bindingoffset=7mm,}
+%Page Layout and geometry
+\usepackage{fancyhdr}
+\fancyhfoffset{0pt}
+
+\usepackage[a4paper,
+			width = 150mm,
+			top = 30mm,
+		    bottom=30mm%,
+		    %bindingoffset = 7mm
+		    ]{geometry}
+
+%Renewing marks for appearance in header
+\renewcommand{\chaptermark}[1]{
+    \markboth{\mbox{\@chapapp}\ \thechapter.\ \ #1}{}%
+}
+\renewcommand{\sectionmark}[1]{
+    \markright{\thesection\ \ #1}{}
+}
+
+%Page Layout For Beginning Of Chapter
+\fancypagestyle{plain}{%
+	\fancyhf{}  %clear all header and footer fields
+	\fancyfoot[C]{\thepage}
+	\renewcommand{\headrulewidth}{0pt}
+	\renewcommand{\footrulewidth}{0pt}
+	}
+
+%Page Layout For Other Pages
+\pagestyle{fancy}
+	\fancyhf{}
+	\fancyhead[LE]{\footnotesize\nouppercase{\leftmark}}
+	\fancyhead[RO]{\footnotesize\nouppercase{\rightmark}}
+	\fancyfoot[C]{\thepage}
+	\renewcommand{\headrulewidth}{0.2pt}
+	\renewcommand{\footrulewidth}{0pt}
+
+%Headings
+\setkomafont{section}{\textsf\bfseries\Large}
+\setkomafont{subsection}{\textsf\bfseries\large}
+\setkomafont{subsubsection}{\textsf\bfseries\normalsize}
+
+
 
 %color settings
-\definecolor{myred}{RGB}{196,19,47} 
-\definecolor{myblue}{RGB}{65,105,225}
+\usepackage{xcolor}
+\definecolor{myred}{RGB}{157,0,0}
+\definecolor{myblue}{RGB}{1,1,141}
+\definecolor{mygreen}{RGB}{0, 119, 85}
 \definecolor{mygray}{RGB}{102, 102, 142}
 
 
@@ -69,101 +104,10 @@
 	\null%
 	\clearpage}
 
-% Page Layout For Beginning Of Chapter
-\fancypagestyle{plain}{%
-	\fancyhf{}  % clear all header and footer fields 
-	\fancyfoot[C]{%
-        	\colorbox{mygray}{\color{white}\textbf{\thepage}}}
-	\renewcommand{\headrulewidth}{0pt}
-	\renewcommand{\footrulewidth}{0pt}}
 
-% Page Layout For The Other Pages
-\pagestyle{fancy}
-\fancyhf{}
-\fancyhead[LE]{\footnotesize\nouppercase{\color{mygray}\leftmark}}
-\fancyhead[RO]{\footnotesize\nouppercase{\color{mygray}\rightmark}}
-	\fancyfoot[C]{%
-        	\colorbox{mygray}{\color{white}\textbf{\thepage}}}
-	
-\renewcommand{\headrulewidth}{0.2pt}
-\renewcommand{\footrulewidth}{0pt}
-
-\usepackage{calc}
-
-
-% Chapter Layout
-\usepackage[explicit]{titlesec}
-	\newcommand\titlefontsize{\Large}
-    \newcommand\chapternumberfontsize{\Huge}
-    \newcommand\parttitlefontsize{\Large}
-	\newcommand*\chapterlabel{}
-    	\titleformat
-			{\chapter} % command
-			[display] % shape
-			{\bfseries\color{mygray}} % format
-			{\colorbox{mygray}{            	\chapternumberfontsize{\textcolor{white}{\thechapter.}}}\hspace{5pt}\huge{\chaptertitlename} % 
-                \\[12pt]
-                \fontsize{20}{24}\selectfont \color{black}{#1}
-     		} % label 
-			{0pt} % sep
-			{
-    			\vspace{-10pt}
-                \rule{\textwidth}{1pt}
-			} % before-code
-			[
-				\vspace{-0.5cm}
-			] % after-code
-    	\titleformat
-			{name=\chapter,numberless} % command
-			[display] % shape
-			{\bfseries\color{mygray}} % format
-			{
-                \fontsize{16}{19.2}\selectfont{#1}
-			} % label 
-			{0pt} % sep
-			{
-    			\vspace{-10pt}
-                \rule{\textwidth}{1pt}
-			} % before-code
-			[
-				\vspace{-1cm}
-			] % after-code            
-
-
-% titles and stuff
-\setkomafont{chapter}{\normalfont\bfseries\huge}
-\setkomafont{section}{\normalfont\bfseries\LARGE}
-\setkomafont{subsection}{\normalfont\bfseries\large}
 \setkomafont{title}{\normalfont\bfseries\Large}
 \setkomafont{author}{\normalfont\bfseries\Large}
 \setkomafont{date}{\normalfont\bfseries\Large}
-
-<<<<<<< HEAD
-% chapter style
-\titleformat{\chapter}[display]
-{\normalfont\Large\filcenter\sffamily}
-{\titlerule[1pt]\vspace{1pt}\titlerule\vspace{1pc}%
-	\LARGE\MakeUppercase{\chaptertitlename} \thechapter}
-{1pc}
-{\titlerule\vspace{1pc}\Huge}
-
-%nice boxes
-=======
-% nice boxes
->>>>>>> cc0fa646afe5d11a08b4f6a58d3ccf2145a2bd8d
-\usepackage[many]{tcolorbox}    
-\newtcolorbox{mybox}[1]{%
-	tikznode boxed title,
-	enhanced,
-	arc=0mm,
-	interior style={white},
-	attach boxed title to top center= {yshift=-\tcboxedtitleheight/2},
-	fonttitle=\large\bfseries,
-	colbacktitle=white,coltitle=black,
-	boxed title style={size=normal,colframe=white,boxrule=0pt},
-	title={#1}}
-
-%proofs,defs ...
 
 %Theorems
 \theoremstyle{marginbreak}
@@ -178,7 +122,7 @@
 \theoremseparator{}
 \newtheorem{lem}[satz]{Lemma}
 
-%Helping lemma, Mathieu, Q's been here
+%Helping lemma
 \theoremstyle{changebreak} 
 \theoremindent0.5cm 
 \theoremseparator{}
@@ -214,18 +158,17 @@
 \theoremsymbol{\ensuremath{\square}}
 \newtheorem{bew}[satz]{Beweis:}
 
-%bibliography
+%Bibliography
 \usepackage[
-style=numeric-comp,
-backend=biber,
-maxnames=10,
-maxcitenames=2,
-isbn=false,
-date=year,
-url=false,
-doi=false
+	style=numeric-comp,
+	backend=biber,
+	isbn=false,
+	date=year,
+	url=false,
+	doi=false,
+	hyperref = auto
 ]{biblatex}
-\bibliography{bibliography/diffgeo-bib}
+\addbibresource{bib/diffgeo-bib.bib}
 
 %appendix
 \usepackage[toc,page]{appendix}
