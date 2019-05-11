@@ -1,5 +1,8 @@
 %compiling with XeLaTeX
-\documentclass[twoside,11pt,abstracton,openright]{scrreprt}
+\documentclass[%twoside,
+			   abstracton,
+			   %openright,
+			   11pt]{scrreprt}
 
 \input{metadata/settings}
 \input{metadata/definitions}
@@ -7,10 +10,9 @@
 \begin{document}
 	
 %title, abstract and toc	 
-\pagenumbering{roman} % start roman numbering before main text
+\pagenumbering{roman} 
 \input{content/titlepage}
-{\hypersetup{linkcolor=black}\pagestyle{plain} % kill headrule for abstract and toc
-	\addcontentsline{toc}{chapter}{\hspace{.6cm}Vorwort }
+{\hypersetup{linkcolor=black}\pagestyle{plain}	\addcontentsline{toc}{chapter}{\hspace{.6cm}Vorwort }
 	\include{content/abstract}
 	\addcontentsline{toc}{chapter}{\hspace{.6cm}Danksagung }
 	\include{content/acknowledgements}
