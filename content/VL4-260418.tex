@@ -4,7 +4,7 @@ Jede Karte liefert eine spezielle Basis von $T_p \mfk$.
 Sei $(x, U)$ eine Karte von $\mfk$ um $p$. 
 Definiere Tangentialvektoren $\pdv{x_i} \eval_{p} $ ($i = 1, \dots, m$) wie folgt:
 \begin{align}
-\pdv{x_i}\eval_{p} (f) := \partial_i (f \circ x^{-1}) \eval_{x(p)}
+\pdv{x_i}(f)\eval_{p}:= \partial_i (f \circ x^{-1}) \eval_{x(p)}
 \end{align}
 Hierbei bedeutet $\partial_i$ die $i$-te partielle Ableitung.
 \end{defs}
@@ -97,9 +97,10 @@ v(f) &= \sum_i (\underbrace{(x_i (p) - x_i (p)) v(f_i)}_{=0} + \underbrace{v(x_i
 \begin{satz}[Transformationsregel]
 Seien $(x, U)$ und $(\tilde{x}, \tilde{U})$ zwei Karten um $p \in \mfk$.
 \begin{figure}[H]
-\centering
+    \begin{center}
 \includegraphics[scale=1.0]{figures/tikz/transformationlaw.pdf}
 \label{img:transformationsregel}
+\end{center}
 \end{figure}  
 Dann gilt:
 \begin{align}
@@ -146,7 +147,7 @@ Dann gilt:
 Sei $f: \mfk \to \mfka$ glatt und sei $(x, U)$ eine Karte von $\mfk$ um $p$ und $(y, V)$ eine Karte von $\mfka$ um $p$.
 Setze $f_j = y_j \circ f$ mit $f_j : \mfk \to \R$, dann gilt:
 \begin{align}
-\underbrace{\dd f \eval_p ( \pdv{x_i} \eval_p)}_{\in T_{f(p)}\mfk} = \sum_j \underbrace{\pdv{x_i}\eval_p (f_j)}_{\in \R} \underbrace{\pdv{y_j} \eval_{f(p)}}_{\in T_{f(p)}\mfka}
+    \underbrace{\dd f \eval_p \left( \pdv{x_i} \eval_p \right)}_{\in T_{f(p)}\mfk} = \sum_j \underbrace{\pdv{x_i}\eval_p (f_j)}_{\in \R} \underbrace{\pdv{y_j} \eval_{f(p)}}_{\in T_{f(p)}\mfka}
 \end{align}
 \end{satz}
 
@@ -282,7 +283,7 @@ Sei $f: \mfk \to \mfka$ mit $\dim \mfk = m$ und $\dim \mfka = n$ glatt, dann gil
 \begin{enumerate}
 \item Sei $q \in \mfka$ ein regulärer Wert, so ist 
 \begin{align}
-\mathcal{H} = f^{-1}(q) = \{ p \in \mfk (f(p))=q \}
+\mathcal{H} = f^{-1}(q) = \{ p \in \mfk \vert f(p) = q \}
 \end{align}
 eine Untermannigfaltigkeit der Dimension $m-n$.
 \item Sei $f$ linear in einer Umgebung von $\mathcal{H} = f^{-1}(q)$ vom $\rang$ $r$, so ist $\mathcal{H}$ eine Untermannigfaltigkeit der Dimension $m-r$.

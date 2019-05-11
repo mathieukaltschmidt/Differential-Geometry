@@ -40,7 +40,7 @@ Damit folgt, dass $c\eval_{[t_i, t_{i+1} ]}$ eine Geodätische ist.
     f(t_i) = \dot{c}(t_i - 0) - \dot{c}(t_i + 0) = 0
 \end{align}
 \end{bew}
-Zsection{$(\mfk, g)$ als metrischer Raum} 
+\section{$(\mfk, g)$ als metrischer Raum} 
 Ziel ist es jetzt zu zeigen, dass $(\mfk, d)$ ein metrischer Raum ist, 
 wobei $d$ eine geeignet definierte Distanzfunktion ist.
 Um dieses Ziel zu erreichen, benötigen wir zunächst ein paar Überlegungen zur Exponentialabbildung.
@@ -50,7 +50,8 @@ Um dieses Ziel zu erreichen, benötigen wir zunächst ein paar Überlegungen zur
 \caption{Die Exponentialabbildung erhält Orthogonalität}
 \label{img:exponentialfunction}
 \end{figure} 
-In Abbildung \ref{img:exponentialfunction} ist zu sehen, dass der Strahl $t v$ auf radiale Geodätische $c_v(t) = \exp_p (t v)$ abgebildet wird durch due Exponentialabbildung.
+In Abbildung \ref{img:exponentialfunction} ist zu sehen, dass der Strahl 
+$t v$ auf radiale Geodätische $c_v(t) = \exp_p (t v)$ abgebildet wird durch die Exponentialabbildung.
 $\exp_p$ erhält Orthogonalität zu den radialen Richtungen.
 Dies nennt man \textbf{radiale Isometrie}.
 \begin{lem}[Gaußlemma]
@@ -69,8 +70,8 @@ Dies nennt man \textbf{radiale Isometrie}.
 zu a):
 \begin{align*}
     \dd(\exp_p\eval_{tv})(v) &= \dv{s}\eval_{s=0} \underbrace{\exp_p (tv + sv )}_{c_v(t+s)}\\
-    &= \dv{s} \eval_{s=0} c_v (t+s) = \dot{c}_v (t)\\
-    &= \dot{c}_c (t)
+    &= \dv{s} \eval_{s=0} c_v (t+s) \\
+    &= \dot{c}_v (t)
 \end{align*}
 zu b):\\
 Wir können o.B.d.A. annehmen, dass $t=1$ (da $c_{tv}(1) = c_v (t)$).

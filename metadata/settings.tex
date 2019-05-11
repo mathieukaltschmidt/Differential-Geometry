@@ -43,8 +43,12 @@
 \usepackage[labelfont=bf]{caption}
 \usepackage{wrapfig}
 \usepackage{physics}
+<<<<<<< HEAD
+\usepackage{titlesec}
+=======
 \usepackage{enumitem}
 \usepackage{xr} % cross referencing
+>>>>>>> cc0fa646afe5d11a08b4f6a58d3ccf2145a2bd8d
 
 %geometry
 \geometry{
@@ -134,7 +138,19 @@
 \setkomafont{author}{\normalfont\bfseries\Large}
 \setkomafont{date}{\normalfont\bfseries\Large}
 
+<<<<<<< HEAD
+% chapter style
+\titleformat{\chapter}[display]
+{\normalfont\Large\filcenter\sffamily}
+{\titlerule[1pt]\vspace{1pt}\titlerule\vspace{1pc}%
+	\LARGE\MakeUppercase{\chaptertitlename} \thechapter}
+{1pc}
+{\titlerule\vspace{1pc}\Huge}
+
+%nice boxes
+=======
 % nice boxes
+>>>>>>> cc0fa646afe5d11a08b4f6a58d3ccf2145a2bd8d
 \usepackage[many]{tcolorbox}    
 \newtcolorbox{mybox}[1]{%
 	tikznode boxed title,
